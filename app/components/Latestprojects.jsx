@@ -4,9 +4,9 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
 const Latestprojects = () => {
     return (
 
-       <div className='px-4 pt-20 text-center'>
+       <div className='px-4  pt-20   text-center'>
          <h2 className='text-3xl font-bold'>Our Latest Projects</h2>
-         <p>Experience the future of living! Join us as we unveil our latest real estate project, designed to redefine modern living. Explore, invest, and secure your spot in the next era of exceptional living. Don't miss out, be part of the excitement</p>
+         <p className='p-8'>Experience the future of living! Join us as we unveil our latest real estate project, designed to redefine modern living. Explore, invest, and secure your spot in the next era of exceptional living. Don't miss out, be part of the excitement</p>
          <div className="md:flex  md:space-x-3  py-12">
    
 

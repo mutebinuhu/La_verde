@@ -5,9 +5,9 @@ import ServiceCard from './ServiceCard';
 
 const Services = () => {
     return (
-        <div className='mx-4 text-center '>
+        <div className='mx-4 pt-10  text-center '>
         <h2 className='text-3xl text-bold py-4 '>See how La Verde can help</h2>
-        <p>Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!</p>
+        <p className='py-8'>Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!</p>
         <div className='md:flex md:space-x-2 '> 
 
         <ServiceCard 

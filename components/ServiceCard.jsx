@@ -33,7 +33,7 @@ const ServiceCard = ({info, image, url, callToAction, title}) => {
           <Link
             isExternal
             showAnchorIcon
-            href="#"
+            href="/contact-us"
           >
            <Button className='border-2 bg-white text-[#104e3e] border-[#104e3e]   py-6 px-6  font-bold rounded'>
                  {callToAction}
