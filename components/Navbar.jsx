@@ -41,9 +41,9 @@ const Navbar = () => {
           </li>
           </Link>
         ))}
-        <Link href={"tel:06767676766"} className='md:flex items-center text-gray'>
+        <Link href={"tel:02 583 5025"} className='md:flex items-center text-gray'>
         <RiCustomerService2Line />
-        <p className='px-2'>06767676766</p>
+        <p className='px-2'>02 583 5025</p>
         </Link>
 
       </ul>
