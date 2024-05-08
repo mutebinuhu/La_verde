@@ -5,10 +5,10 @@ import ServiceCard from './ServiceCard';
 
 const Services = () => {
     return (
-        <div className='mx-4 pt-10  text-center '>
+        <div className='container  mx-auto  pt-10  text-center p-6 '>
         <h2 className='text-3xl text-bold py-4 '>See how La Verde can help</h2>
         <p className='py-8'>Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!</p>
-        <div className='md:flex md:space-x-2 '> 
+        <div className='md:flex md:space-x-6 '> 
 
         <ServiceCard 
         title="Browse Homes"
@@ -26,7 +26,7 @@ const Services = () => {
         title="Rent a home"
         url="/rent-home.jpg"
         info="Lets help you find Your next home. Choose to own a home in any of the seven Emirates from Dubai To Umm Al Quwain "
-        callToAction="Rent Home"/>
+        callToAction="Lets Call You"/>
 
 
         </div>

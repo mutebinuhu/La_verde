@@ -23,10 +23,10 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='bg-[#104e3e]  w-full flex justify-between items-center mx-auto px-4 text-white'>
+    <div className='bg-gray-100  w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold'>
-        <Image src="/la_verde_png.jpg" width={120} height={80} className='py-4' />
+        <Image src="/la_verde_logo_rem_bg.png" width={160} height={80} className='py-4' />
       </h1>
 
       {/* Desktop Navigation */}
@@ -35,21 +35,21 @@ const Navbar = () => {
           <Link href={item.url}>
             <li
             key={item.id}
-            className='p-2 hover:bg-[#00df9a] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            className='p-2 hover:bg-[#00df9a] text-[#104E3E] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
           >
             {item.text}
           </li>
           </Link>
         ))}
-        <Link href={"tel:02 583 5025"} className='md:flex items-center text-gray'>
-        <RiCustomerService2Line />
+        <Link href={"tel:02 583 5025"} className='md:flex items-center text-[#104E3E] '>
+        <RiCustomerService2Line className='text-2xl' />
         <p className='px-2'>025835025</p>
         </Link>
 
       </ul>
 
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className='block md:hidden'>
+      <div onClick={handleNav} className='block md:hidden text-[#104E3E]'>
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
+            className='p-4 border-b text-[#104E3E] rounded-xl hover:bg-[##104e3e] duration-300 hover:text-black cursor-pointer border-gray-600'
           >
             {item.text}
           </li>

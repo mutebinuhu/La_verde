@@ -5,7 +5,7 @@ import { Button } from '@nextui-org/button';
 
 const Banner = () => {
     return (
-        <div className='md:flex justify-between items-center md:space-x-12 mx-4'>
+        <div className='md:flex justify-between items-center md:space-x-12 mx-8'>
             <div className=' w-full md:w-full text-center md:text-left'>
                 <h1 className='text-5xl font-semibold text-gray-700	md:mt-12 mt-6 text-normal'>Discover your dream home anywhere in <span className='bg-[#104e3e] text-white px-4 py-2 text-4xl px-2 rounded-lg'>UAE</span> <span className='border-b-4 border-[#104e3e]'>today!</span> </h1>
                 <p className='py-8 tracking-wide'>
