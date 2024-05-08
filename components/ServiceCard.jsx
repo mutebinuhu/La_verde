@@ -9,15 +9,12 @@ const ServiceCard = ({info, image, url, callToAction, title}) => {
     return (
         <Card className="md:w-1/3 w-full p-8   mt-6">
         <CardHeader className="flex justify-center">
-          <Image
-            alt="nextui logo"
-            height={200}
-            radius="lg"
-            src={url}
-            width={100}
-            className='w-32 h-32 rounded-full'
+          <div className=' h-32 md:h-32 rounded-full w-32' style={{backgroundImage: "url(" + url + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}>
 
-          />
+          </div>
        
         </CardHeader>
         <div className="">

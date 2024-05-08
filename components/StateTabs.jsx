@@ -15,28 +15,28 @@ const StateTabs = () => {
         <Tab key="dubai" title="Dubai">
           <Card>
             <CardBody>
-             Dubai
+             Dubai Coming soon...
             </CardBody>
           </Card>  
         </Tab>
         <Tab key="abudhabi" title="Abudhabi">
           <Card>
             <CardBody>
-            AUH
+            AUH Coming soon...
             </CardBody>
           </Card>  
         </Tab>
         <Tab key="sharjah" title="Sharjah">
           <Card>
             <CardBody>
-              Sharhaj
+              Sharhaj Coming soon...
             </CardBody>
           </Card>  
         </Tab>
         <Tab key="RasAlKhaimah" title="Ras Al Khaimah">
           <Card>
             <CardBody>
-             Ras
+             Ras Coming soon...
             </CardBody>
           </Card>  
         </Tab>
