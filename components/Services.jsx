@@ -29,11 +29,11 @@ const Services = () => {
         callToAction="Lets Talk Now"/>
     
     
-<ServiceCard 
-        title="Buy a home"
-        url="/buy-a-home.jpg"
-        info="Are you thinking about buying a new home and dont Know where to start. Let our team find You a perfect home worth living "
-        callToAction="Get a Call Back"/>
+        <ServiceCard 
+                title="Buy a home"
+                url="/buy-a-home.jpg"
+                info="Are you thinking about buying a new home and dont Know where to start. Let our team find You a perfect home worth living "
+                callToAction="Get a Call Back"/>
 
 
 

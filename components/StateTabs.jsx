@@ -5,7 +5,7 @@ import { Card, CardBody } from '@nextui-org/card';
 const StateTabs = () => {
     return (
        
-   <section className='py-20 container mx-auto px-4'>
+   <section className='py-16 container mx-auto px-4'>
     <div className='py-12' >
     <h2 className='text-4xl font-bold'>Explore new projects in the UAE</h2>
     <p className='py-4'>Discover the latest off-plan and ready properties in UAE.</p>
