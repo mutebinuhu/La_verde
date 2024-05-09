@@ -54,7 +54,7 @@ const abuhdabiProjectDetails =[
     {
         id:4,
         name:"Yas Golf Collection",
-        image:"reportage-image.jpg",
+        image:"ALDAR_Ansam2_CGI08_Buildings_07.jpg",
         plan:"50/50",
         status:"Under construction",
         location:"YAS ISLAND",
