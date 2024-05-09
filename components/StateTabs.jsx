@@ -12,6 +12,13 @@ const StateTabs = () => {
     </div>
     <div className="flex w-full flex-col  ">
       <Tabs aria-label="Options" variant="underlined">
+      <Tab key="abudhabi" title="Abudhabi">
+          <Card>
+            <CardBody>
+             AUH Coming soon...
+            </CardBody>
+          </Card>  
+        </Tab>
         <Tab key="dubai" title="Dubai">
           <Card>
             <CardBody>
@@ -19,20 +26,8 @@ const StateTabs = () => {
             </CardBody>
           </Card>  
         </Tab>
-        <Tab key="abudhabi" title="Abudhabi">
-          <Card>
-            <CardBody>
-            AUH Coming soon...
-            </CardBody>
-          </Card>  
-        </Tab>
-        <Tab key="sharjah" title="Sharjah">
-          <Card>
-            <CardBody>
-              Sharhaj Coming soon...
-            </CardBody>
-          </Card>  
-        </Tab>
+
+     
         <Tab key="RasAlKhaimah" title="Ras Al Khaimah">
           <Card>
             <CardBody>
