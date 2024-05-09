@@ -1,6 +1,39 @@
 import React from 'react';
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
-
+import Link from 'next/link';
+const Project = ({image, name, paymentPlan, units, status, date}) =>{
+  return(
+    <section className='w-full h-[300px]  col-span-12 sm:col-span-7 -z-10'>
+   <Card  className="w-full h-[300px] col-span-12  mt-3 md:mt-0 sm:col-span-7 -z-10">
+     <CardHeader className="absolute z-10 top-1 flex-col items-start">
+     <p className="text-tiny text-white rounded px-1 uppercase font-bold bg-[#104e3e]">{status}</p>
+       <h4 className="text-white/90 font-medium text-xl">{date}</h4>
+     
+      
+     </CardHeader>
+     <Image
+       removeWrapper
+       alt="Relaxing app background"
+       className="z-0 w-full h-full object-cover"
+       src={image}
+     />
+     <CardFooter className="absolute  bg-black/40 bottom-0 z-40 border-t-1 border-default-600 dark:border-default-100">
+       <div className="flex flex-grow gap-2 items-center">
+        
+         <div className="flex flex-col">
+         <p className="text-large text-bold text-white text-left">{name}</p>
+         <p className="text-tiny text-white text-left text-bold">{units}</p>
+         <p className="text-tiny text-white text-left  text-bold">{paymentPlan}</p>
+         </div>
+       </div>
+      <Link href="/contact-us" className='z-40 '>
+      <Button radius="medium" size="LG">Lets Talk</Button>
+      </Link>
+     </CardFooter>
+   </Card>
+   </section>
+  )
+}
 const Latestprojects = () => {
     return (
 
@@ -10,97 +43,11 @@ const Latestprojects = () => {
          <div className="md:flex p-6   md:space-x-6 py-12">
    
 
-   <Card  className="w-full h-[300px]  col-span-12 sm:col-span-7 -z-10">
-     <CardHeader className="absolute z-10 top-1 flex-col items-start">
-       {
-         /**
-          * 
-          * <p className="text-tiny text-white/60 uppercase font-bold">New Site</p>
-       <h4 className="text-white/90 font-medium text-xl">Sale Started 7/5/2024</h4>
-          */
-       }
-     </CardHeader>
-     <Image
-       removeWrapper
-       alt="Relaxing app background"
-       className="z-0 w-full h-full object-cover"
-       src="11.jpg"
-     />
-     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-       <div className="flex flex-grow gap-2 items-center">
-         <Image
-           alt="Breathing app icon"
-           className="rounded-full w-10 h-11 bg-black"
-           src="11.jpg"
-         />
-         <div className="flex flex-col">
-           <p className="text-tiny text-white/60">Info</p>
-           <p className="text-tiny text-white/60">Info</p>
-         </div>
-       </div>
-       <Button radius="full" size="sm">Lets Talk</Button>
-     </CardFooter>
-   </Card>
-   <Card  className="w-full h-[300px] col-span-12  mt-3 md:mt-0 sm:col-span-7 -z-10">
-     <CardHeader className="absolute z-10 top-1 flex-col items-start">
-      {/**
-       * <p className="text-tiny text-white/60 uppercase font-bold">New Site</p>
-       <h4 className="text-white/90 font-medium text-xl">Sale Started 7/5/2024</h4>
-       * 
-       */} 
-     </CardHeader>
-     <Image
-       removeWrapper
-       alt="Relaxing app background"
-       className="z-0 w-full h-full object-cover"
-       src="EXT08_Aerial_v14_10417px_150dpi.jpg"
-     />
-     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-       <div className="flex flex-grow gap-2 items-center">
-         <Image
-           alt="Breathing app icon"
-           className="rounded-full w-10 h-11 bg-black"
-           src="https://nextui.org/images/breathing-app-icon.jpeg"
-         />
-         <div className="flex flex-col">
-         <p className="text-tiny text-white/60">Sama Yas</p>
-           <p className="text-tiny text-white/60">Info</p>
-         </div>
-       </div>
-       <Button radius="full" size="sm">Lets Talk</Button>
-     </CardFooter>
-   </Card>
-   <Card  className="w-full h-[300px] col-span-12 sm:col-span-7  mt-3 md:mt-0 -z-10">
-     <CardHeader className="absolute z-10 top-1 flex-col items-start">
-     {
-         /**
-          * 
-          * <p className="text-tiny text-white/60 uppercase font-bold">New Site</p>
-       <h4 className="text-white/90 font-medium text-xl">Sale Started 7/5/2024</h4>
-          */
-       }
-     </CardHeader>
-     <Image
-       removeWrapper
-       alt="Relaxing app background"
-       className="z-0 w-full h-full object-cover"
-       src="ALD2607_SaadiyatLagoons_S130_EXT_CyclePath.jpg"
-     />
-     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-       <div className="flex flex-grow gap-2 items-center">
-         <Image
-           alt="Breathing app icon"
-           className="rounded-full w-10 h-11 bg-black"
-           src="https://nextui.org/images/breathing-app-icon.jpeg"
-         />
-         <div className="flex flex-col">
-         <p className="text-tiny text-white/60">Info</p>
-           <p className="text-tiny text-white/60">Info</p>
-         </div>
-       </div>
-       <Button radius="full" className='' size="sm">Lets Talk</Button>
-     </CardFooter>
-   </Card>
+   <Project image="/ALDAR_AlReeman2PH3_CGI20_RearYard_04.jpg" name="Fay Al Reeman" units="50 UNITS LEFT" paymentPlan="40/60 PAYMENT PLAN" status="UNDER CONSTRUCTION" date="Sale started 31-Aug-23" />
+   <Project image="/10.jpg" name="Reeman living " units="100 UNITS LEFT" paymentPlan="40/60 PAYMENT PLAN" status="UNDER CONSTRUCTION" date="Sale started 31-Aug-23"/>
+   <Project image="/ALD2607_SaadiyatLagoons_S130_EXT_CyclePath.jpg" name="Saadiyat Lagoons" units="60 UNITS LEFT" paymentPlan="40/60 PAYMENT PLAN" status="UNDER CONSTRUCTION" date="Sale started 31-Aug-23" />
+   
+
  </div>
        </div>
     );

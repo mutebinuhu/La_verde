@@ -2,6 +2,7 @@
 import React from 'react';
 import {Tabs, Tab} from "@nextui-org/tabs";
 import { Card, CardBody } from '@nextui-org/card';
+import AbudhabiProjects from '@/app/components/AbudhabiProjects';
 const StateTabs = () => {
     return (
        
@@ -15,7 +16,7 @@ const StateTabs = () => {
       <Tab key="abudhabi" title="Abudhabi">
           <Card>
             <CardBody>
-             AUH Coming soon...
+              <AbudhabiProjects/>
             </CardBody>
           </Card>  
         </Tab>

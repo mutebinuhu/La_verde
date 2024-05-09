@@ -35,13 +35,13 @@ const Navbar = () => {
           <Link href={item.url}>
             <li
             key={item.id}
-            className='p-2 hover:bg-[#00df9a] text-[#104E3E] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            className='p-2 hover:bg-[#104E3E] text-[#104E3E] hover:text-white rounded m-2 cursor-pointer duration-300 '
           >
             {item.text}
           </li>
           </Link>
         ))}
-        <Link href={"tel:02 583 5025"} className='md:flex items-center text-[#104E3E] '>
+        <Link href={"tel:02 583 5025"} className='md:flex py-2 items-center rounded text-[#104E3E] hover:bg-[#104E3E] text-[#104E3E] hover:text-white px-2 '>
         <RiCustomerService2Line className='text-2xl' />
         <p className='px-2'>025835025</p>
         </Link>
