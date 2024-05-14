@@ -1,39 +1,68 @@
-import LeadForm from '@/components/LeadForm';
-import { Button } from '@nextui-org/button';
-import Link from 'next/link';
-import React from 'react';
-import { MdLocationCity } from "react-icons/md";
-import DetailsTable from './Table';
+import LeadForm from "@/components/LeadForm";
+import { Button } from "@nextui-org/button";
+import Link from "next/link";
+import React from "react";
+import DetailsTable from "./Table";
+import { PiBathtubFill, PiRoadHorizonLight, PiShoppingBag} from "react-icons/pi";
+import { CiShop, CiParking1 } from "react-icons/ci";
+import { IoIosCafe } from "react-icons/io";
+import { FaSquareParking, FaToilet } from "react-icons/fa6";
+import { LiaSwimmerSolid } from "react-icons/lia";
+import { TbGymnastics, TbParkingOff } from "react-icons/tb";
+import { FaBed, FaCar, FaInternetExplorer, FaSatelliteDish, FaShower, FaWalking, FaWater } from "react-icons/fa";
+import { MdWbShade, MdOutlineBalcony,  MdBathtub } from "react-icons/md";
+import { BiSolidLandscape, BiSolidCabinet  } from "react-icons/bi";
+import { PiLadderSimpleBold,  PiLadderSimple } from "react-icons/pi";
+import { GiWindow } from "react-icons/gi";
+import { TbAirConditioning } from "react-icons/tb";
+import { GoMirror } from "react-icons/go";
+import { Roboto_Mono, Playfair_Display } from 'next/font/google';
+
+
+
+
+
+const pF =  Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-play-fair',
+  
+});
+
+
+
+
+
+
 
 
 // components/AmenitiesCard.js
 const amenities = [
-    {
-      id: 1,
-      title: 'Swimming Pool',
-      icon: (
-        <path
-          fillRule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-5a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1v-1zm1-7a3 3 0 100-6 3 3 0 000 6zm-1 1a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1V7z"
-          clipRule="evenodd"
-        />
-      ),
-      description: 'Enjoy a refreshing swim in our state-of-the-art pool.',
-    },
-    {
-      id: 2,
-      title: 'Fitness Center',
-      icon: (
-        <path
-          fillRule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-5a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1v-1zm1-7a3 3 0 100-6 3 3 0 000 6zm-1 1a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1V7z"
-          clipRule="evenodd"
-        />
-      ),
-      description: 'Stay in shape with our fully-equipped fitness center.',
-    },
-    // Add more amenities as needed
-  ];
+  {
+    id: 1,
+    title: "Swimming Pool",
+    icon: (
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm-4a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1v-1zm1-7a3 3 0 100-6 3 3 0 000 6zm-1 1a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1V7z"
+        clipRule="evenodd"
+      />
+    ),
+    description: "Enjoy a refreshing swim in our state-of-the-art pool.",
+  },
+  {
+    id: 2,
+    title: "Fitness Center",
+    icon: (
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm-4a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1v-1zm1-7a3 3 0 100-6 3 3 0 000 6zm-1 1a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1V7z"
+        clipRule="evenodd"
+      />
+    ),
+    description: "Stay in shape with our fully-equipped fitness center.",
+  },
+  // Add more amenities as needed
+];
 const AmenitiesCard = ({ title, icon, description }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -56,139 +85,216 @@ const AmenitiesCard = ({ title, icon, description }) => {
 };
 
 const page = () => {
-    return (
-        <main>
-            <section className=''>
-                    <div className='md:flex'>
-                    <div className='mx-12 bg-white md:grid grid-cols-2 w-1/2 gap-4'>
-                        <div className='bg-blue-300  '>
-                            image-1
-                        </div>
-                            <div className='bg-blue-400 h-[275px]'>
-                            image-2
-                            </div>
-                            <div className='bg-green-400 h-[275px]'>
-                            image-3
-                            </div>
-                            <div className='bg-green-400 h-[275px]'>
-                            image-4
-                            </div>
-                            <div className='bg-green-400 h-[275px]'>
-                            image-5
-                            </div>
-                            <div className='bg-green-400 h-[275px]'>
-                            image-6
-                            </div>
+  return (
+    <main>
+      <section className="">
+        <div className="md:flex">
+          <div className="mx-12 bg-white md:grid grid-cols-2 w-1/2 gap-4 hidden md:block">
+            <div className="bg-blue-300  ">image-1</div>
+            <div className="bg-blue-400 h-[275px]">image-2</div>
+            <div className="bg-green-400 h-[275px]">image-3</div>
+            <div className="bg-green-400 h-[275px]">image-4</div>
+            <div className="bg-green-400 h-[275px]">image-5</div>
+            <div className="bg-green-400 h-[275px]">image-6</div>
+          </div>
+          <div className="w-full md:w-1/2 md:flex justify-center ">
+            <div className="py-8">
+              <h1 className={`text-6xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
+                Reportage Tower
+              </h1>
+              <p className="py-4 px-4 text-3xl">
+                Located in Al Maryah Island, Abu Dhabi.
+              </p>
+              <p className="py-4 px-4">
+                5 mins walking distance to Galleria Al Maryah, Rosewood Abu
+                Dhabi and Cleveland Clinic Abu Dhabi{" "}
+              </p>
+              <p className="py-4 px-4">
+                5 mins driving distance to Four Seasons Hotel , Al Reem Island,
+                Beach Rotana Hotel, Abu Dhabi Mall and ACTIVE Al Maryah Sports
+                Centre{" "}
+              </p>
 
-                    </div>
-                    <div className='w-1/2 md:flex justify-center '>
-                       <div className='py-16'>
-                       <h1 className='text-6xl text-bold text-[#104e3e]'>Reportage Tower</h1>
-                       <p className='py-6  text-3xl'>Located in Al Maryah Island, Abu Dhabi.</p>
-                       <Link href="/contact-us" className='my-6'>
-                            <Button className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded" color="primary">
-                                Contact us for Availability
-                            </Button>
-                        </Link>
-                   
+              <div className="py-4 px-4">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Contact us for Availability
+                  </Button>
+                </Link>
+              </div>
 
-                      <div className='py-16'>
-                      <DetailsTable/>
-                      </div>
+              <div className="py-6 w-full  md:px-0">
+                <DetailsTable />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="md:flex mx-12 space-x-4 relative py-8">
+          <div className="">
+            <section className="md:mx-36">
+              <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
+                About Reportage Tower
+              </h2>
+              <p className="py-3">
+                Reportage Tower is an impressive high-rise residential building
+                located on Al Maryah Island, Abu Dhabi. Offering stunning canal
+                views, it stands on a plot area of 4,361.65 sq.m and reaches a
+                total height of 143.40 meters. The tower features 2 basements, a
+                lower ground level, 2 podiums, an upper ground level, and 36
+                floors, providing luxurious living spaces and unparalleled
+                vistas
+              </p>
 
-
-                       </div>
-                    </div>
-                    </div>
-                    <div className='md:flex mx-12 space-x-4 relative'>
-                        <div className='md:w-2/3' >
-                        <section className=''>
-                    <h2 className='text-bold text-3xl font-semibold'>About Property</h2>
-                    <section className='py-4'>
-                    <p>Type : Residential Building</p>
-                    <p>Plot Area : 4,361.65 sq.m</p>
-                    <p>Total Height : 143.40 m</p>
-                    <p>Levels: 2 Basements + Lower Ground + 2 Podiums + Upper Ground + 36 Floors</p>
-                    </section>
-                   <p className='py-4'>
-                   Reportage Tower is a super high-rise residential building with
-                    wonderful canal view in Al Maryah Island, Abu Dhabi.
-                   </p>
-                   <p className='py-4'>
-                            Its modern sustainable facade design creates a unique unsurpassed
-            look in the centre of the island that is intended to be one of the most
-            luxurious destinations in Abu Dhabi. Reportage Tower offers
-            contemporary and distinctive high-end residential Apartments,
-            delivering the whole luxury lifestyle with close proximity to most of
-            Abu Dhabi’s attractions, and is surrounded by promenades, shopping
-            malls, hotels, restaurants, cafes, and a sports centre. Reportage Tower
-            contains 280 residential units and 12 commercial retails.
-                   </p>
-                   <p>
-                    In terms of design, quality, and space, they have all been built to the
-                    highest international standards.
-                    </p>
-                    </section>
-                        </div>
+              <p className="py-3">
+                The modern and sustainable facade of Reportage Tower creates a
+                unique and unsurpassed look in the heart of Al Maryah Island,
+                positioning it as one of Abu Dhabi’s most luxurious
+                destinations. Reportage Tower offers contemporary and
+                distinctive high-end residential apartments, providing a
+                complete luxury lifestyle. Located close to Abu Dhabi’s top
+                attractions, the tower is surrounded by promenades, shopping
+                malls, hotels, restaurants, cafes, and a sports center
+              </p>
+              <p className="py-3">
+                With 280 residential units and 12 commercial retail spaces,
+                Reportage Tower is designed to meet the highest international
+                standards in terms of design, quality, and space. This
+                prestigious development ensures an unparalleled living
+                experience, combining modern amenities with exceptional
+                proximity to the best of Abu Dhabi
+              </p>
+            </section>
+            <div className="py-4 px-36">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Inquire More Info
+                  </Button>
+                </Link>
+              </div>
+          </div>
+          
+          {/** 
                         <div className=' md:w-1/4  sticky top-0'>
                            <LeadForm/>
                         </div>
-                    </div>
-                    <section className='mx-12'>
-                        <h2 className="text-3xl font-semibold mt-12 mb-8">AMENITIES & SERVICES</h2>
-                        <ul className='md:grid grid-col-4'>
-                            <li>Access to Al Maryah Promenade</li>
-                            <li>Retail shops in Upper Ground floor</li>
-                            <li>Restaurants & Cafes in Promenade Level</li>
-                            <li>Retail shops in Upper Ground floor </li>
-                            <li>Restaurants & Cafes in Promenade Level </li>
-                            <li>442 Covered Plot Parking </li>
-                            <li>Private Parking for each unit</li>
-                            <li>Large Swimming Pool</li>
-                            <li>Gymnasium</li>
-                            <li>Water Features</li>
-                            <li>Retail Shops</li>
-                            <li>Shaded Seating Areas</li>
-                            <li>Landscape Areas</li> 
-                            <li>4 Large Elevators</li>
-                            <li>Service Elevator</li>
-                        </ul>
-      
-                    </section>
-                    <section className='mx-12'>
-                        <h2 className="text-3xl font-semibold mt-12 mb-8">UNIT FEATURES</h2>
-                        <ul className='md:grid grid-col-4'>
-                            <li>Private Balconies / Terraces as per unit plan</li>
-                            <li>Kitchen cabinets and countertops</li>
-                            <li>Fully tiled bathrooms, in-suites and guest toilets wherever applicable</li>
-                            <li>Double glazed windows </li>
-                            <li>Built-in wardrobes in bedrooms </li>
-                            <li>Shower in each bathroom </li>
-                            <li>Central air conditioning </li>
-                            <li>Vanity units & Mirrors</li>
-                            <li>Some bedrooms with private bathroom</li>
-                            <li>Satellite master antenna and fibre optic connection for high-speed internet access </li>
-                            <li>Private Parking for Townhouses</li>
-                        </ul>
-      
-                    </section>
-                    <section className='mx-12'>
-                        <h2 className="text-3xl font-semibold mt-12 mb-8">LOCATION FEATURES</h2>
-                        <ul className='md:grid grid-col-4'>
-                            <li>05 minutes walking to The Galleria Al Maryah</li>
-                            <li>07 minutes walking to Rosewood Abu Dhabi </li>
-                            <li>09 minutes walking to Cleveland Clinic Abu Dhabi</li>
-                            <li>03 minutes driving to Four Seasons Hotel </li>
-                            <li>05 minutes driving to Al Reem Island </li>
-                            <li>05 minutes driving to Beach Rotana Hotel  </li>
-                            <li>05 minutes driving to Abu Dhabi Mall </li>
-                            <li>05 minutes driving to ACTIVE Al Maryah Sports Centre</li>
-                        </ul>
-      
-                    </section>
-            </section>
-        </main>
-    );
+                        */}
+        </div>
+        <section className="mx-12">
+          <div className="md:mx-36">
+            <h2 className={`text-4xl font-semibold mt-12 mb-8 ${pF.variable}`}>
+              Building features
+            </h2>
+           
+            <ul className="md:grid grid-cols-4 gap-4">
+              <li className="flex   py-4 space-x-2"> < PiRoadHorizonLight className="text-3xl text-gray-500"/> <span>Access to Al Maryah Promenade</span></li>
+              <li className="flex   py-4 space-x-4"><CiShop className="text-3xl  text-gray-500"/><span>Retail shops in Upper Ground floor</span></li>
+              <li className="flex   py-4 space-x-4" ><IoIosCafe className="text-3xl  text-gray-500"/><span>Restaurants & Cafes in Promenade Level</span></li>
+              <li className="flex   py-4 space-x-4">< CiParking1 className="text-3xl  text-gray-500"/><span>442 Covered Plot Parking</span> </li>
+              <li className="flex   py-4 space-x-4">< FaSquareParking className="text-3xl text-gray-500"/><span>Private Parking for each unit</span></li>
+              <li className="flex   py-4 space-x-4"><LiaSwimmerSolid className="text-3xl text-gray-500"/><span>Large Swimming Pool</span></li>
+              <li className="flex   py-4 space-x-4"><TbGymnastics className="text-3xl text-gray-500"/><span> Gymnasium</span></li>
+              <li className="flex   py-4 space-x-4"><FaWater className="text-3xl text-gray-500"/><span>Water Features</span></li>
+              <li className="flex   py-4 space-x-4"><MdWbShade className="text-3xl text-gray-500"/><span>Shaded Seating Areas</span></li>
+              <li className="flex   py-4 space-x-4">< BiSolidLandscape className="text-3xl text-gray-500"/><span>Landscape Areas</span></li>
+              <li className="flex   py-4 space-x-4"><PiLadderSimple className="text-3xl text-gray-500"/><span>4 Large Elevators</span></li>
+              <li className="flex   py-4 space-x-4"><PiLadderSimpleBold className="text-3xl text-gray-500"/><span>Service Elevator</span></li>
+            </ul>
+            <div className="py-4">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Request For More Building Features
+                  </Button>
+                </Link>
+              </div>
+          </div>
+        </section>
+        <section className="mx-12">
+          <div className="md:mx-36">
+            <h2 className={`text-4xl font-semibold mt-12 mb-8 ${pF.variable}`}>Unit Features</h2>
+            <ul className="md:grid grid-cols-3">
+              <li className="flex   py-4 space-x-2"><MdOutlineBalcony className="text-3xl text-gray-500"/><span>Private Balconies / Terraces as per unit plan</span></li>
+              <li className="flex   py-4 space-x-2"><BiSolidCabinet className="text-3xl text-gray-500" /><span>Kitchen cabinets and countertops</span></li>
+              <li className="flex   py-4 space-x-2"><MdBathtub  className="text-3xl text-gray-500"/><span>Fully tiled bathrooms, in-suites</span></li>
+              <li className="flex   py-4 space-x-2"><FaToilet className="text-3xl text-gray-500"/><span>guest toilets wherever applicable</span></li>
+              <li className="flex   py-4 space-x-2"><GiWindow  className="text-3xl text-gray-500" /><span>Double glazed windows</span> </li>
+              <li className="flex   py-4 space-x-2"><FaBed className="text-3xl text-gray-500"/> <span>Built-in wardrobes in bedrooms</span> </li>
+              <li className="flex   py-4 space-x-2"><FaShower className="text-3xl text-gray-500" /><span>Shower in each bathroom</span> </li>
+              <li className="flex   py-4 space-x-2"><TbAirConditioning className="text-3xl text-gray-500" /><span>Central air conditioning</span> </li>
+              <li className="flex   py-4 space-x-2"><GoMirror className="text-3xl text-gray-500"/><span>Vanity units & Mirrors</span></li>
+              <li className="flex   py-4 space-x-2"><PiBathtubFill className="text-3xl text-gray-500"/><span>Some bedrooms with private bathroom</span></li>
+              <li className="flex   py-4 space-x-2">
+                <FaSatelliteDish className="text-3xl text-gray-500"/>  <span>Satellite master antenna </span>
+              </li>
+              <li className="flex   py-4 space-x-2"><FaInternetExplorer className="text-3xl text-gray-500"/> <span> fibre optic connection for high-speed internet access</span>{" "}</li>
+              <li className="flex   py-4 space-x-2"><TbParkingOff  className="text-3xl text-gray-500"/> <span>Private Parking for Townhouses</span></li>
+            </ul>
+            <div className="md:w-1/3 md:flex justify-between py-16">
+             <div>
+             <h2 className={`text-4xl ${pF.variable}`}>
+                Do you need more amenities added? 
+              </h2>
+             </div>
+              <div className="py-4">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                   Ask Now
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="mx-12">
+          <div className="md:mx-36">
+            <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
+              LOCATION FEATURES
+            </h2>
+            <ul className="md:grid grid-cols-3 py-12">
+            <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
+              <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>07 minutes walking to Rosewood Abu Dhabi </span></li>
+              <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>09 minutes walking to Cleveland Clinic Abu Dhabi</span></li>
+              <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>03 minutes driving to Four Seasons Hotel</span> </li>
+              <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to Al Reem Island</span> </li>
+              <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to Beach Rotana Hotel</span> </li>
+              <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>05 minutes walking to The Galleria Al Maryah</span></li>
+
+              <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to Abu Dhabi Mall</span> </li>
+              <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
+            </ul>
+          </div>
+          <div className="md:w-1/3 md:flex justify-between py-16 mx-32">
+             <div>
+             <h2 className={`text-4xl ${pF.variable}`}>
+                Do you need more information? 
+              </h2>
+             </div>
+              <div className="py-4">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                  Lets Talk
+                  </Button>
+                </Link>
+              </div>
+            </div>
+        </section>
+      </section>
+    </main>
+  );
 };
 
 export default page;

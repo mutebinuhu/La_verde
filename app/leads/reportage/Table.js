@@ -5,8 +5,8 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@
 const  DetailsTable = () => {
   return (
     <>
-    <p className="py-2 text-3xl font-bold">Total Units 292</p>
-    <Table aria-label="Example static collection table">
+    <p className="py-2 px-4 text-3xl font-bold">Total Units 292</p>
+    <Table aria-label="Example static collection table" className="md:w-1/2 px-4 ">
       <TableHeader>
         <TableColumn>NAME</TableColumn>
         <TableColumn>TYPE</TableColumn>
