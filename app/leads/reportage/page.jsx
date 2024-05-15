@@ -102,23 +102,23 @@ const page = () => {
               <h1 className={`text-6xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
                 Reportage Tower
               </h1>
-              <p className="py-4 px-4 text-3xl">
+              <p className="py-4 px-4 text-3xl font-bold">
                 Located in Al Maryah Island, Abu Dhabi.
               </p>
-              <p className="py-4 px-4">
-                5 mins walking distance to Galleria Al Maryah, Rosewood Abu
-                Dhabi and Cleveland Clinic Abu Dhabi{" "}
+              <p className="py-4 px-4 text-xl">
+                <span className="text-bold">5</span> mins <span className="text-bold">walking distance</span> to <span className="font-bold"> Galleria Al Maryah</span>, <span className="font-bold">Rosewood Abu
+                Dhabi</span> and <span className="font-bold">Cleveland Clinic Abu Dhabi</span>{" "}
               </p>
-              <p className="py-4 px-4">
-                5 mins driving distance to Four Seasons Hotel , Al Reem Island,
-                Beach Rotana Hotel, Abu Dhabi Mall and ACTIVE Al Maryah Sports
-                Centre{" "}
+              <p className="py-4 px-4 text-xl">
+               <span className="text-bold">5</span> mins <span className="text-bold">driving distance</span>  to <span className="font-bold">Four Seasons Hotel</span> , <span className="font-bold">Al Reem Island</span>,
+                <span className="font-bold">Beach Rotana Hotel</span>,<span className="font-bold"> Abu Dhabi Mall</span> and <span className="font-bold"> ACTIVE Al Maryah Sports
+                Centre</span>{" "}
               </p>
 
               <div className="py-4 px-4">
                 <Link href="/contact-us" className="">
                   <Button
-                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    className="bg-[#104e3e] text-2xl py-8 hover:bg-[#104e3e] text-white font-bold px-8 rounded"
                     color="primary"
                   >
                     Contact us for Availability
@@ -127,6 +127,7 @@ const page = () => {
               </div>
 
               <div className="py-6 w-full  md:px-0">
+                <h2 className={`text-4xl px-4 font-semibold mt-12 mb-8 ${pF.variable}`}>Total Units 292</h2>
                 <DetailsTable />
               </div>
             </div>
@@ -237,11 +238,11 @@ const page = () => {
               <li className="flex   py-4 space-x-2"><FaInternetExplorer className="text-3xl text-gray-500"/> <span> fibre optic connection for high-speed internet access</span>{" "}</li>
               <li className="flex   py-4 space-x-2"><TbParkingOff  className="text-3xl text-gray-500"/> <span>Private Parking for Townhouses</span></li>
             </ul>
-            <div className="md:w-1/3 md:flex justify-between py-16">
+            <div className="w-full md:w-1/3 md:flex justify-between py-16">
              <div>
              <h2 className={`text-4xl ${pF.variable}`}>
                 Do you need more amenities added? 
-              </h2>
+              </h2>``
              </div>
               <div className="py-4">
                 <Link href="/contact-us" className="">
@@ -259,7 +260,7 @@ const page = () => {
         <section className="mx-12">
           <div className="md:mx-36">
             <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
-              LOCATION FEATURES
+              Location Features
             </h2>
             <ul className="md:grid grid-cols-3 py-12">
             <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
