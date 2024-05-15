@@ -10,3 +10,28 @@ html {
   }
 
 
+ 
+
+
+
+.rec-arrow {
+    background-color: #164849; /* Example background color for arrows */
+    
+}
+
+.rec-arrow:hover {
+    background-color:  #164849; /* Example hover color for arrows */
+    color:white;
+}
+
+.rec-dot {
+    background-color: #164849; /* Example background color for dots */
+}
+
+.rec-dot_active {
+    background-color: #e64a19; /* Example active dot color */
+}
+.hYa-dfP:hover:enabled, .hYa-dfP:focus:enabled{
+  background-color: #164849; /* Example background color for dots */
+
+}

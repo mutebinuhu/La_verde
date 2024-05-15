@@ -26,7 +26,7 @@ const Navbar = () => {
     <div className='bg-gray-100  w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold'>
-        <Image src="/la_verde_logo_rem_bg.png" width={160} height={80} className='py-4' />
+        <Image src="/la_verde_logo_rem_bg.png" width={100} height={50} className='py-4' />
       </h1>
 
       {/* Desktop Navigation */}
