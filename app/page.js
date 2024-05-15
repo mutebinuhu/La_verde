@@ -7,16 +7,21 @@ import Latestprojects from "./components/Latestprojects";
 import StateTabs from "@/components/StateTabs";
 import PropertyCard from "./components/PropertyCard";
 import Featured from "./Featured";
+import Banner2 from "./components/Banner2";
+import SearchByLocation from "./components/SearchByLocation";
 
 
 
 export default function Home() {
   return (
     <main className="">
-      <Banner/>
+      {/**<Banner/>**/}
+      <Banner2/>
+      <SearchByLocation/>
       <Latestprojects/>
       <Services/>
       <StateTabs/>
+
       <Featured/>
       
       
