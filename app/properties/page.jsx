@@ -60,7 +60,7 @@ const Page = async () =>{
           price: "$12.20",
         },
       ];
-      
+      //
     return(
         <section className="container mx-auto py-8">
             <h1 className="py-16 text-4xl font-bold px-4 ">Property Listing page</h1>
