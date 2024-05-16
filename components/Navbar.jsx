@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { RiCustomerService2Line } from "react-icons/ri"
+import { RiCustomerService2Line } from "react-icons/ri";
+
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -19,6 +20,8 @@ const Navbar = () => {
     { id: 1, text: 'Home', url:'/' },
     { id: 2, text: 'About',  url:'/about-us' },
     { id: 3, text: 'Contact' ,  url:'/contact-us'},
+    { id: 3, text: 'Properties' ,  url:'/properties'},
+
 
   ];
 
@@ -26,7 +29,7 @@ const Navbar = () => {
     <div className='bg-gray-100  w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold'>
-        <Image src="/la_verde_logo_rem_bg.png" width={100} height={50} className='py-4' />
+        <Image src="/la_verde_logo_rem_bg.png" width={100} height={50} className='py-2' />
       </h1>
 
       {/* Desktop Navigation */}

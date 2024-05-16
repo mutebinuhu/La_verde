@@ -6,7 +6,7 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
 
    
     const breakPoints = [
-      { width: 3, itemsToShow: 3 },
+      { width: 3, itemsToShow: 1 },
       { width: 550, itemsToShow: 1, itemsToScroll: 2 },
       { width: 768, itemsToShow: 2 },
       { width: 1200, itemsToShow: 3 }
