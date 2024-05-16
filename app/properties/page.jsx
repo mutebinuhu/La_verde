@@ -6,7 +6,7 @@ const Page = async () =>{
     let data, error;
 
     try {
-      const res = await fetch('https://la-verde.vercel.app/properties', { cache: 'no-store' }); // 'no-store' for fresh data
+      const res = await fetch('https://la-verde.vercel.app/api/properties', { cache: 'no-store' }); // 'no-store' for fresh data
       if (!res.ok) {
         throw new Error('Failed to fetch data');
       }
