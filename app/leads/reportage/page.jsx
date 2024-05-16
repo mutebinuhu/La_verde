@@ -90,12 +90,30 @@ const page = () => {
       <section className="">
         <div className="md:flex">
           <div className="mx-12 bg-white md:grid grid-cols-2 w-1/2 gap-4 hidden md:block">
-            <div className="bg-blue-300  ">image-1</div>
-            <div className="bg-blue-400 h-[275px]">image-2</div>
-            <div className="bg-green-400 h-[275px]">image-3</div>
-            <div className="bg-green-400 h-[275px]">image-4</div>
-            <div className="bg-green-400 h-[275px]">image-5</div>
-            <div className="bg-green-400 h-[275px]">image-6</div>
+            <div className="bg-blue-300 h-[275px]  " style={{backgroundImage: "url(" + "/reportagetower/3848.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+            <div className="bg-blue-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3840.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3841.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3842.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3843.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3844.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
           </div>
           <div className="w-full md:w-1/2 md:flex justify-center ">
             <div className="py-8">
