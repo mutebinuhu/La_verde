@@ -69,12 +69,14 @@ const Navbar = () => {
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
+          <Link href={item.url}>
           <li
-            key={item.id}
-            className='p-4 border-b text-[#104E3E] rounded-xl hover:bg-[##104e3e] duration-300 hover:text-black cursor-pointer border-gray-600'
-          >
-            {item.text}
-          </li>
+          key={item.id}
+          className='p-4 border-b text-[#104E3E] rounded-xl hover:bg-[##104e3e] duration-300 hover:text-black cursor-pointer border-gray-600'
+        >
+          {item.text}
+        </li>
+        </Link>
         ))}
       <div className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600 '>
       <Link href={"tel:06767676766"} className='md:flex items-center text-gray'>
