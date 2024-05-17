@@ -29,7 +29,8 @@ const DropdownForm = () => {
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+          //alert(JSON.stringify(values, null, 2));
+          window.location.href="/properties"
           setSubmitting(false);
         }, 400);
       }}
@@ -89,7 +90,6 @@ const DropdownForm = () => {
             selected={"Villa"}
             options={[
               { value: 'flat', label: 'flat' },
-            
             ]}
           />
           </div>

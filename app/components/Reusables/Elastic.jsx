@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Carousel from 'react-elastic-carousel';
 import SearchByLocation from "../SearchByLocation";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
+import Link from "next/link";
 
    
     const breakPoints = [
@@ -30,9 +31,9 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
             <div className="py-4">
                 <p className="text-white font-bold text-lg text-center">{location}</p>
             </div>
-            <Button className="text-lg font-bold rounded text-[#164849]"  size="lg">
-                View Properties
-            </Button>
+            <Link href="/contact-us" className=" bg-white p-4 text-lg font-bold rounded text-[#164849]"  size="lg">
+                View Properties in {location}
+            </Link>
             </div>
       </div>
     </CardFooter>
@@ -40,7 +41,7 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
         )
     }
     const items=  [
-        <PropertyCard imageUrl={'/reem.jpg'} location="Reem Island"/>,
+        <PropertyCard imageUrl={'/reemiSLAND.jpg'} location="Reem Island"/>,
         <PropertyCard imageUrl={'/ALDAR_Ansam2_CGI08_Buildings_07 (2).jpg'} location="Yas Island"/>,
         <PropertyCard imageUrl={'/ALD2607_SaadiyatLagoons_S160_Aerial_RetailZone_5k.jpg'} location="Sadiyaat Island"/>,
         <PropertyCard imageUrl={'/ALDAR_AlReeman2PH3_CGI20_RearYard_04.jpg'} location="Khalidiyah"/>,
@@ -52,13 +53,17 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
         <div className="controls-wrapper bg-green-500">
       
       </div>
+
+
+
       <h2 className="text-3xl text-bold text-center py-16">Search By Location</h2>
-      <div className="carousel-wrapper">
-      <div>
+      <p className="text-xl  text-center py-4">Are you dreaming of living on Reem Island with its stunning waterfront views, or being surrounded by world-class entertainment and attractions on Yas Island?</p>
+      <p className="text-xl  text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
+
+      <div className="carousel-wrapper py-12">
       <Carousel breakPoints={breakPoints} className="container mx-auto py-0 " >
         {items.map(item =><div className="w-full">{item}</div>)}
       </Carousel>
-          </div>
       </div>
      </>
     )
