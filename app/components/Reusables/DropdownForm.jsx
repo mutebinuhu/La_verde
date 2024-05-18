@@ -8,7 +8,7 @@ import { CiSearch } from "react-icons/ci";
 const Dropdown = ({ label, name, options, selected }) => (
   <div>
     <label htmlFor={name}>{label}</label>
-    <Field as="select" name={name} className="px-4 md:py-4 py-2 my-4 md:my-0 w-56 md:w-32 rounded font-medium text-[#164849]">
+    <Field as="select" name={name} placeholder={name} className="px-4 md:py-4 py-2 my-4 md:my-0 w-56 md:w-32 rounded font-medium text-[#164849]">
       <option value="" label={selected} />
       {options.map(option => (
         <option key={option.value} value={option.value} label={option.label} />
@@ -40,6 +40,7 @@ const DropdownForm = () => {
           <div className='md:flex justify-between md:space-x-4'>
           <Dropdown
             name="buyorsell"
+            placeholder="Buy"
             selected={"Buy"}
             options={[
               { value: 'buy', label: 'Buy' },
@@ -76,20 +77,25 @@ const DropdownForm = () => {
           />
            <Dropdown
             label=""
-            name="noOfRooms"
-            selected={"Rooms"}
+            name="studio"
             options={[
-              { value: '50000', label: '50000' },
-              { value: '100000', label: '100000' },
-              { value: '150000', label: '150000' }
+              { value: '1', label: '1'},
+              { value: '2', label: '2'},
+              { value: '3', label: '3'},
+              { value: '4', label: '4'}
+
             ]}
           />
            <Dropdown
             label=""
             name="propertyType"
-            selected={"Villa"}
             options={[
-              { value: 'flat', label: 'flat' },
+              { value: 'Villa', label: 'villa' },
+              { value: 'Apartment', label: 'Apartment' },
+              { value: 'villa', label: 'Villa' },
+              { value: 'TownHouse', label: 'Town House' },
+
+
             ]}
           />
           </div>

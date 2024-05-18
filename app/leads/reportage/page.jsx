@@ -17,23 +17,11 @@ import { GiWindow } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { GoMirror } from "react-icons/go";
 import { Roboto_Mono, Playfair_Display } from 'next/font/google';
-
-
-
-
-
 const pF =  Playfair_Display({
   subsets: ['latin'],
   variable: '--font-play-fair',
   
 });
-
-
-
-
-
-
-
 
 // components/AmenitiesCard.js
 const amenities = [
@@ -94,7 +82,7 @@ const page = () => {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-blue-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3840.jpg" + ")",
+            <div className="bg-blue-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/reportage.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>

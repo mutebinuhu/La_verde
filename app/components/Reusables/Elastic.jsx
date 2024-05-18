@@ -21,7 +21,7 @@ import Link from "next/link";
             <CardBody className="overflow-visible ">
     <Image
       alt="Card background"
-      className="object-cover h-[450px]  rounded-xl w-full"
+      className="object-cover h-[450px]   rounded-xl w-full"
       src={imageUrl}
     />
   </CardBody>
@@ -31,9 +31,11 @@ import Link from "next/link";
             <div className="py-4">
                 <p className="text-white font-bold text-lg text-center">{location}</p>
             </div>
-            <Link href="/contact-us" className=" bg-white p-4 text-lg font-bold rounded text-[#164849]"  size="lg">
-                View Properties in {location}
+            <div className="text-center">
+            <Link href="/contact-us" className=" bg-white p-4 text-sm font-bold rounded text-[#164849]"  size="lg">
+                 View Properties
             </Link>
+            </div>
             </div>
       </div>
     </CardFooter>
@@ -41,10 +43,9 @@ import Link from "next/link";
         )
     }
     const items=  [
-        <PropertyCard imageUrl={'/reemiSLAND.jpg'} location="Reem Island"/>,
-        <PropertyCard imageUrl={'/ALDAR_Ansam2_CGI08_Buildings_07 (2).jpg'} location="Yas Island"/>,
-        <PropertyCard imageUrl={'/ALD2607_SaadiyatLagoons_S160_Aerial_RetailZone_5k.jpg'} location="Sadiyaat Island"/>,
-        <PropertyCard imageUrl={'/ALDAR_AlReeman2PH3_CGI20_RearYard_04.jpg'} location="Khalidiyah"/>,
+        <PropertyCard imageUrl={'/al-reem-island-adgm.jpg'} location="Reem Island"/>,
+        <PropertyCard imageUrl={'/yas1.jpg'} location="Yas Island"/>,
+        <PropertyCard imageUrl={'/Lq4LqPEX-2013_saadiyat_1_base-1.jpg'} location="Sadiyaat Island"/>,
 
 
       ]
@@ -61,7 +62,7 @@ import Link from "next/link";
       <p className="text-xl  text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
 
       <div className="carousel-wrapper py-12">
-      <Carousel breakPoints={breakPoints} className="container mx-auto py-0 " >
+      <Carousel breakPoints={breakPoints} className="w-full container mx-auto py-0 " >
         {items.map(item =><div className="w-full">{item}</div>)}
       </Carousel>
       </div>
