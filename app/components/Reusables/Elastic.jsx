@@ -46,6 +46,8 @@ import Link from "next/link";
         <PropertyCard imageUrl={'/al-reem-island-adgm.jpg'} location="Reem Island"/>,
         <PropertyCard imageUrl={'/yas1.jpg'} location="Yas Island"/>,
         <PropertyCard imageUrl={'/Lq4LqPEX-2013_saadiyat_1_base-1.jpg'} location="Sadiyaat Island"/>,
+        <PropertyCard imageUrl={'/Ferrari Theme Park Abu Dhabi-0d1a7c5d99888940691b5064ddf0e9591786df52.jpg'} location="Yas Island"/>,
+
 
 
       ]
