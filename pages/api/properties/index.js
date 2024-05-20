@@ -1239,9 +1239,24 @@ export default async function handler(req, res) {
         }
         
     ]
-    if(req.method == 'GET'){
-       return  res.json({
-            data:properties
-        });
+
+
+    const { method } = req;
+
+    switch (method) {
+      case 'GET':
+        // Get all properties
+        res.status(200).json(properties);
+        break;
+      case 'POST':
+        // Add a new property
+        const { address, price } = req.body;
+        const newProperty = { id: properties.length + 1, address, price };
+        properties.push(newProperty);
+        res.status(201).json(newProperty);
+        break;
+      default:
+        res.setHeader('Allow', ['GET', 'POST']);
+        res.status(405).end(`Method ${method} Not Allowed`);
     }
 }
