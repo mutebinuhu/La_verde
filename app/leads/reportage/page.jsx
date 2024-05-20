@@ -75,30 +75,36 @@ const AmenitiesCard = ({ title, icon, description }) => {
 const page = () => {
   return (
     <main>
-      <section className="">
+      <section className="mx-6 md:mx-0">
+      <div className="bg-blue-300 w-full my-12 h-[500px] md:h-[800px] h-full  " style={{backgroundImage: "url(" + "/reportagetower/3847.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}></div>
+
+
         <div className="md:flex">
-          <div className="mx-12 bg-white md:grid grid-cols-2 w-1/2 gap-4 hidden md:block">
-            <div className="bg-blue-300 h-[275px]  " style={{backgroundImage: "url(" + "/reportagetower/3848.jpg" + ")",
+          <div className="md:mx-12 bg-white md:grid grid-cols-2 md:w-1/2 w-full md:gap-4 md:block">
+            <div className="bg-blue-300 h-[275px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/reportagetower/3848.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-blue-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/reportage.jpg" + ")",
+            <div className="bg-blue-400 h-[275px] my-4 md:my-0" style={{backgroundImage: "url(" + "/reportagetower/reportage.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3841.jpg" + ")",
+            <div className="bg-green-400 h-[275px] my-4 md:my-0" style={{backgroundImage: "url(" + "/reportagetower/3841.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3842.jpg" + ")",
+            <div className="bg-green-400 h-[275px] my-4 md:my-0" style={{backgroundImage: "url(" + "/reportagetower/3842.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3843.jpg" + ")",
+            <div className="bg-green-400 h-[275px] my-4 md:my-0" style={{backgroundImage: "url(" + "/reportagetower/3843.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-            <div className="bg-green-400 h-[275px]" style={{backgroundImage: "url(" + "/reportagetower/3844.jpg" + ")",
+            <div className="bg-green-400 h-[275px] my-4 md:my-0" style={{backgroundImage: "url(" + "/reportagetower/3844.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
