@@ -79,9 +79,9 @@ const Navbar = () => {
         </Link>
         ))}
       <div className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600 '>
-      <Link href={"tel:06767676766"} className='md:flex items-center text-gray'>
+      <Link href={"tel:025835025"} className='md:flex items-center text-gray'>
         <RiCustomerService2Line />
-        <p className=''>06767676766</p>
+        <p className=''>025835025</p>
         </Link>
       </div>
 
