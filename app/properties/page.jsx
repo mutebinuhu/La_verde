@@ -65,7 +65,7 @@ const Page = async () =>{
         <section className="container mx-auto py-8">
             <h1 className="py-16 text-4xl font-bold px-4 ">Property Listing page</h1>
             <div className="gap-8 grid grid-cols-1 sm:grid-cols-4 px-4">
-                {data.data.map((item, index) => (
+                {data.map((item, index) => (
                   <PropertyCard item={item} src={item.propertyImages[0]}/>
                 ))}
         </div>
