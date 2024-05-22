@@ -1,6 +1,5 @@
     "use client"
 import React, { useState } from "react";
-import Carousel from 'react-elastic-carousel';
 import SearchByLocation from "../SearchByLocation";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import Link from "next/link";
@@ -45,8 +44,7 @@ import Link from "next/link";
     const items=  [
         <PropertyCard imageUrl={'/al-reem-island-adgm.jpg'} location="Reem Island"/>,
         <PropertyCard imageUrl={'/yas1.jpg'} location="Yas Island"/>,
-        <PropertyCard imageUrl={'/Lq4LqPEX-2013_saadiyat_1_base-1.jpg'} location="Sadiyaat Island"/>,
-        <PropertyCard imageUrl={'/Ferrari Theme Park Abu Dhabi-0d1a7c5d99888940691b5064ddf0e9591786df52.jpg'} location="Yas Island"/>,
+        <PropertyCard imageUrl={'/Lq4LqPEX-2013_saadiyat_1_base-1.jpg'} location="Sadiyaat Island"/>
 
 
 
@@ -63,10 +61,10 @@ import Link from "next/link";
       <p className="text-xl  text-center py-4">Are you dreaming of living on Reem Island with its stunning waterfront views, or being surrounded by world-class entertainment and attractions on Yas Island?</p>
       <p className="text-xl  text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
 
-      <div className="carousel-wrapper py-12">
-      <Carousel breakPoints={breakPoints} className=" " >
+      <div className="py-12 md:mx-48">
+      <div className="md:flex " >
         {items.map(item =><div className="w-full">{item}</div>)}
-      </Carousel>
+      </div>
       </div>
      </>
     )

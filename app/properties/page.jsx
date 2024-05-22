@@ -69,6 +69,7 @@ const Page = async () =>{
                   <PropertyCard item={item} src={item.propertyImages[0]}/>
                 ))}
         </div>
+        
         </section>
     )
 }
