@@ -283,12 +283,13 @@ const page = () => {
           <DetailsTable />
         </section>
         <section className="mt-4 md:mx-12 bg-gray-100">
-          <div className="md:mx-36 p-4">
-            <h2 className={`text-4xl font-semibold mt-12 mb-8 ${pF.variable}`}>
+          <div className="md:mx-36">
+            <h2 className={`text-4xl font-semibold py-8 ${pF.variable}`}>
               Building features
             </h2>
            
-            <ul className="md:grid grid-cols-4 gap-4">
+           <div className="md:flex w-full space-between px-2 md:px-0">
+           <ul className="md:grid grid-cols-4 gap-4">
               <li className="flex   py-4 space-x-2"> < PiRoadHorizonLight className="text-3xl text-gray-500"/> <span>Access to Al Maryah Promenade</span></li>
               <li className="flex   py-4 space-x-4"><CiShop className="text-3xl  text-gray-500"/><span>Retail shops in Upper Ground floor</span></li>
               <li className="flex   py-4 space-x-4" ><IoIosCafe className="text-3xl  text-gray-500"/><span>Restaurants & Cafes in Promenade Level</span></li>
@@ -302,7 +303,15 @@ const page = () => {
               <li className="flex   py-4 space-x-4"><PiLadderSimple className="text-3xl text-gray-500"/><span>4 Large Elevators</span></li>
               <li className="flex   py-4 space-x-4"><PiLadderSimpleBold className="text-3xl text-gray-500"/><span>Service Elevator</span></li>
             </ul>
-            <div className="py-4">
+            <div className=" w-full md:w-2/3 mt-3  bg-blue-300 rounded-lg h-[500px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/almaryahisland.jpg" + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'}}>
+    <p className="">              
+</p>
+            </div>
+           </div>
+            <div className="py-4 px-2">
                 <Link href="/contact-us" className="">
                   <Button
                     className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
@@ -314,8 +323,8 @@ const page = () => {
               </div>
           </div>
         </section>
-        <section className="mx-12">
-          <div className="md:mx-36">
+        <section className="md:mx-12  mt-3">
+          <div className="md:mx-36 p-4">
             <h2 className={`text-4xl font-semibold mt-12 mb-8 ${pF.variable}`}>Unit Features</h2>
             <ul className="md:grid grid-cols-3">
               <li className="flex   py-4 space-x-2"><MdOutlineBalcony className="text-3xl text-gray-500"/><span>Private Balconies / Terraces as per unit plan</span></li>
@@ -334,7 +343,7 @@ const page = () => {
               <li className="flex   py-4 space-x-2"><FaInternetExplorer className="text-3xl text-gray-500"/> <span> fibre optic connection for high-speed internet access</span>{" "}</li>
               <li className="flex   py-4 space-x-2"><TbParkingOff  className="text-3xl text-gray-500"/> <span>Private Parking for Townhouses</span></li>
             </ul>
-            <div className="w-full md:w-1/3 md:flex justify-between py-16">
+            <div className="w-full md:w-1/3 md:flex justify-between py-16 ">
              <div>
              <h2 className={`text-4xl ${pF.variable}`}>
                 Do you need more amenities added? 
@@ -353,12 +362,12 @@ const page = () => {
             </div>
           </div>
         </section>
-        <section className="mx-12">
+        <section className="md:mx-12 bg-gray-100 mb-8 ">
           <div className="md:mx-36">
-            <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
+            <h2 className={`text-4xl py-8 font-semibold ${pF.variable}`}>
               Location Features
             </h2>
-            <ul className="md:grid grid-cols-3 py-12">
+            <ul className="md:grid grid-cols-3 ">
             <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
               <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>07 minutes walking to Rosewood Abu Dhabi </span></li>
               <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>09 minutes walking to Cleveland Clinic Abu Dhabi</span></li>
