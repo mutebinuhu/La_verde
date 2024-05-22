@@ -347,7 +347,7 @@ const page = () => {
              <div>
              <h2 className={`text-4xl ${pF.variable}`}>
                 Do you need more amenities added? 
-              </h2>``
+              </h2>
              </div>
               <div className="py-4">
                 <Link href="/contact-us" className="">
@@ -362,7 +362,7 @@ const page = () => {
             </div>
           </div>
         </section>
-        <section className="md:mx-12 bg-gray-100 mb-8 ">
+        <section className="md:mx-12 bg-gray-100 mb-8 p-4 ">
           <div className="md:mx-36">
             <h2 className={`text-4xl py-8 font-semibold ${pF.variable}`}>
               Location Features
@@ -380,7 +380,7 @@ const page = () => {
               <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
             </ul>
           </div>
-          <div className="md:w-1/3 md:flex justify-between py-16 mx-32">
+          <div className="md:w-1/3 md:flex justify-between py-16 text-center md:mx-32">
              <div>
              <h2 className={`text-4xl ${pF.variable}`}>
                 Do you need more information? 
