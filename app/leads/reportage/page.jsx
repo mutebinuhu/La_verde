@@ -303,7 +303,7 @@ const page = () => {
               <li className="flex   py-4 space-x-4"><PiLadderSimple className="text-3xl text-gray-500"/><span>4 Large Elevators</span></li>
               <li className="flex   py-4 space-x-4"><PiLadderSimpleBold className="text-3xl text-gray-500"/><span>Service Elevator</span></li>
             </ul>
-            <div className=" w-full md:w-2/3 mt-3  bg-blue-300 rounded-lg h-[500px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/almaryahisland.jpg" + ")",
+            <div className=" w-full md:w-2/3 mt-3  bg-blue-300 rounded-lg h-[500px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/almaryahIsland.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}>
