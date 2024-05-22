@@ -6,7 +6,7 @@ import DetailsTable from "./Table";
 import { PiBathtubFill, PiRoadHorizonLight, PiShoppingBag} from "react-icons/pi";
 import { CiShop, CiParking1 } from "react-icons/ci";
 import { IoIosCafe } from "react-icons/io";
-import { FaSquareParking, FaToilet } from "react-icons/fa6";
+import { FaLocationPin, FaSquareParking, FaToilet } from "react-icons/fa6";
 import { LiaSwimmerSolid } from "react-icons/lia";
 import { TbGymnastics, TbParkingOff } from "react-icons/tb";
 import { FaBed, FaCar, FaInternetExplorer, FaSatelliteDish, FaShower, FaWalking, FaWater } from "react-icons/fa";
@@ -17,6 +17,7 @@ import { GiWindow } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { GoMirror } from "react-icons/go";
 import { Roboto_Mono, Playfair_Display } from 'next/font/google';
+import Slideshow from "@/app/components/Reusables/Slideshow";
 const pF =  Playfair_Display({
   subsets: ['latin'],
   variable: '--font-play-fair',
@@ -73,16 +74,36 @@ const AmenitiesCard = ({ title, icon, description }) => {
 };
 
 const page = () => {
+  const imageLinks = [
+    "/reportagetower/3847.jpg",
+    "/reportagetower/3848.jpg",
+    "/reportagetower/reportage.jpg",
+    "/reportagetower/reportage1.png",
+    "/reportagetower/reportage2.png",
+    "/reportagetower/reportage3.png",
+    "/reportagetower/3840.jpg" ,
+    "/reportagetower/3841.jpg" ,
+    "/reportagetower/3842.jpg",
+    "/reportagetower/3843.jpg",
+    "/reportagetower/3844.jpg",
+    "/reportagetower/3845.jpg"
+
+
+
+  ]
   return (
     <main>
-      <section className="mx-6 md:mx-0">
+      <section className="mx-6 md:mx-0 ">
+      <div className="md:hidden z-0">
+      <Slideshow imageLinks={imageLinks}/>
+      </div>
       <div className="bg-blue-300 w-full my-12 h-[500px] md:h-[800px] h-full  " style={{backgroundImage: "url(" + "/reportagetower/3847.jpg" + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
 
 
-        <div className="md:flex">
+        <div className="hidden md:flex">
           <div className="md:mx-12 bg-white md:grid grid-cols-2 md:w-1/2 w-full md:gap-4 md:block">
             <div className="bg-blue-300 h-[275px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/reportagetower/3848.jpg" + ")",
   backgroundPosition: 'center',
@@ -109,6 +130,7 @@ const page = () => {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
           </div>
+      
           <div className="w-full md:w-1/2 md:flex justify-center ">
             <div className="py-8">
               <h1 className={`text-6xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
@@ -145,7 +167,64 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="md:flex mx-12 space-x-4 relative py-8">
+       <section className="md:hidden">
+       <h1 className={`text-4xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
+                Reportage Tower
+        </h1>
+              <p className="py-4 px-4 text-3xl font-bold">
+               <span className="flex text-sm"> <FaLocationPin className="text-gray-500  space-x-8"/> Al Maryah Island, Abu Dhabi.</span>
+              </p>
+            <section>
+              <h3>Welcome to Reportage Tower, where modern elegance meets unparalleled convenience in the heart of Al Maryah Island. This exclusive off-plan development offers a unique opportunity to secure your dream home before it's gone.</h3>
+              <div className="py-8 text-center  ">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]   hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Learn More About this Project
+                  </Button>
+                </Link>
+              </div>
+            </section>
+            <section>
+              <h3 className="text-bold">Key Features</h3>
+              <ul>
+                <li className="py-4 bg-gray-100 p-2 mb-2 rounded">
+                👍🏻 <span className="text-bold">Prime Location:</span> Nestled in the vibrant Al Maryah Island, just minutes from top shopping, dining, and entertainment venues.
+                </li>
+                <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded ">
+                👍🏻 <span className="text-bold">Luxurious Living Spaces:</span>  Choose from a range of meticulously designed units, each boasting high-end finishes, open-plan layouts, and floor-to-ceiling windows that flood your home with natural light.
+
+                </li>
+                <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
+                👍🏻 <span  className="text-bold"> State-of-the-Art Amenities:</span>
+                   Enjoy exclusive access to a rooftop infinity pool, a fully equipped fitness center, lush landscaped gardens, and a private cinema room.
+                </li>
+                <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
+                👍🏻 <span  className="text-bold">Sustainable Design:</span> Built with eco-friendly materials and cutting-edge energy-efficient technologies to ensure a green and sustainable lifestyle.
+
+                </li>
+                <li  className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
+                👍🏻 <span className="text-bold">Investment Potential:</span> With the property market in UAE on the rise, this is not just a home, but a smart investment for your future.
+                </li>
+                <li  className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
+                👍🏻  <span className="text-bold">Chance To Get Investors' Visa:</span> 100% Gurantee for an Investor Visa when You own one of the properties on this upcoming Reportage Tower.
+                </li>
+              </ul>
+              <div className="py-8 text-center">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]   hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Learn More About this Project
+                  </Button>
+                </Link>
+              </div>
+            </section>
+       </section>
+        <div className="md:flex md:mx-12 space-x-4 text-center relative py-4">
           <div className="">
             <section className="md:mx-36">
               <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
@@ -180,7 +259,7 @@ const page = () => {
                 proximity to the best of Abu Dhabi
               </p>
             </section>
-            <div className="py-4 px-36">
+            <div className="py-4 md:px-36 text-center">
                 <Link href="/contact-us" className="">
                   <Button
                     className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
@@ -190,6 +269,7 @@ const page = () => {
                   </Button>
                 </Link>
               </div>
+             
           </div>
           
           {/** 
@@ -198,8 +278,12 @@ const page = () => {
                         </div>
                         */}
         </div>
-        <section className="mx-12">
-          <div className="md:mx-36">
+        <section className="bg-gray-100 md:hidden">
+          <h2 className={`text-4xl font-semibold mt-12 mb-8 px-3 ${pF.variable}`}>Price</h2>
+          <DetailsTable />
+        </section>
+        <section className="mt-4 md:mx-12 bg-gray-100">
+          <div className="md:mx-36 p-4">
             <h2 className={`text-4xl font-semibold mt-12 mb-8 ${pF.variable}`}>
               Building features
             </h2>

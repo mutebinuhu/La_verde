@@ -52,7 +52,7 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className='block md:hidden text-[#104E3E]'>
+      <div onClick={handleNav} className='block md:hidden text-[#104E3E] z-20'>
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
       <ul
         className={
           nav
-            ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
+            ? 'fixed md:hidden left-0 z-20 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500'
             : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
         }
       >
@@ -72,7 +72,7 @@ const Navbar = () => {
           <Link href={item.url}>
           <li
           key={item.id}
-          className='p-4 border-b text-[#104E3E] rounded-xl hover:bg-[##104e3e] duration-300 hover:text-black cursor-pointer border-gray-600'
+          className='p-4 border-b z-20 text-[#104E3E] rounded-xl hover:bg-[##104e3e] duration-300 hover:text-black cursor-pointer border-gray-600'
         >
           {item.text}
         </li>
