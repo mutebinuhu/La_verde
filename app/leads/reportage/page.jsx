@@ -17,12 +17,67 @@ import { GiWindow } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { GoMirror } from "react-icons/go";
 import { Roboto_Mono, Playfair_Display } from 'next/font/google';
+
 import Slideshow from "@/app/components/Reusables/Slideshow";
+import Gallery from "../Gallery";
 const pF =  Playfair_Display({
   subsets: ['latin'],
   variable: '--font-play-fair',
   
 });
+    
+const list = [
+ 
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3847.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/reportage_lower.png",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3848.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/reportage.jpg",
+  },
+ 
+  {
+    title: "reportage tower",
+    img: "/reportagetower/reportage2.png",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/reportage3.png",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3840.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3841.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3842.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3843.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3844.jpg",
+  },
+  {
+    title: "reportage tower",
+    img: "/reportagetower/3845.jpg",
+  },
+];
 
 // components/AmenitiesCard.js
 const amenities = [
@@ -133,18 +188,18 @@ const page = () => {
       
           <div className="w-full md:w-1/2 md:flex justify-center ">
             <div className="py-8">
-              <h1 className={`text-6xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
+              <h1 className={`text-6xl font-bold text-[#104e3e] px-4 ${pF.variable}`}>
                 Reportage Tower
               </h1>
               <p className="py-4 px-4 text-3xl font-bold">
                 Located in Al Maryah Island, Abu Dhabi.
               </p>
               <p className="py-4 px-4 text-xl">
-                <span className="text-bold">5</span> mins <span className="text-bold">walking distance</span> to <span className="font-bold"> Galleria Al Maryah</span>, <span className="font-bold">Rosewood Abu
+                <span className="font-bold">5</span> mins <span className="font-bold">walking distance</span> to <span className="font-bold"> Galleria Al Maryah</span>, <span className="font-bold">Rosewood Abu
                 Dhabi</span> and <span className="font-bold">Cleveland Clinic Abu Dhabi</span>{" "}
               </p>
               <p className="py-4 px-4 text-xl">
-               <span className="text-bold">5</span> mins <span className="text-bold">driving distance</span>  to <span className="font-bold">Four Seasons Hotel</span> , <span className="font-bold">Al Reem Island</span>,
+               <span className="font-bold">5</span> mins <span className="font-bold">driving distance</span>  to <span className="font-bold">Four Seasons Hotel</span> , <span className="font-bold">Al Reem Island</span>,
                 <span className="font-bold">Beach Rotana Hotel</span>,<span className="font-bold"> Abu Dhabi Mall</span> and <span className="font-bold"> ACTIVE Al Maryah Sports
                 Centre</span>{" "}
               </p>
@@ -168,7 +223,7 @@ const page = () => {
           </div>
         </div>
        <section className="md:hidden">
-       <h1 className={`text-4xl text-bold text-[#104e3e] px-4 ${pF.variable}`}>
+       <h1 className={`text-4xl font-bold text-[#104e3e] px-4 ${pF.variable}`}>
                 Reportage Tower
         </h1>
               <p className="py-4 px-4 text-3xl font-bold">
@@ -188,28 +243,30 @@ const page = () => {
               </div>
             </section>
             <section>
-              <h3 className="font-bold">Key Features</h3>
+            <h2 className={`font-bold text-4xl font-semibold py-8 ${pF.variable}`}>
+                Key Features
+              </h2>
               <ul>
                 <li className="py-4 bg-gray-100 p-2 mb-2 rounded">
                 👍🏻 <span className="font-bold">Prime Location:</span> Nestled in the vibrant Al Maryah Island, just minutes from top shopping, dining, and entertainment venues.
                 </li>
                 <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded ">
-                👍🏻 <span className="text-bold">Luxurious Living Spaces:</span>  Choose from a range of meticulously designed units, each boasting high-end finishes, open-plan layouts, and floor-to-ceiling windows that flood your home with natural light.
+                👍🏻 <span className="font-bold">Luxurious Living Spaces:</span>  Choose from a range of meticulously designed units, each boasting high-end finishes, open-plan layouts, and floor-to-ceiling windows that flood your home with natural light.
 
                 </li>
                 <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
-                👍🏻 <span  className="text-bold"> State-of-the-Art Amenities:</span>
+                👍🏻 <span  className="font-bold"> State-of-the-Art Amenities:</span>
                    Enjoy exclusive access to a rooftop infinity pool, a fully equipped fitness center, lush landscaped gardens, and a private cinema room.
                 </li>
                 <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
-                👍🏻 <span  className="text-bold">Sustainable Design:</span> Built with eco-friendly materials and cutting-edge energy-efficient technologies to ensure a green and sustainable lifestyle.
+                👍🏻 <span  className="font-bold">Sustainable Design:</span> Built with eco-friendly materials and cutting-edge energy-efficient technologies to ensure a green and sustainable lifestyle.
 
                 </li>
                 <li  className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
-                👍🏻 <span className="text-bold">Investment Potential:</span> With the property market in UAE on the rise, this is not just a home, but a smart investment for your future.
+                👍🏻 <span className="font-bold">Investment Potential:</span> With the property market in UAE on the rise, this is not just a home, but a smart investment for your future.
                 </li>
                 <li  className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded">
-                👍🏻  <span className="text-bold">Chance To Get Investors' Visa:</span> 100% Gurantee for an Investor Visa when You own one of the properties on this upcoming Reportage Tower.
+                👍🏻  <span className="font-bold">Chance To Get Investors' Visa:</span> 100% Gurantee for an Investor Visa when You own one of the properties on this upcoming Reportage Tower.
                 </li>
               </ul>
               <div className="py-8 text-center">
@@ -227,7 +284,7 @@ const page = () => {
         <div className="md:flex md:mx-12 space-x-4 text-center relative py-4">
           <div className="">
             <section className="md:mx-36">
-              <h2 className={`text-bold text-4xl font-semibold ${pF.variable}`}>
+              <h2 className={`font-bold text-4xl font-semibold ${pF.variable}`}>
                 About Reportage Tower
               </h2>
               <p className="py-3">
@@ -259,6 +316,8 @@ const page = () => {
                 proximity to the best of Abu Dhabi
               </p>
             </section>
+            
+   
             <div className="py-4 md:px-36 text-center">
                 <Link href="/contact-us" className="">
                   <Button
@@ -271,6 +330,7 @@ const page = () => {
               </div>
              
           </div>
+       
           
           {/** 
                         <div className=' md:w-1/4  sticky top-0'>
@@ -278,8 +338,24 @@ const page = () => {
                         </div>
                         */}
         </div>
-        <section className="bg-gray-100 md:hidden">
-          <h2 className={`text-4xl font-semibold mt-12 mb-8 px-3 ${pF.variable}`}>Price</h2>
+        <section className="md:mx-12">
+        <h2 className={`font-bold text-4xl font-semibold py-8 ${pF.variable}`}>
+                Gallery
+              </h2>
+              <Gallery list={list}/>
+        </section>
+        <div className="py-24 text-center  mx-12 px-2">
+                <Link href="/contact-us" className="">
+                  <Button
+                    className="bg-[#104e3e]  hover:bg-[#104e3e] text-white font-bold p-6 rounded"
+                    color="primary"
+                  >
+                    Request For Floor Images
+                  </Button>
+                </Link>
+              </div>
+        <section className="bg-gray-100 md:hidden mt-12">
+          <h2 className={`text-4xl font-semibold  py-8 px-3 ${pF.variable}`}>Price</h2>
           <DetailsTable />
         </section>
         <section className="mt-4 md:mx-12 bg-gray-100">
@@ -287,7 +363,6 @@ const page = () => {
             <h2 className={`text-4xl font-semibold py-8 ${pF.variable}`}>
               Building features
             </h2>
-           
            <div className="md:flex w-full space-between px-2 md:px-0">
            <ul className="md:grid grid-cols-4 gap-4">
               <li className="flex   py-4 space-x-2"> < PiRoadHorizonLight className="text-3xl text-gray-500"/> <span>Access to Al Maryah Promenade</span></li>
@@ -343,7 +418,7 @@ const page = () => {
               <li className="flex   py-4 space-x-2"><FaInternetExplorer className="text-3xl text-gray-500"/> <span> fibre optic connection for high-speed internet access</span>{" "}</li>
               <li className="flex   py-4 space-x-2"><TbParkingOff  className="text-3xl text-gray-500"/> <span>Private Parking for Townhouses</span></li>
             </ul>
-            <div className="w-full md:w-1/3 md:flex justify-between py-16 ">
+            <div className="w-full  text-center py-8  ">
              <div>
              <h2 className={`text-4xl ${pF.variable}`}>
                 Do you need more amenities added? 
@@ -398,6 +473,7 @@ const page = () => {
               </div>
             </div>
         </section>
+
       </section>
     </main>
   );
