@@ -437,11 +437,12 @@ const page = () => {
             </div>
           </div>
         </section>
-        <section className="md:mx-12 bg-gray-100 mb-8 p-4 ">
-          <div className="md:mx-36">
-            <h2 className={`text-4xl py-8 font-semibold ${pF.variable}`}>
+        <h2 className={`text-4xl py-8 md:px-12 font-semibold ${pF.variable}`}>
               Location Features
             </h2>
+        <section className="md:mx-12 bg-gray-100 mb-8 p-4 ">
+          <div className="md:mx-36">
+           
             <ul className="md:grid grid-cols-3 ">
             <li className="flex   py-4 space-x-2"><FaCar className="text-3xl text-gray-500"/><span>05 minutes driving to ACTIVE Al Maryah Sports Centre</span></li>
               <li className="flex   py-4 space-x-2"><FaWalking className="text-3xl text-gray-500"/><span>07 minutes walking to Rosewood Abu Dhabi </span></li>
