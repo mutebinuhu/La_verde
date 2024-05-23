@@ -86,7 +86,9 @@ const page = () => {
     "/reportagetower/3842.jpg",
     "/reportagetower/3843.jpg",
     "/reportagetower/3844.jpg",
-    "/reportagetower/3845.jpg"
+    "/reportagetower/3845.jpg",
+    "/reportagetower/tes1.jpg.png"
+
 
 
 
@@ -101,8 +103,6 @@ const page = () => {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}></div>
-
-
         <div className="hidden md:flex">
           <div className="md:mx-12 bg-white md:grid grid-cols-2 md:w-1/2 w-full md:gap-4 md:block">
             <div className="bg-blue-300 h-[275px] my-4 md:my-0  " style={{backgroundImage: "url(" + "/reportagetower/3848.jpg" + ")",
@@ -188,10 +188,10 @@ const page = () => {
               </div>
             </section>
             <section>
-              <h3 className="text-bold">Key Features</h3>
+              <h3 className="font-bold">Key Features</h3>
               <ul>
                 <li className="py-4 bg-gray-100 p-2 mb-2 rounded">
-                👍🏻 <span className="text-bold">Prime Location:</span> Nestled in the vibrant Al Maryah Island, just minutes from top shopping, dining, and entertainment venues.
+                👍🏻 <span className="font-bold">Prime Location:</span> Nestled in the vibrant Al Maryah Island, just minutes from top shopping, dining, and entertainment venues.
                 </li>
                 <li className="py-4 py-4 bg-gray-100 p-2 mb-2  rounded ">
                 👍🏻 <span className="text-bold">Luxurious Living Spaces:</span>  Choose from a range of meticulously designed units, each boasting high-end finishes, open-plan layouts, and floor-to-ceiling windows that flood your home with natural light.

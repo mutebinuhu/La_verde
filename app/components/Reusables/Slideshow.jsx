@@ -22,7 +22,7 @@ const Slideshow = ({imageLinks}) => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <div className="overflow-hidden relative h-64">
+      <div className="overflow-hidden relative   w-full h-64 bg-gray-200">
         {imageLinks.map((image, index) => (
           <div
             key={index}
@@ -30,7 +30,7 @@ const Slideshow = ({imageLinks}) => {
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full  object-cover" />
+            <img src={image} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
           </div>
         ))}
       </div>
