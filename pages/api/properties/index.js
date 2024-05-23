@@ -1250,7 +1250,8 @@ export default async function handler(req, res) {
         break;
       case 'POST':
         // Add a new property
-        const { address, price } = req.body;
+
+        const { address, price, type, bedrooms, bathrooms, size,  description,  images, features } = req.body;
         const newProperty = { id: properties.length + 1, address, price };
         properties.push(newProperty);
         res.status(201).json(newProperty);

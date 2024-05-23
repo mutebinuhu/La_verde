@@ -35,6 +35,9 @@ const propertySchema = new mongoose.Schema({
   },
   features: {
     type: [String] // Array of features and amenities
+  },
+  availability:{
+    type:[Date]
   }
 });
 
