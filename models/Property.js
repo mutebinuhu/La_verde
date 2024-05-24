@@ -1,6 +1,38 @@
 const mongoose = require('mongoose');
 
 const propertySchema = new mongoose.Schema({
+  category:{
+    type: String,
+    required:true,
+    enum:['residential', 'commercial'],
+  },
+  subCategory:{
+    type: String,
+    required:true,
+    enum:['villa', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
+  },
+  purpose:{
+    type: String,
+    required: true,
+    enum:['sale', 'rent']
+  },
+  completionStatus:{
+    type: String,
+    required: true,
+    enum:['offPlanPrimary', 'offPlanSecondly', 'readyPrimary', 'readySecondary']
+  },
+  title:{
+    type: String,
+    required: true
+  },
+  areaSquare:{
+    type: Number,
+    required: true
+  },
+  createdBy:{
+    type: String,
+    required: true
+  },
   address: {
     type: String,
     required: true
@@ -26,7 +58,11 @@ const propertySchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  description: {
+  descriptionEnglish: {
+    type: String,
+    required: true
+  },
+  descriptionArabic: {
     type: String,
     required: true
   },
