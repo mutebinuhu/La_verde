@@ -9,7 +9,7 @@ const propertySchema = new mongoose.Schema({
   subCategory:{
     type: String,
     required:true,
-    enum:['villa', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
+    enum:['villa', 'studio', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
   },
   purpose:{
     type: String,
@@ -41,11 +41,6 @@ const propertySchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  type: {
-    type: String,
-    enum: ['house', 'apartment', 'condo', 'studio', 'villa'],
-    required: true
-  },
   bedrooms: {
     type: Number,
     required: true
@@ -74,8 +69,14 @@ const propertySchema = new mongoose.Schema({
   },
   availability:{
     type:[Date]
-  }
-});
+  },
+ 
+
+}, 
+{
+  timestamps: true
+}
+);
 
 const Property = mongoose.model('Property', propertySchema);
 
