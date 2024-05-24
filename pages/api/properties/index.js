@@ -1252,8 +1252,8 @@
       switch (method) {
         case 'GET':
           try {
-           {/** const properties = await Property.find({});*/} 
-            res.status(200).json({ success: true, data: properties });
+            const allProperties = await Property.find({});
+            res.status(200).json({ success: true, data: allProperties });
           } catch (error) {
             res.status(400).json({ success: false });
           }
