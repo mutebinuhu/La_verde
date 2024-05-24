@@ -1,4 +1,7 @@
-export default async function handler(req, res) {
+
+   
+    import connectToDatabase from '../../../utils/db';
+    import Property from '../../../models/Property';
     const properties = [
         {   id:1,
             bed:2,
@@ -1240,24 +1243,31 @@ export default async function handler(req, res) {
         
     ]
 
-
-    const { method } = req;
-
-    switch (method) {
-      case 'GET':
-        // Get all properties
-        res.status(200).json(properties);
-        break;
-      case 'POST':
-        // Add a new property
-
-        const { address, price, type, bedrooms, bathrooms, size,  description,  images, features } = req.body;
-        const newProperty = { id: properties.length + 1, address, price };
-        properties.push(newProperty);
-        res.status(201).json(newProperty);
-        break;
-      default:
-        res.setHeader('Allow', ['GET', 'POST']);
-        res.status(405).end(`Method ${method} Not Allowed`);
+    
+    export default async function handler(req, res) {
+      await connectToDatabase();
+    
+      const { method } = req;
+    
+      switch (method) {
+        case 'GET':
+          try {
+           {/** const properties = await Property.find({});*/} 
+            res.status(200).json({ success: true, data: properties });
+          } catch (error) {
+            res.status(400).json({ success: false });
+          }
+          break;
+        case 'POST':
+          try {
+            const property = await Property.create(req.body);
+            res.status(201).json({ success: true, data: property });
+          } catch (error) {
+            res.status(400).json({ success: false, error });
+          }
+          break;
+        default:
+          res.setHeader('Allow', ['GET', 'POST']);
+          res.status(405).end(`Method ${method} Not Allowed`);
+      }
     }
-}
