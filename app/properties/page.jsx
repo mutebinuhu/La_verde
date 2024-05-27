@@ -11,10 +11,8 @@ const Page = async () =>{
         throw new Error('Failed to fetch data');
       }
       data = await res.json();
-      console.log("data===", data)
     } catch (err) {
       error = err.message;
-      console.log("errr=====", err)
     }
   
     if (error) {
