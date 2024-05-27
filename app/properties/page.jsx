@@ -6,7 +6,7 @@ const Page = async () =>{
     let data, error;
 
     try {
-      const res = await fetch('http://localhost:3000/api/properties', { cache: 'no-store' }); // 'no-store' for fresh data
+      const res = await fetch('https://laverde.ae/api/properties', { cache: 'no-store' }); // 'no-store' for fresh data
       if (!res.ok) {
         throw new Error('Failed to fetch data');
       }
