@@ -1253,6 +1253,7 @@
         case 'GET':
           try {
            {/** const properties = await Property.find({});*/} 
+           console.log("properties---", properties)
             res.status(200).json({ success: true, data: properties });
           } catch (error) {
             res.status(400).json({ success: false });
