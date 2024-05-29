@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="">
        
           <ul className="mx-4 flex justify-between md:hidden">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-us">Contact</a></li>
           </ul>
       </div>
       <div className='flex justify-center mt-12'>
@@ -23,7 +23,7 @@ const Footer = () => {
       <ul className="mx-4 md:flex justify-between hidden ">
             <li><Link href="/">Home|</Link></li>
             <li><Link href="/about-us">About|</Link></li>
-            <li><Link href="#services">Services|</Link></li>
+            <li><Link href="/services">Services|</Link></li>
             <li><Link href="/contact-us">Contact</Link></li>
           </ul>
       </div>
