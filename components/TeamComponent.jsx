@@ -3,36 +3,36 @@ import React from 'react';
 
 const teamMembers = [
   {
-    name: 'John Doe',
+    name: 'Ahmed',
     position: 'CEO',
-    image: 'https://via.placeholder.com/150',
+    image: 'workmates/ahmed.jpeg',
     social: {
       twitter: 'https://twitter.com/johndoe',
       linkedin: 'https://linkedin.com/in/johndoe',
     },
   },
   {
-    name: 'Jane Smith',
+    name: 'IDK',
     position: 'CTO',
-    image: 'https://via.placeholder.com/150',
+    image: '/workmates/hr.jpeg',
     social: {
       twitter: 'https://twitter.com/janesmith',
       linkedin: 'https://linkedin.com/in/janesmith',
     },
   },
   {
-    name: 'Alice Johnson',
-    position: 'CFO',
-    image: 'https://via.placeholder.com/150',
+    name: 'Abdel',
+    position: 'CTO',
+    image: '/workmates/abdel.jpeg',
     social: {
       twitter: 'https://twitter.com/alicejohnson',
       linkedin: 'https://linkedin.com/in/alicejohnson',
     },
   },
   {
-    name: 'Bob Brown',
+    name: 'Maria',
     position: 'COO',
-    image: 'https://via.placeholder.com/150',
+    image: '/workmates/maria.jpeg',
     social: {
       twitter: 'https://twitter.com/bobbrown',
       linkedin: 'https://linkedin.com/in/bobbrown',
@@ -41,16 +41,16 @@ const teamMembers = [
   {
     name: 'Mutebi Nuhu',
     position: 'Marketing Manager',
-    image: '/mutebi.jpg',
+    image: '/workmates/mutebi.jpg',
     social: {
       twitter: 'https://twitter.com/charliegreen',
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
   },
   {
-    name: 'Diana White',
+    name: 'Joy',
     position: 'CIO',
-    image: 'https://via.placeholder.com/150',
+    image: '/workmates/joy.jpeg',
     social: {
       twitter: 'https://twitter.com/dianawhite',
       linkedin: 'https://linkedin.com/in/dianawhite',
@@ -74,7 +74,7 @@ const TeamComponent = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <img
-                  className="w-full h-56 object-cover object-center"
+                  className="w-full h-96 object-cover object-center"
                   src={member.image}
                   alt={member.name}
                 />
