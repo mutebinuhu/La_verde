@@ -31,7 +31,7 @@ export default function Home() {
       <Services/>
       <StateTabs/>
      
-      <div className="py-12">
+      <div className="py-6 md:py-12">
       <Ad flexDirection={"flex-row-reverse"}  title="Qualified Experts" text="Buying, selling, or renting a house with La Verde is easy: our consultants are qualified professionals who understand luxury and the needs of our clients." action="Lets Talk" imageUrl="/buy-a-home.jpg"/>
 
       </div>

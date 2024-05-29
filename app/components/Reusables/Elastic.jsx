@@ -59,7 +59,7 @@ import { nonoSerif } from '@/utils/fonts';
 
 
 
-      <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-16`}>Search By Location</h2>
+      <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-8 md:py-16`}>Search By Location</h2>
       <p className="  text-center py-4">Are you dreaming of living on Reem Island with its stunning waterfront views, or being surrounded by world-class entertainment and attractions on Yas Island?</p>
       <p className=" text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
 
