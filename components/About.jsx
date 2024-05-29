@@ -12,7 +12,7 @@ const About = () => {
           <h2 className=" text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Who we Are
           </h2>
-            <section className=' md:flex space-x-12 py-12  p-8'>
+            <section className=' md:flex md:space-x-12 py-12 text-center md:text-left p-8'>
                 <div className='md:flex justify-center items-center px-4 bg-white md:w-1/2 ' style={{backgroundImage: "url(" + "/mumbai-skyline-skyscrapers-construction.jpg" + ")",
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
