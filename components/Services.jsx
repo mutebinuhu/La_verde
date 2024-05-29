@@ -38,7 +38,13 @@ const Services = () => {
                 callToAction="Get a Call Back"/>
 
 
-
+        <ServiceCard 
+        title="Property management"
+        url="/build-your-home-concept.jpg"
+        info="
+        Managing property can be stressful, but with La Verde, we make it easy for you. From management to maintenance, trust us – you won't regret it." 
+        callToAction="View Listing"/>
+    
 
         </div>
     </div>
