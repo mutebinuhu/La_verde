@@ -12,7 +12,7 @@ const Ad = ({title, text, action, imageUrl, flexDirection}) =>{
                     <div>
                     <h2 className="text-white text-4xl font-bold py-5">{title}</h2>
                     <p className="text-white text-2xl font-bold py-5">{text}</p>
-                    <div className="py-5">
+                    <div className="py-5 text-center md:text-left mb-4 md:mb-0">
                     <Link href="/contact-us" className="rounded bg-white text-[#164849] py-6 px-6 font-bold text-xl">{action}</Link>
 
                     </div>

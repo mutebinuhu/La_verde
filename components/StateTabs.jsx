@@ -3,13 +3,14 @@ import React from 'react';
 import {Tabs, Tab} from "@nextui-org/tabs";
 import { Card, CardBody } from '@nextui-org/card';
 import AbudhabiProjects from '@/app/components/AbudhabiProjects';
+import { nonoSerif } from '@/utils/fonts';
 const StateTabs = () => {
     return (
        
    <section className='py-16 container mx-auto px-4'>
     <div className='py-12' >
-    <h2 className='text-4xl font-bold'>Explore new projects in the UAE</h2>
-    <p className='py-4'>Discover the latest off-plan and ready properties in UAE.</p>
+    <h2 className={`${nonoSerif.className} text-4xl text-bold py-8`}>Explore new projects in the UAE</h2>
+    <p className=''>Discover the latest off-plan and ready properties in UAE.</p>
     </div>
     <div className="flex w-full flex-col  ">
       <Tabs aria-label="Options" variant="underlined">

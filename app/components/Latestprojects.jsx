@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import Link from 'next/link';
+import { nonoSerif } from '@/utils/fonts';
 const Project = ({image, name, paymentPlan, units, status, date}) =>{
   return(
     <Link href="/contact-us" className='z-40 '>
@@ -40,7 +41,7 @@ const Latestprojects = () => {
     return (
 
        <div className='container  mx-auto pt-20   text-center'>
-         <h2 className='text-3xl font-bold'>Our Latest Projects</h2>
+         <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-16`}>Our Latest Projects</h2>
          <p className='p-8'> Join us as we unveil our latest real estate project, designed to redefine modern living. Explore, invest, and secure your spot in the next era of exceptional living. Don't miss out, be part of the excitement</p>
          <div className="md:flex p-6   md:space-x-6 py-12">
    

@@ -1,12 +1,13 @@
 import React from 'react';
 
 import ServiceCard from './ServiceCard';
+import { nonoSerif } from '@/utils/fonts';
 
 
 const Services = () => {
     return (
         <div className='container  mx-auto  pt-10  text-center p-6 '>
-        <h2 className='text-3xl text-bold py-4 '>See how La Verde can help</h2>
+        <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-16`}>See how La Verde can help</h2>
         <p className='py-8'>Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!</p>
         <div className='md:flex md:space-x-6 '> 
       {/**<ServiceCard 
