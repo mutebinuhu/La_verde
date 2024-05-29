@@ -1,4 +1,4 @@
-import { verifyToken } from '../../lib/auth';
+import { verifyToken } from '../../../utils/auth';
 
 export default (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];

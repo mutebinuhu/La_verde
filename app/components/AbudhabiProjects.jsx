@@ -30,36 +30,6 @@ const abuhdabiProjectDetails =[
         location:"YAS ISLAND",
         units:"109"
 
-    },
-    {
-        id:3,
-        name:"Yas Golf Collection",
-        image:"ALDAR_Ansam2_CGI08_Buildings_07.jpg",
-        plan:"50/50",
-        status:"Under construction",
-        location:"YAS ISLAND",
-        units:"109"
-
-    },
-    {
-        id:3,
-        name:"Yas Golf Collection",
-        image:"ALDAR_Ansam2_CGI08_Buildings_07.jpg",
-        plan:"50/50",
-        status:"Under construction",
-        location:"YAS ISLAND",
-        units:"109"
-
-    },
-    {
-        id:4,
-        name:"Yas Golf Collection",
-        image:"ALDAR_Ansam2_CGI08_Buildings_07.jpg",
-        plan:"50/50",
-        status:"Under construction",
-        location:"YAS ISLAND",
-        units:"109"
-
     }
 ]
 const Project = ({name, image, plan, status, location, units}) =>{

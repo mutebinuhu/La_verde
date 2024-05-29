@@ -14,7 +14,7 @@ const StateTabs = () => {
     <div className="flex w-full flex-col  ">
       <Tabs aria-label="Options" variant="underlined">
       <Tab key="abudhabi" title="Abudhabi">
-          <Card>
+          <Card className='rounded-none p-6'>
             <CardBody>
               <AbudhabiProjects/>
             </CardBody>

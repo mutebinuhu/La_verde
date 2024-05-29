@@ -3,11 +3,12 @@ import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org
 import Link from 'next/link';
 const Project = ({image, name, paymentPlan, units, status, date}) =>{
   return(
+    <Link href="/contact-us" className='z-40 '>
     <section className='w-full h-[300px]  col-span-12 sm:col-span-7 -z-10'>
    <Card  className="w-full h-[300px] col-span-12  mt-3 md:mt-0 sm:col-span-7 -z-10">
      <CardHeader className="absolute z-10 top-1 flex-col items-start">
      <p className="text-tiny text-white rounded px-1 uppercase font-bold bg-[#104e3e]">{status}</p>
-       <h4 className="text-white/90 font-medium text-xl">{date}</h4>
+       <h4 className="text-white/90 font-medium text-xl bg-slate-500 my-4 px-3 opacity-75 rounded">{date}</h4>
      
       
      </CardHeader>
@@ -26,12 +27,13 @@ const Project = ({image, name, paymentPlan, units, status, date}) =>{
          <p className="text-tiny text-white text-left  text-bold">{paymentPlan}</p>
          </div>
        </div>
-      <Link href="/contact-us" className='z-40 '>
+  
       <Button radius="medium" size="LG">Lets Talk</Button>
-      </Link>
+    
      </CardFooter>
    </Card>
    </section>
+   </Link>
   )
 }
 const Latestprojects = () => {

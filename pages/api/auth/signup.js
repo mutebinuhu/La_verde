@@ -1,4 +1,4 @@
-import { hashPassword } from '../../../lib/auth';
+import { hashPassword } from '../../../utils/auth';
 
 const users = []; // This should be replaced with a proper database in production
 

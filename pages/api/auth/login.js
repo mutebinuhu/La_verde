@@ -1,4 +1,4 @@
-import { verifyPassword, generateToken } from '../../../lib/auth';
+import { verifyPassword, generateToken } from '../../../utils/auth';
 
 const users = []; // This should be replaced with a proper database in production
 
