@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import SearchByLocation from "../SearchByLocation";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import Link from "next/link";
+import { nonoSerif } from '@/utils/fonts';
+
 
    
     const breakPoints = [
@@ -57,9 +59,9 @@ import Link from "next/link";
 
 
 
-      <h2 className="text-3xl text-bold text-center py-16">Search By Location</h2>
-      <p className="text-xl  text-center py-4">Are you dreaming of living on Reem Island with its stunning waterfront views, or being surrounded by world-class entertainment and attractions on Yas Island?</p>
-      <p className="text-xl  text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
+      <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-16`}>Search By Location</h2>
+      <p className="  text-center py-4">Are you dreaming of living on Reem Island with its stunning waterfront views, or being surrounded by world-class entertainment and attractions on Yas Island?</p>
+      <p className=" text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
 
       <div className="py-12 md:mx-48">
       <div className="md:flex " >

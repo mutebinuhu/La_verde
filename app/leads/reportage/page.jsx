@@ -16,7 +16,7 @@ import { PiLadderSimpleBold,  PiLadderSimple } from "react-icons/pi";
 import { GiWindow } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { GoMirror } from "react-icons/go";
-import { Roboto_Mono, Playfair_Display } from 'next/font/google';
+import {Playfair_Display } from 'next/font/google';
 
 import Slideshow from "@/app/components/Reusables/Slideshow";
 import Gallery from "../Gallery";
