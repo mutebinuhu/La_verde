@@ -26,13 +26,13 @@ import { nonoSerif } from '@/utils/fonts';
       src={imageUrl}
     />
   </CardBody>
-    <CardFooter className="absolute h-24 md:h-32  bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between bg-gradient-to-t from-[#164849] to-[#288384]">
+    <CardFooter className="absolute mt-12 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between bg-gradient-to-t from-[#164849] to-[#288384]">
       <div className="w-full md:flex justify-center">
             <div className="">
-            <div className="py-4">
+            <div className="">
                 <p className="text-white font-bold text-lg text-center">{location}</p>
             </div>
-            <div className="text-center py-4">
+            <div className="text-center py-4 ">
             <Link href="/contact-us" className=" bg-white p-4 text-sm font-bold rounded text-[#164849]"  size="lg">
                  View Properties
             </Link>

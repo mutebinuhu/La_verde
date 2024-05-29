@@ -40,7 +40,7 @@ const Project = ({image, name, paymentPlan, units, status, date}) =>{
 const Latestprojects = () => {
     return (
 
-       <div className='container  mx-auto pt-20   text-center'>
+       <div className='container  mx-auto  text-center'>
          <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-8 md:py-16`}>Our Latest Projects</h2>
          <p className='p-8'> Join us as we unveil our latest real estate project, designed to redefine modern living. Explore, invest, and secure your spot in the next era of exceptional living. Don't miss out, be part of the excitement</p>
          <div className="md:flex p-6   md:space-x-6 py-12">
