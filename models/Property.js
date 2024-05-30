@@ -61,10 +61,9 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
- /* images: {
+  images: {
     type: [String] // Array of image URLs
   },
-  */
   /*features: {
     type: [String] // Array of features and amenities
   },

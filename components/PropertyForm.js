@@ -56,12 +56,38 @@ const PropertyForm = () => {
 
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
-
+  const handleFileChange = (event) =>{
+    setSelectedFiles(event.target.files);
+  
+  }
+  
   const handleSubmit = async(values, { setSubmitting, resetForm }) => {
     console.log("imagesTo show", selectedImages)
     const formData = new FormData();
     formData.append('file', values.images);
     console.log("imageslist", formData);
+
+    const uploadedImageURLs = [];
+    for (let file of selectedFiles) {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', 'jtiqg5os'); // Replace with your upload preset
+      //console.log("preset", process.env.REACT_APP_UPLOAD_PRESET )
+  
+      try {
+        const response = await axios.post(
+          `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
+          formData
+        );
+        uploadedImageURLs.push(response.data.secure_url);
+      } catch (error) {
+        console.error('Error uploading image:', error);
+      }
+    }
+    setImageURLs(uploadedImageURLs);
+    
+    console.log("upload Emails",  uploadedImageURLs);
+    values.images = uploadedImageURLs
 
     try {
       
@@ -72,8 +98,8 @@ const PropertyForm = () => {
         },
         body:JSON.stringify(values)
       })
+
       
-   
       const data = await res.json();
       console.log("res", data);
       if(data.success){
@@ -88,7 +114,7 @@ const PropertyForm = () => {
     }
 
     //setSubmitting(false);
-    //resetForm();
+    resetForm();
     //setPreviews("");
   };
 
@@ -102,31 +128,7 @@ const PropertyForm = () => {
   };
 */
  
-const handleFileChange = (event) =>{
-  setSelectedFiles(event.target.files);
 
-}
-const handleUpload = async () => {
-  const uploadedImageURLs = [];
-  for (let file of selectedFiles) {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', 't7sgiqjt'); // Replace with your upload preset
-    //console.log("preset", process.env.REACT_APP_UPLOAD_PRESET )
-
-    try {
-      const response = await axios.post(
-        `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
-        formData
-      );
-      uploadedImageURLs.push(response.data.secure_url);
-    } catch (error) {
-      console.error('Error uploading image:', error);
-    }
-  }
-  setImageURLs(uploadedImageURLs);
-  console.log("upload Emails",  uploadedImageURLs);
-};
   return (
    <div className='my-12'>
    <h2 className='py-2 px-8 text-3xl font-bold md:text-center'>Add Property</h2>
@@ -134,7 +136,7 @@ const handleUpload = async () => {
    
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      //validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
       {({setFieldValue,isSubmitting, touched,errors }) => (
@@ -294,7 +296,7 @@ const handleUpload = async () => {
          */} 
            <div>
       <input type="file" multiple onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+    
       <div>
         {imageURLs.map((url, index) => (
           <img key={index} src={url} alt={`Uploaded ${index}`} style={{ width: '100px', margin: '10px' }} />

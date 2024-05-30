@@ -1261,13 +1261,9 @@ import { image } from '@nextui-org/react';
           break;
         case 'POST':
           try {
-            
-            req.body.images = [
 
-            ];
-
+            console.log("REQUEST_BODY", req.body)
             const newProperty = new Property(req.body);
-            console.log("res", req.body)
             let property = await newProperty.save();
 
            return res.status(201).json({ success: true, data: property });
