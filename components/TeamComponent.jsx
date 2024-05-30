@@ -3,7 +3,7 @@ import React from 'react';
 
 const teamMembers = [
   {
-    name: 'Ahmed',
+    name: 'Ahmad youssef',
     position: 'CEO',
     image: 'workmates/ahmed.jpeg',
     social: {
@@ -12,8 +12,8 @@ const teamMembers = [
     },
   },
   {
-    name: 'IDK',
-    position: 'CTO',
+    name: 'Hazem',
+    position: 'Sales Executive',
     image: '/workmates/hr.jpeg',
     social: {
       twitter: 'https://twitter.com/janesmith',
@@ -21,8 +21,8 @@ const teamMembers = [
     },
   },
   {
-    name: 'Abdel',
-    position: 'CTO',
+    name: 'Abdelrahman',
+    position: 'Sales Manager',
     image: '/workmates/abdel.jpeg',
     social: {
       twitter: 'https://twitter.com/alicejohnson',
@@ -31,7 +31,7 @@ const teamMembers = [
   },
   {
     name: 'Maria',
-    position: 'COO',
+    position: 'Call Center Manager',
     image: '/workmates/maria.jpeg',
     social: {
       twitter: 'https://twitter.com/bobbrown',
@@ -39,7 +39,7 @@ const teamMembers = [
     },
   },
   {
-    name: 'Mutebi Nuhu',
+    name: 'Nuhu',
     position: 'Marketing Manager',
     image: '/workmates/mutebi.jpg',
     social: {
@@ -49,7 +49,7 @@ const teamMembers = [
   },
   {
     name: 'Joy',
-    position: 'CIO',
+    position: 'International Sales',
     image: '/workmates/joy.jpeg',
     social: {
       twitter: 'https://twitter.com/dianawhite',
