@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import withAuth from '@/utils/withAuth';
 import FileUploadForm from './FileUploadForm';
+import axios from 'axios';
 
 const PropertyForm = () => {
 
@@ -51,10 +52,17 @@ const PropertyForm = () => {
   });
   const [previews, setPreviews] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [selectedImages, setSelectedImages] = useState("");
 
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [imageURLs, setImageURLs] = useState([]);
 
   const handleSubmit = async(values, { setSubmitting, resetForm }) => {
-  
+    console.log("imagesTo show", selectedImages)
+    const formData = new FormData();
+    formData.append('file', values.images);
+    console.log("imageslist", formData);
+
     try {
       
       const res = await fetch("http://localhost:3000/api/properties", {
@@ -65,12 +73,13 @@ const PropertyForm = () => {
         body:JSON.stringify(values)
       })
       
+   
       const data = await res.json();
       console.log("res", data);
       if(data.success){
-        setFormSubmitted(true)
+        //setFormSubmitted(true)
         setTimeout(()=>{
-        setFormSubmitted(false)
+       // setFormSubmitted(false)
 
         }, 3000)
       }
@@ -78,21 +87,46 @@ const PropertyForm = () => {
       console.log("error", error.message)
     }
 
-    setSubmitting(false);
-    resetForm();
-    setPreviews("");
+    //setSubmitting(false);
+    //resetForm();
+    //setPreviews("");
   };
 
-  const handleFileChange = (event, setFieldValue) => {
+  /*const handleFileChange = (event, setFieldValue) => {
     const files = Array.from(event.currentTarget.files);
+    setSelectedImages(event.currentTarget.files);
+    console.log("images", selectedImages)
     setFieldValue('images', files);
-
     const filePreviews = files.map(file => URL.createObjectURL(file));
     setPreviews(filePreviews);
   };
-
+*/
  
+const handleFileChange = (event) =>{
+  setSelectedFiles(event.target.files);
 
+}
+const handleUpload = async () => {
+  const uploadedImageURLs = [];
+  for (let file of selectedFiles) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 't7sgiqjt'); // Replace with your upload preset
+    //console.log("preset", process.env.REACT_APP_UPLOAD_PRESET )
+
+    try {
+      const response = await axios.post(
+        `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
+        formData
+      );
+      uploadedImageURLs.push(response.data.secure_url);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+  }
+  setImageURLs(uploadedImageURLs);
+  console.log("upload Emails",  uploadedImageURLs);
+};
   return (
    <div className='my-12'>
    <h2 className='py-2 px-8 text-3xl font-bold md:text-center'>Add Property</h2>
@@ -218,7 +252,8 @@ const PropertyForm = () => {
             <Field as="textarea" name="descriptionArabic" className="mt-1 block w-full border border-1 p-2 rounded" />
             <ErrorMessage name="descriptionArabic" component="div" className="text-red-500 text-sm" />
           </div>
-          <div>
+         
+       {/*   <div>
             <label htmlFor="images">Upload Images</label>
             <input
               id="images"
@@ -237,6 +272,7 @@ const PropertyForm = () => {
               <img key={index} src={src} alt={`preview ${index}`} width="100" />
             ))}
           </div>
+          */}
 
          {/**
           * 
@@ -256,10 +292,15 @@ const PropertyForm = () => {
           </div>
           * 
          */} 
-          <div className="mb-4">
-            <label htmlFor="Images" className="block text-sm font-medium text-gray-700">Images</label>
-            
-          </div>
+           <div>
+      <input type="file" multiple onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+      <div>
+        {imageURLs.map((url, index) => (
+          <img key={index} src={url} alt={`Uploaded ${index}`} style={{ width: '100px', margin: '10px' }} />
+        ))}
+      </div>
+    </div>
           <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md" disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
