@@ -83,7 +83,8 @@ const TeamComponent = () => {
                   <p className="text-indigo-600">{member.position}</p>
                   <div className="mt-4">
                     <a
-                      href={member.social.twitter}
+                     /** member.social.twitter */
+                      href={"#"}
                       className="text-gray-500 hover:text-gray-900 mr-4"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -94,7 +95,8 @@ const TeamComponent = () => {
                       </svg>
                     </a>
                     <a
-                      href={member.social.linkedin}
+                    /**member.social.linkedin**/
+                      href={"#"}
                       className="text-gray-500 hover:text-gray-900"
                       target="_blank"
                       rel="noopener noreferrer"
