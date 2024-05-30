@@ -2,6 +2,7 @@
    
     import connectToDatabase from '../../../utils/db';
     import Property from '../../../models/Property';
+import { image } from '@nextui-org/react';
     const properties = [
         {   id:1,
             bed:2,
@@ -1253,7 +1254,6 @@
         case 'GET':
           try {
            {/** const properties = await Property.find({});*/} 
-           console.log("properties---", properties)
             res.status(200).json({ success: true, data: properties });
           } catch (error) {
             res.status(400).json({ success: false });
@@ -1261,10 +1261,19 @@
           break;
         case 'POST':
           try {
-            const property = await Property.create(req.body);
-            res.status(201).json({ success: true, data: property });
+            
+            req.body.images = [
+
+            ];
+
+            const newProperty = new Property(req.body);
+            console.log("res", req.body)
+            let property = await newProperty.save();
+
+           return res.status(201).json({ success: true, data: property });
           } catch (error) {
-            res.status(400).json({ success: false, error });
+        
+            return res.status(400).json({ success: false, "err":error.message });
           }
           break;
         default:

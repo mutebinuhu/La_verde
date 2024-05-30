@@ -61,15 +61,17 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  images: {
+ /* images: {
     type: [String] // Array of image URLs
   },
-  features: {
+  */
+  /*features: {
     type: [String] // Array of features and amenities
   },
   availability:{
     type:[Date]
   },
+  */
  
 
 }, 
@@ -80,5 +82,6 @@ const propertySchema = new mongoose.Schema({
 
 const Property = mongoose.models.Property || mongoose.model('Property', propertySchema);
 
-export default Property;
+module.exports = Property;
+
 
