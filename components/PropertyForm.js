@@ -103,9 +103,10 @@ const [images, setImages] = useState([])
       const data = await res.json();
   
       if(data.success){
-        //setFormSubmitted(true)
+        setFormSubmitted(true)
         setTimeout(()=>{
-       // setFormSubmitted(false)
+        setFormSubmitted(false)
+        resetForm();
 
         }, 3000)
       }
@@ -113,9 +114,9 @@ const [images, setImages] = useState([])
       console.log("error", error.message)
     }
 
-    //setSubmitting(false);
     resetForm();
-    //setPreviews("");
+    setPreviews("");
+    setSubmitting(false)
   };
 
   /*const handleFileChange = (event, setFieldValue) => {
