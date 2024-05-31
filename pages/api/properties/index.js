@@ -3,7 +3,7 @@
     import connectToDatabase from '../../../utils/db';
     import Property from '../../../models/Property';
 import { image } from '@nextui-org/react';
-    const properties = [
+    const propertiesss = [
         {   id:1,
             bed:2,
             bath:2,
@@ -1253,7 +1253,7 @@ import { image } from '@nextui-org/react';
       switch (method) {
         case 'GET':
           try {
-           {/** const properties = await Property.find({});*/} 
+            const properties = await Property.find({})
             res.status(200).json({ success: true, data: properties });
           } catch (error) {
             res.status(400).json({ success: false });
