@@ -5,6 +5,9 @@ import * as Yup from 'yup';
 import withAuth from '@/utils/withAuth';
 import FileUploadForm from './FileUploadForm';
 import axios from 'axios';
+import { TiTick } from "react-icons/ti";
+import AmenitiesForm from './AmenitiesForm';
+
 
 const PropertyForm = () => {
 const [images, setImages] = useState([])
@@ -25,7 +28,7 @@ const [images, setImages] = useState([])
     descriptionEnglish: '',
     descriptionArabic: '',
     images: [],
-    //features: [],
+    amenities: [],
     //availability: [],
   };
 
@@ -44,7 +47,7 @@ const [images, setImages] = useState([])
     size: Yup.number().required('Size is required'),
     descriptionEnglish: Yup.string().required('Description in English is required'),
     descriptionArabic: Yup.string().required('Description in Arabic is required'),
-    //features: Yup.array().of(Yup.string()),
+    amenities: Yup.array().of(Yup.string()),
    // availability: Yup.array().of(Yup.date().required('Availability date is required')),
     images: Yup.array()
     .min(1, 'Please select at least one image')
@@ -63,7 +66,7 @@ const [images, setImages] = useState([])
   }
   
   const handleSubmit = async(values, { setSubmitting, resetForm }) => {
-    console.log("imagesTo show", selectedImages)
+    console.log("imagesTo show----", values)
     const formData = new FormData();
     formData.append('file', values.images);
     console.log("imageslist", formData);
@@ -130,10 +133,75 @@ const [images, setImages] = useState([])
 */
  
 
+const amenitiesList = [
+  'Swimming Pool',
+  'Gym',
+  'Parking',
+  'Garden',
+  'Security',
+  'Playground',
+  'Clubhouse',
+  'WiFi',
+  'Elevator',
+  'Power Backup',
+  'Air Conditioning',
+  'Balcony',
+  'Pet Friendly',
+  'Laundry Room',
+  'Fireplace',
+  'Tennis Court',
+  'Basketball Court',
+  'Sauna',
+  'Hot Tub',
+  'Spa',
+  'Conference Room',
+  'Business Center',
+  'Concierge Service',
+  'Doorman',
+  'Storage Units',
+  'Bicycle Storage',
+  'Roof Deck',
+  'BBQ Area',
+  'Library',
+  'Game Room',
+  'Yoga Studio',
+  'Movie Theater',
+  'On-site Maintenance',
+  'Package Service',
+  'Recycling Center',
+  'Green Building',
+  'Car Wash Area',
+  'Guest Suites',
+  'Coffee Bar',
+  'Resident Lounge',
+  'Childcare',
+  'Community Kitchen',
+  'Dog Park',
+  'Pet Washing Station',
+  'Electric Vehicle Charging Stations',
+  'Golf Simulator',
+  'Jogging Path',
+  'Lake Access',
+  'Marina',
+  'Wine Cellar',
+  'Sea View'
+];
   return (
-   <div className='my-12'>
+   <div className='my-12 relative'>
+    <div className=''>
    <h2 className='py-2 px-8 text-3xl font-bold md:text-center'>Add Property</h2>
-   {formSubmitted && <p className='bg-[#104e3e] py-4 text-white w-full rounded container mx-auto text-center'>Success !!</p>}
+   {formSubmitted && <div className=' w-full rounded bg-gray-700 text-center absolute z-100 h-full w-full opacity-75'>
+   <div className='flex justify-center h-full  items-center'>
+   <p className='bg-[#104e3e] text-center text-white px-4 py-4'>
+   <TiTick className='text-6xl' />
+   <span>
+   Property Added
+   </span>
+
+   </p>
+    </div>
+  
+    </div>}
    
     <Formik
       initialValues={initialValues}
@@ -310,8 +378,32 @@ const [images, setImages] = useState([])
                 }} />
                 <ErrorMessage name="images" component="images" className="text-red-500 text-sm" />
               </div>
-          
         </div>
+        <div>
+        <h3 className="text-2xl text-center py-12 font-bold mb-5">Select Amenities</h3>
+        <div className="mb-4 grid grid-cols-4">
+              {amenitiesList.map((amenity) => (
+                <div key={amenity} className="flex items-center mb-2">
+                  <Field
+                    type="checkbox"
+                    id={amenity}
+                    name="amenities"
+                    value={amenity}
+                    className="mr-2"
+                  />
+                  <label htmlFor={amenity} className="text-gray-700">
+                    {amenity}
+                  </label>
+                </div>
+              ))}
+            </div>
+        </div>
+        <ErrorMessage
+              name="amenities"
+              component="div"
+              className="text-red-500 text-sm mb-4"
+            />
+
               <div className='my-4'>
               <button type="submit" className="bg-[#104e3e] text-white py-2 px-4 rounded-md w-full" disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Submit'}
@@ -323,6 +415,7 @@ const [images, setImages] = useState([])
 
       }}
     </Formik>
+    </div>
    </div>
   );
 };

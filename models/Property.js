@@ -64,15 +64,12 @@ const propertySchema = new mongoose.Schema({
   images: {
     type: [String] // Array of image URLs
   },
-  /*features: {
+  amenities: {
     type: [String] // Array of features and amenities
   },
   availability:{
     type:[Date]
-  },
-  */
- 
-
+  }
 }, 
 {
   timestamps: true
