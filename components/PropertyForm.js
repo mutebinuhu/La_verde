@@ -7,7 +7,7 @@ import FileUploadForm from './FileUploadForm';
 import axios from 'axios';
 
 const PropertyForm = () => {
-
+const [images, setImages] = useState([])
 
   const initialValues = {
     category: '',
@@ -58,6 +58,7 @@ const PropertyForm = () => {
   const [imageURLs, setImageURLs] = useState([]);
   const handleFileChange = (event) =>{
     setSelectedFiles(event.target.files);
+    setImages(event.target.files)
   
   }
   
@@ -86,7 +87,6 @@ const PropertyForm = () => {
     }
     setImageURLs(uploadedImageURLs);
     
-    console.log("upload Emails",  uploadedImageURLs);
     values.images = uploadedImageURLs
 
     try {
@@ -99,9 +99,9 @@ const PropertyForm = () => {
         body:JSON.stringify(values)
       })
 
-      
+
       const data = await res.json();
-      console.log("res", data);
+  
       if(data.success){
         //setFormSubmitted(true)
         setTimeout(()=>{
@@ -136,178 +136,191 @@ const PropertyForm = () => {
    
     <Formik
       initialValues={initialValues}
-      //validationSchema={validationSchema}
+      validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({setFieldValue,isSubmitting, touched,errors }) => (
-        <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-            <div className="mb-4 ">
-            <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
-            <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
-            {errors.images && touched.images ? (
-              <div>{errors.images}</div>
-            ) : null}
-          </div>
-            <div className='flex justify-between space-x-4'>
-            <div className="mb-4  w-1/2">
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700">Category</label>
-            <Field as="select" name="category" className="mt-1 block w-full border border-1 p-2 rounded">
-              <option value="" label="Select category" />
-              <option value="residential" label="Residential" />
-              <option value="commercial" label="Commercial" />
-            </Field>
-            <ErrorMessage name="category" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4 w-1/2">
-            <label htmlFor="subCategory" className="block text-sm font-medium text-gray-700">Subcategory</label>
-            <Field as="select" name="subCategory" className="mt-1 block w-full border border-1 p-2 rounded">
-              <option value="" label="Select subcategory" />
-              <option value="villa" label="Villa" />
-              <option value="studio" label="Studio" />
-              <option value="apartment" label="Apartment" />
-              <option value="residentialFloor" label="Residential Floor" />
-              <option value="residentialPlot" label="Residential Plot" />
-              <option value="townHouse" label="Town House" />
-              <option value="residentialBuilding" label="Residential Building" />
-              <option value="pentHouse" label="Pent House" />
-              <option value="villaCompound" label="Villa Compound" />
-            </Field>
-            <ErrorMessage name="subCategory" component="div" className="text-red-500 text-sm" />
-          </div>
-            </div>
-            <div className='flex justify-between  space-x-4'>
-          <div className="mb-4  w-1/2 ">
-            <label htmlFor="purpose" className="block text-sm font-medium text-gray-700 ">Purpose</label>
-            <Field as="select" name="purpose" className="mt-1 block w-full border border-1 p-2 rounded">
-              <option value="" label="Select purpose" />
-              <option value="sale" label="Sale" />
-              <option value="rent" label="Rent" />
-            </Field>
-            <ErrorMessage name="purpose" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4 w-1/2 ">
-            <label htmlFor="completionStatus" className="block text-sm font-medium text-gray-700">Completion Status</label>
-            <Field as="select" name="completionStatus" className="mt-1 block w-full border border-1 p-2 rounded">
-              <option value="" label="Select completion status" />
-              <option value="offPlanPrimary" label="Off Plan Primary" />
-              <option value="offPlanSecondly" label="Off Plan Secondly" />
-              <option value="readyPrimary" label="Ready Primary" />
-              <option value="readySecondary" label="Ready Secondary" />
-            </Field>
-            <ErrorMessage name="completionStatus" component="div" className="text-red-500 text-sm" />
-          </div>
-          </div>
-          <div className='flex justify-between  space-x-4'>
-
-        
-          <div className="mb-4  w-1/2">
-            <label htmlFor="size" className="block text-sm font-medium text-gray-700">Size</label>
-            <Field type="number" name="size" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="size" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4  w-1/2">
-            <label htmlFor="areaSquare" className="block text-sm font-medium text-gray-700">Area Square</label>
-            <Field type="number" name="areaSquare" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="areaSquare" component="div" className="text-red-500 text-sm" />
-          </div>
-          </div>  
-      
-          <div className='flex justify-between  space-x-4'>
-          <div className="mb-4 w-1/2">
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
-            <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4  w-1/2">
-            <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price</label>
-            <Field type="number" name="price" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="price" component="div" className="text-red-500 text-sm" />
-          </div>
-          </div>
-          <div className='flex justify-between  space-x-4'>
-          <div className="mb-4  w-1/2">
-            <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700">Bedrooms</label>
-            <Field type="number" name="bedrooms" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="bedrooms" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4  w-1/2">
-            <label htmlFor="bathrooms" className="block text-sm font-medium text-gray-700">Bathrooms</label>
-            <Field type="number" name="bathrooms" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="bathrooms" component="div" className="text-red-500 text-sm" />
-          </div>
-        </div>
+      {({setFieldValue,isSubmitting, touched,errors }) => {
+        console.log("erros", errors)
+        return(
+          (
+            <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
+                <div className="mb-4 ">
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
+                <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
+                {errors.images && touched.images ? (
+                  <div>{errors.images}</div>
+                ) : null}
+              </div>
+                <div className='flex justify-between space-x-4'>
+                <div className="mb-4  w-1/2">
+                <label htmlFor="category" className="block text-sm font-medium text-gray-700">Category</label>
+                <Field as="select" name="category" className="mt-1 block w-full border border-1 p-2 rounded">
+                  <option value="" label="Select category" />
+                  <option value="residential" label="Residential" />
+                  <option value="commercial" label="Commercial" />
+                </Field>
+                <ErrorMessage name="category" component="div" className="text-red-500 text-sm" />
+              </div>
     
-          <div className="mb-4 ">
-            <label htmlFor="descriptionEnglish" className="block text-sm font-medium text-gray-700">Description (English)</label>
-            <Field as="textarea" name="descriptionEnglish" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="descriptionEnglish" component="div" className="text-red-500 text-sm" />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="descriptionArabic" className="block text-sm font-medium text-gray-700">Description (Arabic)</label>
-            <Field as="textarea" name="descriptionArabic" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="descriptionArabic" component="div" className="text-red-500 text-sm" />
-          </div>
-         
-       {/*   <div>
-            <label htmlFor="images">Upload Images</label>
-            <input
-              id="images"
-              name="images"
-              type="file"
-              multiple
-              onChange={event => handleFileChange(event, setFieldValue)}
-            />
-            {errors.images && touched.images ? (
-              <div>{errors.images}</div>
-            ) : null}
-          </div>
+              <div className="mb-4 w-1/2">
+                <label htmlFor="subCategory" className="block text-sm font-medium text-gray-700">Subcategory</label>
+                <Field as="select" name="subCategory" className="mt-1 block w-full border border-1 p-2 rounded">
+                  <option value="" label="Select subcategory" />
+                  <option value="villa" label="Villa" />
+                  <option value="studio" label="Studio" />
+                  <option value="apartment" label="Apartment" />
+                  <option value="residentialFloor" label="Residential Floor" />
+                  <option value="residentialPlot" label="Residential Plot" />
+                  <option value="townHouse" label="Town House" />
+                  <option value="residentialBuilding" label="Residential Building" />
+                  <option value="pentHouse" label="Pent House" />
+                  <option value="villaCompound" label="Villa Compound" />
+                </Field>
+                <ErrorMessage name="subCategory" component="div" className="text-red-500 text-sm" />
+              </div>
+                </div>
+                <div className='flex justify-between  space-x-4'>
+              <div className="mb-4  w-1/2 ">
+                <label htmlFor="purpose" className="block text-sm font-medium text-gray-700 ">Purpose</label>
+                <Field as="select" name="purpose" className="mt-1 block w-full border border-1 p-2 rounded">
+                  <option value="" label="Select purpose" />
+                  <option value="sale" label="Sale" />
+                  <option value="rent" label="Rent" />
+                </Field>
+                <ErrorMessage name="purpose" component="div" className="text-red-500 text-sm" />
+              </div>
+    
+              <div className="mb-4 w-1/2 ">
+                <label htmlFor="completionStatus" className="block text-sm font-medium text-gray-700">Completion Status</label>
+                <Field as="select" name="completionStatus" className="mt-1 block w-full border border-1 p-2 rounded">
+                  <option value="" label="Select completion status" />
+                  <option value="offPlanPrimary" label="Off Plan Primary" />
+                  <option value="offPlanSecondly" label="Off Plan Secondly" />
+                  <option value="readyPrimary" label="Ready Primary" />
+                  <option value="readySecondary" label="Ready Secondary" />
+                </Field>
+                <ErrorMessage name="completionStatus" component="div" className="text-red-500 text-sm" />
+              </div>
+              </div>
+              <div className='flex justify-between  space-x-4'>
+    
+            
+              <div className="mb-4  w-1/2">
+                <label htmlFor="size" className="block text-sm font-medium text-gray-700">Size</label>
+                <Field type="number" name="size" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="size" component="div" className="text-red-500 text-sm" />
+              </div>
+    
+              <div className="mb-4  w-1/2">
+                <label htmlFor="areaSquare" className="block text-sm font-medium text-gray-700">Area Square</label>
+                <Field type="number" name="areaSquare" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="areaSquare" component="div" className="text-red-500 text-sm" />
+              </div>
+              </div>  
           
-          <div>
-            {previews && previews.map((src, index) => (
-              <img key={index} src={src} alt={`preview ${index}`} width="100" />
-            ))}
-          </div>
-          */}
-
-         {/**
-          * 
-          *  <div className="mb-4">
-            <label htmlFor="features" className="block text-sm font-medium text-gray-700">Features</label>
-            <Field as="textarea" name="features" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="features" component="div" className="text-red-500 text-sm" />
-          </div>
-          * 
-          */}
-
-         {/** 
-          * <div className="mb-4">
-            <label htmlFor="availability" className="block text-sm font-medium text-gray-700">Availability (Dates)</label>
-            <Field as="textarea" name="availability" className="mt-1 block w-full border border-1 p-2 rounded" />
-            <ErrorMessage name="availability" component="div" className="text-red-500 text-sm" />
-          </div>
-          * 
-         */} 
-           <div>
-      <input type="file" multiple onChange={handleFileChange} />
+              <div className='flex justify-between  space-x-4'>
+              <div className="mb-4 w-1/2">
+                <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
+                <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
+              </div>
     
-      <div>
-        {imageURLs.map((url, index) => (
-          <img key={index} src={url} alt={`Uploaded ${index}`} style={{ width: '100px', margin: '10px' }} />
-        ))}
-      </div>
-    </div>
-          <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md" disabled={isSubmitting}>
-            {isSubmitting ? 'Submitting...' : 'Submit'}
-          </button>
-        </Form>
-      )}
+              <div className="mb-4  w-1/2">
+                <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price</label>
+                <Field type="number" name="price" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="price" component="div" className="text-red-500 text-sm" />
+              </div>
+              </div>
+              <div className='flex justify-between  space-x-4'>
+              <div className="mb-4  w-1/2">
+                <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700">Bedrooms</label>
+                <Field type="number" name="bedrooms" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="bedrooms" component="div" className="text-red-500 text-sm" />
+              </div>
+    
+              <div className="mb-4  w-1/2">
+                <label htmlFor="bathrooms" className="block text-sm font-medium text-gray-700">Bathrooms</label>
+                <Field type="number" name="bathrooms" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="bathrooms" component="div" className="text-red-500 text-sm" />
+              </div>
+            </div>
+        
+              <div className="mb-4 ">
+                <label htmlFor="descriptionEnglish" className="block text-sm font-medium text-gray-700">Description (English)</label>
+                <Field as="textarea" name="descriptionEnglish" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="descriptionEnglish" component="div" className="text-red-500 text-sm" />
+              </div>
+    
+              <div className="mb-4">
+                <label htmlFor="descriptionArabic" className="block text-sm font-medium text-gray-700">Description (Arabic)</label>
+                <Field as="textarea" name="descriptionArabic" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="descriptionArabic" component="div" className="text-red-500 text-sm" />
+              </div>
+             
+           {/*   <div>
+                <label htmlFor="images">Upload Images</label>
+                <input
+                  id="images"
+                  name="images"
+                  type="file"
+                  multiple
+                  onChange={event => handleFileChange(event, setFieldValue)}
+                />
+                {errors.images && touched.images ? (
+                  <div>{errors.images}</div>
+                ) : null}
+              </div>
+              
+              <div>
+                {previews && previews.map((src, index) => (
+                  <img key={index} src={src} alt={`preview ${index}`} width="100" />
+                ))}
+              </div>
+              */}
+    
+             {/**
+              * 
+              *  <div className="mb-4">
+                <label htmlFor="features" className="block text-sm font-medium text-gray-700">Features</label>
+                <Field as="textarea" name="features" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="features" component="div" className="text-red-500 text-sm" />
+              </div>
+              * 
+              */}
+    
+             {/** 
+              * <div className="mb-4">
+                <label htmlFor="availability" className="block text-sm font-medium text-gray-700">Availability (Dates)</label>
+                <Field as="textarea" name="availability" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="availability" component="div" className="text-red-500 text-sm" />
+              </div>
+              * 
+             */} 
+               <div>
+      
+      
+          <div className="mb-4">
+                <label htmlFor="uploadImages" className="block text-sm font-medium text-gray-700">Upload Images</label>
+                <input type="file" id='images' name='images' className='mt-1 block w-full border border-1 p-2 rounded' multiple onChange={(event)=>{
+                  setSelectedFiles(event.target.files);
+                  setImages(event.target.files)
+                  setFieldValue('images', Array.from(event.target.files) )
+                }} />
+                <ErrorMessage name="images" component="images" className="text-red-500 text-sm" />
+              </div>
+          
+        </div>
+              <div className='my-4'>
+              <button type="submit" className="bg-[#104e3e] text-white py-2 px-4 rounded-md w-full" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit'}
+              </button>
+              </div>
+            </Form>
+          )
+        )
+
+      }}
     </Formik>
    </div>
   );

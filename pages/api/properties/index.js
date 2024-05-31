@@ -1262,7 +1262,6 @@ import { image } from '@nextui-org/react';
         case 'POST':
           try {
 
-            console.log("REQUEST_BODY", req.body)
             const newProperty = new Property(req.body);
             let property = await newProperty.save();
 
