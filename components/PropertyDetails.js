@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp, FaInfoCircle } from 'react-icons/fa';
 import 'tailwindcss/tailwind.css';
@@ -51,29 +52,29 @@ const PropertyDetails = ({ property }) => {
           </ul>
           <div className="flex space-x-2">
             <a
-              href={`mailto:someone@example.com?subject=Inquiry about ${property.title}`}
+              href={`mailto:marketing@laverde.ae?subject=Inquiry about ${property.title}`}
               className="flex items-center justify-center bg-blue-500 text-white p-1 md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
             >
               <FaEnvelope className="mr-2" /> Email
             </a>
             <a
-              href={`https://wa.me/?text=I'm interested in ${property.title}`}
+              href={`https://wa.me/971506144930?text=I'm interested in ${property.title}`}
               className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300"
             >
               <FaWhatsapp className="mr-2" /> WhatsApp
             </a>
             <a
-              href="tel:+1234567890"
+              href="tel:+971508244755"
               className="flex items-center justify-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300"
             >
               <FaPhone className="mr-2" /> Call
             </a>
-            <a
-              href="/contact"
+            <Link
+              href="/contact-us"
               className="flex items-center justify-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 transition duration-300"
             >
               <FaInfoCircle className="mr-2" /> Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>
