@@ -1,24 +1,29 @@
 "use client"
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useFormik } from 'formik';
+import { useFormik, resetForm } from 'formik';
 import * as Yup from 'yup';
 
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
+      name:'',
       email: '',
       password: '',
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Invalid email address').required('Required'),
+      name: Yup.string().required('Required'),
+
       password: Yup.string().min(8, 'Password must be at least 8 characters').required('Required'),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
+      setIsLoading(true)
         const res = await fetch('/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -31,6 +36,8 @@ const Signup = () => {
             const data = await res.json();
             alert(data.message);
           }
+          setIsLoading(false)
+          resetForm();
     },
   });
   const handleSubmit = async (e) => {
@@ -51,7 +58,24 @@ const Signup = () => {
 
   return (
     <div className="max-w-md mx-auto mt-10">
+       {isLoading && <p>Loading...</p>}
       <form onSubmit={formik.handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div className="mb-4">
+          <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            {...formik.getFieldProps('name')}
+            className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              formik.touched.name && formik.errors.name ? 'border-red-500' : ''
+            }`}
+          />
+          {formik.touched.name && formik.errors.name ? (
+            <p className="text-red-500 text-xs italic">{formik.errors.name}</p>
+          ) : null}
+        </div>
         <div className="mb-4">
           <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
             Email

@@ -70,6 +70,10 @@ const propertySchema = new mongoose.Schema({
   
   availability:{
     type:[Date]
+  },
+  approved:{
+    type: Boolean,
+    default: false
   }
 }, 
 {

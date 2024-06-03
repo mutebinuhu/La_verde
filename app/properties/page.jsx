@@ -1,6 +1,5 @@
 
 import React from "react";
-import PropertyCard from "../components/Reusables/PropertyCard";
 import PropertyListing from "@/components/PropertyListing";
 
 const Page = async () =>{

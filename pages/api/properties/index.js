@@ -1253,7 +1253,7 @@ import { image } from '@nextui-org/react';
       switch (method) {
         case 'GET':
           try {
-            const properties = await Property.find({})
+            const properties = await Property.find({approved:true})
             res.status(200).json({ success: true, data: properties });
           } catch (error) {
             res.status(400).json({ success: false });
@@ -1264,7 +1264,6 @@ import { image } from '@nextui-org/react';
 
             const newProperty = new Property(req.body);
          
-
             console.log("features type", typeof(req.body.amenities), "------", req.body.amenities);
             console.log("images type", typeof(req.body.images), "--------", req.body.images);
             let property = await newProperty.save();
