@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp, FaInfoCircle } from 'react-icons/fa';
-import 'tailwindcss/tailwind.css';
+
 
 const PropertyDetails = ({ property }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
