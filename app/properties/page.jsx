@@ -12,6 +12,7 @@ const Page = async () =>{
       }
       data = await res.json();
     } catch (err) {
+      console.log("errrr================", err.message)
       error = err.message;
     }
   

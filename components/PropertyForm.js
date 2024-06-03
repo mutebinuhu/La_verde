@@ -8,7 +8,6 @@ import axios from 'axios';
 import { TiTick } from "react-icons/ti";
 import AmenitiesForm from './AmenitiesForm';
 
-
 const PropertyForm = () => {
 const [images, setImages] = useState([])
 
