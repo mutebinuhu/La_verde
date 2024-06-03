@@ -7,6 +7,7 @@ import FileUploadForm from './FileUploadForm';
 import axios from 'axios';
 import { TiTick } from "react-icons/ti";
 import AmenitiesForm from './AmenitiesForm';
+import OffplanProject from './OffplanProject';
 
 const PropertyForm = () => {
 const [images, setImages] = useState([])
@@ -188,6 +189,7 @@ const amenitiesList = [
   return (
    <div className='my-12 relative'>
     <div className=''>
+
    <h2 className='py-2 px-8 text-3xl font-bold md:text-center'>Add Property</h2>
    {formSubmitted && <div className=' w-full rounded bg-gray-700 text-center absolute z-100 h-full w-full opacity-75'>
    <div className='flex justify-center h-full  items-center'>

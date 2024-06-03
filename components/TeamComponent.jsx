@@ -31,16 +31,7 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/bobbrown',
     },
   },
-  {
-    name: 'Hazem',
-    position: 'Sales Executive',
-    image: '/workmates/hr.jpeg',
-    social: {
-      twitter: 'https://twitter.com/janesmith',
-      linkedin: 'https://linkedin.com/in/janesmith',
-    },
-  },
-  
+ 
   {
     name: 'Amir',
     position: 'Property Sales Consultant',
@@ -50,13 +41,14 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
   },
+  
   {
-    name: 'Nuhu',
-    position: 'Marketing Manager',
-    image: '/workmates/mutebi.jpg',
+    name: 'Hazem',
+    position: 'Sales Executive',
+    image: '/workmates/hr.jpeg',
     social: {
-      twitter: 'https://twitter.com/charliegreen',
-      linkedin: 'https://linkedin.com/in/charliegreen',
+      twitter: 'https://twitter.com/janesmith',
+      linkedin: 'https://linkedin.com/in/janesmith',
     },
   },
   {
@@ -68,6 +60,16 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/dianawhite',
     },
   },
+  {
+    name: 'Nuhu',
+    position: 'Marketing Manager',
+    image: '/workmates/mutebi.jpg',
+    social: {
+      twitter: 'https://twitter.com/charliegreen',
+      linkedin: 'https://linkedin.com/in/charliegreen',
+    },
+  },
+  
 ];
 
 const TeamComponent = () => {
