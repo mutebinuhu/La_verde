@@ -93,7 +93,7 @@ const [images, setImages] = useState([])
 
     try {
       
-      const res = await fetch("http://localhost:3000/api/properties", {
+      const res = await fetch("https://laverde.ae/api/properties", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
