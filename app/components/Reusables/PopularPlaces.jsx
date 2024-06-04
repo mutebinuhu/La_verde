@@ -17,7 +17,7 @@ const PopularPlaces = () =>{
             <p className='text-center py-8'>Own a home in one of the most popular and luxurious places in Abudhabi. Get yourself a home in <strong>Reem Island,</strong> <strong>Yas Island</strong>, <strong>Sadiyaat  Island, </strong> </p>
             <div  className="md:flex md:space-x-4">
                 <div className="w-full md:w-1/3">   
-                <Card className="col-span-12 sm:col-span-4 h-[300px]">
+                <Card className="col-span-12 sm:col-span-4 h-[300px] hover:bg-red-200 ">
                     <CardHeader className="absolute z-10 top-1 flex-col !items-start ">
                         <CardInnerHeading title="Reem Island" subTitle="500,000 AED"/>  
                     </CardHeader>

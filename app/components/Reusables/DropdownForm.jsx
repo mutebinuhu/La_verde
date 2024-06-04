@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { CiSearch } from "react-icons/ci";
@@ -8,7 +8,7 @@ import { CiSearch } from "react-icons/ci";
 const Dropdown = ({ label, name, options, selected }) => (
   <div>
     <label htmlFor={name}>{label}</label>
-    <Field as="select" name={name} placeholder={name} className="px-4 md:py-4 py-2 my-4 md:my-0 w-56 md:w-32 rounded font-medium text-[#164849]">
+    <Field as="select" name={name} placeholder={name} className="px-4 md:py-2 py-2 my-4 md:my-0 w-32 rounded font-medium text-[#164849]">
       <option value="" label={selected} />
       {options.map(option => (
         <option key={option.value} value={option.value} label={option.label} />
@@ -22,6 +22,38 @@ const validationSchema = Yup.object({
    
 });
 
+const Dropper = () =>{
+const [showDropDown, setShowDropDown] = useState(false)
+
+  return(
+    <div>
+      <button onClick={()=>setShowDropDown(opened=>!opened)}  id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+     </svg>
+</button>
+
+  {
+    showDropDown && 
+    <div id="dropdown" class="z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+        </li>
+      </ul>
+  </div>
+  }
+    </div>
+  )
+}
 const DropdownForm = () => {
   return (
     <Formik
@@ -38,6 +70,7 @@ const DropdownForm = () => {
       {({ isSubmitting }) => (
         <Form className='text-center'>
           <div className='md:flex justify-between md:space-x-4'>
+          <div className='flex space-x-4 '>
           <Dropdown
             name="buyorsell"
             placeholder="Buy"
@@ -55,6 +88,8 @@ const DropdownForm = () => {
               { value: 'residential', label: 'Residential' },
             ]}
           />
+          </div>
+          <div className='flex space-x-4 '>
           <Dropdown
             label=""
             name="price"
@@ -75,6 +110,8 @@ const DropdownForm = () => {
               { value: '150000', label: '150000' }
             ]}
           />
+          </div>
+           <div className='flex space-x-4 '>
            <Dropdown
             label=""
             name="studio"
@@ -98,17 +135,18 @@ const DropdownForm = () => {
 
             ]}
           />
+           </div>
           </div>
           <div>
             
           </div>
           <div className='flex w-full justify-center items-center mt-8'>
-            <Field  name="search" className="outline-none border-none px-4 py-4 w-full rounded" placeholder="Search listings by location"></Field>
+            <Field  name="search" className="outline-none border-none px-4 py-3.5 w-full rounded" placeholder="Search listings by location"></Field>
             <ErrorMessage name="search" component="div" className="error" />
         </div>
-          <div className='mt-8 flex justify-center w-full items-center'>
-          <button type="submit"  name='submit' className='bg-white text-lg items-center md:flex space-x-2 px-6 w-full md:w-1/3 font-bold text-[#164849]  rounded py-2 ' disabled={isSubmitting}>
-             <span><CiSearch className='text-4xl'/></span>
+          <div className='mt-6 flex justify-center w-full items-center'>
+          <button type="submit"  name='submit' className='bg-white text-lg items-center flex space-x-4  w-full md:w-1/3 font-bold text-[#164849]  rounded py-2 ' disabled={isSubmitting}>
+             <span><CiSearch className='text-2xl'/></span>
              <span className=''>Find Your New Home</span>
           </button>
           </div>
