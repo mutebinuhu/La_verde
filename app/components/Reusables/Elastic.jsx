@@ -4,6 +4,7 @@ import SearchByLocation from "../SearchByLocation";
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import Link from "next/link";
 import { nonoSerif } from '@/utils/fonts';
+import {Card as CustomCard} from "./Card";
 
 
    
@@ -64,9 +65,23 @@ import { nonoSerif } from '@/utils/fonts';
       <p className=" text-center py-2">Let us send you a curated list of properties in your desired area. Your perfect home awaits!</p>
 
       <div className="py-12 md:mx-48">
-      <div className="md:flex " >
-        {items.map(item =><div className="w-full">{item}</div>)}
-      </div>
+      <div className="flex justify-center justify-between items-center ">
+      <CustomCard
+        imageUrl="/al-reem-island-adgm.jpg"
+        title="Reem Island"
+        buttonText="Click me"
+      />
+      <CustomCard
+        imageUrl="/yas1.jpg"
+        title="Yas Island"
+        buttonText="Click me"
+      />
+      <CustomCard
+        imageUrl="/Lq4LqPEX-2013_saadiyat_1_base-1.jpg"
+        title="Saadiyat "
+        buttonText="Click me"
+      />
+    </div>
       </div>
      </>
     )

@@ -12,6 +12,7 @@ import SearchByLocation from "./components/SearchByLocation";
 import ResponsiveCarousel from "./components/Reusables/ResponsiveCarousel";
 import { Elsatic } from "./components/Reusables/Elastic";
 import Ad from "./components/Reusables/Ad";
+import PopularPlaces from "./components/Reusables/PopularPlaces";
 
 
 
@@ -26,9 +27,9 @@ export default function Home() {
     <main className="">
       {/**<Banner/>**/}
       <Banner2/>
-      <Elsatic/>
-      <Latestprojects/>
+      <PopularPlaces/>
       <Services/>
+      <Latestprojects/>
       <StateTabs/>
      
       <div className="py-6 md:py-12">

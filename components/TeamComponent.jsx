@@ -171,3 +171,4 @@ const TeamComponent = () => {
 };
 
 export default TeamComponent;
+

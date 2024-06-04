@@ -11,7 +11,7 @@ const Banner2 = () => {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat'}}>
                 <div className='flex justify-center  items-center h-full md:w-full py-12 px-10 md:py-0  '>
-                   <div className='bg-[#164849] py-12 px-12 rounded-lg'>
+                   <div className='bg-[#164849] bg-opacity-75 py-12 px-12 rounded-lg'>
                         <h1 className={ `${nonoSerif.className} text-white text-4xl py-4 font-bold`}>Let us Guide you home</h1>
                         <p className='text-white text-xl py-4'>With exclusive offerings in abudhabi with the premier real estate company in the region</p>
                         <div className='md:flex justify-between items-center w-full py-8'>

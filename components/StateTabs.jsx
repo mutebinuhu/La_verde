@@ -8,14 +8,14 @@ const StateTabs = () => {
     return (
        
    <section className='py-16 container mx-auto px-4'>
-    <div className='py-12' >
+    <div className='py-12 text-center' >
     <h2 className={`${nonoSerif.className} text-4xl text-bold py-4 md:py-8`}>Explore new projects in the UAE</h2>
     <p className=''>Discover the latest off-plan and ready properties in UAE.</p>
     </div>
     <div className="flex w-full flex-col  ">
       <Tabs aria-label="Options" variant="underlined">
       <Tab key="abudhabi" title="Abudhabi">
-          <Card className='rounded-none p-6'>
+          <Card className='rounded-none '>
             <CardBody>
               <AbudhabiProjects/>
             </CardBody>
