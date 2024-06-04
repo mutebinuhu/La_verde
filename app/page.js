@@ -27,8 +27,8 @@ export default function Home() {
     <main className="">
       {/**<Banner/>**/}
       <Banner2/>
-      <PopularPlaces/>
       <Services/>
+      <PopularPlaces/>
       <Latestprojects/>
       <StateTabs/>
      
