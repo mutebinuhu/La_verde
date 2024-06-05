@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@nextui-org/button';
+import Slideshow from './Reusables/Slideshow';
 
 
 const Banner = () => {
@@ -41,6 +42,7 @@ const Banner = () => {
   backgroundRepeat: 'no-repeat'}}>
   
             </div>
+           
 
         </div>
     );
