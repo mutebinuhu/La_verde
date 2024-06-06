@@ -18,10 +18,11 @@ const PropertyDetails = ({ property }) => {
   };
 
   return (
+
     <div className="max-w-4xl md:mx-auto p-4 mt-10 bg-white rounded-lg w-full  overflow-hidden">
-      <div className="md:flex">
+      <div className="md:flex ">
         {/* Slideshow Section */}
-        <div className="w-full md:w-1/4 relative">
+        <div className="w-full md:w-2/4 relative rounded-lg">
           <img
             src={property.images[currentImageIndex]}
             alt={`Property Image ${currentImageIndex + 1}`}
@@ -43,7 +44,13 @@ const PropertyDetails = ({ property }) => {
 
         {/* Details Section */}
         <div className="w-3/4 p-6 border rounded w-full">
+          <>
+            
+              
+         <Link href={`/properties/${property._id}`}>
           <h2 className="text-xl md:text-3xl font-bold mb-4 transition-transform duration-500 hover:scale-105">{property.title}</h2>
+         </Link>
+          <Link href={`/properties/${property._id}`}>
           <p className="text-gray-700 mb-2"><span className='flex items-center space-x-2'><FaLocationDot/>{property.address}</span></p>
           <h3 className="text-xl md:text-2xl font-semibold">Amenities:</h3>
           <ul className="flex flex-wrap items-center py-2 text-gray-900 dark:text-white">
@@ -55,26 +62,27 @@ const PropertyDetails = ({ property }) => {
             ))}
           </ul>
           <p className="text-xl font-semibold mb-2">Price: AED {property.price}</p>
+          </Link>
 
           <div className="md:flex md:space-x-2 ">
-            <a
+            <Link
               href={`mailto:marketing@laverde.ae?subject=Inquiry about ${property.title}`}
               className="flex mb-2 items-center justify-center bg-blue-500 text-white p-1 md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
             >
               <FaEnvelope className="mr-2" /> Email
-            </a>
-            <a
+            </Link>
+            <Link
               href={`https://wa.me/971506144930?text=I'm interested in ${property.title}`}
               className="flex mb-2 items-center justify-center bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 transition duration-300"
             >
               <FaWhatsapp className="mr-2" /> WhatsApp
-            </a>
-            <a
+            </Link>
+            <Link
               href="tel:+971508244755"
               className="flex mb-2  items-center justify-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300"
             >
               <FaPhone className="mr-2" /> Call
-            </a>
+            </Link>
             <Link
               href="/contact-us"
               className="flex mb-2   items-center justify-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 transition duration-300"
@@ -82,9 +90,13 @@ const PropertyDetails = ({ property }) => {
               <FaInfoCircle className="mr-2" /> Contact Us
             </Link>
           </div>
+     
+          </>
         </div>
       </div>
+      
     </div>
+
   );
 };
 

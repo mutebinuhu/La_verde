@@ -67,6 +67,7 @@ const Page = async () =>{
     return(
         <section className="container  py-8">
              <PropertyListing/>
+             <PropertyDetailsBeta/>
         
         </section>
     )
