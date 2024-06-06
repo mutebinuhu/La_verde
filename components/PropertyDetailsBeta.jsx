@@ -1,7 +1,20 @@
 import React from 'react';
 import ImagesGallery from './ImagesGallery';
 import "../app/globals.css";
-const PropertyDetailsBeta = () => {
+import { redirect } from 'next/navigation'
+ 
+async function fetchPropertyId(id) {
+ /**
+  * 
+  *  const res = await fetch(process.env.API_URL)
+  if (!res.ok) return undefined
+  return res.json()
+  */
+}
+const PropertyDetailsBeta =  ({id}) => {
+  
+
+
   const property = {
     images: [
       '/10.jpg', // Main image
@@ -60,7 +73,7 @@ const PropertyDetailsBeta = () => {
         <a href="tel:+123456789" className="bg-yellow-500 text-white px-4 py-2 rounded-md">
           Call
         </a>
-        <a href="/contact" className="bg-gray-500 text-white px-4 py-2 rounded-md">
+        <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-md">
           Contact Us
         </a>
       </div>
