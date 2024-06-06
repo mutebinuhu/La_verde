@@ -47,10 +47,10 @@ const PropertyDetails = ({ property }) => {
           <>
             
               
-         <Link href={`/properties/${property._id}`}>
+         <Link href={`/properties/`}>
           <h2 className="text-xl md:text-3xl font-bold mb-4 transition-transform duration-500 hover:scale-105">{property.title}</h2>
          </Link>
-          <Link href={`/properties/${property._id}`}>
+          <Link href={`/properties/`}>
           <p className="text-gray-700 mb-2"><span className='flex items-center space-x-2'><FaLocationDot/>{property.address}</span></p>
           <h3 className="text-xl md:text-2xl font-semibold">Amenities:</h3>
           <ul className="flex flex-wrap items-center py-2 text-gray-900 dark:text-white">
