@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp, FaInfoCircle} from 'react-icons/fa';
 import { FaLocationDot } from "react-icons/fa6";
+import SlideshowCard from './SlideshowCard';
 
 
 
@@ -87,14 +88,13 @@ const PropertyDetails = ({ property }) => {
               href="/contact-us"
               className="flex mb-2   items-center justify-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 transition duration-300"
             >
-              <FaInfoCircle className="mr-2" /> Contact Us
+              <FaInfoCircle className="mr-2" /> Contact Us Now
             </Link>
           </div>
      
           </>
         </div>
       </div>
-      
     </div>
 
   );

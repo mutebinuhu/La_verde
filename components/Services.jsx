@@ -6,7 +6,7 @@ import { nonoSerif } from '@/utils/fonts';
 
 const Services = () => {
     return (
-        <div className='container  mx-auto  text-center md:-mt-24 px-4 '>
+        <div className='container  mx-auto  text-center md:mt-24 px-4 '>
         <h2 className={`${nonoSerif.className} text-4xl text-bold text-center `}>See how La Verde can help</h2>
         <p className='py-8'>Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!</p>
         <div className='md:flex md:space-x-6 '> 
