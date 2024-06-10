@@ -4,16 +4,21 @@ import "../app/globals.css";
 import { redirect } from 'next/navigation'
  
 async function fetchPropertyId(id) {
- /**
-  * 
-  *  const res = await fetch(process.env.API_URL)
+ 
+   const res = await fetch(process.env.API_URL+"api/properties/"+id)
   if (!res.ok) return undefined
   return res.json()
-  */
-}
-const PropertyDetailsBeta =  ({id}) => {
   
+}
+const PropertyDetailsBeta = async ({propertyId}) => {
+  console.log("PROPERTYid----------------------------------------====",propertyId )
+try {
+  const res =  await fetchPropertyId(propertyId);
 
+  console.log("ressss", res);
+} catch (error) {
+  console.log("response=======================", error.message)
+}
 
   const property = {
     images: [
@@ -34,15 +39,18 @@ const PropertyDetailsBeta =  ({id}) => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">Property Details</h1>
       
       {/* Image Gallery */}
       <ImagesGallery images={property.images} />
 
       {/* Description */}
+      <h1 className="text-4xl font-bold mb-4">Property Details</h1>
+
       <div className="mb-4">
         <h2 className="text-2xl font-semibold mb-2">Description</h2>
+        <p>AED {}</p>
         <p>{property.description}</p>
+
       </div>
 
       {/* Amenities */}

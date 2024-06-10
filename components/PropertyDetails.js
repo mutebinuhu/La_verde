@@ -47,7 +47,7 @@ const PropertyDetails = ({ property }) => {
           <>
             
               
-         <Link href={`/properties/`}>
+         <Link href={`/properties/${property._id}/`}>
           <h2 className="text-xl md:text-3xl font-bold mb-4 transition-transform duration-500 hover:scale-105">{property.title}</h2>
          </Link>
           <Link href={`/properties/`}>

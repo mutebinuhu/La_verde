@@ -37,9 +37,9 @@ const Banner = () => {
             
             </div>
             <div className='w-full mt-6 rounded-lg border-[#00df9a]  h-60 md:h-96 ' style={{backgroundImage: "url(" + "https://img.freepik.com/free-photo/hand-holding-keys-outdoors_23-2151015223.jpg?t=st=1715059069~exp=1715062669~hmac=d0210341714255a352dfd2872af427c708052d818db486c2e662d7763b96cc39&w=826" + ")",
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat'}}>
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'}}>
   
             </div>
            
