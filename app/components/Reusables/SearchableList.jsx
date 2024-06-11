@@ -47,11 +47,11 @@ const SearchableList = () => {
       />
       {isListVisible && (
         <div className="max-h-60 overflow-y-auto border rounded p-2">
-          <ul className="list-none">
+          <ul className="list-none text-white">
             {filteredItems.map((item, index) => (
               <li 
                 key={index} 
-                className={`py-1 cursor-pointer ${selectedItems.includes(item) ? 'bg-blue-200' : ''}`}
+                className={`py-1 cursor-pointer ${selectedItems.includes(item) ? 'bg-[#164849]' : ''}`}
                 onClick={() => handleSelectItem(item)}
               >
                 {item}
@@ -65,7 +65,7 @@ const SearchableList = () => {
           <h2 className="text-xl font-bold mb-2 container text-white mx-auto">Selected Areas</h2>
           <ul className="list-none flex justify-center space-x-4 items-center">
             {selectedItems.map((item, index) => (
-              <li key={index} className="flex  text-white font-bold items-center justify-between py-1 px-2 border rounded">
+              <li key={index} className="flex bg-white text-[#164849] font-bold items-center justify-between py-1 px-2 border rounded">
                 {item}
                 <button 
                   className="ml-2 text-red-600"

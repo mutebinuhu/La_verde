@@ -118,6 +118,7 @@ const DropdownForm = () => {
             name="studio"
             selected={"Bedrooms"}
             options={[
+
               { value: '1', label: '1'},
               { value: '2', label: '2'},
               { value: '3', label: '3'},
@@ -130,6 +131,7 @@ const DropdownForm = () => {
             name="propertyType"
             selected={"Type"}
             options={[
+              { value: 'Studio', label: 'Studio' },
               { value: 'Villa', label: 'villa' },
               { value: 'Apartment', label: 'Apartment' },
               { value: 'villa', label: 'Villa' },
