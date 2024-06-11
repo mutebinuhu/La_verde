@@ -71,7 +71,7 @@ const SearchableList = () => {
                   className="ml-2 text-red-600"
                   onClick={() => handleRemoveItem(item)}
                 >
-                  <MdCancel />
+                  <MdCancel className='text-[#164849]' />
                 </button>
               </li>
             ))}

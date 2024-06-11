@@ -15,7 +15,7 @@ const Banner2 = () => {
                    <div className='bg-[#164849] bg-opacity-50  px-12 rounded-lg'>
                         <h1 className={ `${nonoSerif.className} text-white text-2xl  md:text-2xl  md:py-4 font-bold`}>Let us Guide you home</h1>
                         <p className='text-white text-sm md:text-xl py-2'>With exclusive offerings in abudhabi with the premier real estate company in the region</p>
-                        <div className='md:flex justify-between items-center w-full py-4'>
+                        <div className='md:flex justify-between items-center w-full py-8'>
                         <DropdownForm/>
                         </div>
                         
