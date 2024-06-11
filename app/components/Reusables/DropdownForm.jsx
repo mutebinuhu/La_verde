@@ -116,6 +116,7 @@ const DropdownForm = () => {
            <Dropdown
             label=""
             name="studio"
+            selected={"Bedrooms"}
             options={[
               { value: '1', label: '1'},
               { value: '2', label: '2'},
@@ -127,12 +128,12 @@ const DropdownForm = () => {
            <Dropdown
             label=""
             name="propertyType"
+            selected={"Type"}
             options={[
               { value: 'Villa', label: 'villa' },
               { value: 'Apartment', label: 'Apartment' },
               { value: 'villa', label: 'Villa' },
               { value: 'TownHouse', label: 'Town House' },
-
 
             ]}
           />
