@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { CiSearch } from "react-icons/ci";
-
+import Pills from '@/components/Pills';
+import SearchableList from './SearchableList';
 
 const Dropdown = ({ label, name, options, selected }) => (
   <div>
     <label htmlFor={name}>{label}</label>
-    <Field as="select" name={name} placeholder={name} className="px-4 md:py-2 py-2 my-1 md:my-0 w-32 rounded font-medium text-[#164849]">
+    <Field as="select" name={name} placeholder={name} className="px-4 md:py-2 py-1 my-1 md:my-0 w-32 rounded font-medium text-[#164849]">
       <option value="" label={selected} />
       {options.map(option => (
         <option key={option.value} value={option.value} label={option.label} />
@@ -140,16 +141,22 @@ const DropdownForm = () => {
           <div>
             
           </div>
-          <div className='flex w-full justify-center items-center mt-8'>
-            <Field  name="search" className="outline-none border-none px-4 py-2 w-full rounded" placeholder="Search listings by location"></Field>
+            {/**
+             * 
+             * <Field  name="search" className="outline-none border-none px-4 py-2 w-full rounded" placeholder="Search listings by location"></Field>
             <ErrorMessage name="search" component="div" className="error" />
-        </div>
-          <div className='mt-4 md:mt-6 flex justify-center w-full items-center'>
+             */}
+             <SearchableList/>
+          <div className='mt-2 md:mt-6 flex justify-center w-full items-center'>
           <button type="submit"  name='submit' className='bg-white text-lg items-center flex space-x-4  w-full md:w-1/3 font-bold text-[#164849]  rounded py-2 ' disabled={isSubmitting}>
              <span><CiSearch className='text-2xl'/></span>
              <span className=''>Find Your New Home</span>
           </button>
           </div>
+          <div className='flex w-full justify-center items-center mt-'>
+
+          </div>
+
         </Form>
       )}
     </Formik>

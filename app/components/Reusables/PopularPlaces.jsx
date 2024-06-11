@@ -12,7 +12,7 @@ const CardInnerHeading = ({title, subTitle}) =>{
 }
 const PopularPlaces = () =>{
     return(
-        <section className="container mx-auto mx-4 tex-center mb-96 md:mb-0">
+        <section className="container mx-auto mx-4 mt-24 md:-mt-32 tex-center mb-96 md:mb-0">
             <h2 className={`${nonoSerif.className} text-4xl text-bold text-center py-8`}>Most Popular Areas In Abudhabi</h2>
             <p className='text-center py-8'>Own a home in one of the most popular and luxurious places in Abudhabi. Get yourself a home in <strong>Reem Island,</strong> <strong>Yas Island</strong>, <strong>Sadiyaat  Island, </strong> </p>
             <div  className="md:flex mx-4 md:mx-12">

@@ -28,9 +28,11 @@ const Navbar = () => {
   return (
     <div className='bg-gray-100  w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
-      <h1 className='w-full text-3xl font-bold'>
+     <Link href="/">
+     <h1 className='w-full text-3xl font-bold'>
         <Image src="/la_verde_logo_rem_bg.png" width={80} height={50} className='py-2' />
       </h1>
+     </Link>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center font-bold '>
@@ -66,10 +68,14 @@ const Navbar = () => {
         }
       >
         {/* Mobile Logo */}
+        <Link href="/">
         <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>
-        <Image src="/la_verde_png.jpg" width={80} height={50} className='py-2' />
+       
+          <Image src="/la_verde_png.jpg" width={80} height={50} className='py-2' />
+   
 
         </h1>
+        </Link>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (

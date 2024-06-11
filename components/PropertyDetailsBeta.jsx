@@ -2,6 +2,7 @@ import React from 'react';
 import ImagesGallery from './ImagesGallery';
 import "../app/globals.css";
 import { redirect } from 'next/navigation'
+import ImagesSlideShow from './ImagesSlideShow';
  
 async function fetchPropertyId(id) {
  
@@ -41,7 +42,12 @@ try {
     <div className="container mx-auto p-4">
       
       {/* Image Gallery */}
-      <ImagesGallery images={property.images} />
+    <div className='hidden md:block'>
+    <ImagesGallery images={property.images} />
+    </div>
+      <div className='md:hidden'>
+      <ImagesSlideShow   images={property.images}/>
+      </div>
 
       {/* Description */}
       <h1 className="text-4xl font-bold mb-4">Property Details</h1>

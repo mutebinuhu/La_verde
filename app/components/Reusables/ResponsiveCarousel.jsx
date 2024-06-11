@@ -6,7 +6,7 @@
       const { responsive } = items;
       return (
         <div className={styles.container}>
-         
+       
         </div>
       );
     }
