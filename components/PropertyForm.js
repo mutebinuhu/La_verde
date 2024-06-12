@@ -26,6 +26,7 @@ const PropertyForm = () => {
     descriptionArabic: '',
     images: [],
     amenities: [],
+    area:""
   };
 
   const validationSchema = Yup.object().shape({
@@ -129,6 +130,11 @@ const PropertyForm = () => {
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
               <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
               <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="area" className="block text-sm font-medium text-gray-700">Area</label>
+              <Field type="text" name="area" className="mt-1 block w-full border border-1 p-2 rounded" />
+              <ErrorMessage name="area" component="div" className="text-red-500 text-sm" />
             </div>
             <div className='flex justify-between space-x-4'>
               <div className="mb-4 w-1/2">
