@@ -6,7 +6,7 @@ import ImagesSlideShow from './ImagesSlideShow';
  
 async function fetchPropertyId(id) {
  
-   const res = await fetch(process.env.API_URL+"api/properties/"+id)
+   const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties/"+id)
   if (!res.ok) return undefined
   return res.json()
   

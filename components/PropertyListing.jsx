@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropertyDetails from './PropertyDetails';
 async function getData() {
 
-    const res = await fetch(process.env.API_URL+"api/properties")
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties")
     console.log("test====", res);
     
     // The return value is *not* serialized
