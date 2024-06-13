@@ -43,10 +43,10 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       
       {/* Image Gallery */}
     <div className='hidden md:block'>
-    <ImagesGallery images={property.images} />
+    <ImagesGallery images={res.data.images} />
     </div>
       <div className='md:hidden'>
-      <ImagesSlideShow   images={property.images}/>
+      <ImagesSlideShow   images={res.data.images}/>
       </div>
 
       {/* Description */}
