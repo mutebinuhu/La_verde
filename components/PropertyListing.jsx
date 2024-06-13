@@ -23,7 +23,7 @@ const PropertyListing = async () => {
 
   return (
     <div className=" mt-10">
-      <h1 className="text-3xl font-bold mb-5 text-center">Property Listings pages</h1>
+      <h1 className="text-3xl font-bold mb-5 text-center">Property Listing</h1>
       <div className="">
         {
             properties.data.map(property => (
