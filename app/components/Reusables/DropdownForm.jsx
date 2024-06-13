@@ -5,6 +5,9 @@ import * as Yup from 'yup';
 import { CiSearch } from "react-icons/ci";
 import Pills from '@/components/Pills'; // Make sure this path is correct
 import SearchableList from './SearchableList'; // Adjust the import path as necessary
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
+
+
 
 
 const Dropdown = ({ label, name, options, selected }) => (
@@ -67,6 +70,7 @@ const Dropper = () => {
 }
 
 const DropdownForm = () => {
+  const router = useRouter();
   return (
     <Formik
       initialValues={{ 
@@ -74,11 +78,11 @@ const DropdownForm = () => {
         type: '', 
         price: '', 
         sqfeet: '', 
-        comOrRes: '', 
+        category: '', 
         selectedItems: [] 
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={async (values, { setSubmitting }) => {
         console.log("values",values);
        /* setTimeout(() => {
           // Handle form submission logic
@@ -87,6 +91,22 @@ const DropdownForm = () => {
           setSubmitting(false);
         }, 400);
         */
+       try {
+       /*
+ const res = await fetch("http://localhost:3000/api/search?category=residential")
+        const data = await res.json();
+        console.log("response", data);
+       */
+        if(values.selectedItems.length>1){
+          alert("many items")
+        }
+        const query = new URLSearchParams(values).toString();
+        console.log("query====", query);
+        //router.push(`http://localhost:3000/properties?${query}`);
+        router.push(`http://localhost:3000/properties`);
+       } catch (error) {
+        console.log("error", error)
+       }
        setSubmitting(false)
       }}
     >
@@ -97,15 +117,15 @@ const DropdownForm = () => {
               <Dropdown
                 label=""
                 name="buyorsell"
-                selected={"Buy Or Sell"}
+                selected={"Buy Or Rent"}
                 options={[
                   { value: 'buy', label: 'Buy' },
-                  { value: 'sell', label: 'Sell' },
+                  { value: 'rent', label: 'rent' },
                 ]}
               />
               <Dropdown
                 label=""
-                name="comOrRes"
+                name="category"
                 selected={"Select Property Type"}
                 options={[
                   { value: 'commercial', label: 'Commercial' },
@@ -116,8 +136,8 @@ const DropdownForm = () => {
             <div className='flex space-x-4 '>
               <Dropdown
                 label=""
-                name="price"
-                selected={"Price"}
+                name="minPrice"
+                selected={"Min Price"}
                 options={[
                   { value: '50000', label: '50000' },
                   { value: '100000', label: '100000' },
@@ -126,14 +146,15 @@ const DropdownForm = () => {
               />
               <Dropdown
                 label=""
-                name="sqfeet"
-                selected={"Sq Ft"}
+                name="maxPrice"
+                selected={"Max Price"}
                 options={[
-                  { value: '50000', label: '50000' },
+                  { value: '500000', label: '500000' },
                   { value: '100000', label: '100000' },
                   { value: '150000', label: '150000' }
                 ]}
               />
+              
             </div>
             <div className='flex space-x-4 '>
               <Dropdown
@@ -152,10 +173,27 @@ const DropdownForm = () => {
                 name="type"
                 selected={"Choose Type"}
                 options={[
-                  { value: 'Studio', label: 'Studio' },
-                  { value: 'Villa', label: 'Villa' },
-                  { value: 'Apartment', label: 'Apartment' },
-                  { value: 'TownHouse', label: 'Town House' },
+                  { value: 'studio', label: 'Studio' },
+                  { value: 'villa', label: 'Villa' },
+                  { value: 'apartment', label: 'Apartment' },
+                  { value: 'townHouse', label: 'Town House' },
+                  {value: 'residentialFloor', label: 'Residential Floor'},
+                  { value: 'residentialBuilding', label: 'Residential Building'},
+                  { value: 'pentHouse', label: 'Pent House'},
+                  {value: 'villaCompound', label: 'Villa Compound'}
+        
+                ]}
+              />
+            </div>
+            <div className='w-full'>
+            <Dropdown
+                label=""
+                name="sqfeet"
+                selected={"Sq Ft"}
+                options={[
+                  { value: '50000', label: '50000' },
+                  { value: '100000', label: '100000' },
+                  { value: '150000', label: '150000' }
                 ]}
               />
             </div>

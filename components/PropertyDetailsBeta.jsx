@@ -12,14 +12,14 @@ async function fetchPropertyId(id) {
   
 }
 const PropertyDetailsBeta = async ({propertyId}) => {
-  console.log("PROPERTYid----------------------------------------====",propertyId )
-try {
-  const res =  await fetchPropertyId(propertyId);
 
-  console.log("ressss", res);
-} catch (error) {
-  console.log("response=======================", error.message)
-}
+
+
+  const res =  await fetchPropertyId(propertyId);
+  console.log("data", res);
+  
+ 
+
 
   const property = {
     images: [
@@ -51,11 +51,12 @@ try {
 
       {/* Description */}
       <h1 className="text-4xl font-bold mb-4">Property Details</h1>
+      <p>{res.data.title} | {res.data.address}</p>
 
       <div className="mb-4">
         <h2 className="text-2xl font-semibold mb-2">Description</h2>
-        <p>AED {}</p>
-        <p>{property.description}</p>
+        <p>AED {res.data.price}</p>
+        <p>{res.data.descriptionEnglish}</p>
 
       </div>
 
@@ -63,7 +64,7 @@ try {
       <div className="mb-4">
         <h2 className="text-2xl font-semibold mb-2">Amenities</h2>
         <ul className="list-disc pl-5">
-          {property.amenities.map((amenity, index) => (
+          {res.data.amenities.map((amenity, index) => (
             <li key={index}>{amenity}</li>
           ))}
         </ul>
@@ -72,8 +73,9 @@ try {
       {/* Details */}
       <div className="mb-4">
         <h2 className="text-2xl font-semibold mb-2">Details</h2>
-        <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
-        <p><strong>Date Posted:</strong> {new Date(property.datePosted).toLocaleDateString()}</p>
+        <p><strong>Bedrooms:</strong> {res.data.bedrooms}</p>
+        <p><strong>Bathrooms:</strong> {res.data.bathrooms}</p>
+        <p><strong>Date Posted:</strong> {new Date(res.data.createdAt).toLocaleDateString()}</p>
       </div>
 
       {/* Call to Action Buttons */}

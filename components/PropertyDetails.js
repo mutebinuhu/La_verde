@@ -62,7 +62,7 @@ const PropertyDetails = ({ property }) => {
                 </>
             ))}
           </ul>
-          <p className="text-xl font-semibold mb-2">Price: AED {property.price}</p>
+          <p className="text-xl font-semibold mb-2 text-3xl font-bold">Price: AED {property.price}</p>
           </Link>
 
           <div className="md:flex md:space-x-2 ">

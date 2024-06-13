@@ -4,7 +4,7 @@ export default async function handler (req, res){
     try {
         const filters = req.query;
         const query = {};
-    
+
         if (filters.category) query.category = filters.category;
         if (filters.subCategory) query.subCategory = filters.subCategory;
         if (filters.purpose) query.purpose = filters.purpose;
