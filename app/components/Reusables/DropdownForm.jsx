@@ -97,9 +97,7 @@ const DropdownForm = () => {
         const data = await res.json();
         console.log("response", data);
        */
-        if(values.selectedItems.length>1){
-          alert("many items")
-        }
+        
         const query = new URLSearchParams(values).toString();
         console.log("query====", query);
         //router.push(`http://localhost:3000/properties?${query}`);
