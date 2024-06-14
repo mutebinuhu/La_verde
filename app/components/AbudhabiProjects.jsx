@@ -34,7 +34,7 @@ const abuhdabiProjectDetails =[
 ]
 const Project = ({name, image, plan, status, location, units}) =>{
     return(
-<Card className="py-4 mt-4">
+<Card className="py-4 mt-4  transform transition-transform hover:scale-105">
   <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
     <p className="text-tiny uppercase font-bold">{status}</p>
     <small className="text-default-500"><span className="text-bold">PAYMENT PLAN </span>{plan}</small>

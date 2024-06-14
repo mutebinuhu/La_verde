@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { nonoSerif } from '@/utils/fonts';
 const Project = ({image, name, paymentPlan, units, status, date}) =>{
   return(
-    <Link href="/contact-us" className='z-40 '>
+    <Link href="/contact-us" className='z-40  transform transition-transform hover:scale-105 '>
     <section className='w-full h-[300px]  col-span-12 sm:col-span-7 -z-10'>
    <Card  className="w-full h-[300px] col-span-12  mt-3 md:mt-0 sm:col-span-7 -z-10">
      <CardHeader className="absolute z-10 top-1 flex-col items-start">

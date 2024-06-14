@@ -88,7 +88,7 @@ const PropertyDetails = ({ property }) => {
               href="/contact-us"
               className="flex mb-2   items-center justify-center bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700 transition duration-300"
             >
-              <FaInfoCircle className="mr-2" /> Contact Us Now
+              <FaInfoCircle className="mr-2" /> Contact Us
             </Link>
           </div>
      

@@ -80,13 +80,13 @@ const PropertyDetailsBeta = async ({propertyId}) => {
 
       {/* Call to Action Buttons */}
       <div className="flex space-x-4">
-        <a href="https://wa.me/?text=I'm interested in the property" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-4 py-2 rounded-md">
+        <a href={`https://wa.me/971506144930?text=I'm interested in ${property.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white px-4 py-2 rounded-md">
           WhatsApp
         </a>
-        <a href="mailto:info@example.com" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+        <a href={`mailto:marketing@laverde.ae?subject=Inquiry about ${property.title}`} className="bg-blue-500 text-white px-4 py-2 rounded-md">
           Email
         </a>
-        <a href="tel:+123456789" className="bg-yellow-500 text-white px-4 py-2 rounded-md">
+        <a href="tel:+971508244755" className="bg-yellow-500 text-white px-4 py-2 rounded-md">
           Call
         </a>
         <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-md">
