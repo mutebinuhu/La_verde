@@ -10,9 +10,10 @@ const ServiceCard = ({info, image, url, callToAction, title}) => {
         <Card className="md:w-1/3 w-full p-8   mt-6">
         <CardHeader className="flex justify-center">
           <div className=' h-32 md:h-32 rounded-full w-32' style={{backgroundImage: "url(" + url + ")",
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat'}}>
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'}}
+            >
 
           </div>
        
