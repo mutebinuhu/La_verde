@@ -13,7 +13,7 @@ import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 const Dropdown = ({ label, name, options, selected }) => (
   <div>
     <label htmlFor={name}>{label}</label>
-    <Field as="select" name={name} className="px-4 md:py-2 py-1 my-1 md:my-0 w-32 rounded font-medium text-[#164849]">
+    <Field as="select" name={name} className="px-4  py-2 my-1 md:my-0 w-32 rounded font-medium text-[#164849]">
       <option value="" label={selected} />
       {options.map((option, index) => (
         <option key={index} value={option.value}>
