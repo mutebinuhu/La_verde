@@ -38,7 +38,7 @@ const SearchForm = () => {
     if (maxSize) query.maxSize = maxSize;
     const newQuery = new URLSearchParams(query).toString();
     // Ensure router.push is receiving correct arguments
-    router.push('http://localhost:3000/search?'+newQuery);
+    router.push('https://laverde.ae/search?'+newQuery);
   };
 
   return (

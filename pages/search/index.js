@@ -14,7 +14,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const Search = () => {
   const router = useRouter();
   const { query } = router;
-  const { data, error } = useSWR(() => query ? `/api/properties/search?${new URLSearchParams(query)}` : null, fetcher);
+  const { data, error } = useSWR(() => query ? `https://laverde.ae/api/properties/search?${new URLSearchParams(query)}` : null, fetcher);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
