@@ -209,8 +209,10 @@ const PropertyForm = () => {
                   {locationList && locationList.map((loca)=>  <option value={loca.name} label={loca.name} />)}
                 </Field>
                 <ErrorMessage name="area" component="div" className="text-red-500 text-sm" />
-              <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
+                <div className='my-4'>
+                <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
 
+                </div>
               </div>
             <div className='flex justify-between space-x-4'>
               <div className="mb-4 w-1/2">
