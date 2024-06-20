@@ -110,8 +110,8 @@ const SearchForm = () => {
           onChange={(e) => setMaxPrice(e.target.value)}
           className="p-2 border rounded-md"
         />
-        {/**
-         * <input
+     
+        <input
           type="number"
           placeholder="Min Bedrooms"
           value={minBedrooms}
@@ -125,9 +125,10 @@ const SearchForm = () => {
           onChange={(e) => setMaxBedrooms(e.target.value)}
           className="p-2 border rounded-md"
         />
-         * 
-         */}
-        <input
+      
+       {/**
+        * 
+        *  <input
           type="number"
           placeholder="Min Bathrooms"
           value={minBathrooms}
@@ -141,6 +142,8 @@ const SearchForm = () => {
           onChange={(e) => setMaxBathrooms(e.target.value)}
           className="p-2 border rounded-md"
         />
+        * 
+        */}
         {/**
          * <input
           type="number"
