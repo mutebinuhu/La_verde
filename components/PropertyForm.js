@@ -1,14 +1,83 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { TiTick } from "react-icons/ti";
 
+
+
 const PropertyForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const [showLocationComponent,setShowLocationComponent] = useState(false)
+  const [locationList, setLocationList] = useState([])
 
+  const getLocations = async () =>{
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations')
+      const data = await res.json();
+      setLocationList(data.data)
+      console.log("locations", data)
+    } catch (error) {
+      console.log("locerr", error)
+    }
+  }
+
+  useEffect(()=>{
+    getLocations();
+  }, [])
+  const AddLocation = ({handleCancel}) => {
+    const [location, setLocation] = useState('');
+    const handleSubmit = async (e) =>{
+      e.preventDefault();
+      try {
+        const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations', {
+          method:"POST",
+          headers:{
+            'Content-Type':'application/json'
+          },
+          body:JSON.stringify({
+            name:location
+          })
+        });
+        const data = await res.json();
+        if(data.success){
+          alert("Location Added")
+          getLocations();
+        }
+        console.log("res", data)
+      } catch (error) {
+        console.log("err", error)
+      }
+    }
+  
+    return  (
+         <>
+          <div className='flex justify-center  items-center mx-4'>
+          <form onSubmit={handleSubmit} className="p-4 bg-gray-300 shadow-md w-full rounded-md">
+        <div className="text-center">
+        <input
+            type="text"
+            placeholder="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="p-2 border text rounded-md"
+          />
+          </div>
+          <div className='py-4'>
+          <button type="submit"  className="bg-blue-500 mx-2 text-white py-2 px-4 rounded hover:bg-blue-600">
+                Submit
+              </button>
+              <button onClick={handleCancel}  className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
+                cancel
+              </button>
+          </div>
+          </form>
+          </div>
+         </>
+    )
+  }
   const initialValues = {
     category: '',
     subCategory: '',
@@ -131,11 +200,18 @@ const PropertyForm = () => {
               <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
               <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
             </div>
-            <div className="mb-4">
-              <label htmlFor="area" className="block text-sm font-medium text-gray-700">Area</label>
-              <Field type="text" name="area" className="mt-1 block w-full border border-1 p-2 rounded" />
-              <ErrorMessage name="area" component="div" className="text-red-500 text-sm" />
-            </div>
+       
+            <div className="mb-4 w-full">
+                <label htmlFor="Area" className="block text-sm font-medium text-gray-700">Area</label>
+                <Field as="select" name="area" id="area" className="mt-1 block w-full border border-1 p-2 rounded">
+                <option value="" label="Select Area" />
+
+                  {locationList && locationList.map((loca)=>  <option value={loca.name} label={loca.name} />)}
+                </Field>
+                <ErrorMessage name="area" component="div" className="text-red-500 text-sm" />
+              <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
+
+              </div>
             <div className='flex justify-between space-x-4'>
               <div className="mb-4 w-1/2">
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700">Category</label>
@@ -259,6 +335,10 @@ const PropertyForm = () => {
           </Form>
         )}
       </Formik>
+{
+  showLocationComponent && <div className='absolute top-0 text-center h-96'><AddLocation handleCancel={()=>setShowLocationComponent(false)}/></div>
+}
+      
     </div>
   );
 };
