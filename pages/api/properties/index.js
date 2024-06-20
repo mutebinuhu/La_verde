@@ -1290,9 +1290,7 @@ import { image } from '@nextui-org/react';
                 const properties = await Property.find(query)
                 res.status(200).json({ success: true, data: properties });
             }else{
-            const properties = await Property.find({approved:true})
-            res.status(200).json({ success: true, data: properties });
-
+          
 
             }
           } catch (error) {

@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 
+
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {

@@ -25,6 +25,9 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  location:{
+    type: String
+  },
   areaSquare:{
     type: Number,
     required: true

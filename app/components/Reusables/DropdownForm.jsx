@@ -100,8 +100,8 @@ const DropdownForm = () => {
         
         const query = new URLSearchParams(values).toString();
         console.log("query====", query);
-        //router.push(`http://localhost:3000/properties?${query}`);
-        router.push(process.env.NEXT_PUBLIC_API_URL+'properties');
+        router.push(`http://localhost:3000/properties?${query}`);
+        //router.push(process.env.NEXT_PUBLIC_API_URL+'properties');
        } catch (error) {
         console.log("error", error)
        }
