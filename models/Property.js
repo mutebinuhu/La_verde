@@ -52,10 +52,7 @@ const propertySchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  size: {
-    type: Number,
-    required: true
-  },
+  
   descriptionEnglish: {
     type: String,
     required: true

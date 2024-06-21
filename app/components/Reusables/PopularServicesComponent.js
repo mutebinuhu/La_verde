@@ -1,6 +1,7 @@
 "use client";
 import { Card, CardHeader } from "@nextui-org/card";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 
@@ -46,40 +47,47 @@ const PopularServicesComponent = ()=>{
          <div id="" ref={sectionRef}>
             <div  className="md:flex mx-4 md:mx-12">
                 <div className="w-full md:w-1/3 md:mx-2">   
-                <Card className="col-span-12 sm:col-span-4 h-[300px] hover:bg-red-200 ">
-                    <CardHeader className="absolute z-10 top-1 flex-col !items-start ">
-                        <CardInnerHeading title="Reem Island" subTitle="500,000 AED"/>  
-                    </CardHeader>
-                <Image
-                    removeWrapper
-                    alt="Card background"
-                    width={1000}
-                    height={1000}
-                    className="z-0 w-full h-full object-cover"
-                    src="/al-reem-island-adgm.jpg"
-                />
-      </Card>
+                <Link href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Al+Reem+Island`}>
+                        <Card className="col-span-12 sm:col-span-4 h-[300px] hover:bg-red-200 ">
+                            <CardHeader className="absolute z-10 top-1 flex-col !items-start ">
+                                <CardInnerHeading title="Reem Island" subTitle="500,000 AED"/>  
+                            </CardHeader>
+                        <Image
+                            removeWrapper
+                            alt="Card background"
+                            width={1000}
+                            height={1000}
+                            className="z-0 w-full h-full object-cover"
+                            src="/al-reem-island-adgm.jpg"
+                        />
+                    </Card>
+                </Link>
                 </div>
                 <div className="w-full md:w-2/3 mt-4 md:mt-0">
+                <Link href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Yas+Island`}>
+
                 <Card className="col-span-12 sm:col-span-4 h-[300px]">
                     <CardHeader className="absolute z-10 top-1 flex-col !items-start ">
 
                         <CardInnerHeading title="Yas Island" subTitle="600,000 AED"/>  
                         
                     </CardHeader>
-                <Image
-                    removeWrapper
-                    alt="Card background"
-                    width={1000}
-                    height={1000}
-                    className="z-0 w-full h-full object-cover"
-                    src="/yas1.jpg"
-                />
-      </Card>
+                    <Image
+                        removeWrapper
+                        alt="Card background"
+                        width={1000}
+                        height={1000}
+                        className="z-0 w-full h-full object-cover"
+                        src="/yas1.jpg"
+                    />
+                </Card>
+                </Link>
                 </div>
             </div>
             <div  className="md:flex md h-72 mt-4  mx-4 md:mx-12">
-                <div className="w-full md:w-2/3 md:mx-2">   
+                
+                <Link href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Saadiyaat+Island`} className="w-full md:w-2/3 md:mx-2">
+                <div className="">   
                 <Card className="col-span-12 sm:col-span-4 h-[300px]">
                     <CardHeader className="absolute z-10 top-1 flex-col !items-start w-full ">
                         <CardInnerHeading title=" Saadiyaat Island" subTitle="600,000 AED"/>  
@@ -94,7 +102,9 @@ const PopularServicesComponent = ()=>{
                 />
       </Card>
                 </div>
-                <div className="w-full mt-4 md:mt-0 md:w-1/3">
+                </Link>
+                <Link className="w-full mt-4 md:mt-0 md:w-1/3" href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Al+Bateen`}>
+                <div className="">
                 <Card className="col-span-12 sm:col-span-4 h-[300px]">
                     <CardHeader className="absolute z-10 top-1 flex-col !items-start ">
                     <CardInnerHeading title="AL BATEEN" subTitle="178,000 AED"/>  
@@ -109,6 +119,7 @@ const PopularServicesComponent = ()=>{
                 />
       </Card>
                 </div>
+                </Link>
             </div>
             </div>
         </>

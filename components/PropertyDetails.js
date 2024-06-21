@@ -20,7 +20,7 @@ const PropertyDetails = ({ property }) => {
 
   return (
 
-    <div className="max-w-4xl md:mx-auto p-4 mt-10 bg-white rounded-lg w-full  overflow-hidden">
+    <div className="max-w-4xl md:mx-auto p-4 bg-white rounded-lg w-full  overflow-hidden">
       <div className="md:flex ">
         {/* Slideshow Section */}
         <div className="w-full md:w-2/4 relative rounded-lg">

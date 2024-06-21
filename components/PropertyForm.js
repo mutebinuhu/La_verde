@@ -90,7 +90,6 @@ const PropertyForm = () => {
     price: '',
     bedrooms: '',
     bathrooms: '',
-    size: '',
     descriptionEnglish: '',
     descriptionArabic: '',
     images: [],
@@ -110,7 +109,6 @@ const PropertyForm = () => {
     price: Yup.number().required('Price is required'),
     bedrooms: Yup.number().required('Number of bedrooms is required'),
     bathrooms: Yup.number().required('Number of bathrooms is required'),
-    size: Yup.number().required('Size is required'),
     descriptionEnglish: Yup.string().required('Description in English is required'),
     descriptionArabic: Yup.string().required('Description in Arabic is required'),
     amenities: Yup.array().of(Yup.string()),
@@ -197,12 +195,18 @@ const PropertyForm = () => {
       >
         {({ setFieldValue, isSubmitting, touched, errors }) => (
           <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
-            <div className="mb-4">
+             <div className='flex justify-between space-x-4'>
+            <div className="mb-4 w-1/2">
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
               <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
               <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
             </div>
-       
+            <div className="mb-4 w-1/2">
+                <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
+                <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
+                <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
+              </div>
+              </div>
             <div className="mb-4 w-full">
                 <label htmlFor="Area" className="block text-sm font-medium text-gray-700">Location</label>
                 <Field as="select" name="location" id="area" className="mt-1 block w-full border border-1 p-2 rounded">
@@ -290,16 +294,7 @@ const PropertyForm = () => {
               </div>
             </div>
             <div className='flex justify-between space-x-4'>
-              <div className="mb-4 w-1/2">
-                <label htmlFor="size" className="block text-sm font-medium text-gray-700">Size</label>
-                <Field type="number" name="size" className="mt-1 block w-full border border-1 p-2 rounded" />
-                <ErrorMessage name="size" component="div" className="text-red-500 text-sm" />
-              </div>
-              <div className="mb-4 w-1/2">
-                <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
-                <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
-                <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
-              </div>
+              
             </div>
             <div className="mb-4">
               <label htmlFor="descriptionEnglish" className="block text-sm font-medium text-gray-700">Description (English)</label>

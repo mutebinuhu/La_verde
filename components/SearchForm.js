@@ -13,6 +13,7 @@ const SearchForm = () => {
   const [maxPrice, setMaxPrice] = useState('');
   const [minBedrooms, setMinBedrooms] = useState('');
   const [maxBedrooms, setMaxBedrooms] = useState('');
+  const [location, setLocation] = useState('');
   const [minBathrooms, setMinBathrooms] = useState('');
   const [maxBathrooms, setMaxBathrooms] = useState('');
   const [minSize, setMinSize] = useState('');
@@ -24,6 +25,8 @@ const SearchForm = () => {
     const query = {};
 
     if (category) query.category = category;
+    if (location) query.location = category;
+
     if (subCategory) query.subCategory = subCategory;
     if (purpose) query.purpose = purpose;
     if (completionStatus) query.completionStatus = completionStatus;

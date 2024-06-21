@@ -44,7 +44,7 @@ const { data, error } = useSWR(()=> {
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
           <p className='text-center text-2xl'>Search Results</p>
           <div className="containr mx-auto">
-          <div className='md:flex justify-center items-center w-full py-8 '>
+          <div className='md:flex justify-center items-center w-full py-4 '>
               <Filters onFilterChange={handleFilterChange} />
           </div>
           </div>
