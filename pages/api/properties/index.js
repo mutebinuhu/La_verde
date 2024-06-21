@@ -1255,7 +1255,8 @@ import { image } from '@nextui-org/react';
         case 'GET':
           try {
             const filters = req.query;
-            const query = {};
+            const query = { approved: true }; // Ensure only approved properties are returned
+
            
             
         if (filters.category) query.category = filters.category;

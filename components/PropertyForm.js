@@ -95,7 +95,8 @@ const PropertyForm = () => {
     descriptionArabic: '',
     images: [],
     amenities: [],
-    area:""
+    //area:"",
+    location:""
   };
 
   const validationSchema = Yup.object().shape({
@@ -138,7 +139,8 @@ const PropertyForm = () => {
 
       values.images = uploadedImageURLs;
 
-      const res = await fetch("https://laverde.ae/api/properties", {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties", {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -202,13 +204,13 @@ const PropertyForm = () => {
             </div>
        
             <div className="mb-4 w-full">
-                <label htmlFor="Area" className="block text-sm font-medium text-gray-700">Area</label>
-                <Field as="select" name="area" id="area" className="mt-1 block w-full border border-1 p-2 rounded">
-                <option value="" label="Select Area" />
+                <label htmlFor="Area" className="block text-sm font-medium text-gray-700">Location</label>
+                <Field as="select" name="location" id="area" className="mt-1 block w-full border border-1 p-2 rounded">
+                <option value="" label="Select Location" />
 
                   {locationList && locationList.map((loca)=>  <option value={loca.name} label={loca.name} />)}
                 </Field>
-                <ErrorMessage name="area" component="div" className="text-red-500 text-sm" />
+                <ErrorMessage name="location" component="div" className="text-red-500 text-sm" />
                 <div className='my-4'>
                 <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
 

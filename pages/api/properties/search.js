@@ -10,6 +10,7 @@ export default async function handler(req, res) {
   if (query.category) {
     searchCriteria.category = query.category;
   }
+
   if (query.location) {
     searchCriteria.location = query.location;
   }
