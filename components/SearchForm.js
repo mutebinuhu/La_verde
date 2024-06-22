@@ -45,7 +45,7 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4  shadow-md w-full rounded-md">
+    <form onSubmit={handleSubmit} className=" shadow-md w-full rounded-md">
       <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-6">
      {/** <input
           type="text"
