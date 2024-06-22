@@ -58,7 +58,7 @@ const SearchForm = () => {
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          className="p-2 border rounded-md"
+          className="p-2.5 border rounded-md"
         >
           <option value="">Category</option>
           <option value="residential">Residential</option>
@@ -67,7 +67,7 @@ const SearchForm = () => {
         <select
           value={subCategory}
           onChange={(e) => setSubCategory(e.target.value)}
-          className="p-2 border rounded-md"
+          className="p-2.5 border rounded-md"
         >
           <option value="">Sub Category</option>
           <option value="villa">Villa</option>
@@ -83,7 +83,7 @@ const SearchForm = () => {
         <select
           value={purpose}
           onChange={(e) => setPurpose(e.target.value)}
-          className="p-2 border rounded-md"
+          className="p-2.5 border rounded-md"
         >
           <option value="">Purpose</option>
           <option value="sale">Sale</option>
