@@ -45,8 +45,16 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-white shadow-md w-full rounded-md">
-      <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-3">
+    <form onSubmit={handleSubmit} className="p-4  shadow-md w-full rounded-md">
+      <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+     {/** <input
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="p-2 border rounded-md"
+        />
+        */} 
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -92,13 +100,7 @@ const SearchForm = () => {
           <option value="readyPrimary">Ready Primary</option>
           <option value="readySecondary">Ready Secondary</option>
         </select>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="p-2 border rounded-md"
-        />
+       
         <input
           type="number"
           placeholder="Min Price"
@@ -113,7 +115,9 @@ const SearchForm = () => {
           onChange={(e) => setMaxPrice(e.target.value)}
           className="p-2 border rounded-md"
         />
-     
+      {/**
+        * 
+        * 
         <input
           type="number"
           placeholder="Min Bedrooms"
@@ -129,9 +133,7 @@ const SearchForm = () => {
           className="p-2 border rounded-md"
         />
       
-       {/**
-        * 
-        *  <input
+       <input
           type="number"
           placeholder="Min Bathrooms"
           value={minBathrooms}
@@ -166,9 +168,11 @@ const SearchForm = () => {
          */}
         
       </div>
-      <button type="submit" className="mt-4 w-full bg-[#164849] text-white py-2 rounded-md">
+     <div className='text-center'>
+     <button type="submit" className="mt-4 px-12 py-2 text-2xl font-bold bg-[#164849] text-white py-2 rounded-md">
         Search
       </button>
+     </div>
     </form>
   );
 };

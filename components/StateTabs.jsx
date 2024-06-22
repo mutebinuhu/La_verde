@@ -7,7 +7,7 @@ import { nonoSerif } from '@/utils/fonts';
 const StateTabs = () => {
     return (
        
-   <section className='py-16 container mx-auto px-4'>
+   <section className=' container mx-auto px-4'>
     <div className='py-12 text-center' >
     <h2 className={`${nonoSerif.className} text-4xl text-bold py-4 md:py-8 `}>Explore new projects in the UAE</h2>
     <p className='text-xl'>Discover the latest off-plan and ready properties in UAE.</p>
