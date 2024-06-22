@@ -1,9 +1,10 @@
 // components/ImageCarousel.js
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { GiCancel } from 'react-icons/gi';
+import { useSwipeable } from 'react-swipeable';
 
-const ImageCarousel = ({ images, handleClick}) => {
+const  SwipeImages = ({ images, handleClick }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -14,22 +15,33 @@ const ImageCarousel = ({ images, handleClick}) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: nextImage,
+    onSwipedRight: prevImage,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true
+  });
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75">
+    <div
+      {...handlers}
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
+    >
       <button
-        className="absolute left-24 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
+        className="absolute left-0 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
         onClick={prevImage}
       >
         &lt;
       </button>
-     <div className='text-right relative' onClick={handleClick}>
-        <GiCancel className='text-red-500 text-3xl right-0 absolute' />
-     <img
+      <div  onClick={handleClick}>
+      <GiCancel className='text-red-500 text-3xl right-0 absolute' />
+      <img
         src={images[currentIndex]}
         alt={`Image ${currentIndex + 1}`}
         className="max-h-screen max-w-screen"
       />
-     </div>
+      </div>
+
       <button
         className="absolute right-0 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
         onClick={nextImage}
@@ -40,4 +52,4 @@ const ImageCarousel = ({ images, handleClick}) => {
   );
 };
 
-export default ImageCarousel;
+export default SwipeImages;

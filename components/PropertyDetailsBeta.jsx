@@ -43,11 +43,11 @@ const PropertyDetailsBeta = async ({propertyId}) => {
     <div className="container mx-auto p-4">
       
       {/* Image Gallery */}
-    <div className='hidden md:block'>
+    <div className='md:block'>
       
    {<ImagesGallery images={res.data.images} />}
     </div>
-      <div className='md:hidden'>
+      <div className='hidden'>
       <ImagesSlideShow   images={res.data.images}/>
       </div>
 
