@@ -3,6 +3,7 @@ import ImagesGallery from './ImagesGallery';
 import "../app/globals.css";
 import { redirect } from 'next/navigation'
 import ImagesSlideShow from './ImagesSlideShow';
+import ImageCarousel from './ImageCoursel';
  
 async function fetchPropertyId(id) {
  
@@ -37,13 +38,14 @@ const PropertyDetailsBeta = async ({propertyId}) => {
     bedrooms: 3,
     datePosted: '2024-05-20',
   };
-
+ 
   return (
     <div className="container mx-auto p-4">
       
       {/* Image Gallery */}
     <div className='hidden md:block'>
-    <ImagesGallery images={res.data.images} />
+      
+   {<ImagesGallery images={res.data.images} />}
     </div>
       <div className='md:hidden'>
       <ImagesSlideShow   images={res.data.images}/>
