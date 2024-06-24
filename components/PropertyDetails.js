@@ -8,7 +8,11 @@ import SlideshowCard from './SlideshowCard';
 
 
 const PropertyDetails = ({ property }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  {
+    /**
+     * 
+     * 
+     * const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % property.images.length);
@@ -18,18 +22,24 @@ const PropertyDetails = ({ property }) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + property.images.length) % property.images.length);
   };
 
+     */
+  }
   return (
-
-    <div className="max-w-4xl md:mx-auto p-4 bg-white rounded-lg w-full  overflow-hidden">
-      <div className="md:flex ">
+    <Link href={`/properties/${property._id}/`} className=''>
+    <div className="max-w-6xl md:mx-auto mb-8  md:border shadow-md  w-full  rounded-2xl  overflow-hidden">
+      <div className="md:flex  md:h-72 ">
         {/* Slideshow Section */}
-        <div className="w-full md:w-2/4 relative rounded-lg">
+        <div className="w-full md:w-2/4 ">
           <img
-            src={property.images[currentImageIndex]}
-            alt={`Property Image ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            src={property.images[0]}
+            alt={`Property Image ${property.images[0]}`}
+            className="w-full  md:h-full h-64 object-cover transition-transform duration-500 hover:scale-105"
           />
-          <button
+         {
+          /**
+           * 
+           * 
+           *  <button
             onClick={handlePrevImage}
             className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-900 transition duration-300"
           >
@@ -41,17 +51,19 @@ const PropertyDetails = ({ property }) => {
           >
             <FaArrowRight />
           </button>
+           */
+         }
         </div>
 
         {/* Details Section */}
-        <div className="w-3/4 p-6 border rounded w-full">
+        <div className="w-3/4   relative  w-full px-4 py-2">
           <>
             
               
-         <Link href={`/properties/${property._id}/`}>
-          <h2 className="text-xl md:text-3xl font-bold mb-4 transition-transform duration-500 hover:scale-105">{property.title}</h2>
-         </Link>
-          <Link href={`/properties/`}>
+          <h2 className="text-xl md:text-3xl font-bold mb-2 transition-transform duration-500 hover:scale-105">{property.title}</h2>
+          <p className="text-xl text-gray-700 font-semibold mb-2 text-3xl font-bold">Price: AED {property.price}</p>
+     
+     
           <p className="text-gray-700 mb-2"><span className='flex items-center space-x-2'><FaLocationDot/>{property.address}</span></p>
           <h3 className="text-xl md:text-2xl font-semibold">Amenities:</h3>
           <ul className="flex flex-wrap items-center py-2 text-gray-900 dark:text-white">
@@ -62,9 +74,9 @@ const PropertyDetails = ({ property }) => {
                 </>
             ))}
           </ul>
-          <p className="text-xl font-semibold mb-2 text-3xl font-bold">Price: AED {property.price}</p>
-          </Link>
+         
 
+          <div className='absolute bottom-0 hidden md:block '>
           <div className="md:flex md:space-x-2 ">
             <Link
               href={`mailto:marketing@laverde.ae?subject=Inquiry about ${property.title}`}
@@ -92,11 +104,12 @@ const PropertyDetails = ({ property }) => {
             </Link>
           </div>
      
+          </div>
           </>
         </div>
       </div>
     </div>
-
+    </Link>
   );
 };
 
