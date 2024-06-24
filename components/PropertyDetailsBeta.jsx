@@ -80,6 +80,23 @@ const PropertyDetailsBeta = async ({propertyId}) => {
         <h1 className="text-3xl font-bold mb-4">About This Property</h1>
         <p>{res.data.descriptionEnglish}</p>
         </section>
+        <section className='my-8 mx-12 bg-gray-50 p-4'>
+      <h2 className="text-3xl font-bold mb-4"><span className='text-gray-500'>Interested ?</span> Lets Talk Via</h2>
+      <div className="flex space-x-4">
+        <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
+          WhatsApp
+        </a>
+        <a href={`mailto:marketing@laverde.ae?subject=Inquiry about ${res.data.title}`} className="bg-blue-500 text-white px-4 py-2 rounded-full">
+          Email
+        </a>
+        <a href="tel:+971508244755" className="bg-yellow-500 text-white px-4 py-2 rounded-full">
+          Call
+        </a>
+        <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-full">
+          Contact Us
+        </a>
+      </div>
+      </section>
         <section className="my-8 mx-12 bg-gray-50 p-4">
         <h2 className="text-3xl font-bold mb-4">Amenities</h2>
         <ul className="">
@@ -87,6 +104,23 @@ const PropertyDetailsBeta = async ({propertyId}) => {
             <li key={index} className='flex space-x-4 py-2 '><FaRegCheckCircle className='text-2xl text-blue-500'/><span>{amenity}</span></li>
           ))}
         </ul>
+      </section>
+      <section className='my-8 mx-12 bg-gray-50 p-4'>
+      <h2 className="text-3xl font-bold mb-4"><span className='text-gray-500'>Interested ?</span> Lets Talk Via</h2>
+      <div className="flex space-x-4">
+        <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
+          WhatsApp
+        </a>
+        <a href={`mailto:marketing@laverde.ae?subject=Inquiry about ${res.data.title}`} className="bg-blue-500 text-white px-4 py-2 rounded-full">
+          Email
+        </a>
+        <a href="tel:+971508244755" className="bg-yellow-500 text-white px-4 py-2 rounded-full">
+          Call
+        </a>
+        <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-full">
+          Contact Us
+        </a>
+      </div>
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4">
         <h2 className="text-3xl font-bold mb-4">Price</h2>
@@ -99,7 +133,23 @@ const PropertyDetailsBeta = async ({propertyId}) => {
      
 
       </div>
-
+      <section className='my-8 mx-12 bg-gray-50 p-4'>
+      <h2 className="text-3xl font-bold mb-4"><span className='text-gray-500'>Interested ?</span> Lets Talk Via</h2>
+      <div className="flex space-x-4">
+        <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
+          WhatsApp
+        </a>
+        <a href={`mailto:marketing@laverde.ae?subject=Inquiry about ${res.data.title}`} className="bg-blue-500 text-white px-4 py-2 rounded-full">
+          Email
+        </a>
+        <a href="tel:+971508244755" className="bg-yellow-500 text-white px-4 py-2 rounded-full">
+          Call
+        </a>
+        <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-full">
+          Contact Us
+        </a>
+      </div>
+      </section>
       {/* Amenities */}
    
 
@@ -107,7 +157,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
      
 
       {/* Call to Action Buttons */}
-      <div className='fixed bottom-0 left-0 right-0 bg-gray-500 bg-opacity-25 p-2'>
+      <div className='fixed bottom-0 left-0 right-0 bg-gray-500 bg-opacity-25 p-2 md:hidden'>
       <div className="flex justify-between">
         <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
           WhatsApp
