@@ -5,12 +5,13 @@ import { redirect } from 'next/navigation'
 import ImagesSlideShow from './ImagesSlideShow';
 import ImageCarousel from './ImageCoursel';
 import { SlSizeFullscreen, Slbath, S } from "react-icons/sl";
-import { FaBath } from "react-icons/fa";
+import { FaBath, FaPhone, FaPhoneAlt, FaVoicemail, FaWhatsapp } from "react-icons/fa";
 import { IoIosBed } from "react-icons/io";
 import { FaRegBuilding } from "react-icons/fa";
 import { MdSquareFoot } from "react-icons/md";
 
 import { FaRegCheckCircle } from "react-icons/fa";
+import { FaMailchimp, FaMessage } from 'react-icons/fa6';
 
 
 
@@ -160,17 +161,18 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       {/* Call to Action Buttons */}
       <div className='fixed bottom-0 left-0 right-0 bg-gray-500 bg-opacity-25 p-2 md:hidden'>
       <div className="flex justify-between">
-        <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
+        <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="flex justify-between  items-center bg-green-500 rounded-full text-white px-2 py-2 ">
           WhatsApp
+       <span className='mx-1'><FaWhatsapp/></span>
+
         </a>
-        <a href={`mailto:marketing@laverde.ae?subject=Inquiry about ${res.data.title}`} className="bg-blue-500 text-white px-4 py-2 rounded-full">
-          Email
-        </a>
-        <a href="tel:+971508244755" className="bg-yellow-500 text-white px-4 py-2 rounded-full">
+        <a href="tel:+971508244755" className="flex justify-between bg-yellow-500 text-white px-4 py-2 rounded-full">
           Call
+          <span className='mx-1'><FaPhoneAlt/></span>
         </a>
-        <a href="/contact-us" className="bg-gray-500 text-white px-4 py-2 rounded-full">
-          Contact Us
+        <a href="/contact-us" className="flex justify-between bg-gray-500 text-white px-4 py-2 rounded-full">
+          Contact us
+          <span className='mx-1'><FaMessage/></span>
         </a>
       </div>
       </div>
