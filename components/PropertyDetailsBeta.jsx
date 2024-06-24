@@ -52,7 +52,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
   return (
     <div className="max-w-6xl mx-auto ">
          <section>
-         <div className='bg-white/50 shadow-xl my-4 rounded-lg p-4 mx-4'>
+         <div className='bg-white/50 shadow-xl my-4 rounded-lg p-4 mx-4 md:mx-0'>
           <h1 className='text-3xl font-bold'>{res.data.title} in -  {res.data.address}</h1>
           </div>
       {/* Image Gallery */}
