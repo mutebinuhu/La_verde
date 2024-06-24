@@ -16,7 +16,7 @@ const ImagesSlideShow = ({images}) =>{
           <img
             src={images[currentImageIndex]}
             alt={`Property Image ${currentImageIndex + 1}`}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-96 object-cover transition-transform duration-500 hover:scale-105"
           />
           <button
             onClick={handlePrevImage}

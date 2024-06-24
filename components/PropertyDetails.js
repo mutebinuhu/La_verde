@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp, FaInfoCircle} from 'react-icons/fa';
 import { FaLocationDot } from "react-icons/fa6";
 import SlideshowCard from './SlideshowCard';
+import ImageCarousel from './ImageCoursel';
 
 
 
@@ -26,6 +27,7 @@ const PropertyDetails = ({ property }) => {
   }
   return (
     <Link href={`/properties/${property._id}/`} className=''>
+   
     <div className="max-w-6xl md:mx-auto mb-8  md:border shadow-md  w-full  rounded-2xl  overflow-hidden">
       <div className="md:flex  md:h-72 ">
         {/* Slideshow Section */}
