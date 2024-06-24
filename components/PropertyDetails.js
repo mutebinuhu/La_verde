@@ -102,12 +102,40 @@ const PropertyDetails = ({ property }) => {
             >
               <FaInfoCircle className="mr-2" /> Contact Us
             </Link>
+
           </div>
-     
+           
           </div>
           </>
+          
         </div>
       </div>
+      <div className='md:hidden flex bg-gray-200 justify-between'>
+            <Link
+              href={`mailto:marketing@laverde.ae?subject=Inquiry about ${property.title}`}
+              className="flex m-2 items-center bg-gray-100 rounded-full p-4 justify-center    md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
+            >
+              <FaEnvelope className="text-2xl text-blue-500" />
+            </Link>
+            <Link
+              href={`https://wa.me/971506144930?text=I'm interested in ${property.title}`}
+              className="flex m-2 items-center bg-gray-100 rounded-full p-4 justify-center    md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
+            >
+              <FaWhatsapp className="text-2xl  text-green-500" />
+            </Link>
+            <Link
+              href="tel:+971508244755"
+              className="flex m-2 items-center bg-gray-100 rounded-full p-4 justify-center    md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
+            >
+              <FaPhone className="text-2xl" /> 
+            </Link>
+            <Link
+              href="/contact-us"
+              className="flex m-2 items-center bg-gray-100 rounded-full p-4 justify-center    md:px-4 md:py-2 rounded hover:bg-blue-700 transition duration-300"
+            >
+              <FaInfoCircle className="text-2xl text-[#164849]" />
+            </Link>
+            </div>
     </div>
     </Link>
   );
