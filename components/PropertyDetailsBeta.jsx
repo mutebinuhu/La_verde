@@ -81,7 +81,8 @@ const PropertyDetailsBeta = async ({propertyId}) => {
         <p>{res.data.descriptionEnglish}</p>
         </section>
         <section className='my-8 mx-12 bg-gray-50 p-4 hidden md:block'>
-      <h2 className="text-3xl font-bold mb-4"><span className='text-gray-500'>Interested ?</span> Lets Talk Via</h2>
+        <h2 className="text-3xl font-bold mb-4">Learn More</h2>
+
       <div className="flex space-x-4">
         <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
           WhatsApp
@@ -106,7 +107,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
         </ul>
       </section>
       <section className='my-8 mx-12 bg-gray-50 p-4 hidden md:block'>
-      <h2 className="text-3xl font-bold mb-4"><span className='text-gray-500'>Interested ?</span> Lets Talk Via</h2>
+      <h2 className="text-3xl font-bold mb-4">Learn More</h2>
       <div className="flex space-x-4">
         <a href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className="bg-green-500 rounded-3xl text-white px-4 py-2 ">
           WhatsApp
