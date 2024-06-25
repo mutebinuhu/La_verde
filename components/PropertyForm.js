@@ -322,8 +322,8 @@ const PropertyForm = () => {
               )}
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700">Amenities</label>
-              <div className="grid grid-cols-2 gap-4">
+              <label className="block text-sm font-medium text-gray-700 py-4">Amenities</label>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {amenitiesList.map((amenity, index) => (
                   <label key={index} className="flex items-center">
                     <Field type="checkbox" name="amenities" value={amenity} className="mr-2" />
