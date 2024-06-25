@@ -62,7 +62,7 @@ const PropertyDetails = ({ property }) => {
           <>
             
               
-          <h2 className="text-xl md:text-3xl font-bold mb-2 transition-transform duration-500 hover:scale-105">{property.title}</h2>
+          <h2 className="text-xl capitalize md:text-3xl font-bold mb-2 transition-transform duration-500 hover:scale-105">{property.title}</h2>
           <p className="text-xl text-gray-700 font-semibold mb-2 text-3xl font-bold">Price: {property.price.toLocaleString()} AED </p>
      
      
