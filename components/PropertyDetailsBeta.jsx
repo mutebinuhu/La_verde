@@ -126,7 +126,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
         <h2 className="text-3xl font-bold mb-4">Price</h2>
-        <p className='text-3xl font-semibold	'>AED {res.data.price}</p>
+        <p className='text-3xl font-semibold	'>{res.data.price.toLocaleString()} AED </p>
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
         <h2 className="text-3xl font-bold mb-4">Date Posted</h2>
