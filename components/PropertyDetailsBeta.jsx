@@ -71,7 +71,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       <div className="mb-4  ">
         <section className='mx-12 border-b'>
           <ul className='text-normal py-8 '>
-            <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><SlSizeFullscreen/><span>Size</span><span className='text-gray-800'>{res.data.size}<sup className='text-gray-600 space-x-4 text-xs'>sqft</sup></span></li>
+            <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><SlSizeFullscreen/><span>Size</span><span className='text-gray-800'>{res.data.areaSquare}<sup className='text-gray-600 space-x-4 text-xs'>sqft</sup></span></li>
             <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><FaBath/><span>Bathrooms</span><span className='text-gray-800'>{res.data.bathrooms}</span></li>
             <li className='py-4 text-2xl text-gray-500 font-bold  flex space-x-4'><IoIosBed/><span>Bedrooms</span><span className='text-gray-800'>{res.data.bedrooms}</span></li>
             <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><FaRegBuilding /><span>Type</span><span className='text-gray-800'>{res.data.subCategory}</span></li>
@@ -101,7 +101,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       </section>
         <section className="my-8 mx-12 bg-gray-50 p-4">
         <h2 className="text-3xl font-bold mb-4">Amenities</h2>
-        <ul className="">
+        <ul className="md:grid md:grid-cols-4">
           {res.data.amenities.map((amenity, index) => (
             <li key={index} className='flex space-x-4 py-2 '><FaRegCheckCircle className='text-2xl text-blue-500'/><span>{amenity}</span></li>
           ))}

@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 
 
@@ -18,14 +18,30 @@ const SearchForm = () => {
   const [maxBathrooms, setMaxBathrooms] = useState('');
   const [minSize, setMinSize] = useState('');
   const [maxSize, setMaxSize] = useState('');
-  const router = useRouter();
+  const [locationList, setLocationList] = useState([])
 
+  
+  const router = useRouter();
+  const getLocations = async () =>{
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations')
+      const data = await res.json();
+      setLocationList(data.data)
+      console.log("locations", data)
+    } catch (error) {
+      console.log("locerr", error)
+    }
+  }
+
+  useEffect(()=>{
+    getLocations();
+  }, [])
   const handleSubmit = (e) => {
     e.preventDefault();
     const query = {};
 
     if (category) query.category = category;
-    if (location) query.location = category;
+    if (location) query.location = location;
 
     if (subCategory) query.subCategory = subCategory;
     if (purpose) query.purpose = purpose;
@@ -90,6 +106,18 @@ const SearchForm = () => {
           <option value="rent">Rent</option>
         </select>
         <select
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className="p-2 border rounded-md"
+        >
+          <option value="">Location</option>
+            {locationList && locationList.map((loca)=>  <option className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' value={loca.name} label={loca.name} />)}
+          </select>
+            {
+              /**
+               * 
+               * 
+               * <select
           value={completionStatus}
           onChange={(e) => setCompletionStatus(e.target.value)}
           className="p-2 border rounded-md"
@@ -100,6 +128,8 @@ const SearchForm = () => {
           <option value="readyPrimary">Ready Primary</option>
           <option value="readySecondary">Ready Secondary</option>
         </select>
+               */
+            }
        
         <input
           type="number"

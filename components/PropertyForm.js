@@ -122,7 +122,12 @@ const PropertyForm = () => {
       const uploadPromises = Array.from(selectedFiles).map(file => {
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('upload_preset', 'jtiqg5os');
+        formData.append('upload_preset',"jtiqg5os");
+  // Add the transformation for the logo overlay
+   // Add the transformation for the logo overlay
+
+
+ // formData.append('transformation', JSON.stringify(transformation));
 
         return axios.post(
           `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
@@ -271,7 +276,7 @@ const PropertyForm = () => {
             </div>
             <div className='flex justify-between space-x-4'>
               <div className="mb-4 w-1/2">
-                <label htmlFor="areaSquare" className="block text-sm font-medium text-gray-700">Area in Square Meters</label>
+                <label htmlFor="areaSquare" className="block text-sm font-medium text-gray-700">Area in Square feet</label>
                 <Field type="number" name="areaSquare" className="mt-1 block w-full border border-1 p-2 rounded" />
                 <ErrorMessage name="areaSquare" component="div" className="text-red-500 text-sm" />
               </div>

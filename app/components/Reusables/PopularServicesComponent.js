@@ -86,7 +86,7 @@ const PopularServicesComponent = ()=>{
             </div>
             <div  className="md:flex md h-72 mt-4  mx-4 md:mx-12">
                 
-                <Link href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Saadiyaat+Island`} className="w-full md:w-2/3 md:mx-2">
+                <Link href={`${process.env.NEXT_PUBLIC_API_URL}/search?location=Al+Saadiyat+Island`} className="w-full md:w-2/3 md:mx-2">
                 <div className="">   
                 <Card className="col-span-12 sm:col-span-4 h-[300px]">
                     <CardHeader className="absolute z-10 top-1 flex-col !items-start w-full ">
