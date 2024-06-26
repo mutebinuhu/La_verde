@@ -12,6 +12,7 @@ import { MdSquareFoot } from "react-icons/md";
 
 import { FaRegCheckCircle } from "react-icons/fa";
 import { FaMailchimp, FaMessage } from 'react-icons/fa6';
+import ContactForm from './Contactus';
 
 
 
@@ -51,7 +52,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
   };
  
   return (
-    <div className="max-w-6xl mx-auto ">
+    <div className="max-w-6xl mx-auto relative ">
          <section>
          <div className='bg-white/50 shadow-xl my-4 rounded-lg p-4 mx-4 md:mx-0'>
           <h1 className='text-3xl font-bold'>{res.data.title} in -  {res.data.address}</h1>
@@ -66,8 +67,12 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       </div>
 
       {/* Description */}
- 
-
+    
+   <div className='hidden lg:block fixed top-24 right-6 bg-gray-200 rounded-md  w-64  z-0'>
+      <div className='bg-white/50 p-4'>
+         <ContactForm title="Learn More about this property" propertyId={res.data._id} showEmailAndTextBox={false}/>
+      </div>
+   </div>
       <div className="mb-4  ">
         <section className='mx-12 border-b'>
           <ul className='text-normal py-8 '>

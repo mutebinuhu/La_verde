@@ -4,8 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('Name is required'),
+
   phoneNumber: Yup.string()
     .matches(/^[0-9]+$/, 'Phone number must contain only digits')
     .min(10, 'Phone number must be at least 10 digits')
@@ -15,7 +14,7 @@ const validationSchema = Yup.object().shape({
     .required('Email is required'),
 });
 
-const ContactForm = () => {
+const ContactForm = ({title, showEmailAndTextBox}) => {
   const [success, setSuccess] = useState();
   const handleSubmit = async(values, { setSubmitting, resetForm }) => {
     console.log("----", values)
@@ -31,6 +30,9 @@ const ContactForm = () => {
     if (result.success) {
       setSuccess(true);
     resetForm();
+    setTimeout(()=>{
+      setSuccess(false)
+    }, 3000)
 
     } else {
       setSuccess(false);
@@ -40,26 +42,31 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-md mx-8 md:mx-auto py-16 ">
-      <h2 className="text-xl font-bold mb-4">Get a Call Back from us!</h2>
+      <h2 className="text-xl font-bold mb-4">{title ? title :"Get a Call Back from us!"}</h2>
       <p className='py-4'>Enter your details below for instant call back from our team!</p>
       {success && <p className='py-4 px-4 bg-[#104e3e] text-white my-2 rounded'>Message sent </p>}
       <Formik
-        initialValues={{ name: '', phoneNumber: '', email: '' }}
+        initialValues={{ name: '', phoneNumber: '', email: '', message:'' }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
           <Form className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-              <Field
-                type="text"
-                id="name"
-                name="name"
-                className="mt-1 p-2 block w-full border-gray-300 border-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              />
-              <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
+             {
+            showEmailAndTextBox ?     <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+            <Field
+              type="text"
+              id="name"
+              name="name"
+              className="mt-1 p-2 block w-full border-gray-300 border-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
+          </div> :showEmailAndTextBox
+            
+            }
+
+        
             <div>
               <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">Phone Number</label>
               <Field
@@ -80,17 +87,19 @@ const ContactForm = () => {
               />
               <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
             </div>
-            <div>
-              <label htmlFor="textArea" className="block text-sm font-medium text-gray-700">Message</label>
-              <Field
-              as="textarea"
-                type="text"
-                id="textArea"
-                name="message"
-                className="mt-1 p-2 block w-full border-gray-300 border-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              />
-              <ErrorMessage name="textArea" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
+           {
+            showEmailAndTextBox ?  <div>
+            <label htmlFor="textArea" className="block text-sm font-medium text-gray-700">Message</label>
+            <Field
+            as="textarea"
+              type="text"
+              id="message"
+              name="message"
+              className="mt-1 p-2 block w-full border-gray-300 border-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
+          </div> :  showEmailAndTextBox 
+           }
             <button
               type="submit"
               disabled={isSubmitting}

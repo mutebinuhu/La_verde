@@ -4,7 +4,7 @@ import React from 'react';
 const Page = () => {
     return (
         <div>
-            <ContactForm/>
+            <ContactForm showEmailAndTextBox={true}/>
         </div>
     );
 }
