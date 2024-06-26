@@ -17,7 +17,6 @@ const validationSchema = Yup.object().shape({
 const ContactForm = ({title, showEmailAndTextBox}) => {
   const [success, setSuccess] = useState();
   const handleSubmit = async(values, { setSubmitting, resetForm }) => {
-    console.log("----", values)
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -26,7 +25,6 @@ const ContactForm = ({title, showEmailAndTextBox}) => {
       body: JSON.stringify(values),
     });
     const result = await response.json();
-    console.log("res", result);
     if (result.success) {
       setSuccess(true);
     resetForm();
