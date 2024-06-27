@@ -52,6 +52,28 @@ const Latestprojects = () => {
    
 
  </div>
+ <div className="text-center mt-12">
+      <Link
+            isExternal
+            showAnchorIcon
+            href="/properties"
+            className="mt-32"
+          >
+           <Button className='border-2 bg-[#104e3e] text-white  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Find out More
+           </Button>
+          </Link>
+          <Link
+            isExternal
+            showAnchorIcon
+            href="/properties"
+            className="mt-32"
+          >
+           <Button className='border-2 bg-white text-[#104e3e] md:mx-4 mx-0 transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Talk To Us
+           </Button>
+          </Link>
+      </div>
        </div>
     );
 }

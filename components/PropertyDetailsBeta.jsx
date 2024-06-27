@@ -68,13 +68,19 @@ const PropertyDetailsBeta = async ({propertyId}) => {
 
       {/* Description */}
     
-   <div className='hidden lg:block fixed top-24 right-6 bg-gray-200 rounded-md  w-64  z-0'>
+  
+      <div className=" ">
+     {
+      /**
+       *  <div className='right-0 top-20 fixed bg-gray-200 rounded-md  w-64  z-0'>
       <div className='bg-white/50 p-4'>
          <ContactForm title="Learn More about this property" propertyId={res.data._id} showEmailAndTextBox={false}/>
       </div>
    </div>
-      <div className="mb-4  ">
-        <section className='mx-12 border-b'>
+       * 
+       */
+     }
+        <section className='mx-12 border-b gg'>
           <ul className='text-normal py-8 '>
             <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><SlSizeFullscreen/><span>Size</span><span className='text-gray-800'>{res.data.areaSquare}<sup className='text-gray-600 space-x-4 text-xs'>sqft</sup></span></li>
             <li className='py-4 text-2xl text-gray-500 font-bold flex space-x-4'><FaBath/><span>Bathrooms</span><span className='text-gray-800'>{res.data.bathrooms}</span></li>

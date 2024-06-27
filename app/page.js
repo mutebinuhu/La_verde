@@ -13,8 +13,39 @@ import ResponsiveCarousel from "./components/Reusables/ResponsiveCarousel";
 import { Elsatic } from "./components/Reusables/Elastic";
 import Ad from "./components/Reusables/Ad";
 import PopularPlaces from "./components/Reusables/PopularPlaces";
+import Link from "next/link";
+import { Button } from "@nextui-org/button";
 
+const PopularPlacesComponent = () =>{
+  return(
+   <div>
+    <PopularPlaces/>
+      <div className="text-center mt-12">
+      <Link
+            isExternal
+            showAnchorIcon
+            href="/properties"
+            className="mt-32"
+          >
+           <Button className='border-2 bg-[#104e3e] text-white  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Find out More
+           </Button>
+          </Link>
+          <Link
+            isExternal
+            showAnchorIcon
+            href="/properties"
+            className="mt-32"
+          >
+           <Button className='border-2 bg-white text-[#104e3e] md:mx-4 mx-0 transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Talk To Us
+           </Button>
+          </Link>
+      </div>
+   </div>
 
+  )
+}
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -27,8 +58,7 @@ export default function Home() {
     <main className="">
       {/**<Banner/>**/}
       <Banner2/>
-      <PopularPlaces/>
-
+      < PopularPlacesComponent/>
       <Services/>
       <Latestprojects/>
       <StateTabs/>
