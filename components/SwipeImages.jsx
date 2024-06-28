@@ -28,13 +28,15 @@ const  SwipeImages = ({ images, handleClick }) => {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75"
     >
       <button
-        className="absolute left-0 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
+        className="absolute left-0 text-4xl  p-4 font-bolder text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
         onClick={prevImage}
       >
         &lt;
       </button>
-      <div  onClick={handleClick}>
-      <GiCancel className='text-red-500 text-3xl right-0 absolute' />
+      <div  onClick={handleClick} >
+      <div className='right-0 absolute'>
+      <span className='text-white'>Close<GiCancel className='text-red-500 text-3xl ' /></span>
+      </div>
       <img
         src={images[currentIndex]}
         alt={`Image ${currentIndex + 1}`}
@@ -43,7 +45,7 @@ const  SwipeImages = ({ images, handleClick }) => {
       </div>
 
       <button
-        className="absolute right-0 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
+        className="absolute  font-bolder text-4xl  right-0 p-4 text-white bg-gray-800 bg-opacity-50 hover:bg-opacity-75"
         onClick={nextImage}
       >
         &gt;

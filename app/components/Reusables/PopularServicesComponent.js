@@ -57,7 +57,7 @@ const PopularServicesComponent = ()=>{
                             alt="Card background"
                             width={1000}
                             height={1000}
-                            className="z-0 w-full h-full object-cover"
+                            className="z-0 w-full h-full object-cover  transition-opacity duration-300 ease-in-out hover:opacity-75"
                             src="/al-reem-island-adgm.jpg"
                         />
                     </Card>
@@ -77,7 +77,7 @@ const PopularServicesComponent = ()=>{
                         alt="Card background"
                         width={1000}
                         height={1000}
-                        className="z-0 w-full h-full object-cover"
+                        className="z-0 w-full h-full object-cover  transition-opacity duration-300 ease-in-out hover:opacity-75"
                         src="/yas1.jpg"
                     />
                 </Card>
@@ -97,7 +97,7 @@ const PopularServicesComponent = ()=>{
                     alt="Card background"
                     width={1000}
                     height={1000}
-                    className="z-0 w-full h-full object-cover"
+                    className="z-0 w-full h-full object-cover  transition-opacity duration-300 ease-in-out hover:opacity-75"
                     src="/Lq4LqPEX-2013_saadiyat_1_base-1.jpg"
                 />
       </Card>
@@ -114,14 +114,13 @@ const PopularServicesComponent = ()=>{
                     alt="Card background"
                     width={1000}
                     height={1000}
-                    className="z-0 w-full h-full object-cover"
+                    className="z-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out hover:opacity-75"
                     src="/al-bateen-area-1.jpg"
                 />
       </Card>
                 </div>
                 </Link>
             </div>
-            
             </div>
         </>
     )

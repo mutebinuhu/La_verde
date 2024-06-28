@@ -14,6 +14,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { FaMailchimp, FaMessage } from 'react-icons/fa6';
 import ContactForm from './Contactus';
 
+import { FaArrowUpRightDots } from "react-icons/fa6";
 
 
  
@@ -55,11 +56,11 @@ const PropertyDetailsBeta = async ({propertyId}) => {
     <div className="max-w-6xl mx-auto relative ">
          <section>
          <div className='bg-white/50 shadow-xl my-4 rounded-lg p-4 mx-4 md:mx-0'>
-          <h1 className='text-3xl font-bold'>{res.data.title} in -  {res.data.address}</h1>
+          <FaArrowUpRightDots className='text-3xl text-gray-300'/>
+          <h1 className='text-3xl capitalize  font-bold'>{res.data.title} in -  {res.data.address}</h1>
           </div>
       {/* Image Gallery */}
     <div className='hidden md:block'>
-      
    {<ImagesGallery images={res.data.images} />}
     </div>
       <div className='md:hidden'>
