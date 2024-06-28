@@ -71,9 +71,50 @@ const propertySchema = new mongoose.Schema({
   availability:{
     type:[Date]
   },
+  //data for new projects
+  unitsLeft:{
+    type:Number
+  },
+  startSellDate:{
+    type:Date
+  },
+  noOfBedroomsStart:{
+    type:Number
+  },
+  noOfBedroomsEnd:{
+    type:Number
+  },
+
   approved:{
     type: Boolean,
     default: false
+  },
+  paymentPlan:{
+    type:[String]
+  },
+  lifeStyle:{
+    type:String
+  },
+  startingPrice:{
+    type:Number
+  },
+  developerName:{
+    type:String
+  },
+  lat:{
+    type:Float
+  },
+  lon:{
+    type:Float
+  },
+  sqftFrom:{
+    type:Float
+  },
+  sqftTo:{
+    type:Float
+  },
+  nearByPlaces:{
+   type:[Array] 
   }
 }, 
 {
