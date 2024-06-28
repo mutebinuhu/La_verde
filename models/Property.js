@@ -72,7 +72,7 @@ const propertySchema = new mongoose.Schema({
     type:[Date]
   },
   //data for new projects
-  unitsLeft:{
+  /*unitsLeft:{
     type:Number
   },
   startSellDate:{
@@ -102,20 +102,30 @@ const propertySchema = new mongoose.Schema({
     type:String
   },
   lat:{
-    type:Float
+    type:Double
   },
   lon:{
-    type:Float
+    type:Double
   },
   sqftFrom:{
-    type:Float
+    type:Double
   },
   sqftTo:{
-    type:Float
+    type:Double
   },
   nearByPlaces:{
    type:[Array] 
+  },
+  priceNotes:{
+    type:String
+  },
+  notes:{
+    type:[String]
   }
+  */
+ noOfPayments:{
+  type:String
+ }
 }, 
 {
   timestamps: true
