@@ -1,6 +1,5 @@
-"use client";
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+"use client"
+import { useState } from 'react';
 
 export default function Subscribe() {
   const [formData, setFormData] = useState({
@@ -9,22 +8,6 @@ export default function Subscribe() {
     message: '',
   });
 
-  // Fetch query parameters using useSearchParams
-  const router = useSearchParams();
-  const { name: queryName, email: queryEmail, message: queryMessage } = router;
-
-  // Update form data when query parameters change
-  useEffect(() => {
-    if (queryName || queryEmail || queryMessage) {
-      setFormData({
-        name: queryName || '',
-        email: queryEmail || '',
-        message: queryMessage || '',
-      });
-    }
-  }, [queryName, queryEmail, queryMessage]);
-
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -33,7 +16,6 @@ export default function Subscribe() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -46,21 +28,19 @@ export default function Subscribe() {
       });
       if (response.ok) {
         alert('Subscription successful!');
-        setFormData({
-            name:'',
-            email: '',
-            message: '',
-          });
+         setFormData({
+        name: '',
+        email: '',
+        message: '',
+      })
       } else {
         alert('Subscription failed.');
       }
+     
     } catch (error) {
+        console.log('err', error)
       console.error('Error:', error);
-      setFormData({
-        name:'',
-        email: '',
-        message: '',
-      });
+      
     }
   };
 
@@ -74,7 +54,7 @@ export default function Subscribe() {
             type="text"
             id="name"
             name="name"
-            value={formData.name ? formData.name : queryName}
+            value={formData.name}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded mt-1"
             required
