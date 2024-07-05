@@ -3,22 +3,29 @@ const mongoose = require('mongoose');
 const propertySchema = new mongoose.Schema({
   category:{
     type: String,
-    required:true,
+    //required:true,
     enum:['residential', 'commercial'],
+  },
+  project:{
+    type:Boolean,
+    default:false
+  },
+  projectLocation:{
+    type:String 
   },
   subCategory:{
     type: String,
     required:true,
-    enum:['villa', 'studio', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
+    enum:['villa','project','studio', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
   },
   purpose:{
     type: String,
-    required: true,
+    //required: true,
     enum:['sale', 'rent']
   },
   completionStatus:{
     type: String,
-    required: true,
+    //required: true,
     enum:['offPlanPrimary', 'offPlanSecondly', 'readyPrimary', 'readySecondary']
   },
   title:{
@@ -30,7 +37,7 @@ const propertySchema = new mongoose.Schema({
   },
   areaSquare:{
     type: Number,
-    required: true
+    //required: true
   },
   createdBy:{
     type: String,
@@ -42,15 +49,15 @@ const propertySchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true
+    //required: true
   },
   bedrooms: {
     type: Number,
-    required: true
+    //required: true
   },
   bathrooms: {
     type: Number,
-    required: true
+    //required: true
   },
   
   descriptionEnglish: {
@@ -62,17 +69,23 @@ const propertySchema = new mongoose.Schema({
     required: true
   },
   images: {
-    type: [String] // Array of image URLs
+    type: [String], // Array of image URLs
+    default: []
   },
   amenities: {
-    type: [String] // Array of features and amenities
+    type: [String], // Array of features and amenities
+    default: []
   },
   
   availability:{
-    type:[Date]
+    type:Date
+   
+  },
+  handover:{
+    type: String
   },
   //data for new projects
-  /*unitsLeft:{
+  unitsLeft:{
     type:Number
   },
   startSellDate:{
@@ -90,7 +103,8 @@ const propertySchema = new mongoose.Schema({
     default: false
   },
   paymentPlan:{
-    type:[String]
+    type:[String],
+    default: []
   },
   lifeStyle:{
     type:String
@@ -102,29 +116,37 @@ const propertySchema = new mongoose.Schema({
     type:String
   },
   lat:{
-    type:Double
+    type:Number
   },
   lon:{
-    type:Double
+    type:Number
   },
   sqftFrom:{
-    type:Double
+    type:Number
   },
   sqftTo:{
-    type:Double
+    type:Number
+  },
+   sqMtFrom:{
+    type:Number
+  },
+  sqMtTo:{
+    type:Number
   },
   nearByPlaces:{
-   type:[Array] 
+   type:[String],
+   default: []
+ 
   },
   priceNotes:{
     type:String
   },
   notes:{
-    type:[String]
-  }
-  */
+    type:[String],
+    default: []
+  },
  noOfPayments:{
-  type:String
+  type:Number
  }
 }, 
 {

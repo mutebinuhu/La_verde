@@ -1,16 +1,16 @@
 // pages/api/properties/search.js
 import connectToDatabase from '../../../utils/db';
 import Property from '../../../models/Property';
+
 export default async function handler(req, res) {
-  await  connectToDatabase();
+  await connectToDatabase();
 
   const { query } = req;
-  const searchCriteria = {};
+  const searchCriteria = { approved: true }; // Ensure only approved properties are returned
 
   if (query.category) {
     searchCriteria.category = query.category;
   }
-
   if (query.location) {
     searchCriteria.location = query.location;
   }
@@ -54,6 +54,10 @@ export default async function handler(req, res) {
     searchCriteria.size = { ...searchCriteria.size, $lte: query.maxSize };
   }
 
-  const properties = await Property.find(searchCriteria);
-  res.status(200).json(properties);
+  try {
+    const properties = await Property.find(searchCriteria);
+    res.status(200).json(properties);
+  } catch (error) {
+    res.status(400).json({ success: false, error: error.message });
+  }
 }
