@@ -34,7 +34,7 @@ const teamMembers = [
  
   {
     name: 'Amir',
-    position: 'Property Sales Consultant',
+    position: 'Property Consultant ',
     image: '/workmates/samir.jpeg',
     social: {
       twitter: 'https://twitter.com/charliegreen',
@@ -85,16 +85,16 @@ const TeamComponent = () => {
 
         <div className="mt-10">
             <div className='md:flex w-full py-12 justify-center'>
-            <div  className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div  className="bg-white shadow-lg rounded-lg overflow-hidden p-12">
                 <img
-                  className="w-full h-96 object-cover object-center"
+                  className="w-full h-48 w-48 object-cover object-center rounded-full"
                   src={ceo[0].image}
                   alt={ceo[0].name}
                 />
-                <div className="p-6">
+                <div className="p-6 text-center">
                   <h3 className="text-lg font-semibold text-gray-900">{ceo[0].name}</h3>
                   <p className="text-indigo-600">{ceo[0].position}</p>
-                  <div className="mt-4">
+                  <div className="mt-4 flex justify-center">
                     <a
                      /** member.social.twitter */
                       href={"#"}
@@ -125,16 +125,18 @@ const TeamComponent = () => {
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                <img
-                  className="w-full h-96 object-cover object-center"
+              <div key={index} className=" shadow-lg  w-full  rounded-lg overflow-hidden">
+                <div className='flex justify-center w-full'>
+                  <div>
+                  <img
+                  className="rounded-full  h-48 w-48 object-cover object-center"
                   src={member.image}
                   alt={member.name}
                 />
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 text-center">{member.name}</h3>
                   <p className="text-indigo-600">{member.position}</p>
-                  <div className="mt-4">
+                  <div className="mt-4 flex justify-center w-full">
                     <a
                      /** member.social.twitter */
                       href={"#"}
@@ -161,6 +163,8 @@ const TeamComponent = () => {
                     </a>
                   </div>
                 </div>
+                    </div> 
+              </div>
               </div>
             ))}
           </div>

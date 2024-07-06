@@ -33,6 +33,10 @@ export default function Subscribe() {
         email: '',
         message: '',
       })
+    
+      setTimeout(()=>{
+          window.location.href="/"
+      }, 2000)
       } else {
         alert('Subscription failed.');
       }

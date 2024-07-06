@@ -1,3 +1,5 @@
+import { Button } from '@nextui-org/button';
+import Link from 'next/link';
 import React from 'react';
 
 const NoResults = () => {
@@ -18,8 +20,19 @@ const NoResults = () => {
             d="M9 14l2-2 4 4m0 0l2-2m-2 2V7"
           ></path>
         </svg>
-        <h3 className="mt-2 text-sm font-medium text-gray-900">No Results Found</h3>
-        <p className="mt-1 text-sm text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+        <h3 className="mt-2 text-6xl py-4 font-medium text-gray-900">No Results Found<span className=''>🤷</span></h3>
+        <p className="mt-1 py-4 text-4xl text-gray-500">No worries! Contact us for an updated list tailored just for you.</p>
+        <div className='py-16'>
+        <Link
+            isExternal
+            showAnchorIcon
+            href="/contact-us"
+          >
+           <Button className='border-2 text-white bg-white bg-[#104e3e]  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Contact Us
+           </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

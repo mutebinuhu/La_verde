@@ -1255,7 +1255,7 @@ import { image } from '@nextui-org/react';
         case 'GET':
             try {
               const filters = req.query;
-              let query = { approved: true, project: true}; // Ensure only approved properties are returned
+              let query = { project: true}; // Ensure only approved properties are returned
           
               const properties = await Property.find(query) // Use lean() to get plain JavaScript objects
               
