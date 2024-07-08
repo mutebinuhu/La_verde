@@ -85,13 +85,16 @@ const TeamComponent = () => {
 
         <div className="mt-10">
             <div className='md:flex w-full py-12 justify-center'>
-            <div  className="bg-white shadow-lg rounded-lg overflow-hidden p-12">
+            <div  className="rounded-lg overflow-hidden p-8">
+               <div className=''>
+                <div className='w-full md:flex justify-center'>
                 <img
-                  className="w-full h-48 w-48 object-cover object-center rounded-full"
+                  className=" h-32 w-32 object-cover object-center rounded-full"
                   src={ceo[0].image}
                   alt={ceo[0].name}
                 />
-                <div className="p-6 text-center">
+                </div>
+                <div className="p-6 ">
                   <h3 className="text-lg font-semibold text-gray-900">{ceo[0].name}</h3>
                   <p className="text-indigo-600">{ceo[0].position}</p>
                   <div className="mt-4 flex justify-center">
@@ -121,22 +124,24 @@ const TeamComponent = () => {
                     </a>
                   </div>
                 </div>
+               </div>
               </div>
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className=" shadow-lg  w-full  rounded-lg overflow-hidden">
-                <div className='flex justify-center w-full'>
-                  <div>
-                  <img
-                  className="rounded-full  h-48 w-48 object-cover object-center"
+              <div key={index} className="  w-full  rounded-lg overflow-hidden ">
+                <div className=''>
+                <div className='w-full md:flex justify-center'>
+                <img
+                  className=" h-32 w-32 object-cover object-center rounded-full"
                   src={member.image}
                   alt={member.name}
                 />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 text-center">{member.name}</h3>
+                </div>
+                <div className="p-6 ">
+                  <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
                   <p className="text-indigo-600">{member.position}</p>
-                  <div className="mt-4 flex justify-center w-full">
+                  <div className="mt-4 flex justify-center">
                     <a
                      /** member.social.twitter */
                       href={"#"}
@@ -163,8 +168,7 @@ const TeamComponent = () => {
                     </a>
                   </div>
                 </div>
-                    </div> 
-              </div>
+               </div>
               </div>
             ))}
           </div>

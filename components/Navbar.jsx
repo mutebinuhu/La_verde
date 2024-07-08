@@ -18,9 +18,11 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, text: 'Home', url:'/' },
-    { id: 2, text: 'About',  url:'/about-us' },
-    { id: 3, text: 'Contact' ,  url:'/contact-us'},
-    { id: 3, text: 'Properties' ,  url:'/properties'},
+    { id: 2, text: 'Rent' ,  url:'/search?purpose=rent'},
+    { id: 3, text: 'Sell' ,  url:'/search?purpose=sale'},
+    { id: 4, text: 'About',  url:'/about-us' },
+    { id: 5, text: 'Contact' ,  url:'/contact-us'},
+
 
 
   ];

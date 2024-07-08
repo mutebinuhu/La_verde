@@ -40,7 +40,7 @@ const { data, error } = useSWR(()=> {
     <>
       <div className={montserrat.className}>
       <Navbar/>
-        <div className="mt-10">
+        <div className="mt-10 ">
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
           <p className='text-center text-2xl'>Search Results</p>
           <div className="containr mx-auto">
