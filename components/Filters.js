@@ -128,7 +128,7 @@ const Filters = ({ onFilterChange }) => {
             
           </div>
       </div>
-      <div className="mt-4 text-center">
+      <div className="mt-4 mb-2 text-center">
         <button
           type="submit"
           className="mt-4 px-12 py-2 text-2xl font-bold bg-[#164849] text-white py-2 rounded-md"
