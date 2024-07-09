@@ -10,6 +10,7 @@ import NoResults from "./NoResults";
 import useSWR from 'swr';
 import Filters from "@/components/Filters";
 import { useState } from "react";
+import ScrollableForm from "@/components/ScrollableForm";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -44,10 +45,12 @@ const { data, error } = useSWR(()=> {
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
           <p className='text-center text-2xl'>Search Results</p>
           <div className="containr mx-auto">
-          <div className='md:flex justify-center items-center w-full py-4 '>
+          <div className='md:flex justify-center items-center w-full  '>
               <Filters onFilterChange={handleFilterChange} />
+
           </div>
           </div>
+       
 
 
           <div className="mx-4">

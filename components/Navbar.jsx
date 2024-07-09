@@ -20,8 +20,9 @@ const Navbar = () => {
     { id: 1, text: 'Home', url:'/' },
     { id: 2, text: 'Rent' ,  url:'/search?purpose=rent'},
     { id: 3, text: 'Sell' ,  url:'/search?purpose=sale'},
-    { id: 4, text: 'About',  url:'/about-us' },
-    { id: 5, text: 'Contact' ,  url:'/contact-us'},
+    { id: 4, text: 'Off Plan' ,  url:'/search?completionStatus=offPlanPrimary'},
+    { id: 5, text: 'About',  url:'/about-us' },
+    { id: 6, text: 'Contact' ,  url:'/contact-us'},
 
 
 

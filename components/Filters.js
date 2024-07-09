@@ -44,9 +44,9 @@ const Filters = ({ onFilterChange }) => {
     getLocations();
   }, [])
   return (
-    <form onSubmit={handleSubmit} className="mb-6 mx-4">
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-4">
-        <div>
+    <form onSubmit={handleSubmit} className="my-4 md:mx-72 mx-4 ">
+      <div className="flex overflow-x-auto space-x-4 p-4 border border-gray-300 rounded-md">
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Category</label>
           <select name="category" value={filters.category} onChange={handleChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Select</option>
@@ -54,7 +54,7 @@ const Filters = ({ onFilterChange }) => {
             <option value="commercial">Commercial</option>
           </select>
         </div>
-        <div>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Sub Category</label>
           <select name="subCategory" value={filters.subCategory} onChange={handleChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Select</option>
@@ -69,7 +69,7 @@ const Filters = ({ onFilterChange }) => {
             <option value="villaCompound">Villa Compound</option>
           </select>
         </div>
-        <div>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Purpose</label>
           <select name="purpose" value={filters.purpose} onChange={handleChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Select</option>
@@ -77,7 +77,7 @@ const Filters = ({ onFilterChange }) => {
             <option value="rent">Rent</option>
           </select>
         </div>
-        <div>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Status</label>
           <select name="completionStatus" value={filters.completionStatus} onChange={handleChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">Select</option>
@@ -87,7 +87,7 @@ const Filters = ({ onFilterChange }) => {
             <option value="readySecondary">Ready Secondary</option>
           </select>
         </div>
-        <div>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Min Price</label>
           <input
             type="number"
@@ -97,7 +97,7 @@ const Filters = ({ onFilterChange }) => {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
-        <div>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Max Price</label>
           <input
             type="number"
@@ -107,7 +107,7 @@ const Filters = ({ onFilterChange }) => {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
-        <div className='w-full'>
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Bedrooms</label>
           <input
             type="number"
@@ -117,7 +117,7 @@ const Filters = ({ onFilterChange }) => {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
         </div>
-        <div className="w-full">
+        <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Location</label>
             <select type='' name='location' onChange={handleChange} className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'>
             <option value="" label="Select Area" className='' />

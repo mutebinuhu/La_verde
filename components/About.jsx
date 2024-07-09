@@ -13,7 +13,7 @@ const About = () => {
             Who we Are
           </h2>
             <section className=' md:flex md:space-x-12 py-12 text-center md:text-left p-8'>
-                <div className='md:flex justify-center items-center px-4 bg-white md:w-1/2 ' style={{backgroundImage: "url(" + "/kamil-rogalinski-PvMwVuZZfFc-unsplash.jpg" + ")",
+                <div className='md:flex justify-center items-center px-4 bg-white md:w-1/2 ' style={{backgroundImage: "url(" + "/FerrariTheme.jpg" + ")",
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'}}
