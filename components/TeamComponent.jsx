@@ -74,7 +74,7 @@ const teamMembers = [
 
 const TeamComponent = () => {
   return (
-    <div className="py-12 bg-gray-100 mt-4">
+    <div className="py-12 mx-8 bg-gray-100 mt-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base text-[#164849] font-semibold tracking-wide uppercase">Our Team</h2>
@@ -85,14 +85,15 @@ const TeamComponent = () => {
 
         <div className="mt-10">
             <div className='md:flex w-full py-12 justify-center'>
-            <div  className="rounded-lg overflow-hidden p-8">
-               <div className=''>
+            <div  className="rounded-lg overflow-hidden bg-white text-center">
                 <div className='w-full md:flex justify-center'>
-                <img
+                  <div className='flex justify-center w-full '>
+                  <img
                   className=" h-32 w-32 object-cover object-center rounded-full"
                   src={ceo[0].image}
                   alt={ceo[0].name}
                 />
+                  </div>
                 </div>
                 <div className="p-6 ">
                   <h3 className="text-lg font-semibold text-gray-900">{ceo[0].name}</h3>
@@ -124,21 +125,20 @@ const TeamComponent = () => {
                     </a>
                   </div>
                 </div>
-               </div>
               </div>
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="  w-full  rounded-lg overflow-hidden ">
+              <div key={index} className="  w-full  rounded-lg overflow-hidden">
                 <div className=''>
-                <div className='w-full md:flex justify-center'>
+                <div className='w-full my-2 flex justify-center'>
                 <img
-                  className=" h-32 w-32 object-cover object-center rounded-full"
+                  className=" h-32 w-32  object-cover object-center rounded-full"
                   src={member.image}
                   alt={member.name}
                 />
                 </div>
-                <div className="p-6 ">
+                <div className="p-6 text-center">
                   <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
                   <p className="text-indigo-600">{member.position}</p>
                   <div className="mt-4 flex justify-center">
