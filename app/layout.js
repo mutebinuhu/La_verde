@@ -19,6 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+   
     <html lang="en">
       <body className={`${inter.className} relative`}>
            <div className="fixed bottom-0 right-4 z-40">
