@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import {Providers} from "./providers";
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 
 
@@ -18,7 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} relative`}>
+           <div className="fixed bottom-0 right-4 z-40">
+           <Link
+              href={`https://wa.me/971506144930?text=Hello`}
+              target="_blank"
+              className="flex w-12 h-12 rounded-full  items-center justify-center bg-green-500 text-white px-2 py-2 rounded hover:bg-green-700 transition duration-300"
+            >
+              <FaWhatsapp className="text-3xl" />
+            </Link>
+           </div>
       <Providers>
         <Navbar/>
           {children}
