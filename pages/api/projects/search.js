@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   await connectToDatabase();
 
   const { query } = req;
-  const searchCriteria = { approved: true}; // Ensure only approved properties and projects are returned
+  const searchCriteria = { approved: true, project: true }; // Ensure only approved properties and projects are returned
 
   if (query.category) {
     searchCriteria.category = query.category;

@@ -6,11 +6,13 @@ import { nonoSerif } from '@/utils/fonts';
 import Slideshow from './Reusables/Slideshow';
 import BackgroundSlideshow from './Reusables/BackgroundSlideshow';
 import SearchForm from '@/components/SearchForm';
+import HeaderBar from '@/components/header';
 const Banner2 = () => {
     return (
               
+        <>
+
             <div className='w-full relative border-[#00df9a]    md:h-[700px] '>
-             
                 <BackgroundSlideshow/>
                 <div className='flex justify-center z-70 md:h-[500px] items-center md:w-full py-4  md:py-0  '>
                    <div className='bg-[#164849] bg-opacity-50  px-4 rounded-lg'>
@@ -24,7 +26,7 @@ const Banner2 = () => {
                    </div>
                 </div>
             </div>
-
+</>
     );
 }
 

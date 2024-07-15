@@ -1285,7 +1285,7 @@ import { image } from '@nextui-org/react';
               if (filters.createdBy) query.createdBy = filters.createdBy;
           
               const properties = await Property.find(query).lean(); // Use lean() to get plain JavaScript objects
-          
+              
               const modifiedProperties = properties.map(property => {
                 property.project = false; // Ensure the project property is always false
                 return property;

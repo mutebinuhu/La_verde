@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { RiCustomerService2Line } from "react-icons/ri";
+import HeaderBar from './header';
 
 
 const Navbar = () => {
@@ -27,6 +28,8 @@ const Navbar = () => {
   ];
 
   return (
+    <>
+    <HeaderBar/>
     <div className='bg-gray-100  w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
      <Link href="/">
@@ -98,6 +101,7 @@ const Navbar = () => {
 
       </ul>
     </div>
+    </>
   );
 };
 

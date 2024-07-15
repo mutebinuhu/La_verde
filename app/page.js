@@ -15,6 +15,7 @@ import Ad from "./components/Reusables/Ad";
 import PopularPlaces from "./components/Reusables/PopularPlaces";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
+import HeaderBar from "@/components/header";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -57,6 +58,7 @@ export default function Home() {
   return (
     <main className="">
       {/**<Banner/>**/}
+ 
       <Banner2/>
       < PopularPlacesComponent/>
       <Services/>
