@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
    
     <html lang="en">
       <head>
-        <FacebookPixel pixelId={424213247242337}/>
+        <FacebookPixel pixelId={1184822549604092}/>
       </head>
       <body className={`${inter.className} relative`}>
            <div className="fixed bottom-0 right-4 z-40">
