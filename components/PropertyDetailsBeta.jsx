@@ -15,6 +15,7 @@ import { FaMailchimp, FaMessage } from 'react-icons/fa6';
 import ContactForm from './Contactus';
 
 import { FaArrowUpRightDots } from "react-icons/fa6";
+import { formatNumberWithCommas } from '@/utils/commons';
 
 
  
@@ -138,7 +139,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
         <h2 className="text-3xl font-bold mb-4">Price</h2>
-        <p className='text-3xl font-semibold	'>{res.data.price.toLocaleString()} AED </p>
+        <p className='text-3xl font-semibold	'>{formatNumberWithCommas(res.data.price && res.data.price.toLocaleString())} AED </p>
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
         <h2 className="text-3xl font-bold mb-4">Date Posted</h2>

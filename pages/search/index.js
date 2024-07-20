@@ -50,9 +50,6 @@ const { data, error } = useSWR(()=> {
 
           </div>
           </div>
-       
-
-
           <div className="mx-4">
             {
               data.length > 0 ? data.map((property) => (

@@ -64,7 +64,7 @@ const PropertyDetails = ({ property }) => {
             
               
           <h2 className="text-xl capitalize md:text-3xl font-bold mb-2 transition-transform duration-500 hover:scale-105">{property.title}</h2>
-          <p className="text-xl text-gray-700 font-semibold mb-2 text-3xl font-bold">Price: { formatNumberWithCommas(property.price)} AED </p>
+          <p className="text-xl text-gray-700 font-semibold mb-2 text-3xl font-bold">{property.completionStatus=="offPlanPrimary" ? "Prices start from:" :"Price:"} { formatNumberWithCommas(property.price)} AED </p>
      
      
           <p className="text-gray-700 mb-2"><span className='flex items-center space-x-2'><FaLocationDot/>{property.address}</span></p>

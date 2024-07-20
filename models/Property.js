@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { string } = require('yup');
 
 const propertySchema = new mongoose.Schema({
   category:{
@@ -17,6 +18,10 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required:true,
     enum:['villa','project','studio', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']
+  },
+  status:{
+    type:String,
+    enum:['vacant', 'notVacant']
   },
   purpose:{
     type: String,

@@ -7,6 +7,8 @@ import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import FacebookPixel from "./components/FacebookPixel";
+
 
 
 
@@ -16,11 +18,15 @@ export const metadata = {
   title: "La Verde Property Management",
   description: "We sell. Lease. Property Management and Mantainance",
 };
+const pixelId = 'YOUR_PIXEL_ID';
 
 export default function RootLayout({ children }) {
   return (
    
     <html lang="en">
+      <head>
+        <FacebookPixel pixelId={424213247242337}/>
+      </head>
       <body className={`${inter.className} relative`}>
            <div className="fixed bottom-0 right-4 z-40">
            <Link
@@ -42,3 +48,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+

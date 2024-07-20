@@ -133,6 +133,7 @@ const PropertyForm = () => {
    projectLocation:"",
    hondover:"",
    availability:"",
+   status:""
 
   };
 
@@ -149,6 +150,7 @@ const PropertyForm = () => {
     //bathrooms: Yup.number().required('Number of bathrooms is required'),
     descriptionEnglish: Yup.string().required('Description in English is required'),
     descriptionArabic: Yup.string().required('Description in Arabic is required'),
+    status: Yup.string().required('Availability Status is required'),
     amenities: Yup.array().of(Yup.string()),
     //images: Yup.array().min(1, 'Please select at least one image').required('Images are required'),
   });
@@ -256,6 +258,16 @@ const PropertyForm = () => {
                     <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
                     <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
                   </div>
+                  </div>
+                  <div className="mb-4 w-full">
+                    <label htmlFor="status" className="block text-sm font-medium text-gray-700">Status</label>
+                    <Field as="select" name="status" className="mt-1 block w-full border border-1 p-2 rounded">
+                      <option value="" label="Select status" />
+                      <option value="vacant" label="vacant" />
+                      <option value="notVacant" label="Not Vacant" />
+
+                    </Field>
+                    <ErrorMessage name="status" component="div" className="text-red-500 text-sm" />
                   </div>
                 <div className='flex justify-between space-x-4'>
                   {
