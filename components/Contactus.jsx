@@ -39,7 +39,7 @@ const ContactForm = ({title, showEmailAndTextBox}) => {
   };
 
   return (
-    <div className="max-w-md mx-8 md:mx-auto py-16 ">
+    <div className="max-w-md mx-8 md:mx-auto py-16   p-4 ">
       <h2 className="text-xl font-bold mb-4">{title ? title :"Get a Call Back from us!"}</h2>
       <p className='py-4'>Enter your details below for instant call back from our team!</p>
       {success && <p className='py-4 px-4 bg-[#104e3e] text-white my-2 rounded'>Message sent </p>}

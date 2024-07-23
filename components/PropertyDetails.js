@@ -9,6 +9,11 @@ import { formatNumberWithCommas } from '@/utils/commons';
 
 
 
+export const metadata = {
+  title: "La Verde Property Management - Reliable Property Management in Abu Dhabi",
+  description: "Looking for reliable property management in Abu Dhabi? La Verde Property Management L.L.C is your trusted partner for buying, selling, and renting properties. Experience exceptional service and personalized solutions. Contact us today!",
+};
+
 const PropertyDetails = ({ property }) => {
   {
     /**
@@ -27,6 +32,7 @@ const PropertyDetails = ({ property }) => {
      */
   }
   return (
+    
     <Link href={`/properties/${property._id}/`} className=''>
    
     <div className="max-w-6xl md:mx-auto mb-8  md:border shadow-md  w-full  rounded-2xl  overflow-hidden">
