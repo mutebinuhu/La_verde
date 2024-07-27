@@ -1270,8 +1270,7 @@ import { image } from '@nextui-org/react';
           try {
 
             const newProperty = new Property(req.body);
-            console.log("reeeeeeeeeeeeeeee", req.body);
-         
+            //console.log("reeeeeeeeeeeeeeee", req.body);
             console.log("features type", typeof(req.body.amenities), "------", req.body.amenities);
             console.log("images type", typeof(req.body.images), "--------", req.body.images);
             let property = await newProperty.save();

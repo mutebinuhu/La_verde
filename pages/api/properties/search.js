@@ -55,7 +55,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const properties = await Property.find(searchCriteria);
+    const properties = await Property.find(searchCriteria).sort({createdAt: -1});
     res.status(200).json(properties);
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });

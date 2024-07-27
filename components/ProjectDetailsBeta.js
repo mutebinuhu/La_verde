@@ -26,7 +26,7 @@ async function fetchPropertyId(id) {
   return res.json()
   
 }
-const PropertyDetailsBeta = async ({propertyId}) => {
+const ProjectDetailsBeta = async ({propertyId}) => {
 
 
 
@@ -61,7 +61,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
           </section>
       {/* Image Gallery */}
     <div className='hidden md:block'>
-   {<ImagesGallery images={res.data.images} />}
+   {<ImagesGallery images={res.data.images} type={`${res.data.project}`} status={`${res.data.completionStatus}`} />}
     </div>
       <div className='md:hidden'>
       <ImagesSlideShow   images={res.data.images}/>
@@ -90,7 +90,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
           </ul>
         </section>
         <section className='py-8 mx-12 border-b'>
-        <h1 className="text-3xl font-bold mb-4">About This Property</h1>
+        <h1 className="text-3xl font-bold mb-4">About This {`${res.data.project ? `Project`:`Property`}`}</h1>
         <p>{res.data.descriptionEnglish}</p>
         </section>
         <section className='my-8 mx-12 bg-gray-50 p-4 hidden md:block'>
@@ -137,9 +137,16 @@ const PropertyDetailsBeta = async ({propertyId}) => {
       </div>
       </section>
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
-        <h2 className="text-3xl font-bold mb-4">Price</h2>
+        <h2 className="text-3xl font-bold mb-4">{`${res.data.project ? `Prices Start from`:`Price`}`}</h2>
         <p className='text-3xl font-semibold	'>{formatNumberWithCommas(res.data.price && res.data.price.toLocaleString())} AED </p>
       </section>
+      {
+        res.data.project ? <>  <section className="my-8 mx-12 bg-gray-50 p-4 ">
+        <h2 className="text-3xl font-bold mb-4">Payment Plan</h2>
+        <p className='text-3xl font-semibold	'>{res.data.paymentPlan.replace("and", "|").replace("and", "|").replace("and", "|")}</p>
+      </section></> :""
+      }
+    
       <section className="my-8 mx-12 bg-gray-50 p-4 ">
         <h2 className="text-3xl font-bold mb-4">Date Posted</h2>
         <p className='text-3xl font-semibold	'>{new Date(res.data.createdAt).toLocaleDateString()}</p>
@@ -192,4 +199,4 @@ const PropertyDetailsBeta = async ({propertyId}) => {
   );
 };
 
-export default PropertyDetailsBeta;
+export default ProjectDetailsBeta;

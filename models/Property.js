@@ -152,6 +152,20 @@ const propertySchema = new mongoose.Schema({
   },
  noOfPayments:{
   type:Number
+ },
+ //the external souce from an integrator
+ source:{
+  type:String,
+  default:"main"
+ },
+ //the external source unique id from an integrator
+ sourceUniqueId:{
+   type:Number,
+  default:0
+ },
+ imported:{
+  type:Boolean,
+  default:false
  }
 }, 
 {

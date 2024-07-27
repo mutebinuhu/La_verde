@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
 import Link from 'next/link';
 import { nonoSerif } from '@/utils/fonts';
-const Project = ({image, name, paymentPlan, units, status}) =>{
+const Project = ({image, name, paymentPlan, units, status, id}) =>{
   console.log("imagexxxxxxxxxxx===", image)
    let imageDisplay ="";
    if(name == "Reeman Living"){
@@ -15,7 +15,7 @@ const Project = ({image, name, paymentPlan, units, status}) =>{
     imageDisplay=image[3]
    }
   return(
-    <Link href="/contact-us" className='z-40  transform transition-transform hover:scale-105 '>
+    <Link href={`/properties/${id}`} className='z-40  transform transition-transform hover:scale-105 '>
     <section className='w-full h-[300px]  col-span-12 sm:col-span-7 -z-10'>
    <Card  className="w-full h-[300px] col-span-12  mt-3 md:mt-0 sm:col-span-7 -z-10">
      <CardHeader className="absolute z-10 top-1 flex-col items-start">
@@ -68,7 +68,7 @@ const Latestprojects = async() => {
   data && data.data.map((data)=>{
     console.log("test===", data)
     return(
-      <Project image={data.images} name={data.title} units={`${data.unitsLeft} UNITS LEFT`} paymentPlan={data.paymentPlan.map((data)=><>{data}</>)} status="UNDER CONSTRUCTION" />
+      <Project id={data._id} image={data.images} name={data.title} units={`${data.unitsLeft} UNITS LEFT`} paymentPlan={data.paymentPlan.map((data)=><>{data}</>)} status="UNDER CONSTRUCTION" />
     )
   })
 }

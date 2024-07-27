@@ -9,7 +9,7 @@ import Navbar from "../../components/Navbar";
 import NoResults from "./NoResults";
 import useSWR from 'swr';
 import Filters from "@/components/Filters";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export const metadata = {
   title: "Best real estate agency Abu Dhabi",
   description: "Achieve your real estate goals with La Verde Property Management L.L.C. Our expert team in Abu Dhabi offers customized and professional services for property buying, selling, and renting. Reach out to us for a personalized consultation",
@@ -17,8 +17,12 @@ export const metadata = {
 const montserrat = Montserrat({ subsets: ["latin"] });
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
+
+
 const Search = () => {
   const [filters, setFilters] = useState({});
+  const [dataRes, setRes] = useState(null)
+
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
   };
@@ -39,6 +43,7 @@ const { data, error } = useSWR(()=> {
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
+
   return (
     <>
       <div className={montserrat.className}>
@@ -58,6 +63,10 @@ const { data, error } = useSWR(()=> {
                 <PropertyDetails key={property.id} property={property} />
               )) :<NoResults/>
             }
+            <h2>MORE dETAILS</h2>
+            <div className="mx-4">
+
+            </div>
           </div>
         </div>
       </div>

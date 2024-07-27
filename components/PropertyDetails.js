@@ -33,7 +33,7 @@ const PropertyDetails = ({ property }) => {
   }
   return (
     
-    <Link href={`/properties/${property._id}/`} className=''>
+    <Link href={property.project ? `/projects/${property.title}/`:`/properties/${property._id}/`} className=''>
    
     <div className="max-w-6xl md:mx-auto mb-8  md:border shadow-md  w-full  rounded-2xl  overflow-hidden">
       <div className="md:flex  md:h-72 ">
