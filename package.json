@@ -11,6 +11,8 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.2",
+    "@mapbox/mapbox-sdk": "^0.16.0",
     "@next/third-parties": "^14.2.3",
     "@nextui-org/button": "^2.0.31",
     "@nextui-org/card": "^2.0.28",
@@ -23,6 +25,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.1.8",
     "jsonwebtoken": "^9.0.2",
+    "mapbox-gl": "^3.5.2",
     "mongoose": "^8.3.4",
     "next": "^14.2.4",
     "next-scripts": "^0.3.4",

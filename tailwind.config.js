@@ -11,6 +11,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        merriweather: ['Merriweather', 'serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -19,7 +24,8 @@ module.exports = {
       width: {
         '7/10': '70%',
         '3/10': '30%',
-      }
+      },
+      
     },
   },
   darkMode: "class",

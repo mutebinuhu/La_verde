@@ -16,6 +16,8 @@ import PopularPlaces from "./components/Reusables/PopularPlaces";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import HeaderBar from "@/components/header";
+import CardHero from "@/components/CardHero";
+import Map from "@/components/Map";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -59,7 +61,17 @@ export default function Home() {
     <main className="">
       {/**<Banner/>**/}
  
-      <Banner2/>
+    
+      
+        {/**
+         * 
+         * <Banner2/>
+         */}
+
+        
+       
+    
+      <CardHero/>
       < PopularPlacesComponent/>
       <Services/>
       <Latestprojects/>

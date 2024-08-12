@@ -19,7 +19,8 @@ export const metadata = {
   description: "We sell. Lease. Property Management and Mantainance",
 };
 const pixelId = 'YOUR_PIXEL_ID';
-
+import 'mapbox-gl/dist/mapbox-gl.css'; // Import Mapbox CSS globally
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'; // Import Geocoder CSS globally
 export default function RootLayout({ children }) {
   return (
    
