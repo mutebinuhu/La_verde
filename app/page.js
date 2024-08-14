@@ -19,6 +19,8 @@ import HeaderBar from "@/components/header";
 import CardHero from "@/components/CardHero";
 import Map from "@/components/Map";
 import Hero1 from "./components/Hero1";
+import GoogleRating from "./components/GoogleRating";
+import FeaturedListing from "@/components/FeaturedListing";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -59,7 +61,7 @@ const breakPoints = [
 ];
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-[#F5F4F0]">
       {/**<Banner/>**/}
  
     
@@ -72,6 +74,12 @@ export default function Home() {
         
        
       <Hero1/>
+      <div className="flex items-center justify-center bg-gray-100">
+      <GoogleRating rating={4.2} totalReviews={120} />
+    </div>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <FeaturedListing />
+    </div>
      {/* <CardHero/>*/}
       < PopularPlacesComponent/>
       <Services/>

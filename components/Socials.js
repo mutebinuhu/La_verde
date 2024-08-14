@@ -13,25 +13,25 @@ const Socials = () => {
        <ul className='flex justify-between space-x-8'>
             <li>
                 <Link href="https://www.facebook.com/profile.php?id=100093006217955" target='_blank'>
-                    <FaFacebookSquare className='text-4xl text-blue-500' />
+                    <FaFacebookSquare className='md:text-4xl text-2xl text-blue-500' />
                 </Link>
             </li>
 
             <li>
                 <Link href="https://www.instagram.com/laverde_ae/?fbclid=IwAR10IWl6XE0jkFvkiBMKhDE0DIQpgTQIL0sXodkIooLYMVjZ2vh8dXt6XCg" target='_blank'>
-                  <IoLogoInstagram className='text-4xl' />
+                  <IoLogoInstagram className='md:text-4xl text-2xl' />
                 </Link>
             </li>
 
             <li>
-                <Link href="https://www.tiktok.com/@laverde.uae" target='_blank'>
-                <FaSquareXTwitter className='text-4xl' />
+                <Link href="https://x.com/LaverdeUae" target='_blank'>
+                <FaSquareXTwitter className='md:text-4xl text-2xl' />
             </Link>
             </li>
 
             <li>
             <Link href="https://www.tiktok.com/@laverde.uae" target='_blank'>
-                  <FaTiktok className='text-4xl' />
+                  <FaTiktok className='md:text-4xl text-2xl' />
             </Link>
 
             </li>

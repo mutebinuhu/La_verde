@@ -1,8 +1,12 @@
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 
 export default function PropertySearchForm() {
   const [location, setLocation] = useState('');
+    
+  const router = useRouter();
 
   const [activeButton, setActiveButton] = useState('rent');
   const [locationList, setLocationList] = useState([])
@@ -37,6 +41,9 @@ export default function PropertySearchForm() {
 
     // Handle form submission, e.g., API call with formData and activeButton
     console.log('Form submitted:', formData, 'Type:', activeButton);
+    const newQuery = new URLSearchParams(query).toString();
+    // Ensure router.push is receiving correct arguments
+    router.push(process.env.NEXT_PUBLIC_API_URL+'/search?'+newQuery);
 
   };
 
@@ -59,21 +66,21 @@ export default function PropertySearchForm() {
         <button
           type="button"
           onClick={() => handleButtonClick('rent')}
-          className={`px-12 md:px-12 py-6 font-semibold  bg-blue-500 rounded-tl-xl  text-white`}
+          className={`px-12 md:px-12 py-6 font-semibold  bg-[#104E3E]  rounded-tl-xl  text-white`}
         >
           Rent
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('buy')}
-          className={`px-12 py-6 font-semibold ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-12 py-6 font-semibold border-r border-l border-white ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-100'}`}
         >
           Buy
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('sell')}
-          className={`px-12 py-6 font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+          className={`px-12 py-6 font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-700 text-gray-100'}`}
         >
           Sell
         </button>
@@ -121,8 +128,8 @@ export default function PropertySearchForm() {
           className="p-2 w-24 md:w-full rounded"
         />
       <div className='w-full'>
-      <button className='bg-blue-500 md:p-6 p-4 w-full   text-white'>
-          Go
+      <button className='bg-[#104E3E] md:p-6 p-4 w-full rounded  text-white'>
+         <span className='flex justify-center space-x-4 items-center'><FaSearch className='text-xl'/> <span>Go</span></span>
         </button>
       </div>
           </div>

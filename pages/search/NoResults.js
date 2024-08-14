@@ -22,17 +22,30 @@ const NoResults = () => {
         </svg>
         <h3 className="mt-2 text-6xl py-4 font-medium text-gray-900">No Results Found<span className=''>🤷</span></h3>
         <p className="mt-1 py-4 text-4xl text-gray-500">No worries! Contact us for an updated list tailored just for you.</p>
-        <div className='py-16'>
+          <div className='md:flex justify-center items-center'>
+          <div className='md:flex space-x-4 py-16'>
         <Link
+            isExternal
+            showAnchorIcon
+            href="/search"
+          >
+           <Button className='border-2 text-white bg-white bg-[#104e3e]  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+                 Home
+           </Button>
+
+          </Link>
+          <Link
             isExternal
             showAnchorIcon
             href="/contact-us"
           >
-           <Button className='border-2 text-white bg-white bg-[#104e3e]  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
+           <Button className='border-2 bg-white text-[#104e3e]  transform transition-transform hover:scale-105 border-[#104e3e]   py-6 px-6  font-bold rounded'>
                  Contact Us
            </Button>
+           
           </Link>
         </div>
+          </div>
       </div>
     </div>
   );

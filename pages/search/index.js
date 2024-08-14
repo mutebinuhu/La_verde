@@ -63,7 +63,7 @@ const { data, error } = useSWR(()=> {
                 <PropertyDetails key={property.id} property={property} />
               )) :<NoResults/>
             }
-            <h2>MORE dETAILS</h2>
+            <h2 className="hidded">MORE dETAILS</h2>
             <div className="mx-4">
 
             </div>
