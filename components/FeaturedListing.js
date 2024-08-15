@@ -62,9 +62,9 @@ const FeaturedListing = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold">Featured Listings</h2>
-        <p className="text-gray-600">Explore our top properties</p>
+      <div className="mb-8">
+        <h2 className="text-xl  font-bold text-[#FFA72A] ">Featured Listings</h2>
+        <p className="text-gray-600 text-3xl font-bold">Explore our top properties</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredItems.map((item, index) => (

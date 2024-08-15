@@ -21,6 +21,8 @@ import Map from "@/components/Map";
 import Hero1 from "./components/Hero1";
 import GoogleRating from "./components/GoogleRating";
 import FeaturedListing from "@/components/FeaturedListing";
+import SellComponent from "./components/SellComponent";
+import OurServices from "@/components/OurServices";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -74,15 +76,24 @@ export default function Home() {
         
        
       <Hero1/>
-      <div className="flex items-center justify-center bg-gray-100">
+      <div className="flex py-4 items-center justify-center bg-gray-100">
       <GoogleRating rating={4.2} totalReviews={120} />
     </div>
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="flex justify-center items-center">
+    <div className="md:max-w-screen-xl bg-gray-100  py-12 flex items-center justify-center">
       <FeaturedListing />
     </div>
+    </div>
+          <div className="flex justify-center items-center ">
+          <div className="md:max-w-screen-xl  w-full ">
+    <SellComponent />
+    </div>
+          </div>
      {/* <CardHero/>*/}
-      < PopularPlacesComponent/>
-      <Services/>
+      {/** < PopularPlacesComponent/> */}
+     {/**  <Services/> */}
+      <OurServices/>
+      
       <Latestprojects/>
      {
       /**

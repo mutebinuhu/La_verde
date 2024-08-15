@@ -28,11 +28,11 @@ const Navbar = () => {
 
 
   ];
-
+{/** bg-[#F5F4F0] */}
   return (
     <>
     <HeaderBar/>
-    <div className='bg-[#F5F4F0]  w-full flex justify-between items-center mx-auto px-4 text-white'>
+    <div className=' bg-[#104E3E]   w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
      <Link href="/">
      <h1 className='w-full text-3xl font-bold'>
@@ -46,7 +46,7 @@ const Navbar = () => {
           <Link href={item.url}>
             <li
             key={item.id}
-            className={`p-2 hover:bg-[#104E3E] text-[#104E3E] hover:text-white rounded m-2 cursor-pointer duration-300`}
+            className={`p-2 hover:bg-[#104E3E] text-gray-200 hover:text-white rounded m-2 cursor-pointer duration-300`}
           >
             {item.text}
           </li>

@@ -1,3 +1,4 @@
+"use client"
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -66,35 +67,35 @@ export default function PropertySearchForm() {
         <button
           type="button"
           onClick={() => handleButtonClick('rent')}
-          className={`px-12 md:px-12 py-6 font-semibold  bg-[#104E3E]  rounded-tl-xl  text-white`}
+          className={`px-12 md:px-12 py-6  font-semibold  bg-[#FFA72A]  rounded-tl-xl  text-white`}
         >
           Rent
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('buy')}
-          className={`px-12 py-6 font-semibold border-r border-l border-white ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-100'}`}
+          className={`px-12 py-6 font-semibold border-r border-l border-white ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-800'}`}
         >
           Buy
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('sell')}
-          className={`px-12 py-6 font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-700 text-gray-100'}`}
+          className={`px-12 py-6 font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-800'}`}
         >
           Sell
         </button>
       </div>
 
-      <div className="bg-white ">
-          <div className='flex  w-full '>
+      <div className="bg-white p-1">
+          <div className='flex  w-full space-x-2 '>
           <select
           type="text"
           name="location"
           placeholder="Location"
           value={formData.location}
           onChange={handleInputChange}
-          className="p-2  w-24 md:w-full rounded"
+          className="p-2  w-24 md:w-full rounded border border-gray-400"
         >
           <option value="">Location</option>
             {locationList && locationList.map((loca)=>  <option className='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' value={loca.name} label={loca.name} />)}
@@ -106,7 +107,7 @@ export default function PropertySearchForm() {
           placeholder="Type"
           value={formData.propertyType}
           onChange={handleInputChange}
-          className="p-2  w-24 md:w-full rounded"
+          className="p-2  w-24 md:w-full rounded  border border-gray-400"
         >
            <option value="">Type</option>
           <option value="villa">Villa</option>
@@ -125,10 +126,10 @@ export default function PropertySearchForm() {
           placeholder="Max Price"
           value={formData.maxPrice}
           onChange={handleInputChange}
-          className="p-2 w-24 md:w-full rounded"
+          className="p-2 w-24 md:w-full rounded border border-gray-400"
         />
       <div className='w-full'>
-      <button className='bg-[#104E3E] md:p-6 p-4 w-full rounded  text-white'>
+      <button className='bg-[#FFA72A]  md:p-6 p-4 w-full rounded  text-white'>
          <span className='flex justify-center space-x-4 items-center'><FaSearch className='text-xl'/> <span>Go</span></span>
         </button>
       </div>

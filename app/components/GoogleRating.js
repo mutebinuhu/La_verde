@@ -6,10 +6,10 @@ import { FaGoogle } from 'react-icons/fa';
 
 const GoogleRating = ({ rating, totalReviews }) => {
   return (
-    <div className='md:p-8 p-2 max-w-screen-xl mx-12 md:mx-0 text-center bg-white rounded-lg shadow-md'>
-        <p className='text-xl md:text-3xl font-bold py-4'>A Reason To Trust La verde property Management</p>
+    <div className='md:p-4 p-2 max-w-screen-xl my-4 md:mx-0 text-center bg-white rounded-lg shadow-md'>
+        <p className='text-xl font-bold py-4'>A Reason To Trust La verde property Management</p>
     <div className="flex flex-col items-center justify-center  md:flex-row md:space-x-4">
-      <div className="flex items-center mb-4 md:mb-0">
+      <div className="flex items-center mb-2 md:mb-0">
         <span className="text-4xl font-bold text-yellow-500">{rating}</span>
         <span className="ml-2 text-gray-600">/5</span>
       </div>
@@ -40,7 +40,7 @@ const GoogleRating = ({ rating, totalReviews }) => {
                 <p className='py-2'><Image src="/icons8-google-48.png" className='text-3xl' width={50} height={40}/></p>
             </div>
           </Link>
-      <div className='flex justify-center mt-12'>
+      <div className='flex justify-center mt-4'>
       <Socials/>
       </div>
     </div>
