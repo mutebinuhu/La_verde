@@ -6,23 +6,24 @@ import FeaturedItem from './FeaturedItem';
 const FeaturedListing = () => {
   const featuredItems = [
     { 
-      imageSrc: 'https://res.cloudinary.com/mutebinuhu/image/upload/v1720696815/o6x8z3e3msnvp4vqgmae.jpg',
+      imageSrc: 'mayan.jpg',
       tag: 'For Sale',
-      title: 'Modern Apartment',
-      price: '760,000 AED',
-      bedrooms: 3,
-      bathrooms: 2,
+      title: 'Spacious studio in Mayan - Yas Island',
+      price: '1,400,000 AED',
+      bedrooms: 0,
+      bathrooms: 1,
       squareFeet: 1500,
-      url:""
+      url:"",
+      type:"studio"
     },
     {
-      imageSrc: 'https://via.placeholder.com/300',
+      imageSrc: 'talatower.jpg',
       tag: 'For Rent',
-      title: 'Luxury Villa',
-      price: '$2,500/mo',
-      bedrooms: 4,
-      bathrooms: 3,
-      squareFeet: 2000,
+      title: '3 bedrooms in Marina Square - Alreem Island',
+      price: '150,000 AED',
+      bedrooms: 3,
+      bathrooms: 5,
+      squareFeet: 2100,
       url:""
     },
     {
