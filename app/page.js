@@ -23,6 +23,10 @@ import GoogleRating from "./components/GoogleRating";
 import FeaturedListing from "@/components/FeaturedListing";
 import SellComponent from "./components/SellComponent";
 import OurServices from "@/components/OurServices";
+import Testimonial from "@/components/Testmonial";
+import ContactUsMain from "@/components/ContactUsMain";
+import LatestProperties from "@/components/UpcomingProperties";
+import UpcomingProperties from "@/components/UpcomingProperties";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -76,25 +80,34 @@ export default function Home() {
         
        
       <Hero1/>
-      <div className="flex py-4 items-center justify-center bg-gray-100">
+      <div className="flex py-4 items-center justify-center bg-gray-100 hidden">
       <GoogleRating rating={4.2} totalReviews={120} />
     </div>
-    <div className="flex justify-center items-center">
-    <div className="md:max-w-screen-xl bg-gray-100  py-12 flex items-center justify-center">
+    <div className="flex justify-center items-center mt-20 md:mt-0">
+    <div className="container  pb-12 md:mt-8 mx-auto">
       <FeaturedListing />
     </div>
     </div>
-          <div className="flex justify-center items-center ">
-          <div className="md:max-w-screen-xl  w-full ">
+    <div className="flex justify-center items-center ">
+          <div className="container px-6 py-12 mx-auto ">
     <SellComponent />
     </div>
           </div>
+    <OurServices/>
+          
      {/* <CardHero/>*/}
       {/** < PopularPlacesComponent/> */}
      {/**  <Services/> */}
-      <OurServices/>
+     
+      <Testimonial/>
+      <UpcomingProperties/>
+      {/**
+       *             <Latestprojects/>
+
+       * 
+       */}
       
-      <Latestprojects/>
+            <ContactUsMain/>
      {
       /**
        *  <StateTabs/>
@@ -102,7 +115,7 @@ export default function Home() {
        */
      }
      
-      <div className="py-6 md:py-12">
+      <div className="py-6 md:py-12 hidden">
       <Ad flexDirection={"flex-row-reverse"}  title="Qualified Experts" text="Buying, selling, or renting a house with La Verde is easy: our consultants are qualified professionals who understand luxury and the needs of our clients." action="Lets Talk" imageUrl="/buy-a-home.jpg"/>
 
       </div>

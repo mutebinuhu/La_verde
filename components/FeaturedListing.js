@@ -1,37 +1,11 @@
 import React from 'react';
+import FeaturedItem from './FeaturedItem';
 
-const FeaturedItem = ({ imageSrc, tag, title, price, bedrooms, bathrooms, squareFeet }) => {
-  return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-      <div className="relative">
-        <img src={imageSrc} alt={title} className="w-full h-64 object-cover" />
-        <div className="absolute top-0 left-0 bg-blue-600 text-white px-3 py-1 text-sm">{tag}</div>
-      </div>
-      <div className="p-4 bg-white">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-gray-600">{price}</p>
-        <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center text-gray-600">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-            {bedrooms}
-          </div>
-          <div className="flex items-center text-gray-600">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            {bathrooms}
-          </div>
-          <div className="flex items-center text-gray-600">
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            {squareFeet} sq.ft
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 const FeaturedListing = () => {
   const featuredItems = [
-    {
+    { 
       imageSrc: 'https://res.cloudinary.com/mutebinuhu/image/upload/v1720696815/o6x8z3e3msnvp4vqgmae.jpg',
       tag: 'For Sale',
       title: 'Modern Apartment',
@@ -39,6 +13,7 @@ const FeaturedListing = () => {
       bedrooms: 3,
       bathrooms: 2,
       squareFeet: 1500,
+      url:""
     },
     {
       imageSrc: 'https://via.placeholder.com/300',
@@ -48,6 +23,7 @@ const FeaturedListing = () => {
       bedrooms: 4,
       bathrooms: 3,
       squareFeet: 2000,
+      url:""
     },
     {
       imageSrc: 'https://via.placeholder.com/300',
@@ -57,11 +33,12 @@ const FeaturedListing = () => {
       bedrooms: 2,
       bathrooms: 1,
       squareFeet: 1200,
+      url:""
     },
   ];
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 md:p-12">
       <div className="mb-8">
         <h2 className="text-xl  font-bold text-[#FFA72A] ">Featured Listings</h2>
         <p className="text-gray-600 text-3xl font-bold">Explore our top properties</p>

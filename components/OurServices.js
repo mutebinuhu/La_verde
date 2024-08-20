@@ -4,54 +4,56 @@ const OurServices = () =>{
         <>
           <section>
       {/* Container */}
-      <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+      <div className="container px-6 py-12 mx-auto ">
         {/* Title */}
-        <h2 className="items-center text-center text-3xl font-bold md:text-5xl">
-          See How La Verde Property Management Can Help You
+        <div className="mb-8">
+        <h2 className="text-xl  font-bold text-[#FFA72A]">
+          Our Services
         </h2>
-        <p className="mx-auto mb-8 mt-4 max-w-lg text-center text-sm text-gray-500 sm:text-base md:mb-12">
-        Discover your dream home today! Whether you're ready to browse homes in UAE , sell your house , or find a new place to rent In Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah, let's make your real estate journey seamless and rewarding. Start exploring now!
-        </p>
+        <p className="text-gray-600 text-3xl font-bold">Some of our services </p>
+       
+        </div>
+        
         {/* List */}
-        <ul className="grid gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
-          <li className="flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
+        <ul className="grid gap-5 sm:grid-cols-2 mt-4  md:grid-cols-4 md:gap-0 ">
+          <li className="transition-all duration-300 hover:bg-gray-100 flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+              src="/rent.png"
               alt=""
-              className="inline-block h-16 w-16 rounded-full object-cover"
+              className="inline-block h-20 w-20 rounded object-cover"
             />
             <p className="text-xl font-semibold">Rent Home</p>
             <p className="text-center text-sm text-gray-500">
             Lets help you find Your next home. Choose to own a home in any of the seven Emirates from Dubai To Umm Al Quwain
             </p>
           </li>
-          <li className="flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
+          <li className="transition-all duration-300 hover:bg-gray-100  flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+              src="/property.png"
               alt=""
-              className="inline-block h-16 w-16 rounded-full object-cover"
+              className="inline-block h-20 w-20 rounded object-cover"
             />
             <p className="text-xl font-semibold">Sell Property</p>
             <p className="text-center text-sm text-gray-500">
             Are You Looking at Selling Your Home  , we can help you navigate a successful sale
             </p>
           </li>
-          <li className="flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
+          <li className="transition-all duration-300 hover:bg-gray-100  flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+              src="/buy.png"
               alt=""
-              className="inline-block h-16 w-16 rounded-full object-cover"
+              className="inline-block h-20 w-20 rounded object-cover"
             />
             <p className="text-xl font-semibold">Buy Property</p>
             <p className="text-center text-sm text-gray-500">
             Are you thinking about buying a new home and dont Know where to start. Let our team find You a perfect home worth living
             </p>
           </li>
-          <li className="flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
+          <li className="transition-all duration-300 hover:bg-gray-100  flex flex-col items-center gap-6 md:border-r md:px-10 md:py-4 p-8 md:border-gray-300">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+              src="assets.png"
               alt=""
-              className="inline-block h-16 w-16 rounded-full object-cover"
+              className="inline-block h-20 w-20 rounded object-cover"
             />
             <p className="text-xl font-semibold">Property Management</p>
             <p className="text-center text-sm text-gray-500">

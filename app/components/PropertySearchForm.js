@@ -62,32 +62,34 @@ export default function PropertySearchForm() {
     getLocations();
   }, [])
   return (
-    <form onSubmit={handleSubmit} className="">
-      <div className="flex">
+    <form onSubmit={handleSubmit} className="shadow-xl">
+      <div  className='flex md:block justify-center items-center'>
+      <div className="flex h-12 md:h-full text-center">
         <button
           type="button"
           onClick={() => handleButtonClick('rent')}
-          className={`px-12 md:px-12 py-6  font-semibold  bg-[#FFA72A]  rounded-tl-xl  text-white`}
+          className={`px-4 md:px-12 md:py-6  font-semibold  bg-[#FFA72A]  rounded-tl-xl  text-white`}
         >
           Rent
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('buy')}
-          className={`px-12 py-6 font-semibold border-r border-l border-white ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-800'}`}
+          className={`px-4 md:px-12  font-semibold border-r border-l border-white ${activeButton === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-800'}`}
         >
           Buy
         </button>
         <button
           type="button"
           onClick={() => handleButtonClick('sell')}
-          className={`px-12 py-6 font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-800'}`}
+          className={`px-4 md:px-12  font-semibold rounded-tr-xl ${activeButton === 'sell' ? 'bg-yellow-500 text-white' : 'bg-gray-100 text-gray-800'}`}
         >
           Sell
         </button>
       </div>
+      </div>
 
-      <div className="bg-white p-1">
+      <div className="bg-white p-1  rounded-r">
           <div className='flex  w-full space-x-2 '>
           <select
           type="text"
