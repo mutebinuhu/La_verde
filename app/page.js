@@ -27,6 +27,7 @@ import Testimonial from "@/components/Testmonial";
 import ContactUsMain from "@/components/ContactUsMain";
 import LatestProperties from "@/components/UpcomingProperties";
 import UpcomingProperties from "@/components/UpcomingProperties";
+import Agents from "@/components/Agents";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -106,8 +107,11 @@ export default function Home() {
 
        * 
        */}
+                   <Agents/>
+
       
             <ContactUsMain/>
+
      {
       /**
        *  <StateTabs/>

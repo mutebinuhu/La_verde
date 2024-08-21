@@ -23,8 +23,10 @@ const Navbar = () => {
     { id: 3, text: 'Sell' ,  url:'/search?purpose=sale'},
     { id: 4, text: 'Off Plan' ,  url:'/search?completionStatus=offPlanPrimary'},
     { id: 5, text: 'About',  url:'/about-us' },
+    { id: 8, text: 'Agents' ,  url:'/#agents'},
     { id: 6, text: 'Contact' ,  url:'/contact-us'},
     { id: 7, text: 'Blog' ,  url:'/blog'}
+    
 
 
   ];
