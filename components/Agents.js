@@ -2,17 +2,20 @@
 import Link from 'next/link';
 import React from 'react'
 import { Fade } from 'react-awesome-reveal'
-import { FaPhone, FaVoicemail } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaPhoneAlt, FaVoicemail, FaWhatsapp } from 'react-icons/fa';
 import { MdOutlineMail } from 'react-icons/md';
 const ceo =[
+  
   {
-    name: 'Ahmad youssef',
-    position: 'CEO',
-    image: 'workmates/ahmed.jpeg',
+    name: 'Maria',
+    position: 'Call Center Manager',
+    image: '/workmates/maria.jpeg',
     social: {
-      twitter: 'https://twitter.com/johndoe',
-      linkedin: 'https://linkedin.com/in/johndoe',
+      twitter: 'https://twitter.com/bobbrown',
+      linkedin: 'https://linkedin.com/in/bobbrown',
     },
+    className:"w-full h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto",
+    email:"marketing@laverde.ae"
   },
 ]
 const teamMembers = [
@@ -25,17 +28,23 @@ const teamMembers = [
       twitter: 'https://twitter.com/alicejohnson',
       linkedin: 'https://linkedin.com/in/alicejohnson',
     },
+    className:"w-full h-56 rounded-t-lg object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:mt-20",
+    email:"marketing@laverde.ae"
+
   },
+  
   {
-    name: 'Maria',
-    position: 'Call Center Manager',
-    image: '/workmates/maria.jpeg',
+    name: 'Ahmad youssef',
+    position: 'CEO',
+    image: 'workmates/ahmed.jpeg',
     social: {
-      twitter: 'https://twitter.com/bobbrown',
-      linkedin: 'https://linkedin.com/in/bobbrown',
+      twitter: 'https://twitter.com/johndoe',
+      linkedin: 'https://linkedin.com/in/johndoe',
     },
+    className:"w-full h-56rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mx-auto",
+    email:"marketing@laverde.ae"
+
   },
- 
   {
     name: 'Amir',
     position: 'Property Consultant ',
@@ -44,16 +53,9 @@ const teamMembers = [
       twitter: 'https://twitter.com/charliegreen',
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
-  },
-  
-  {
-    name: 'Hazem',
-    position: 'Sales Executive',
-    image: '/workmates/hr.jpeg',
-    social: {
-      twitter: 'https://twitter.com/janesmith',
-      linkedin: 'https://linkedin.com/in/janesmith',
-    },
+    className:"w-full md:mt-20 h-56 rounded-t-lg  object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0",
+    email:"marketing@laverde.ae"
+
   },
   {
     name: 'Joy',
@@ -63,6 +65,21 @@ const teamMembers = [
       twitter: 'https://twitter.com/dianawhite',
       linkedin: 'https://linkedin.com/in/dianawhite',
     },
+    className:"w-full h-56  rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto",
+    email:"marketing@laverde.ae"
+
+  },
+  {
+    name: 'Maria',
+    position: 'Call Center Manager',
+    image: '/workmates/maria.jpeg',
+    social: {
+      twitter: 'https://twitter.com/bobbrown',
+      linkedin: 'https://linkedin.com/in/bobbrown',
+    },
+    className:"w-full h-56 rounded-t-lg  object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto",
+    email:"marketing@laverde.ae"
+
   },
   {
     name: 'Nuhu',
@@ -72,9 +89,32 @@ const teamMembers = [
       twitter: 'https://twitter.com/charliegreen',
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
+    className:"w-full h-56 rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mr-0",
+    email:"marketing@laverde.ae"
+
   },
+
   
 ];
+const Details = () =>{
+  return(
+    <div className=" bg-black bg-opacity-50 p-6 text-white">
+        <h3 className="text-lg font-semibold">{_.name}</h3>
+        <p className="text-sm">{_.position}</p>
+        <div className="flex space-x-4 mt-2">
+          <a href={`mailto:${_.email}`} className="hover:text-gray-300">
+            <FaEnvelope className="w-5 h-5" />
+          </a>
+          <a href={`https://wa.me/${_.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+            <FaWhatsapp className="w-5 h-5" />
+          </a>
+          <a href={`tel:${_.phone}`} className="hover:text-gray-300">
+            <FaPhoneAlt className="w-5 h-5" />
+          </a>
+        </div>
+    </div>
+  )
+}
 
 function Agents() {
   return (
@@ -96,36 +136,40 @@ function Agents() {
                 <div class="w-full lg:w-1/2 lg:mt-0 md:mt-40 mt-16 max-lg:max-w-2xl">
                 <Fade direction='top' delay={1000}>
                 <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                    <img src="https://pagedone.io/asset/uploads/1696238644.png" alt="Team tailwind section"
-                        class=" h-56 rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0" />
+                   
+                    {teamMembers.map((_, index)=>{
+                      
+                      return(
+                        
+                       <div>
+                        <img src={_.image} alt="Team tailwind section"
+                        class={_.className} />
 
-                        <div className='flex justify-center items-center '>
-                        <Link href={"/"} className=' p-2.5 my-2 font-bold md:mr-2 md:w-1/2 flex text-white justify-between border border-2-[#FFA72A]  bg-[#FFA72A] '><span>Call</span> <span><FaPhone/></span></Link>
-                        <Link href={"/"} className='border my-2 border-gray-800 border-2 p-2  md:w-1/2  flex  justify-between'><span>Email</span> <span>< MdOutlineMail/></span></Link>
+                  
+                          <div className='bg-black bg-opacity-70 p-4 text-white'>
+                          <h3 className="text-lg text-center font-semibold">{_.name}</h3>
+        <p className="text-sm text-center">{_.position}</p>
+        <div className="flex justify-between mt-2">
+          <a href={`mailto:${_.email}`} className="hover:text-gray-300">
+            <FaEnvelope className="w-5 h-5" />
+          </a>
+          <a href={`https://wa.me/${_.whatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+            <FaWhatsapp className="w-5 h-5" />
+          </a>
+          <a href={`tel:${_.phone}`} className="hover:text-gray-300">
+            <FaPhoneAlt className="w-5 h-5" />
+          </a>
+        </div>
+                          </div>
                         </div>
 
-                    </div>
-                   <div>
-                   <img src="https://pagedone.io/asset/uploads/1696238665.png" alt="Team tailwind section"
-                        class=" h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mx-auto" />
-                   </div>
-                    <div>
-                    <img src="https://pagedone.io/asset/uploads/1696238684.png" alt="Team tailwind section"
-                        class="h-56 rounded-2xl object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0" />
-                    </div>
-                    <div>
-                    <img src="https://pagedone.io/asset/uploads/1696238702.png" alt="Team tailwind section"
-                        class="h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto" />
-                    </div>
-                   <div>
-                   <img src="https://pagedone.io/asset/uploads/1696238720.png" alt="Team tailwind section"
-                        class="h-56 rounded-2xl object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto" />
-                   </div>
-                   <div>
-                   <img src="https://pagedone.io/asset/uploads/1696238737.png" alt="Team tailwind section"
-                        class="h-56 rounded-2xl object-cover mx-auto min-[450px]:ml-0 md:mr-0" />
-                   </div>
+                  
+                      )
+                    })}
+
+                   
+             
+                   
 
                 </div>
                 </Fade>

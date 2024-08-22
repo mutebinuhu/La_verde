@@ -4,7 +4,7 @@ const OurServices = () =>{
         <>
           <section>
       {/* Container */}
-      <div className="container px-6 py-12 mx-auto ">
+      <div className="container px-8 md:px-12 py-12 mx-auto ">
         {/* Title */}
         <div className="mb-8">
         <h2 className="text-xl  font-bold text-[#FFA72A]">

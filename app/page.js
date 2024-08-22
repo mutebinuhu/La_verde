@@ -90,7 +90,7 @@ export default function Home() {
     </div>
     </div>
     <div className="flex justify-center items-center ">
-          <div className="container px-6 py-12 mx-auto ">
+          <div className="container px-6  mx-auto ">
     <SellComponent />
     </div>
           </div>
@@ -107,7 +107,9 @@ export default function Home() {
 
        * 
        */}
+                   <div className="w-full">
                    <Agents/>
+                   </div>
 
       
             <ContactUsMain/>
