@@ -56,7 +56,7 @@ const properties = [
 const UpcomingProperties = () => {
   return (
 
-    <div className="sm:py-16 md:px-4 py-12 md:py-20">
+    <div className="py-12 bg-gray-70 sm:py-16 lg:py-20">
       <div className='container px-6 py-12 mx-auto'>
         <div className="mb-8">
           <h2 className="text-xl font-bold text-[#FFA72A]">Up Coming Projects</h2>

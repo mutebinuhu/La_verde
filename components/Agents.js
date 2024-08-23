@@ -119,7 +119,7 @@ const Details = () =>{
 function Agents() {
   return (
 
-    <section class="py-24 bg-gray-50 " id="agents">
+    <section class="py-24 bg-gray-70 " id="agents">
     <div class="container px-6 py-12 mx-auto">
         <div class="flex justify-between items-center flex-col lg:flex-row md:mt-20">
             <div class="w-full lg:w-1/2">
@@ -128,6 +128,8 @@ function Agents() {
                     class="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7 text-center lg:text-left">
                     Your Trusted Real Estate Partner</h2>
                 <p class="text-lg text-gray-500 mb-16 text-center lg:text-left">We Have a Full Team Of Office Staff and Realtors Ready To Help You
+                </p>
+                <p class="text-lg text-gray-500 mb-8 text-center lg:text-left">Just contact any by clicking on the Icons
                 </p>
                 <button class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
                     our team</button>

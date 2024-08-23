@@ -1,13 +1,15 @@
 import React from "react";
+import CustomLink from "./CustomLink";
 const OurServices = () =>{
     return(
         <>
           <section>
       {/* Container */}
-      <div className="container px-8 md:px-12 py-12 mx-auto ">
+      <div className="py-12 bg-gray-70 sm:py-16 lg:py-20">
+      <div className='container px-6 py-12 mx-auto'>
         {/* Title */}
         <div className="mb-8">
-        <h2 className="text-xl  font-bold text-[#FFA72A]">
+        <h2 className="text-xl font-bold text-[#FFA72A]">
           Our Services
         </h2>
         <p className="text-gray-600 text-3xl font-bold">Some of our services </p>
@@ -62,6 +64,11 @@ const OurServices = () =>{
           </li>
         </ul>
       </div>
+      <div className="text-center">
+        <CustomLink styles="bg-[#104E3E] py-4 px-4 rounded text-white text-bold" title="Contact Us" href={`/contact-us`}/>
+        </div>
+      </div>
+      
     </section>  
         </>
     )

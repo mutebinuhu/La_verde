@@ -94,14 +94,17 @@ export default function Home() {
     <SellComponent />
     </div>
           </div>
-    <OurServices/>
+          <div className="bg-white">
+          <OurServices/>
+
+          </div>
           
      {/* <CardHero/>*/}
       {/** < PopularPlacesComponent/> */}
      {/**  <Services/> */}
-     
+     <UpcomingProperties/>
+
       <Testimonial/>
-      <UpcomingProperties/>
       {/**
        *             <Latestprojects/>
 
