@@ -64,6 +64,10 @@ const propertySchema = new mongoose.Schema({
     type: Number,
     //required: true
   },
+  isFeatured:{
+    type: Boolean,
+    default:false
+  },
   
   descriptionEnglish: {
     type: String,

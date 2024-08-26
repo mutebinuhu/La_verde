@@ -27,13 +27,13 @@ const FeaturedListing = () => {
       url:""
     },
     {
-      imageSrc: 'https://via.placeholder.com/300',
-      tag: 'For Sale',
-      title: 'Cozy House',
-      price: '$350,000',
-      bedrooms: 2,
-      bathrooms: 1,
-      squareFeet: 1200,
+      imageSrc: 'mag5.jpg',
+      tag: 'For Rent',
+      title: '3 bhk + maid + Kitchen Appliances- Al Reem',
+      price: '220,000',
+      bedrooms: 3,
+      bathrooms: 3,
+      squareFeet: 2000,
       url:""
     },
   ];
