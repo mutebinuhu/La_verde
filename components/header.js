@@ -4,7 +4,7 @@ import { FaEnvelope, FaLocationArrow, FaPhone, FaWhatsapp } from "react-icons/fa
 const HeaderBar = () =>{
     return(
     <>
-    <div className="bg-[#104E3E] p-2 flex w-full justify-between">
+    <div className=" p-2 flex w-full justify-between">
         <ul className="flex mx-24 space-x-4">
             <li>
             <Link

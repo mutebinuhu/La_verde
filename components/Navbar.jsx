@@ -33,8 +33,8 @@ const Navbar = () => {
 {/** bg-[#F5F4F0] */}
   return (
     <>
-    <HeaderBar/>
-    <div className=' bg-[#104E3E]   w-full flex justify-between items-center mx-auto px-4 text-white'>
+    {/**<HeaderBar/> */}
+    <div className='    w-full flex justify-between items-center mx-auto px-4 text-white'>
       {/* Logo */}
      <Link href="/">
      <h1 className='w-full text-3xl font-bold'>

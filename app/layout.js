@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
             </Link>
            </div>
       <Providers>
-        <Navbar/>
+       {/**  <Navbar/> */}
           {children}
         <Footer/>
       </Providers>
