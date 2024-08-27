@@ -41,16 +41,6 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
   },
-  
-  {
-    name: 'Hazem',
-    position: 'Sales Executive',
-    image: '/workmates/hr.jpeg',
-    social: {
-      twitter: 'https://twitter.com/janesmith',
-      linkedin: 'https://linkedin.com/in/janesmith',
-    },
-  },
   {
     name: 'Joy',
     position: 'International Sales',
