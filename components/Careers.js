@@ -53,7 +53,7 @@ function Careers() {
                   return(
                     <div class="flex justify-between gap-x-8 my-6 pb-6 border-b border-gray-200">
               <h3 class="text-gray-900 text-xl font-medium leading-8">{data.name}</h3>
-              <button class="w-20 h-9 rounded-full bg-[#104E3E] hover:bg-[#44b99c] transition-all duration-700 text-white text-xs font-semibold leading-4">Apply</button>
+              <Link href="/apply" class="w-20 h-9 rounded-full bg-[#104E3E] hover:bg-[#44b99c] transition-all duration-700 text-white text-xs font-semibold leading-4">Apply</Link>
             </div>
                   )
                 })

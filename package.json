@@ -23,6 +23,7 @@
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "formidable": "^3.5.1",
     "formik": "^2.4.6",
     "framer-motion": "^11.1.8",
     "jsonwebtoken": "^9.0.2",
