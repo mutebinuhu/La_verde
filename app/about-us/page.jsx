@@ -7,9 +7,7 @@ export const metadata = {
 const Page = () => {
     return (
         <div className='bg-gray-200'>
-              <h1 className="bg-white text-3xl text-center py-12 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                About La Verde Property Management
-            </h1>
+              
             <About/>
         </div>
     );

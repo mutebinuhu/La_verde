@@ -3,10 +3,17 @@ import LazyYoutube from './LazyYoutube';
 import { Button } from '@nextui-org/button';
 import Link from 'next/link';
 import TeamComponent from './TeamComponent';
+import Navbar from './Navbar';
 
 const About = () => {
   return (
     <div className="">
+       <div className="bg-[#104e3e]">
+       <Navbar/>
+       </div>
+       <h1 className="bg-white text-3xl text-center py-12 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                About La Verde Property Management
+            </h1>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         <div className="lg:text-center bg-white py-12">
         

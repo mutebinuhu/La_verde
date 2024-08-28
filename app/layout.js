@@ -33,13 +33,13 @@ export default function RootLayout({ children }) {
            <Link
               href={`https://wa.me/971506144930?text=Hello`}
               target="_blank"
-              className="flex w-12 h-12 rounded-full  items-center justify-center bg-green-500 text-white px-2 py-2 rounded hover:bg-green-700 transition duration-300"
+              className="flex w-12 h-12  items-center justify-center bg-green-500 text-white px-2 py-2 rounded hover:bg-green-700 transition duration-300"
             >
               <FaWhatsapp className="text-3xl" />
             </Link>
            </div>
       <Providers>
-       {/**  <Navbar/> */}
+       {/** <Navbar/> */}
           {children}
         <Footer/>
       </Providers>

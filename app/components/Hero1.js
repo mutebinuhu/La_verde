@@ -4,13 +4,14 @@ import PropertySearchForm from "./PropertySearchForm";
 import { AttentionSeeker } from "react-awesome-reveal";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import HomeWorthForm from "@/components/HomeWorthForm";
 
 
 const Hero1 = () =>{
     return(
         <>
         
-            <section class=" dark:bg-gray-900  bg-[#104E3E]   md:relative relative  bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+            <section class=" dark:bg-gray-900  bg-gradient-to-l from-[#104E3E]  to-[#3b8e79]   md:relative relative  bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
             <div className="absolute inset-0 bg-[#104E3E] opacity-50"></div>
             <div className="relative">
                 <Navbar/>
@@ -29,7 +30,7 @@ const Hero1 = () =>{
                 </div>
                 <div class="hidden lg:mt-0 lg:col-span-5 lg:flex mx-2 w-full h-full z-10 ">
                    <AttentionSeeker effect="pulse" duration={4000} >
-                   <p>Loreme</p>
+                    <HomeWorthForm/>
                    </AttentionSeeker >
                 </div>                
             </div>
