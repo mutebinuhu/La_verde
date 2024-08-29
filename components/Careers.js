@@ -53,7 +53,10 @@ function Careers() {
                   return(
                     <div class="flex justify-between gap-x-8 my-6 pb-6 border-b border-gray-200">
               <h3 class="text-gray-900 text-xl font-medium leading-8">{data.name}</h3>
-              <Link href="/apply" class="w-20 h-9 rounded-full bg-[#104E3E] hover:bg-[#44b99c] transition-all duration-700 text-white text-xs font-semibold leading-4">Apply</Link>
+              <Link href="/apply" target="_blank">
+              <button  class="w-20 h-9 rounded-full bg-[#104E3E] hover:bg-[#44b99c] transition-all duration-700 text-white text-xs font-semibold leading-4">Apply</button>
+
+              </Link>
             </div>
                   )
                 })
@@ -67,10 +70,12 @@ function Careers() {
                 <h3 class="text-white font-manrope lg:text-4xl text-3xl font-semibold leading-10 mb-5">Don't see the role you're interested in?</h3>
                 <p class="text-indigo-100 text-xl font-normal leading-8">We’re always looking for talented people to join our team. Send us your CV and we will contact you for any future roles.</p>
               </div>
+              <Link href="/apply" target="_blank">
               <button class="px-2.5 h-14 flex items-center justify-center text-[#104E3E] text-lg font-semibold leading-7 gap-2 rounded-full bg-white whitespace-nowrap"> Send Your CV <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M2.75 11L17.4167 11M12.8333 16.5L17.6852 11.6482C17.9907 11.3426 18.1435 11.1898 18.1435 11C18.1435 10.8102 17.9907 10.6574 17.6852 10.3518L12.8333 5.5" stroke="#104E3E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
+              </Link>
             </div>
           </div>
      </div>

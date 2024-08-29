@@ -24,11 +24,9 @@ const Navbar = () => {
     { id: 4, text: 'Off Plan' ,  url:'/search?completionStatus=offPlanPrimary'},
     { id: 5, text: 'About',  url:'/about-us' },
     { id: 8, text: 'Agents' ,  url:'/#agents'},
+    { id: 8, text: 'Careers' ,  url:'/careers'},
     { id: 6, text: 'Contact' ,  url:'/contact-us'},
     { id: 7, text: 'Blog' ,  url:'/blog'}
-    
-
-
   ];
 {/** bg-[#F5F4F0] */}
   return (

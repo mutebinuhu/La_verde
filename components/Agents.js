@@ -29,7 +29,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/alicejohnson',
     },
     className:"w-full h-56 rounded-t-lg object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:mt-20",
-    email:"marketing@laverde.ae"
+    email:"marketing@laverde.ae",
+    whatsapp:"971506144930"
 
   },
   
@@ -42,7 +43,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/johndoe',
     },
     className:"w-full h-56rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mx-auto",
-    email:"marketing@laverde.ae"
+    email:"marketing@laverde.ae",
+     whatsapp:"971506144930"
 
   },
   {
@@ -54,8 +56,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
     className:"w-full md:mt-20 h-56 rounded-t-lg  object-cover md:mt-20 mx-auto min-[450px]:mr-0 md:ml-0",
-    email:"marketing@laverde.ae"
-
+    email:"marketing@laverde.ae",
+ whatsapp:"971506144930"
   },
   {
     name: 'Joy',
@@ -66,7 +68,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/dianawhite',
     },
     className:"w-full h-56  rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mr-0 md:ml-auto",
-    email:"marketing@laverde.ae"
+    email:"marketing@laverde.ae",
+     whatsapp:"971506144930"
 
   },
   {
@@ -78,7 +81,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/bobbrown',
     },
     className:"w-full h-56 rounded-t-lg  object-cover md:-mt-20 mx-auto min-[450px]:mr-0 md:mx-auto",
-    email:"marketing@laverde.ae"
+    email:"marketing@laverde.ae",
+     whatsapp:"971506144930"
 
   },
   {
@@ -90,7 +94,8 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
     className:"w-full h-56 rounded-t-lg  object-cover mx-auto min-[450px]:ml-0 md:mr-0",
-    email:"marketing@laverde.ae"
+    email:"marketing@laverde.ae",
+     whatsapp:"971506144930"
 
   },
 
@@ -131,8 +136,8 @@ function Agents() {
                 </p>
                 <p class="text-lg text-gray-500 mb-8 text-center lg:text-left">Just contact any by clicking on the Icons
                 </p>
-                <button class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
-                    our team</button>
+                <Link href={"/careers"} target='_blank' class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
+                    our team</Link>
             </Fade>
             </div>
                 <div class="w-full lg:w-1/2 lg:mt-0 md:mt-40 mt-16 max-lg:max-w-2xl">
