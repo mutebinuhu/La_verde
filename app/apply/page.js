@@ -35,11 +35,15 @@ export default function Home() {
     form.append('phone', formData.phone);
     form.append('position', formData.position);
     form.append('cv', formData.cv);
+    console.log("form data", formData)
 
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'/api/applications', {
+      headers:{
+        'Content-Type':"application/json"
+      },
         method: 'POST',
-        body: form,
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
