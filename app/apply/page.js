@@ -1,8 +1,12 @@
 "use client"
+import React, { useRef } from 'react';
+import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
 import { useState } from 'react';
 
 export default function Home() {
+  const formRef = useRef(null);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,6 +14,8 @@ export default function Home() {
     position: '',
     cv: null,
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -28,6 +34,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
 
     const form = new FormData();
     form.append('name', formData.name);
@@ -35,15 +42,13 @@ export default function Home() {
     form.append('phone', formData.phone);
     form.append('position', formData.position);
     form.append('cv', formData.cv);
+    console.log("form", form)
     console.log("form data", formData)
 
     try {
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'/api/applications', {
-      headers:{
-        'Content-Type':"application/json"
-      },
-        method: 'POST',
-        body: JSON.stringify(formData),
+        method:"POST",
+        body:form
       });
 
       if (response.ok) {
@@ -52,8 +57,25 @@ export default function Home() {
         alert('Failed to submit the form.');
       }
     } catch (error) {
+      
       console.error('Error submitting the form', error);
+      setIsLoading(false)
+
+    }finally{
+      setIsLoading(false)
+
     }
+    setIsLoading(false)
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      position: '',
+      cv: null,
+    })
+
+    formRef.current.reset();
+
   };
 
   return (
@@ -62,7 +84,13 @@ export default function Home() {
         <Navbar/>
       </div>
       <div className="flex justify-center items-center h-screen">
-        <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-8 rounded shadow-lg">
+        <form ref={formRef}  onSubmit={handleSubmit} className="w-full max-w-md bg-white p-8 rounded shadow-lg">
+          {isLoading && 
+          
+            <div className='text-center'>
+             <p>Submitting...</p>
+            </div>
+          }
           <h2 className="text-2xl font-bold mb-6 text-center">Application Form</h2>
 
           <div className="mb-4">
@@ -138,6 +166,7 @@ export default function Home() {
               onChange={handleChange}
               required
             />
+            <p className='text-red-500 font-bold py-4'>Please make sure the file size is not morethan 8mbs and should be in a pdf format</p>
           </div>
 
           <button

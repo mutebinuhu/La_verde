@@ -4,10 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { writeFile } from 'fs/promises';
 import path from 'path';
 import fs from 'fs';
-import formidable from 'formidable';
+import { IncomingForm } from 'formidable';
+import cloudinary from '@/cloudinaryConfig';
+
 export const config = {
   api: {
-    bodyParser: false, // Disable Next.js's built-in body parser
+    bodyParser: false, // Disables Next.js body parsing
   },
 };
 export default async function handler(req, res) {
@@ -18,72 +20,84 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const applications = await JobApplication.find();
-        res.status(200).json(applications);
+        // Retrieve all job applications from MongoDB
+        const jobApplications = await JobApplication.find().sort({ createdAt: -1 }); // Sort by latest application first
+  
+        // Respond with the list of job applications
+        res.status(200).json({
+          message: 'Job applications retrieved successfully',
+          jobApplications,
+        });
       } catch (error) {
-        console.error('Error fetching job applications:', error);
-        res.status(500).json({ error: 'Failed to fetch job applications' });
+        console.error('Error retrieving job applications:', error);
+        res.status(500).json({ error: 'Failed to retrieve job applications' });
       }
       break;
 
     case 'POST':
-      try {
-        console.log("req=======================", req.body)
-        const form = new formidable.IncomingForm();
+      await connectToDatabase();
 
-        form.parse(req, (err, fields, files) => {
-          if (err) {
-            return res.status(500).json({ error: err.message });
-          }
-          console.log("files======================", files)
-          const file = files.cv; // Assuming the file field name is 'file'
-          const data = fs.readFileSync(file.filepath);
-          const savePath = path.join(process.cwd(), 'uploads', file.originalFilename);
-    
-          fs.writeFileSync(savePath, data);
-    
-          res.status(200).json({ message: 'File uploaded successfully', filePath: savePath });
-        });
+      if (req.method === 'POST') {
+        try {
+          const form = new IncomingForm();
+          //const uploadDir = path.join(process.cwd(), '/public/uploads');
+      
+          // Ensure the upload directory exists
+           //fs.mkdirSync(uploadDir, { recursive: true });
+      
+         // form.uploadDir = uploadDir;
+          //form.keepExtensions = true;
 
-        const {name, email, phone, position, cv:cvFile} = req.body;
-        //console.log("resanswer", name, email, phone, position)
-      {
-        /**
-         * 
-         *   
-         * @param
-         * const formData = await req.formData();
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const position = formData.get('position');
-        const cvFile = formData.get('cv');
-
-         */
-      }
-        /*if (!name || !email || !phone || !position || !cvFile) {
-          return res.status(400).json({ error: 'All fields are required' });
+          form.parse(req, async (err, fields, files) => {
+            if (err) {
+              console.error('Formidable Error:', err);
+              res.status(500).json({ error: 'Something went wrong during file upload' });
+              return;
+            }
+      
+            try {
+              console.log('Fields:', fields);
+              console.log('Files:', files.cv[0].filepath);
+      
+              // Upload the CV file to Cloudinary
+              const uploadResponse = await cloudinary.v2.uploader.upload(files.cv[0].filepath, {
+                folder: 'job_applications',
+                resource_type: 'auto', // Automatically detects the file type
+              });
+      
+              // Get the URL of the uploaded file
+              const cvUrl = uploadResponse.secure_url;
+      
+              // Save the form data and Cloudinary URL to MongoDB
+              const jobApplication = new JobApplication({
+                name: fields.name[0],
+                email: fields.email[0],
+                phone: fields.phone[0],
+                position: fields.position[0],
+                cv: cvUrl,
+              });
+      
+              await jobApplication.save();
+      
+              res.status(200).json({
+                message: 'Job application submitted and saved successfully',
+                jobApplication,
+              });
+            } catch (error) {
+              console.error('Saving Error:', error);
+              res.status(500).json({ error: 'Failed to save data' });
+            }
+          })
+        } catch (error) {
+          console.log("error---XXXXX", error.message)
         }
-
-        const cvFileName = `${uuidv4()}_${cvFile.name}`;
-        const cvFilePath = path.join(process.cwd(), 'public/uploads', cvFileName);
-        await writeFile(cvFilePath, Buffer.from(await cvFile.arrayBuffer()));
-*/
-const cvFileName ="test"
-        const jobApplication = new JobApplication({
-          name,
-          email,
-          phone,
-          position,
-          cv: `/uploads/${cvFileName}`,
-        });
-
-        await jobApplication.save();
-        res.status(200).json({ message: 'Job application submitted successfully' });
-      } catch (error) {
-        console.error('======================================================Error submitting job application:', error.message);
-        return res.status(500).json({ error: 'Failed to submit job application' });
+    
+        ;
+        
+      } else {
+        res.status(405).json({ message: 'Only POST requests allowed' });
       }
+    
       break;
 
     default:
