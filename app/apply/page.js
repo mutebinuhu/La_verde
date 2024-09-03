@@ -46,7 +46,7 @@ export default function Home() {
     console.log("form data", formData)
 
     try {
-      const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'/api/applications', {
+      const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'api/applications', {
         method:"POST",
         body:form
       });
