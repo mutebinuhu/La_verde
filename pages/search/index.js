@@ -59,16 +59,21 @@ const { data, error } = useSWR(()=> {
 
           </div>
           </div>
-          <div className="mx-4">
+          <div className="md:flex md:mx-54 space-x-12w-full flex justify-center">
+            <div className="md:grid grid-cols-4 gap-4 ">
             {
               data.length > 0 ? data.map((property) => (
                 <PropertyDetails key={property.id} property={property} />
               )) :<NoResults/>
             }
-            <h2 className="hidded">MORE dETAILS</h2>
-            <div className="mx-4">
-
             </div>
+           {/**
+            *  <div className="hidden md:block w-1/2 bg-red-400">
+            Map Will Go here
+            </div>
+            * 
+            */}
+           
           </div>
         </div>
       </div>
