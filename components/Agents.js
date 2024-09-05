@@ -141,7 +141,7 @@ function Agents() {
             </Fade>
             </div>
                 <div class="w-full lg:w-1/2 lg:mt-0 md:mt-40 mt-16 max-lg:max-w-2xl">
-                <Fade direction='top' delay={1000}>
+           
                 <div class="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 gap-8">
                    
                     {teamMembers.map((_, index)=>{
@@ -179,7 +179,7 @@ function Agents() {
                    
 
                 </div>
-                </Fade>
+                
 
             </div>
         </div>
