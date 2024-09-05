@@ -66,7 +66,7 @@ const FooterComponent = () => {
             <FaPhoneAlt className="text-[#FFA72A]" />
             <div>
               <p className="text-sm">For Enquiry Call</p>
-              <Link href={`tel:+971506144930`} target='_blank' className="font-semibold">+971 2 666 9131</Link>
+              <Link href={`tel:+971506144930`} target='_blank' className="font-semibold">+971 50 614 4930</Link>
             </div>
           </div>
           <div className="flex items-center space-x-4 mb-4">
