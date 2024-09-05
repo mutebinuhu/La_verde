@@ -10,6 +10,7 @@ import NoResults from "./NoResults";
 import useSWR from 'swr';
 import Filters from "@/components/Filters";
 import { useEffect, useState } from "react";
+import CityGrid from "@/components/CityCard";
 export const metadata = {
   title: "Best real estate agency Abu Dhabi",
   description: "Achieve your real estate goals with La Verde Property Management L.L.C. Our expert team in Abu Dhabi offers customized and professional services for property buying, selling, and renting. Reach out to us for a personalized consultation",
@@ -53,20 +54,34 @@ const { data, error } = useSWR(()=> {
         <div className="mt-10 ">
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
           <p className='text-center text-2xl'>Search Results</p>
-          <div className="containr mx-auto">
+          <div className="container mx-auto">
           <div className='md:flex justify-center items-center w-full  '>
               <Filters onFilterChange={handleFilterChange} />
 
           </div>
           </div>
-          <div className="md:flex md:mx-54 space-x-12w-full flex justify-center">
-            <div className="md:grid grid-cols-4 gap-4 ">
+        
+          <div className="container mx-auto py-12">
+          <div className="container mb-8 ">
+        <h2 className="text-xl  mx-4 font-bold text-[#FFA72A] ">Featured Cities</h2>
+          <p className="text-gray-600 mx-4 text-3xl font-bold">Explore our top Cities</p>
+        </div>
+              <CityGrid />
+          </div>
+          <div className="container  mx-auto w-full ">
+          <div className="container mb-8 w-full">
+        <h2 className="text-xl  font-bold text-[#FFA72A] ">Featured Properties</h2>
+          <p className="text-gray-600 text-3xl font-bold">Explore Our Properties</p>
+        </div>
+            <>
+            <div className={`${data.length > 0 ? 'md:grid grid-cols-4 gap-4':'w-full'  } `}>
             {
               data.length > 0 ? data.map((property) => (
                 <PropertyDetails key={property.id} property={property} />
-              )) :<NoResults/>
+              )) :<div className=""><NoResults/></div>
             }
             </div>
+            </>
            {/**
             *  <div className="hidden md:block w-1/2 bg-red-400">
             Map Will Go here

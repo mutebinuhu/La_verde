@@ -4,7 +4,7 @@ import React from 'react';
 
 const NoResults = () => {
   return (
-    <div className="flex items-center justify-center h-full">
+    <div className="w-full flex items-center justify-center h-full  bg-red-200">
       <div className="text-center">
         <svg
           className="mx-auto h-12 w-12 text-gray-400"

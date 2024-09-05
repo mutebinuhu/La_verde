@@ -179,13 +179,13 @@ const PropertyDetails = ({ property }) => {
           </div>
           <div className="flex items-center">
             <FaRulerCombined className="mr-1" />
-            <span>1,500 sqft</span>
+            <span>{property.areaSquare}sqft</span>
           </div>
         </div>
       </div>
     </div>
     </Link>
-   
+    
     </>
   );
 };

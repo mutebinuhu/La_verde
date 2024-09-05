@@ -1,4 +1,6 @@
 import ContactForm from '@/components/Contactus';
+import ContactUsMain from '@/components/ContactUsMain';
+import Navbar from '@/components/Navbar';
 import React from 'react';
 export const metadata = {
     title: "La Verde Property Management  - Real Estate Services in Abu Dhabi",
@@ -7,8 +9,18 @@ export const metadata = {
 const Page = () => {
     return (
         <div className='bg-gray-200'>
-            <h1 className="bg-white text-3xl text-center py-8 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Contact Us Today to Start the Conversation</h1>
-            <ContactForm showEmailAndTextBox={true}/>
+             <div className="bg-[#104E3E]">
+       <Navbar/>
+       </div>
+       {/**
+        *             <h1 className="bg-white text-3xl text-center py-8 leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Contact Us Today to Start the Conversation</h1>
+
+        * 
+        */}
+           {/**
+            *  <ContactForm showEmailAndTextBox={true}/>
+            */}
+            <ContactUsMain/>
         </div>
     );
 }

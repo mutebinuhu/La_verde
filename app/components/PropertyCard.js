@@ -1,35 +1,71 @@
-// components/PropertyCard.js
 import React from 'react';
 
-const PropertyCard = ({ image, title, description, amenities }) => {
+const PropertyCard = ({ 
+  image, 
+  title, 
+  location, 
+  price, 
+  pricePerSqFt, 
+  bedrooms, 
+  bathrooms, 
+  garages, 
+  area, 
+  type, 
+  agentName, 
+  timeAgo 
+}) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <p className="text-gray-600 mb-4">{description}</p>
-        <ul className="text-gray-600">
-          {amenities.map((amenity, index) => (
-            <li key={index} className="flex items-center mb-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-5a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1h-2a1 1 0 01-1-1v-1zm1-7a3 3 0 100-6 3 3 0 000 6zm-1 1a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1V7z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {amenity}
-            </li>
-          ))}
-        </ul>
-        <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600">
-          Contact Us
-        </button>
+    <div className="flex bg-white shadow-md rounded-lg overflow-hidden">
+      <img src={image} alt={title} className="w-1/3 object-cover" />
+
+      <div className="w-2/3 p-4 flex flex-col justify-between">
+        <div>
+          <div className="flex items-center justify-between">
+            <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">FEATURED</span>
+            <span className="text-gray-500 text-xs">FOR SALE</span>
+          </div>
+          <h3 className="text-lg font-semibold mt-2">{title}</h3>
+          <p className="text-sm text-orange-500">{location}</p>
+        </div>
+
+        <div className="flex items-center mt-2 text-gray-600">
+          <div className="flex items-center mr-4">
+            <span className="material-icons">hotel</span>
+            <span className="ml-1">{bedrooms}</span>
+          </div>
+          <div className="flex items-center mr-4">
+            <span className="material-icons">bathtub</span>
+            <span className="ml-1">{bathrooms}</span>
+          </div>
+          <div className="flex items-center mr-4">
+            <span className="material-icons">directions_car</span>
+            <span className="ml-1">{garages}</span>
+          </div>
+          <div className="flex items-center">
+            <span className="material-icons">square_foot</span>
+            <span className="ml-1">{area} Sq Ft</span>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <p className="text-sm text-gray-500">{type}</p>
+          <div className="text-xl font-semibold text-gray-800">
+            {price}
+          </div>
+          <div className="text-sm text-gray-500">
+            {pricePerSqFt}/sq ft
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center justify-between">
+          <div className="text-sm text-gray-500">
+            <p>👤 {agentName}</p>
+            <p>{timeAgo}</p>
+          </div>
+          <button className="bg-orange-500 text-white px-4 py-2 rounded">
+            Details
+          </button>
+        </div>
       </div>
     </div>
   );
