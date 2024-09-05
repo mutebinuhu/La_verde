@@ -11,6 +11,7 @@ import useSWR from 'swr';
 import Filters from "@/components/Filters";
 import { useEffect, useState } from "react";
 import CityGrid from "@/components/CityCard";
+import FooterComponent from "@/app/components/FooterComponent";
 export const metadata = {
   title: "Best real estate agency Abu Dhabi",
   description: "Achieve your real estate goals with La Verde Property Management L.L.C. Our expert team in Abu Dhabi offers customized and professional services for property buying, selling, and renting. Reach out to us for a personalized consultation",
@@ -92,6 +93,9 @@ const { data, error } = useSWR(()=> {
           </div>
         </div>
       </div>
+     <div className="py-8">
+     <FooterComponent/>
+     </div>
     </>
   );
 };
