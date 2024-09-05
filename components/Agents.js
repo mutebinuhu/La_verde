@@ -125,10 +125,11 @@ function Agents() {
   return (
 
     <section class="py-24 bg-gray-70 " id="agents">
+    <Fade >
     <div class="container px-6 py-12 mx-auto">
         <div class="flex justify-between items-center flex-col lg:flex-row md:mt-20">
             <div class="w-full lg:w-1/2">
-            <Fade cascade damping={0.4}>
+      
                 <h2
                     class="font-manrope text-5xl text-gray-900 font-bold leading-[4rem] mb-7 text-center lg:text-left">
                     Your Trusted Real Estate Partner</h2>
@@ -138,7 +139,7 @@ function Agents() {
                 </p>
                 <Link href={"/careers"} target='_blank' class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
                     our team</Link>
-            </Fade>
+   
             </div>
                 <div class="w-full lg:w-1/2 lg:mt-0 md:mt-40 mt-16 max-lg:max-w-2xl">
            
@@ -184,7 +185,8 @@ function Agents() {
             </div>
         </div>
     </div>
-</section>
+    </Fade>
+    </section>
                                
   )
 }
