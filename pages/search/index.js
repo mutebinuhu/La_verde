@@ -52,7 +52,7 @@ const { data, error } = useSWR(()=> {
       <div className="bg-[#104E3E]">
        <Navbar/>
        </div>
-        <div className="mt-10 ">
+        <div className="mt-10">
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
           <p className='text-center text-2xl'>Search Results</p>
           <div className="container mx-auto">
@@ -75,7 +75,7 @@ const { data, error } = useSWR(()=> {
           <p className="text-gray-600 text-3xl font-bold">Explore Our Properties</p>
         </div>
             <>
-            <div className={`${data.length > 0 ? 'md:grid grid-cols-4 gap-4':'w-full'  } `}>
+            <div className={`${data.length > 0 ? 'md:grid grid-cols-4 gap-4 mx-4 md:mx-2':'w-full'  } `}>
             {
               data.length > 0 ? data.map((property) => (
                 <PropertyDetails key={property.id} property={property} />

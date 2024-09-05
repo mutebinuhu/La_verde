@@ -42,7 +42,7 @@ const PropertyDetails = ({ property }) => {
             <img
               src={property.images[0]}
               alt={`Property Image ${property.images[0]}`}
-              className="w-full  md:h-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full  md:h-full h-68 object-cover transition-transform duration-500 hover:scale-105"
             />
            {
             /**
@@ -157,7 +157,7 @@ const PropertyDetails = ({ property }) => {
  <div className="max-w-sm rounded mb-4 md:mb-0 w-full overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
       <div className="relative">
         <img
-          className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
+          className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
           src={property.images[0]} // Replace with your image URL
           alt="Property"
         />
