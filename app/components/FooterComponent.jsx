@@ -90,10 +90,10 @@ const FooterComponent = () => {
         <div className='absolute flex justify-center items-center w-full text-white '>
         <div className='md:flex justify-center'>
 
-      <ul className="mx-4 flex justify-between ">
-            <li><Link href="/">Home|</Link></li>
-            <li><Link href="/about-us">About|</Link></li>
-            <li><Link href="#">Services|</Link></li>
+      <ul className="mx-4 flex justify-between text-[#FFA72A]">
+            <li><Link href="/">Home| </Link></li>
+            <li><Link href="/about-us">About| </Link></li>
+            <li><Link href="#">Services| </Link></li>
             <li><Link href="/contact-us">Contact</Link></li>
           </ul>
 
