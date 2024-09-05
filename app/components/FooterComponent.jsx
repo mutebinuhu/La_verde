@@ -3,13 +3,13 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram, FaFaceb
 
 const FooterComponent = () => {
   return (
-    <footer className="relative bg-blue-900 text-white py-12">
+    <footer className="relative bg-[#104E3E] text-white py-12">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/footer-bg.png')" }}
       />
-      <div className="absolute inset-0 bg-[#104E3E] opacity-60" /> {/* Overlay */}
+      <div className="absolute inset-0 bg-[#104E3E] opacity-10" /> {/* Overlay */}
 
       {/* Footer Content */}
       <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4">
@@ -47,8 +47,8 @@ const FooterComponent = () => {
 
         {/* Our Properties */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Our Properties</h3>
-          <ul className="text-sm space-y-2">
+          <h3 className="text-lg font-semibold mb-4 ">Our Properties</h3>
+          <ul className="text-sm space-y-2 border-t-[#104E3E] ">
             <li>Apartments</li>
             <li>Villas</li>
             <li>Office Space</li>
@@ -63,21 +63,21 @@ const FooterComponent = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <div className="flex items-center space-x-4 mb-4">
-            <FaPhoneAlt className="text-red-600" />
+            <FaPhoneAlt className="text-[#FFA72A]" />
             <div>
               <p className="text-sm">For Enquiry Call</p>
               <Link href={`tel:+971506144930`} target='_blank' className="font-semibold">+971 2 666 9131</Link>
             </div>
           </div>
           <div className="flex items-center space-x-4 mb-4">
-            <FaEnvelope className="text-red-600" />
+            <FaEnvelope className="text-[#FFA72A]" />
             <div>
               <p className="text-sm">Send Us Email</p>
               <Link href={`mailto:info@laverde.ae`} className="font-semibold">info@laverde.ae</Link>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <FaMapMarkerAlt className="text-red-600" />
+            <FaMapMarkerAlt className="text-[#FFA72A]" />
             <div>
               <p className="text-sm">Address</p>
               <p className="font-semibold">Office 42, Al Jazeera Towers ,<br />Hamdan Bin Mohammed St  Abu Dhabi UAE</p>
