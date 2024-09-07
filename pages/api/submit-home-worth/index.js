@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import User from '../../../models/User';
+import Homeworth from '@/models/Homeworth';
 
 // Connect to MongoDB
 const connectToDatabase = async () => {
@@ -22,7 +23,7 @@ export const handler = async (req, res) =>{
                 if (!fullName || !email || !address) {
                   return  res.json('Missing required fields');
                 }
-                const newUser = new User({
+                const newUser = new Homeworth({
                   fullName,
                   email,
                   address,
@@ -30,7 +31,7 @@ export const handler = async (req, res) =>{
             
                 await newUser.save();
                 return new json('User created successfully');
-                
+
               } catch (error) {
                 console.error(error);
                 return res.json('Failed to create user');

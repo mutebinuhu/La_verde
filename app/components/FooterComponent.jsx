@@ -18,8 +18,7 @@ const FooterComponent = () => {
           <h3 className="text-lg font-semibold mb-4">About Us</h3>
           <p className="text-sm">
            
-                At La Verde Property Management L.L.C, we understand that buying, selling, or renting property is a significant decision in your life. Located in the heart of Abu Dhabi, 
-                our dedicated team of experienced professionals is committed to providing exceptional customer service and personalized solutions tailored to your unique needs
+          La Verde, we're more than just a real estate agency. We're your trusted partner, dedicated to providing comprehensive solutions tailored to your unique needs. With our in-depth knowledge of the Abu Dhabi property market and a team of experienced professionals, we're committed to delivering exceptional service and ensuring a seamless experience for every client. Whether you're buying, selling, or renting, we're here to guide you every step of the way.
           </p>
           <div className="mt-4 flex space-x-4">
             <Link href="https://x.com/LaverdeUae" target='_blank' aria-label="Twitter" className="text-white hover:text-gray-300"><FaTwitter /></Link>
