@@ -16,10 +16,10 @@ const About = () => {
         <div className="lg:text-center bg-white py-12">
         
             <section className=' md:flex md:space-x-12 py-12 text-center md:text-left p-8'>
-                <div className='md:flex justify-center items-center px-4 bg-white md:w-1/2 ' style={{backgroundImage: "url(" + "baraka/baraka4.png" + ")",
+                <div className='md:flex justify-center items-center px-4 bg-white md:w-1/2 ' style={{backgroundImage: "url(" + "BURJKALIFAH.jpg" + ")",
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'}}
+                backgroundRepeat: 'no-repeat'}}   
                 >  
                 </div>
                 <div className=''>

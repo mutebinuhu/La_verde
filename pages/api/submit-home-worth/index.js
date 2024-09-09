@@ -3,22 +3,15 @@ import User from '../../../models/User';
 import Homeworth from '@/models/Homeworth';
 
 // Connect to MongoDB
-const connectToDatabase = async () => {
-  if (mongoose.connection.readyState === 1) return;
 
-  await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-};
-export const handler = async (req, res) =>{
+export default async function handler(req, res){
 
     const method = req.method
     switch(method){
 
         case 'POST':
             try {
-                const { fullName, email, address } = await req.json();
+                const { fullName, email, address } = await req.body;
             
                 if (!fullName || !email || !address) {
                   return  res.json('Missing required fields');
@@ -29,12 +22,13 @@ export const handler = async (req, res) =>{
                   address,
                 });
             
-                await newUser.save();
-                return new json('User created successfully');
+               let apply =  await newUser.save();
+               console.log("apply", apply)
+                return res.json({data:'User created successfully'});
 
               } catch (error) {
-                console.error(error);
-                return res.json('Failed to create user');
+                console.error("home-work-error", error.message);
+                return res.json(error.message);
               }
 
               break;
