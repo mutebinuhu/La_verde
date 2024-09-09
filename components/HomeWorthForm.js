@@ -23,9 +23,16 @@ export default function HomeWorthForm() {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const res = await response.json();
+
+      if (res.data) {
         // Handle success, e.g., show a success message
         alert("Your estimate request has been sent!");
+        setFormData({
+          fullName: "",
+          email: "",
+          address: "",
+        })
       } else {
         // Handle error
         alert("Something went wrong. Please try again.");
@@ -34,11 +41,16 @@ export default function HomeWorthForm() {
       console.error("Error:", error);
       alert("An error occurred. Please try again later.");
     }
+    setFormData({
+      fullName: "",
+      email: "",
+      address: "",
+    })
   };
 
   return (
-    <div className="max-w-lg mx-auto my-10 p-8 bg-[#197961] text-white shadow-3xl rounded-lg">
-      <h1 className="text-2xl font-bold mb-2">How Much Is Your Home Worth?</h1>
+    <div className="max-w-lg mx-auto my-10 p-8 bg-[#197961]  shadow-3xl rounded-lg">
+      <h1 className="text-2xl font-bold mb-2 text-white">How Much Is Your Home Worth?</h1>
       <p className="text-gray-200 mb-6">
         Receive a personalized estimate via e-mail within the next 24hrs
       </p>

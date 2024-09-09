@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
-import User from '../../../models/User';
-import Homeworth from '@/models/Homeworth';
 
-// Connect to MongoDB
+import Homeworth from '@/models/Homeworth';
+import connectToDatabase from '@/utils/db';
+
 
 export default async function handler(req, res){
+  await connectToDatabase();
 
     const method = req.method
     switch(method){
