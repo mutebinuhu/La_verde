@@ -39,6 +39,9 @@ const { data, error } = useSWR(()=> {
 
   return (
     <>
+         <div className="bg-[#104e3e]">
+       <Navbar/>
+       </div>
       <div className={montserrat.className}>
         <div className="mt-10">
           <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && 'Available projects'}</h1>
