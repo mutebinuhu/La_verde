@@ -7,12 +7,17 @@ export default function HomeWorthForm() {
     address: "",
   });
 
+  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [requestSent,setRequestSent] = useState(false);
+  const [requestSentError,setRequestSentError] = useState(false)
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmiting(true)
 
     try {
       const response = await fetch("/api/submit-home-worth", {
@@ -33,19 +38,30 @@ export default function HomeWorthForm() {
           email: "",
           address: "",
         })
+    
+        setIsSubmiting(false)
+        setRequestSent(true)
+        setTimeout(()=>{
+          setRequestSent(false)
+        }, 3000)
       } else {
         // Handle error
         alert("Something went wrong. Please try again.");
+        setIsSubmiting(false)
+        setRequestSentError(true)
       }
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again later.");
+      setIsSubmiting(false)
+      setRequestSentError(true)
     }
     setFormData({
       fullName: "",
       email: "",
       address: "",
     })
+    setIsSubmiting(false)
   };
 
   return (
@@ -54,6 +70,15 @@ export default function HomeWorthForm() {
       <p className="text-gray-200 mb-6">
         Receive a personalized estimate via e-mail within the next 24hrs
       </p>
+      {isSubmiting && <p className="text-gray-200 text-sm mb-6">
+        Submitting Request...
+      </p>}
+      {requestSent && <p className="text-gray-200 text-sm mb-6">
+        Your estimate request has been sent!
+      </p>}
+      {requestSentError && <p className="text-red-500 text-sm mb-6">
+        An error occurred. Please try again later.
+      </p>}
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-100 mb-2" htmlFor="fullName">
