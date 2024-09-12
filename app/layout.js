@@ -46,7 +46,6 @@ export default function RootLayout({ children }) {
          *   <Footer/>
          * 
          */}
-        <FooterComponent/>
       </Providers>
       <Analytics />
       <GoogleAnalytics gaId="G-5R8ELRR41Z" />

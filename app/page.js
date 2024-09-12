@@ -28,6 +28,7 @@ import ContactUsMain from "@/components/ContactUsMain";
 import LatestProperties from "@/components/UpcomingProperties";
 import UpcomingProperties from "@/components/UpcomingProperties";
 import Agents from "@/components/Agents";
+import FooterComponent from "./components/FooterComponent";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -95,27 +96,24 @@ export default function Home() {
     </div>
           </div>
           <div className="bg-white">
-          <OurServices/>
-
+            <OurServices/>
           </div>
           
-     {/* <CardHero/>*/}
-      {/** < PopularPlacesComponent/> */}
-     {/**  <Services/> */}
-     <UpcomingProperties/>
+              {/* <CardHero/>*/}
+                {/** < PopularPlacesComponent/> */}
+              {/**  <Services/> */}
+            <UpcomingProperties/>
 
-      <Testimonial/>
+            <Testimonial/>
       {/**
        *             <Latestprojects/>
 
        * 
        */}
-                   <div className="w-full">
-                   <Agents/>
-                   </div>
-
-      
-            <ContactUsMain/>
+              <div className="w-full">
+              <Agents/>
+              </div>
+              <ContactUsMain/>
 
      {
       /**
@@ -129,7 +127,8 @@ export default function Home() {
 
       </div>
 
-      {/** <Elsatic/> */}    
+      {/** <Elsatic/> */}  
+      <FooterComponent/>  
     </main>
   );
 }
