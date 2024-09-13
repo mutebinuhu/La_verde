@@ -1,6 +1,5 @@
 import React from "react";
 import { FaChartBar, FaShoppingCart, FaFileInvoiceDollar, FaUserFriends } from "react-icons/fa";
-
 function Sidebar() {
   return (
     <div className="w-64 bg-gray-800 text-white">

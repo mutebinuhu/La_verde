@@ -3,6 +3,7 @@ import { FaTasks } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
 import { PiBuildingApartmentThin } from "react-icons/pi";
 import { MdGppGood } from "react-icons/md";
+import { FaMessage } from "react-icons/fa6";
 
 
 function DashboardContent() {
@@ -27,7 +28,8 @@ function DashboardContent() {
     )
   }
   const itemsList = [ 
-    {title: "Total Tasks", subTitle:"Tasks", count: 100, icon: <FaTasks className="text-3xl" /> },
+    {title: "Total Messages", subTitle:"Message", count: 100, icon: <FaMessage className="text-3xl" /> },
+   // {title: "TotalInterests", subTitle:"Message", count: 100, icon: <FaMessage className="text-3xl" /> },
     {title: "Total Leads", subTitle:"Leads", count: 300, icon: <VscGraph className="text-3xl" />},
     {title: "Total Properties", subTitle:"Properties", count: 100, icon: <PiBuildingApartmentThin className="text-3xl" /> },
     {title: "Total availabilities", subTitle:"Availabilities", count: 63, icon: <MdGppGood className="text-3xl" /> }

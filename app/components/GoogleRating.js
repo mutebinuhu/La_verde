@@ -6,7 +6,7 @@ import { FaGoogle } from 'react-icons/fa';
 
 const GoogleRating = ({ rating, totalReviews }) => {
   return (
-    <div className='md:p-4 p-2 max-w-screen-xl my-4 md:mx-0 text-center bg-white rounded-lg shadow-md'>
+    <div className='md:p-4 p-2 max-w-screen-xl my-12 md:mx-0 text-center bg-white rounded-lg shadow-md'>
         <p className='text-xl font-bold py-4'>A Reason To Trust La verde property Management</p>
     <div className="flex flex-col items-center justify-center  md:flex-row md:space-x-4">
       <div className="flex items-center mb-2 md:mb-0">

@@ -1,6 +1,9 @@
 import Property from "@/models/Property";
+import connectToDatabase from "@/utils/db";
 
 export default async function handler (req, res){
+  await connectToDatabase();
+
     try {
         const filters = req.query;
         const query = { approved: true }; 

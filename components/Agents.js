@@ -63,6 +63,7 @@ const teamMembers = [
     name: 'Joy',
     position: 'International Sales',
     image: '/workmates/joy.jpeg',
+    status:"vacant",
     social: {
       twitter: 'https://twitter.com/dianawhite',
       linkedin: 'https://linkedin.com/in/dianawhite',
@@ -150,14 +151,20 @@ function Agents() {
                       return(
                         
                        <div>
-                        <img src={_.image} alt="Team tailwind section"
+                        <img src={_.status=="vacant" ? '/Portrait_placeholder.png' :_.image} alt="Team tailwind section"
                         class={_.className} />
 
                   
                           <div className='bg-black bg-opacity-70 p-4 text-white'>
-                          <h3 className="text-lg text-center font-semibold">{_.name}</h3>
-        <p className="text-sm text-center">{_.position}</p>
-        <div className="flex justify-between mt-2">
+                        {_.status == "vacant" ?"" : <> <h3 className="text-lg text-center font-semibold">{_.name}</h3>
+                        <p className="text-sm text-center">{_.position}</p></> }
+        {
+          _.status == "vacant" ? (<>
+          <div className="flex justify-between mt-2">
+          <Link href={"/careers"} target='_blank' class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-sm font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
+          Fill This Position</Link>
+        </div>
+          </>)  :  <div className="flex justify-between mt-2">
           <a href={`mailto:${_.email}`} className="hover:text-gray-300">
             <FaEnvelope className="w-5 h-5" />
           </a>
@@ -168,6 +175,8 @@ function Agents() {
             <FaPhoneAlt className="w-5 h-5" />
           </a>
         </div>
+        }
+       
                           </div>
                         </div>
 

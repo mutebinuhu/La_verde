@@ -82,11 +82,11 @@ export default function Home() {
         
        
       <Hero1/>
-      <div className="flex py-4 items-center justify-center bg-gray-100 hidden">
-      <GoogleRating rating={4.2} totalReviews={120} />
+      <div className="flex  items-center justify-center bg-gray-100">
+      <GoogleRating rating={4.3} totalReviews={120} />
     </div>
-    <div className="flex justify-center items-center mt-20 md:mt-0">
-    <div className="container  pb-12 md:mt-8 mx-auto">
+    <div className="">
+    <div className="pb-12 md:mt-8 ">
       <FeaturedListing />
     </div>
     </div>

@@ -1,14 +1,15 @@
 // pages/api/posts/index.js
-import Post from '@/models/Post';
+import Message from '@/models/messages';
 import connectToDatabase from '@/utils/db';
 
 
 export default async function handler(req, res) {
-  await connectToDatabase()
+  await connectToDatabase();
 
   if (req.method === 'GET') {
     try {
-      const posts = await Post.find({});
+      const posts = await Message.find({}).sort({createdAt: 'desc'});
+      
       res.status(200).json(posts);
     } catch (error) {
       res.status(400).json({ message: 'Error fetching posts', error: error.message });
