@@ -1,6 +1,6 @@
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
-
+<meta name="googlebot" content="noindex,nofollow" />
 export default function DashboardLayout({
     children, // will be a page or nested layout
   }) {
