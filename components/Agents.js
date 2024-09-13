@@ -161,7 +161,7 @@ function Agents() {
         {
           _.status == "vacant" ? (<>
           <div className="flex justify-between mt-2">
-          <Link href={"/careers"} target='_blank' class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-sm font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">Join
+          <Link href={"/careers"} target='_blank' class="cursor-pointer py-3 px-8 w-60 bg-[#FFA72A] text-white text-sm font-semibold transition-all duration-500 block text-center rounded-full hover:bg-[#dc9314] mx-auto lg:mx-0">
           Fill This Position</Link>
         </div>
           </>)  :  <div className="flex justify-between mt-2">

@@ -41,15 +41,7 @@ const teamMembers = [
       linkedin: 'https://linkedin.com/in/charliegreen',
     },
   },
-  {
-    name: 'Joy',
-    position: 'International Sales',
-    image: '/workmates/joy.jpeg',
-    social: {
-      twitter: 'https://twitter.com/dianawhite',
-      linkedin: 'https://linkedin.com/in/dianawhite',
-    },
-  },
+
   {
     name: 'Nuhu',
     position: 'Marketing Manager',

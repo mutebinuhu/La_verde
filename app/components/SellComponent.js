@@ -29,7 +29,7 @@ const SellComponent = () => {
       </div>
       <div className='h-full bg-gray-100'>
         {/* Image on the extreme right */}
-      <FadeImage url="https://www.propertyfinder.ae/agent/0/260/200/MODE/5d16dc/258812-84bd8o.webp?ctr=ae"/>
+      <FadeImage url="/workmates/maria.jpeg"/>
       </div>
     </div>
     </div>
