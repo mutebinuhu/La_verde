@@ -35,6 +35,7 @@ export default function page() {
     getMessages();
   }, []);
   const columns = [
+ 
     {
       name: 'Property Type',
       selector: row => <div class="capitalize">{ row.subCategory}</div>,
@@ -48,7 +49,30 @@ export default function page() {
       selector: row => row.price,
     }
   ];
-  
+  const customStyles = {
+    headCells: {
+      style: {
+        backgroundColor: '#f3f4f6',
+        color: '#333',
+        fontWeight: 'bold',
+        borderBottom: '1px solid #ccc',
+      },
+    },
+    cells: {
+      style: {
+        borderBottom: '1px solid #d1d5db',
+        padding: '10px',
+        fontSize: '14px',
+      },
+    },
+    rows: {
+      style: {
+        '&:nth-of-type(even)': {
+          backgroundColor: '#f9fafb',
+        },
+      },
+    },
+  };
 
   return (
 
@@ -56,7 +80,8 @@ export default function page() {
     <DashboardContent />
     <div className="flex-1 md:flex justify-between space-x-8 overflow-y-auto">
       <div className="w-3/4 py-7">
-        <Card component={<DataTable data={data} columns={columns} pagination />} />
+        <h2>Properties List</h2>
+        <Card component={<DataTable data={data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />
       </div>
       <div className="w-1/4 py-7">
         <Messages messages={messages} />

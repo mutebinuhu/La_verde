@@ -50,3 +50,56 @@ html {
   transform: translateX(-100%);
   transition: opacity 500ms, transform 500ms;
 }
+.table-container {
+  margin: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.rdt_TableHead {
+  background-color: #f3f4f6;
+}
+
+.status-tag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-tag.green {
+  background-color: #4caf50;
+}
+
+.status-tag.orange {
+  background-color: #ff9800;
+}
+
+.status-tag.red {
+  background-color: #f44336;
+}
+
+.status-tag.purple {
+  background-color: #9c27b0;
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.download-icon {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.rdt_Pagination {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
