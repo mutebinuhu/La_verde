@@ -21,7 +21,7 @@ const formattedDate = (date) => {
     console.log("info", messages)
   return (
    
-      <div className="overflow-y-auto h-[630px] bg-white shadow-md p-4 border border-gray-200 rounded-md">
+      <div className="overflow-y-auto  sticky h-[630px] bg-white shadow-md p-4 border border-gray-200 rounded-md">
         <div className='border-b w-full my-4'>
             <h2 className='p-4 font-bold'>Messages</h2>
         </div>

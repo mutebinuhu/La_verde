@@ -26,7 +26,7 @@ const Navbar = () => {
     { id: 8, text: 'Agents' ,  url:'/#agents'},
     { id: 8, text: 'Careers' ,  url:'/careers'},
     { id: 6, text: 'Contact' ,  url:'/contact-us'},
-    { id: 7, text: 'Blog' ,  url:'/blog'}
+    { id: 7, text: 'Blog' ,  url:'/#'}
   ];
 {/** bg-[#F5F4F0] */}
   return (

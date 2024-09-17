@@ -11,6 +11,10 @@ const propertySchema = new mongoose.Schema({
     type:Boolean,
     default:false
   },
+  upComingDate:{
+    type: Date,
+    //required: true
+  },
   projectLocation:{
     type:String 
   },

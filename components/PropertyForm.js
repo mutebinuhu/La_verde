@@ -6,11 +6,17 @@ import axios from 'axios';
 import { TiTick } from "react-icons/ti";
 import SubmittingState from './SubmittingState';
 import SubmittedState from './SubmittedState';
+import { MyContext } from '@/context';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { Slide } from "react-awesome-reveal";
+
 
 
 
 const PropertyForm = () => {
+  const { showAddPropertyForm, setShowAddPropertyForm } = React.useContext(MyContext);
 
+  console.log("value=====", showAddPropertyForm);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [showLocationComponent,setShowLocationComponent] = useState(false)
@@ -18,6 +24,7 @@ const PropertyForm = () => {
   const [payMtPlanState, setpayMtPlanState] = useState([])
   const [hideProjectForm, setHideProjectForm] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [upComingDate, setUpComingDate] = useState(false)
   const clearField = (fieldName) => {
     
   };
@@ -133,7 +140,8 @@ const PropertyForm = () => {
    projectLocation:"",
    hondover:"",
    availability:"",
-   status:""
+   status:"",
+   upComingDate:""
 
   };
 
@@ -228,11 +236,10 @@ const PropertyForm = () => {
   ];
   
   return (
-    <div className='my-12 relative'>
+    <div className='fixed  scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100'>
       {
       isLoading && <SubmittingState/>
       }
-      <h2 className='py-2 px-8 text-3xl font-bold md:text-center'>Add Property</h2>
       {formSubmitted && (
        <SubmittedState/>
       )}
@@ -244,44 +251,65 @@ const PropertyForm = () => {
         {({ setFieldValue, values, isSubmitting, touched, errors }) => {
 
           console.log("touched==", values)
+          if(touched.status && values.status == 'upComing'){
+            setUpComingDate(true)
+          }else{
+            setUpComingDate(false)
+          }
+          //console.log("upComingSelected====", upComingSelected)
           return (
-            
-              <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md">
+            <>
+            {showAddPropertyForm && (
+              <div className='h-screen overflow-y-auto'>
+              <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md ">
+                      <div className='flex justify-between py-6'>
+                        <h2 className='py-2  text-3xl font-bold md:text-center'>Add Property</h2>
+                        <IoIosCloseCircleOutline className='text-3xl' onClick={()=>setShowAddPropertyForm(false)} />
+                      </div>
+
                  <div className='flex justify-between space-x-4'>
                 <div className="mb-4 w-1/2">
                   <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
-                  <Field type="text" name="title" className="mt-1 block w-full border border-1 p-2 rounded" />
+                  <Field type="text" name="title" className="mt-1 block w-full border  p-2 rounded" />
                   <ErrorMessage name="title" component="div" className="text-red-500 text-sm" />
                 </div>
                 <div className="mb-4 w-1/2">
                     <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
-                    <Field type="text" name="address" className="mt-1 block w-full border border-1 p-2 rounded" />
+                    <Field type="text" name="address" className="mt-1 block w-full border  p-2 rounded" />
                     <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
                   </div>
                   </div>
                   <div className="mb-4 w-full">
                     <label htmlFor="status" className="block text-sm font-medium text-gray-700">Status</label>
-                    <Field as="select" name="status" className="mt-1 block w-full border border-1 p-2 rounded">
+                    <Field as="select" name="status" className="mt-1 block w-full border p-2 rounded">
                       <option value="" label="Select status" />
                       <option value="vacant" label="vacant" />
-                      <option value="notVacant" label="Not Vacant" />
-
+                      <option value="upComing" label="Up Coming" />
+                      <option value="occupied" label="Occupied" />
                     </Field>
                     <ErrorMessage name="status" component="div" className="text-red-500 text-sm" />
                   </div>
+                 {upComingDate &&  <div className='my-4' >
+              <label className="block text-sm font-medium text-red-700">Upcoming Date</label>
+              <Field
+                name="upComingDate"
+                type="date"
+                className="mt-1 block w-full border border-red-700 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+              />
+            </div>}
                 <div className='flex justify-between space-x-4'>
                   {
                     !hideProjectForm && <>
                      <div className="mb-4 w-1/2">
                     <label htmlFor="Area" className="block text-sm font-medium text-gray-700">Locations</label>
-                    <Field as="select" name="location" id="area" className="mt-1 block w-full border border-1 p-2 rounded">
+                    <Field as="select" name="location" id="area" className="mt-1 block w-full border p-2 rounded">
                     <option value="" label="Select Location" />
     
                       {locationList && locationList.map((loca)=>  <option value={loca.name} label={loca.name} />)}
                     </Field>
                     <ErrorMessage name="location" component="div" className="text-red-500 text-sm" />
                     <div className='my-4'>
-                    <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
+                    <button type='button' onClick={()=>setShowLocationComponent(true)} className='bg-[#104e3e] text-white py-2 px-4 rounded hover:bg-blue-600'>Add Area</button>
     
                     </div>
                     
@@ -613,6 +641,11 @@ const PropertyForm = () => {
                   Submit
                 </button>
               </Form>
+              </div>
+
+            )}
+            </>
+              
           )
         }
         }

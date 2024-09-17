@@ -1,18 +1,29 @@
+import Navbar from "./Navbar";
+
 // components/BlogList.js
 async function fetchData() {
-    const res = await fetch('/api/posts', {
-      next: { revalidate: 60 } // Revalidate data every 60 seconds
-    });
-    const data = await res.json();
-    console.log("properties", data)
-    return data;
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL+'/api/blog', {
+        next: { revalidate: 60*60 } // Revalidate data every 60 seconds
+      });
+      const data = await res.json();
+      console.log("properties", data)
+      return data;
+    } catch (error) {
+      console.log("error", error.message)
+    }
   }
   
 export const  BlogList =  async()=>{
     const data = await fetchData();
     return (
+      <div>
+        
+        <div className="bg-[#104e3e]">
+       <Navbar/>
+       </div>
+       <h1>Blog Posts</h1>
       <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Blog Posts</h2>
         {data.length === 0 ? (
           <p className="text-gray-500">No posts available.</p>
         ) : (
@@ -23,6 +34,7 @@ export const  BlogList =  async()=>{
             </div>
           ))
         )}
+      </div>
       </div>
     );
   }

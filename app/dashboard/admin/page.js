@@ -4,18 +4,21 @@ import DashboardContent from '../components/DashboardContent'
 import DataTable from 'react-data-table-component';
 import Card from '../components/Card';
 import Messages from '../components/Messages';
+import Link from 'next/link';
+import { MyContext } from '@/context';
 
 export default function page() {
   const [data, setData] = useState([]);
   const [messages, setMessages] = useState([]);
+  
 
   useEffect(() => {
 
     const getData = async () => {
         try {
-          const res = await fetch('/api/search');
+          const res = await fetch('/api/properties');
           const data = await res.json();
-          setData(data);  
+          setData(data.data);  
           console.log("data", data);
         } catch (error) {
           console.error('Error fetching data:', error.message);
@@ -74,14 +77,22 @@ export default function page() {
     },
   };
 
+
+  const { showAddPropertyForm, setShowAddPropertyForm } = React.useContext(MyContext);
   return (
 
     <div className="h-screen flex flex-col">
-    <DashboardContent />
-    <div className="flex-1 md:flex justify-between space-x-8 overflow-y-auto">
+  
+    <div className="flex-1 md:flex justify-between space-x-8 overflow-y-auto ">
       <div className="w-3/4 py-7">
-        <h2>Properties List</h2>
+      
+        <div className='flex justify-between'>
+        <h2 className='text-3xl font-bold'>Properties List</h2>
+        <button className="p-2 bg-[#104E3E] text-white rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
+        </div>
+        <div className='my-2 '>
         <Card component={<DataTable data={data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />
+        </div>
       </div>
       <div className="w-1/4 py-7">
         <Messages messages={messages} />

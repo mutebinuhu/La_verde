@@ -13,14 +13,14 @@ function DashboardContent() {
        <div className="flex items-center space-x-4 h-full justify-between">
         <div className="w-1/6 flex-1 h-full ">
           <div className="flex justify-center items-center h-full">
-            <div className="bg-green-200 p-4 rounded-full">
+            <div className="bg-[#104E3E]  text-gray-100 p-4 rounded-full">
             {icon}
             </div>
           </div>
         </div>
       <div className="w-5/6 h-full">
       <h2 className="text-lg font-bold">{title}</h2>
-        <p className="text-4xl font-semibold text-blue-600">{count}</p>
+        <p className="text-4xl font-semibold text-[#104E3E] ">{count}</p>
         <p className="text-sm text-gray-500">{subTitle}</p>
       </div>
        </div>
