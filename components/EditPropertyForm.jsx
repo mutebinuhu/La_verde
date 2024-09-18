@@ -1,105 +1,20 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import { TiTick } from "react-icons/ti";
-import SubmittingState from './SubmittingState';
-import SubmittedState from './SubmittedState';
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import MyProvider from '@/context/MyProvider';
 import { MyContext } from '@/context';
+import { TbFlagCancel } from 'react-icons/tb';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import { Slide } from "react-awesome-reveal";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 
 
 
-
-const PropertyForm = ({data}) => {
-  const { showAddPropertyForm, setShowAddPropertyForm } = React.useContext(MyContext);
-
-  console.log("value=====", showAddPropertyForm);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [showLocationComponent,setShowLocationComponent] = useState(false)
-  const [locationList, setLocationList] = useState([])
-  const [payMtPlanState, setpayMtPlanState] = useState([])
-  const [hideProjectForm, setHideProjectForm] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+const EditPropertyForm = ({data}) => {
   const [upComingDate, setUpComingDate] = useState(false)
-  const clearField = (fieldName) => {
-    
-  };
-
-  const handlePaymentPlan = (data)=>{
-    //e.preventDefault()
-    setpayMtPlanState([...payMtPlanState, data])
-    console.log("test====", payMtPlanState);
-  }
-
-  const getLocations = async () =>{
-    try {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations')
-      const data = await res.json();
-      setLocationList(data.data)
-      console.log("locations", data)
-    } catch (error) {
-      console.log("locerr", error)
-    }
-  }
-
-  useEffect(()=>{
-    getLocations();
-  }, [])
-  const AddLocation = ({handleCancel}) => {
-    const [location, setLocation] = useState('');
-    const handleSubmit = async (e) =>{
-      e.preventDefault();
-      try {
-        const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations', {
-          method:"POST",
-          headers:{
-            'Content-Type':'application/json'
-          },
-          body:JSON.stringify({
-            name:location
-          })
-        });
-        const data = await res.json();
-        if(data.success){
-          alert("Location Added")
-          getLocations();
-        }
-        console.log("res", data)
-      } catch (error) {
-        console.log("err", error)
-      }
-    }
-  
-    return  (
-         <>
-          <div className='flex justify-center  items-center mx-4'>
-          <form onSubmit={handleSubmit} className="p-4 bg-gray-300 shadow-md w-full rounded-md">
-        <div className="text-center">
-        <input
-            type="text"
-            placeholder="Location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            className="p-2 border text rounded-md"
-          />
-          </div>
-          <div className='py-4'>
-          <button type="submit"  className="bg-blue-500 mx-2 text-white py-2 px-4 rounded hover:bg-blue-600">
-                Submit
-              </button>
-              <button onClick={handleCancel}  className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
-                cancel
-              </button>
-          </div>
-          </form>
-          </div>
-         </>
-    )
-  }
+  const [hideProjectForm, setHideProjectForm] = useState(false)
+  const [locationList, setLocationList] = useState([])
   const initialValues = {
     category: '',
     subCategory: '',
@@ -144,7 +59,6 @@ const PropertyForm = ({data}) => {
    upComingDate:""
 
   };
-
   const validationSchema = Yup.object().shape({
     category: Yup.string().required('Category is required').oneOf(['residential', 'commercial']),
     //subCategory: Yup.string().required('Subcategory is required').oneOf(['villa', 'studio', 'apartment', 'residentialFloor', 'residentialPlot', 'townHouse', 'residentialBuilding', 'pentHouse', 'villaCompound']),
@@ -162,38 +76,47 @@ const PropertyForm = ({data}) => {
     amenities: Yup.array().of(Yup.string()),
     //images: Yup.array().min(1, 'Please select at least one image').required('Images are required'),
   });
+  const amenitiesList = [
+    'Swimming Pool', 'Gym', 'Parking', 'Garden', 'Security', 'Playground',
+    'Clubhouse', 'WiFi', 'Elevator', 'Power Backup', 'Air Conditioning',
+    'Balcony', 'Pet Friendly', 'Laundry Room', 'Fireplace', 'Tennis Court',
+    'Basketball Court', 'Sauna', 'Hot Tub', 'Spa', 'Conference Room',
+    'Business Center', 'Concierge Service', 'Doorman', 'Storage Units',
+    'Bicycle Storage', 'Roof Deck', 'BBQ Area', 'Library', 'Game Room',
+    'Yoga Studio', 'Movie Theater', 'On-site Maintenance', 'Package Service',
+    'Recycling Center', 'Green Building', 'Car Wash Area', 'Guest Suites',
+    'Coffee Bar', 'Resident Lounge', 'Childcare', 'Community Kitchen', 'Dog Park',
+    'Pet Washing Station', 'Electric Vehicle Charging Stations', 'Golf Simulator',
+    'Jogging Path', 'Lake Access', 'Marina', 'Wine Cellar', 'Sea View', 'Mosque'
+  ];
+  const getLocations = async () =>{
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + 'api/locations')
+      const data = await res.json();
+      setLocationList(data.data)
+      console.log("locations", data)
+    } catch (error) {
+      console.log("locerr", error)
+    }
+  }
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  useEffect(()=>{
+    getLocations();
+  }, [])
+
+
+const {      showEditPropertyForm, setShowEditPropertyForm, singleProperty} = useContext(MyContext);
+  // Function to handle form submission
+   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    alert("we are here")
     const uploadedImageURLs = [];
     setIsLoading(true)
     try {
-      // Upload images concurrently
-      const uploadPromises = Array.from(selectedFiles).map(file => {
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('upload_preset',"jtiqg5os");
-  // Add the transformation for the logo overlay
-   // Add the transformation for the logo overlay
+     
 
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties/"+singleProperty._id, {
 
- // formData.append('transformation', JSON.stringify(transformation));
-
-        return axios.post(
-          `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
-          formData
-        );
-      });
-
-      const responses = await Promise.all(uploadPromises);
-      responses.forEach(response => {
-        uploadedImageURLs.push(response.data.secure_url);
-      });
-
-      values.images = uploadedImageURLs;
-
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties", {
-
-        method: 'POST',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -201,6 +124,7 @@ const PropertyForm = ({data}) => {
       });
 
       const data = await res.json();
+      CONSOLE.LOG("UPDATED*****", data)
       if (data.success) {
         setFormSubmitted(true);
         setIsLoading(false)
@@ -221,53 +145,67 @@ const PropertyForm = ({data}) => {
 
   };
 
-  const amenitiesList = [
-    'Swimming Pool', 'Gym', 'Parking', 'Garden', 'Security', 'Playground',
-    'Clubhouse', 'WiFi', 'Elevator', 'Power Backup', 'Air Conditioning',
-    'Balcony', 'Pet Friendly', 'Laundry Room', 'Fireplace', 'Tennis Court',
-    'Basketball Court', 'Sauna', 'Hot Tub', 'Spa', 'Conference Room',
-    'Business Center', 'Concierge Service', 'Doorman', 'Storage Units',
-    'Bicycle Storage', 'Roof Deck', 'BBQ Area', 'Library', 'Game Room',
-    'Yoga Studio', 'Movie Theater', 'On-site Maintenance', 'Package Service',
-    'Recycling Center', 'Green Building', 'Car Wash Area', 'Guest Suites',
-    'Coffee Bar', 'Resident Lounge', 'Childcare', 'Community Kitchen', 'Dog Park',
-    'Pet Washing Station', 'Electric Vehicle Charging Stations', 'Golf Simulator',
-    'Jogging Path', 'Lake Access', 'Marina', 'Wine Cellar', 'Sea View', 'Mosque'
-  ];
+console.log('singleProperty**********************************', singleProperty);
+const getPropertInfo = (setFieldValue)=>{
+ 
+    // Setting the 'email' field
+    
+     
+ 
   
+}
+if (showEditPropertyForm) getPropertInfo();
+
   return (
-    <div className='fixed  scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100'>
-      {
-      isLoading && <SubmittingState/>
-      }
-      {formSubmitted && (
-       <SubmittedState/>
-      )}
+    <>
+    {
+      showEditPropertyForm && (
+        <div className="max-w-4xl mx-auto p-8 bg-white shadow-md rounded" >
+                  <div className='flex justify-between '>
+                    <h2 className="text-2xl font-semibold mb-6">Edit Property</h2>
+                    <IoIosCloseCircleOutline className='text-3xl' onClick={()=>setShowEditPropertyForm(false)} />
+                  </div>
       <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+      initialValues={initialValues}
+     
+      onSubmit={handleSubmit}
       >
-        {({ setFieldValue, values, isSubmitting, touched, errors }) => {
 
-          console.log("touched==", values)
-          if(touched.status && values.status == 'upComing'){
-            setUpComingDate(true)
-          }else{
-            setUpComingDate(false)
-          }
-          //console.log("upComingSelected====", upComingSelected)
-          return (
-            <>
-            {showAddPropertyForm && (
-              <div className='h-screen overflow-y-auto'>
-              <Form className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md ">
-                      <div className='flex justify-between py-6'>
-                        <h2 className='py-2  text-3xl font-bold md:text-center'>Add Property</h2>
-                        <IoIosCloseCircleOutline className='text-3xl' onClick={()=>setShowAddPropertyForm(false)} />
-                      </div>
+        
+      {
+      ({setFieldValue, errors,isSubmitting, values, touched})=>{
 
-                 <div className='flex justify-between space-x-4'>
+        console.log("touched==", values)
+        if(touched.status && values.status == 'upComing'){
+          setUpComingDate(true)
+        }else{
+          setUpComingDate(false)
+        }
+       useEffect(()=>{
+        setFieldValue('title', singleProperty.title);
+        setFieldValue('address', singleProperty.address);
+        setFieldValue('status', singleProperty.status);
+        setFieldValue('location', singleProperty.location);
+        setFieldValue('category', singleProperty.category);
+        setFieldValue('subCategory', singleProperty.subCategory);
+        setFieldValue('purpose', singleProperty.purpose);
+        setFieldValue('completionStatus', singleProperty.completionStatus);
+        setFieldValue('descriptionEnglish', singleProperty.descriptionEnglish);
+        setFieldValue('descriptionArabic', singleProperty.descriptionArabic);
+        setFieldValue('bedrooms', singleProperty.bedrooms);
+        setFieldValue('bathrooms', singleProperty.bathrooms);
+        setFieldValue('price', singleProperty.price);
+        setFieldValue('areaSquare', singleProperty.areaSquare);
+        setFieldValue('amenities', singleProperty.amenities);
+       
+
+        
+
+       }, [setFieldValue]);
+
+       return (
+        <>
+  <div className='flex justify-between space-x-4 '>
                 <div className="mb-4 w-1/2">
                   <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
                   <Field type="text" name="title" className="mt-1 block w-full border  p-2 rounded" />
@@ -352,7 +290,7 @@ const PropertyForm = ({data}) => {
                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               />
             </div>
-    
+              
             <div className='my-4'>
               <label className="block text-sm font-medium text-gray-700">No of Bedrooms Start</label>
               <Field
@@ -586,7 +524,8 @@ const PropertyForm = ({data}) => {
                     <ErrorMessage name="price" component="div" className="text-red-500 text-sm" />
                   </div>
                 </div>
-                <div className='flex justify-between space-x-4'>
+                {
+                  values.subCategory == "studio" ? "" :     <div className='flex justify-between space-x-4'>
                   <div className="mb-4 w-1/2">
                     <label htmlFor="bedrooms" className="block text-sm font-medium text-gray-700">Bedrooms</label>
                     <Field type="number" name="bedrooms" className="mt-1 block w-full border border-1 p-2 rounded" />
@@ -598,6 +537,8 @@ const PropertyForm = ({data}) => {
                     <ErrorMessage name="bathrooms" component="div" className="text-red-500 text-sm" />
                   </div>
                 </div>
+                }
+            
                   </>
                 }
                 
@@ -640,22 +581,19 @@ const PropertyForm = ({data}) => {
                 <button type="submit" disabled={isSubmitting} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
                   Submit
                 </button>
-              </Form>
-              </div>
-
-            )}
-            </>
-              
-          )
-        }
-        }
+        </>
+       );
+   
+      }}
       </Formik>
-{
-  showLocationComponent && <div className='absolute top-0 text-center h-96'><AddLocation handleCancel={()=>setShowLocationComponent(false)}/></div>
-}
-      
-    </div>
+      </div>
+      )
+    
+    }
+    </>
   );
+ 
+
 };
 
-export default PropertyForm;
+export default EditPropertyForm;

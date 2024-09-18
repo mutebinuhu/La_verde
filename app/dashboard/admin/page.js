@@ -1,29 +1,23 @@
 "use client"
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import DashboardContent from '../components/DashboardContent'
 import DataTable from 'react-data-table-component';
 import Card from '../components/Card';
 import Messages from '../components/Messages';
 import Link from 'next/link';
 import { MyContext } from '@/context';
+import ActionsComponent from '../components/ActionsComponent';
 
 export default function page() {
   const [data, setData] = useState([]);
   const [messages, setMessages] = useState([]);
   
+  const { showAddPropertyForm, setShowAddPropertyForm, properties,setShowEditPropertyForm } = React.useContext(MyContext);
 
   useEffect(() => {
 
-    const getData = async () => {
-        try {
-          const res = await fetch('/api/properties');
-          const data = await res.json();
-          setData(data.data);  
-          console.log("data", data);
-        } catch (error) {
-          console.error('Error fetching data:', error.message);
-        }
-    }
+    setData(properties);
+    console.log("data=======xxxxxxxxxxxxxxxxxxxx", properties);
     const getMessages = async () => {
       try {
         const res = await fetch('/api/messages');
@@ -34,7 +28,7 @@ export default function page() {
         console.error('Error fetching data:', error.message);
       }
   }
-    getData();
+
     getMessages();
   }, []);
   const columns = [
@@ -50,6 +44,10 @@ export default function page() {
     {
       name: 'Price',
       selector: row => row.price,
+    },
+    {
+      name: 'Actions',
+      selector: row => <ActionsComponent data={row}/>,
     }
   ];
   const customStyles = {
@@ -78,7 +76,19 @@ export default function page() {
   };
 
 
-  const { showAddPropertyForm, setShowAddPropertyForm } = React.useContext(MyContext);
+  const { data:newData, loading, error } = useContext(MyContext); // Destructure context values
+
+  if (loading) return(
+    <div class="flex w-full h-screen justify-center items-center">
+    <div class="w-12 h-12 rounded-full absolute border border-solid border-gray-200"></div>
+  
+    <div
+        class="w-12 h-12 rounded-full animate-spin absolute border border-solid border-cyan-500 border-t-transparent shadow-md">
+    </div>
+  </div>
+  )
+  if (error) return <p>Error: {error}</p>;
+ 
   return (
 
     <div className="h-screen flex flex-col">
@@ -91,7 +101,7 @@ export default function page() {
         <button className="p-2 bg-[#104E3E] text-white rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
         </div>
         <div className='my-2 '>
-        <Card component={<DataTable data={data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />
+        <Card component={<DataTable data={newData.data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />
         </div>
       </div>
       <div className="w-1/4 py-7">

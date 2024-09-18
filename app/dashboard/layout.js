@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import MyProvider from "@/context/MyProvider";
 import DashboardContent from "./components/DashboardContent";
+import EditPropertyForm from "@/components/EditPropertyForm";
 <meta name="robots" content="noindex,nofollow" />
 
 export default function DashboardLayout({
@@ -15,8 +16,12 @@ export default function DashboardLayout({
 <MyProvider>
 <div className="relative  h-screen">
  <div className="absolute z-40 top-0">
- <PropertyForm showForm={true}/>
+ <PropertyForm/>
  </div>
+  <div className="absolute left-0 z-30 top-0">
+ <EditPropertyForm />
+ </div>
+
 <div className="flex bg-gray-100">
       <Sidebar />
       <div className="flex flex-col flex-1 w-full">
