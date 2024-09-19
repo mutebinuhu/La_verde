@@ -30,7 +30,8 @@ const ActionsComponent = ({data}) => {
       </button>
 
       {/* Delete Button */}
-      <button
+     {/**
+      *  <button
            onClick={()=>alert(data._id)}
         className="flex items-center bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
         title="Delete"
@@ -38,6 +39,8 @@ const ActionsComponent = ({data}) => {
         <FaTrash className="mr-2" />
         Delete
       </button>
+      * 
+      */}
     </div>
   );
 };

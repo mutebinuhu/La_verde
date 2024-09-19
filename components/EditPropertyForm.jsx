@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
@@ -8,6 +9,8 @@ import { MyContext } from '@/context';
 import { TbFlagCancel } from 'react-icons/tb';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import SubmittingState from './SubmittingState';
+import SubmittedState from './SubmittedState';
 
 
 
@@ -15,6 +18,11 @@ const EditPropertyForm = ({data}) => {
   const [upComingDate, setUpComingDate] = useState(false)
   const [hideProjectForm, setHideProjectForm] = useState(false)
   const [locationList, setLocationList] = useState([])
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [showLocationComponent,setShowLocationComponent] = useState(false)
+  const [payMtPlanState, setpayMtPlanState] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   const initialValues = {
     category: '',
     subCategory: '',
@@ -108,15 +116,15 @@ const EditPropertyForm = ({data}) => {
 const {      showEditPropertyForm, setShowEditPropertyForm, singleProperty} = useContext(MyContext);
   // Function to handle form submission
    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    alert("we are here")
     const uploadedImageURLs = [];
     setIsLoading(true)
+    console.log("Values*****", values)
     try {
      
 
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties/"+singleProperty._id, {
 
-        method: 'PATCH',
+        method:'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -124,14 +132,15 @@ const {      showEditPropertyForm, setShowEditPropertyForm, singleProperty} = us
       });
 
       const data = await res.json();
-      CONSOLE.LOG("UPDATED*****", data)
+      console.log("UPDATED*****", data)
       if (data.success) {
-        setFormSubmitted(true);
+       setFormSubmitted(true);
         setIsLoading(false)
 
         setTimeout(() => {
           setFormSubmitted(false);
           resetForm();
+          setShowEditPropertyForm(false);
         }, 3000);
       }
     } catch (error) {
@@ -141,7 +150,7 @@ const {      showEditPropertyForm, setShowEditPropertyForm, singleProperty} = us
     }
 
     setSubmitting(false);
-    setIsLoading(false)
+   setIsLoading(false)
 
   };
 
@@ -158,6 +167,12 @@ if (showEditPropertyForm) getPropertInfo();
 
   return (
     <>
+      {
+      isLoading && <SubmittingState/>
+      }
+        {formSubmitted && (
+       <SubmittedState/>
+      )}
     {
       showEditPropertyForm && (
         <div className="max-w-4xl mx-auto p-8 bg-white shadow-md rounded" >
@@ -167,7 +182,7 @@ if (showEditPropertyForm) getPropertInfo();
                   </div>
       <Formik
       initialValues={initialValues}
-     
+      validationSchema={validationSchema}
       onSubmit={handleSubmit}
       >
 
@@ -205,6 +220,7 @@ if (showEditPropertyForm) getPropertInfo();
 
        return (
         <>
+        <Form>
   <div className='flex justify-between space-x-4 '>
                 <div className="mb-4 w-1/2">
                   <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title</label>
@@ -581,6 +597,7 @@ if (showEditPropertyForm) getPropertInfo();
                 <button type="submit" disabled={isSubmitting} className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
                   Submit
                 </button>
+                </Form>
         </>
        );
    
@@ -593,7 +610,6 @@ if (showEditPropertyForm) getPropertInfo();
     </>
   );
  
-
 };
 
 export default EditPropertyForm;

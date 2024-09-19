@@ -31,6 +31,30 @@ export default function page() {
 
     getMessages();
   }, []);
+
+  const StatusColor = ({status}) => {
+    switch(status) {
+      case 'vacant':
+        return <div className="bg-green-900 text-white py-0.8 px-1 rounded ">{status}</div>
+      case 'upComing':
+        return <div className="bg-yellow-500 text-white py-0.8 px-1 rounded">{status}</div>
+      case 'occupied':
+        return <div className="bg-red-900 text-white py-0.8 px-1 rounded">{status}</div>
+      default:
+        return <div className="bg-gray-100 text-white py-0.8 px-1 rounded">{status}</div>
+    }
+  }
+  const formattedDate = (date) => {
+    
+    const dateObj = new Date(date);
+    return dateObj.toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour12: false, // 24-hour format
+      })
+      
+};
   const columns = [
  
     {
@@ -40,6 +64,10 @@ export default function page() {
     {
       name: 'Location',
       selector: row => row.location,
+    },
+    {
+      name: 'Status',
+      selector: row => <div class="capitalize flex space-x-2"><StatusColor status={ row.status} /> <span>{row.status == "upComing" && "on " + formattedDate(row.upComingDate) }</span></div>,
     },
     {
       name: 'Price',
@@ -98,7 +126,7 @@ export default function page() {
       
         <div className='flex justify-between'>
         <h2 className='text-3xl font-bold'>Properties List</h2>
-        <button className="p-2 bg-[#104E3E] text-white rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
+        <button className="p-2 bg-[#104E3E] text-white py-0.8 px-1 rounded rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
         </div>
         <div className='my-2 '>
         <Card component={<DataTable data={newData.data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />

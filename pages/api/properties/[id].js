@@ -21,6 +21,7 @@ export default async function handler(req, res) {
       break;
     case 'PUT':
       try {
+      
         const property = await Property.findByIdAndUpdate(id, req.body, {
           new: true,
           runValidators: true,
