@@ -11,7 +11,7 @@ const ActionsComponent = ({data}) => {
     <div className="flex space-x-3">
       {/* View Button */}
       <button
-             onClick={()=>alert(data._id)}
+             onClick={()=>{setSingleProperty(data)}}
         className="flex items-center bg-blue-500 text-white px-3 py-2 rounded border hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
         title="View"
       >

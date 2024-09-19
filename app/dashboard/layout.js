@@ -1,17 +1,20 @@
 "use client"
-import React from "react";
+import React, { useContext } from "react";
 import PropertyForm from "@/components/PropertyForm";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import MyProvider from "@/context/MyProvider";
 import DashboardContent from "./components/DashboardContent";
 import EditPropertyForm from "@/components/EditPropertyForm";
+import { MyContext } from "@/context";
+import PropertyDetails from "./components/PropertyDetails";
 <meta name="robots" content="noindex,nofollow" />
 
 export default function DashboardLayout({
     children, // will be a page or nested layout
   }) 
   {
+  
     return (
 <MyProvider>
 <div className="relative  h-screen">
@@ -20,6 +23,9 @@ export default function DashboardLayout({
  </div>
   <div className="absolute left-0 z-30 top-0">
  <EditPropertyForm />
+ </div>
+ <div className="absolute left-0 z-30 top-0">
+ <PropertyDetails />
  </div>
 
 <div className="flex bg-gray-100">

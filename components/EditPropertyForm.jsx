@@ -113,7 +113,7 @@ const EditPropertyForm = ({data}) => {
   }, [])
 
 
-const {      showEditPropertyForm, setShowEditPropertyForm, singleProperty} = useContext(MyContext);
+const { showEditPropertyForm, setShowEditPropertyForm, singleProperty} = useContext(MyContext);
   // Function to handle form submission
    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const uploadedImageURLs = [];
