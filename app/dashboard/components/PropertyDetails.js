@@ -1,13 +1,19 @@
 import { MyContext } from '@/context';
 import React from 'react';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 const PropertyDetails = ({ property }) => {
-    const { singleProperty} = React.useContext(MyContext);
+    
+    const { singleProperty,setSingleProperty } = React.useContext(MyContext);
     property = singleProperty
     
     if (!property) return null;
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white shadow-md rounded" >
+    <div className="max-w-4xl mx-auto p-2 bg-white shadow-md rounded" >
+      <div className='flex justify-between '>
+                    <h2 className="text-2xl font-semibold mb-6">Property Details</h2>
+                    <IoIosCloseCircleOutline className='text-3xl' onClick={()=>setSingleProperty(false)} />
+                  </div>
     <div className="flex flex-col justify-between h-screen p-6 bg-gray-50">
       {/* Header Section */}
       <div className="space-y-2">
