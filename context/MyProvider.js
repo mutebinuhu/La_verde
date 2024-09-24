@@ -32,6 +32,8 @@ const MyProvider = ({ children }) => {
  
   }, []);
 
+
+
   return (
     <MyContext.Provider value={{ showAddPropertyForm, setShowAddPropertyForm,  data, loading, error, showEditPropertyForm, setShowEditPropertyForm, singleProperty, setSingleProperty }}>
       {children}

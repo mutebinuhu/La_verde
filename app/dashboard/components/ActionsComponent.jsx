@@ -2,6 +2,27 @@
 import { MyContext } from '@/context';
 import React, {useContext} from 'react';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
+import { FcApproval,FcCancel } from "react-icons/fc";
+
+
+const approveListing = async (id, data) => {
+  try {
+    const response = await fetch(`/api/properties/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to approve listing');
+    }
+    const result = await response.json();
+    console.log(result);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 const ActionsComponent = ({data}) => {
    // console.log('actions component', data._id);
@@ -16,7 +37,7 @@ const ActionsComponent = ({data}) => {
         title="View"
       >
         <FaEye className="mr-2" />
-        View
+   
       </button>
 
       {/* Edit Button */}
@@ -26,21 +47,33 @@ const ActionsComponent = ({data}) => {
         title="Edit"
       >
         <FaEdit className="mr-2" />
-        Edit
+    
       </button>
 
-      {/* Delete Button */}
-     {/**
-      *  <button
-           onClick={()=>alert(data._id)}
-        className="flex items-center bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
-        title="Delete"
-      >
-        <FaTrash className="mr-2" />
-        Delete
-      </button>
-      * 
-      */}
+  
+       {
+        !data.approved  &&  <button
+        onClick={()=>approveListing(data._id, {approved: true})}
+     className="flex items-center bg-green-500 text-white space-x-2 p-1 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+     title="Activate"
+   >
+    <FcApproval className='bg-white rounded'/>
+ 
+   </button>
+       }
+   
+   {
+    data.approved  && (
+      <button
+      onClick={()=>approveListing(data._id, {approved: false})}
+   className="flex items-center bg-green-500 text-white space-x-2 p-1 py-2 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+   title="Deactivate"
+ >
+  <FcCancel className='bg-white rounded'/>
+ 
+ </button>
+    )
+   }
     </div>
   );
 };
