@@ -7,6 +7,7 @@ import Messages from '../components/Messages';
 import Link from 'next/link';
 import { MyContext } from '@/context';
 import ActionsComponent from '../components/ActionsComponent';
+import LeadForm from '../components/LeadForm';
 
 export default function page() {
   const [data, setData] = useState([]);
@@ -120,7 +121,13 @@ export default function page() {
   return (
 
     <div className="h-screen flex flex-col">
-  
+   <div>
+    {/**
+     * 
+     *  <div className='w-full'><LeadForm /></div>
+     * 
+     */}
+   </div>
     <div className="flex-1 md:flex justify-between space-x-8 overflow-y-auto ">
       <div className="w-3/4 py-7">
       

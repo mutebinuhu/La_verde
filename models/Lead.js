@@ -80,6 +80,7 @@ LeadSchema.pre('save', function (next) {
   next();
 });
 
-const Lead = mongoose.model('Lead', LeadSchema);
+const Lead = mongoose.models.Lead || mongoose.model('Lead', LeadSchema);
+
 
 module.exports = Lead;

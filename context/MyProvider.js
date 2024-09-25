@@ -8,6 +8,11 @@ const MyProvider = ({ children }) => {
   const [properties, setProperties] = useState(false);
   const [data, setData] = useState(null);  // State to hold API data
   const [singleProperty, setSingleProperty] = useState(null);  // State to hold API data
+  const [leads, setLeads] = useState(null);  // State to hold API data
+  const [leadsError, setLeadsError] = useState(null);  // State to hold API error data
+  const [leadsLoading, setLeadsLoading] = useState(null);  // State to hold API error data
+
+
 
   const [loading, setLoading] = useState(true); // State to show loading status
   const [error, setError] = useState(null); // State to show errors
@@ -15,6 +20,8 @@ const MyProvider = ({ children }) => {
 
       const fetchData = async () => {
         try {
+          alert("hello")
+
           const response = await fetch('/api/properties'); // Replace with your API
           if (!response.ok) {
             throw new Error('Failed to fetch data');
@@ -27,8 +34,27 @@ const MyProvider = ({ children }) => {
           setLoading(false);
         }
       };
+      
+      const fetchLeads = async () => {
+        try {
+          const response = await fetch('/api/leads'); // Replace with your API
+          if (!response.ok) {
+            throw new Error('Failed to fetch leads data');
+          }
+          const result = await response.json();
+          console.log("results: ", result);
+          setLeads(result);
+        } catch (err) {
+          setLeadsError(err.message);
+          console.error('Error fetching leads data:', err.message);
+        } finally {
+          setLeadsLoading(false);
+        }
+      };
+  
   
       fetchData();
+      fetchLeads();
  
   }, []);
 
