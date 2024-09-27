@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { MyContext } from '@/context';
 import ActionsComponent from '../components/ActionsComponent';
 import LeadForm from '../components/LeadForm';
+import MyProvider from '@/context/MyProvider';
 
 export default function page() {
   const [data, setData] = useState([]);
@@ -105,7 +106,7 @@ export default function page() {
   };
 
 
-  const { data:newData, loading, error } = useContext(MyContext); // Destructure context values
+  const { data:newData, loading, error } = useContext(MyProvider); // Destructure context values
 
   if (loading) return(
     <div class="flex w-full h-screen justify-center items-center">

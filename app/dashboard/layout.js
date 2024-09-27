@@ -3,11 +3,10 @@ import React, { useContext } from "react";
 import PropertyForm from "@/components/PropertyForm";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
-import MyProvider from "@/context/MyProvider";
 import DashboardContent from "./components/DashboardContent";
-import EditPropertyForm from "@/components/EditPropertyForm";
-import { MyContext } from "@/context";
 import PropertyDetails from "./components/PropertyDetails";
+import EditPropertyForm from "./components/EditPropertyForm";
+import { MyProvider } from "./context/MyContext";
 <meta name="robots" content="noindex,nofollow" />
 
 export default function DashboardLayout({

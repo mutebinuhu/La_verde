@@ -1,10 +1,11 @@
 import { MyContext } from '@/context';
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { useMyContext } from '../context/MyContext';
 
 const PropertyDetails = ({ property }) => {
     
-    const { singleProperty,setSingleProperty } = React.useContext(MyContext);
+    const { singleProperty,setSingleProperty } = useMyContext();
     property = singleProperty
     
     if (!property) return null;

@@ -9,13 +9,12 @@ import SubmittedState from './SubmittedState';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { Slide } from "react-awesome-reveal";
 import MyContext from "@/context";
-import { useMyContext } from '@/app/dashboard/context/MyContext';
 
 
 
 
 const PropertyForm = ({data}) => {
-  const { showAddPropertyForm, setShowAddPropertyForm } = useMyContext()
+  const { showAddPropertyForm, setShowAddPropertyForm } = React.useContext(MyContext);
 
   console.log("value=====", showAddPropertyForm);
   const [formSubmitted, setFormSubmitted] = useState(false);
