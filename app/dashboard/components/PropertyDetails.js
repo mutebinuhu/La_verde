@@ -2,15 +2,18 @@ import { MyContext } from '@/context';
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { useMyContext } from '../context/MyContext';
+import ImageList from './ImageList';
 
 const PropertyDetails = ({ property }) => {
     
-    const { singleProperty,setSingleProperty } = useMyContext();
+    const { singleProperty,setSingleProperty, showPropertyDetails, setShowPropertyDetails } = useMyContext();
     property = singleProperty
     
     if (!property) return null;
+    if ( !showPropertyDetails) return null
+
   return (
-    <div className="max-w-4xl mx-auto p-2 bg-white shadow-md rounded" >
+    <div className="max-w-4xl mx-auto p-2 bg-white shadow-md rounded overflow-y-auto  sticky h-screen" >
       <div className='flex justify-between '>
                     <h2 className="text-2xl font-semibold mb-6">Property Details</h2>
                     <IoIosCloseCircleOutline className='text-3xl' onClick={()=>setSingleProperty(false)} />
@@ -30,20 +33,12 @@ const PropertyDetails = ({ property }) => {
       {/* Image Gallery */}
       <div className="my-6">
         {property.images.length > 0 ? (
-          <div className="grid grid-cols-2 gap-4">
-            {property.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Property Image ${index + 1}`}
-                className="w-full h-48 object-cover rounded-lg"
-              />
-            ))}
-          </div>
+          <ImageList images={property.images} propertyId={property._id} />
         ) : (
           <p>No images available</p>
         )}
       </div>
+     
 
       {/* Description Section */}
       <div className="flex-1">

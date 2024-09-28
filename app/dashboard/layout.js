@@ -6,17 +6,16 @@ import Topbar from "./components/Topbar";
 import DashboardContent from "./components/DashboardContent";
 import PropertyDetails from "./components/PropertyDetails";
 import EditPropertyForm from "./components/EditPropertyForm";
-import { MyProvider } from "./context/MyContext";
+import { MyProvider, useMyContext } from "./context/MyContext";
 <meta name="robots" content="noindex,nofollow" />
 
-export default function DashboardLayout({
-    children, // will be a page or nested layout
-  }) 
-  {
+
+export default function DashboardLayout({children}) 
   
+  {
     return (
 <MyProvider>
-<div className="relative  h-screen">
+<div className="overflow-y-auto  sticky h-screen">
  <div className="absolute z-40 top-0">
  <PropertyForm/>
  </div>

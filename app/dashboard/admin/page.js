@@ -9,12 +9,13 @@ import { MyContext } from '@/context';
 import ActionsComponent from '../components/ActionsComponent';
 import LeadForm from '../components/LeadForm';
 import MyProvider from '@/context/MyProvider';
+import { useMyContext } from '../context/MyContext';
 
 export default function page() {
   const [data, setData] = useState([]);
   const [messages, setMessages] = useState([]);
   
-  const { showAddPropertyForm, setShowAddPropertyForm, properties,setShowEditPropertyForm } = React.useContext(MyContext);
+  const { showAddPropertyForm, setShowAddPropertyForm, properties,setShowEditPropertyForm } = useMyContext();
 
   useEffect(() => {
 
@@ -106,7 +107,7 @@ export default function page() {
   };
 
 
-  const { data:newData, loading, error } = useContext(MyProvider); // Destructure context values
+  const {  properties:newData, loading, error } = useMyContext(); // Destructure context values
 
   if (loading) return(
     <div class="flex w-full h-screen justify-center items-center">
@@ -134,7 +135,7 @@ export default function page() {
       
         <div className='flex justify-between'>
         <h2 className='text-3xl font-bold'>Properties List</h2>
-        <button className="p-2 bg-[#104E3E] text-white py-0.8 px-1 rounded rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
+        <button className="p-2 bg-[#104E3E] text-white py-0.8 px-1 rounded" onClick={()=>setShowAddPropertyForm(true)}>Add Property</button>
         </div>
         <div className='my-2 '>
         <Card component={<DataTable data={newData.data}  selectableRows columns={columns} pagination customStyles={customStyles} />} />

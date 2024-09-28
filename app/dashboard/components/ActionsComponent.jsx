@@ -3,6 +3,7 @@ import { MyContext } from '@/context';
 import React, {useContext} from 'react';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import { FcApproval,FcCancel } from "react-icons/fc";
+import { useMyContext } from '../context/MyContext';
 
 
 const approveListing = async (id, data) => {
@@ -26,13 +27,13 @@ const approveListing = async (id, data) => {
 
 const ActionsComponent = ({data}) => {
    // console.log('actions component', data._id);
-   const {setShowEditPropertyForm, setSingleProperty} = useContext(MyContext);
+   const {setShowEditPropertyForm, setSingleProperty, setShowPropertyDetails} = useMyContext();
 
   return (
     <div className="flex space-x-3">
       {/* View Button */}
       <button
-             onClick={()=>{setSingleProperty(data)}}
+             onClick={()=>{setSingleProperty(data); setShowPropertyDetails(true) }}
         className="flex items-center bg-blue-500 text-white px-3 py-2 rounded border hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
         title="View"
       >
@@ -42,7 +43,7 @@ const ActionsComponent = ({data}) => {
 
       {/* Edit Button */}
       <button
-        onClick={()=>{setShowEditPropertyForm(true); setSingleProperty(data)}}
+        onClick={()=>{setShowEditPropertyForm(true); setSingleProperty(data);setShowPropertyDetails(false) }}
         className="flex items-center bg-yellow-500 text-white px-3 py-2 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-300"
         title="Edit"
       >

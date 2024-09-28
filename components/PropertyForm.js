@@ -142,7 +142,8 @@ const PropertyForm = ({data}) => {
    hondover:"",
    availability:"",
    status:"",
-   upComingDate:""
+   upComingDate:"",
+   thumbNail:""
 
   };
 
@@ -617,6 +618,16 @@ const PropertyForm = ({data}) => {
                 </div>
                 <div className="mb-4">
                   <label htmlFor="images" className="block text-sm font-medium text-gray-700">Images</label>
+                  <input type="file" multiple onChange={(event) => {
+                    setSelectedFiles(event.target.files);
+                    setFieldValue("images", event.target.files);
+                  }} className="mt-1 block w-full border border-1 p-2 rounded" />
+                  {errors.images && touched.images && (
+                    <div className="text-red-500 text-sm">{errors.images}</div>
+                  )}
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="images" className="block text-sm font-medium text-gray-700">Cover Image</label>
                   <input type="file" multiple onChange={(event) => {
                     setSelectedFiles(event.target.files);
                     setFieldValue("images", event.target.files);

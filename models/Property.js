@@ -89,7 +89,10 @@ const propertySchema = new mongoose.Schema({
     type: [String], // Array of features and amenities
     default: []
   },
-  
+  coverImage:{
+    type: String, // URL of the cover image
+    required: false
+  },
   availability:{
     type:Date
    

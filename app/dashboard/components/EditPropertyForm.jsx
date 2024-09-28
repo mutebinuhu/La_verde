@@ -16,6 +16,8 @@ import { useMyContext } from '../context/MyContext';
 
 
 const EditPropertyForm = ({data}) => {
+  const { setSingleProperty } = useMyContext();
+
   const [upComingDate, setUpComingDate] = useState(false)
   const [hideProjectForm, setHideProjectForm] = useState(false)
   const [locationList, setLocationList] = useState([])
@@ -582,6 +584,7 @@ if (showEditPropertyForm) getPropertInfo();
                     <div className="text-red-500 text-sm">{errors.images}</div>
                   )}
                 </div>
+                
                 <div className="mb-4">
                   <label className="block text-lg font-bold  text-gray-700 py-4">Amenities</label>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
