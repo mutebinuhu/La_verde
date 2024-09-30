@@ -6,6 +6,7 @@ export default async function handler(req, res) {
 
   const { method } = req;
   const { propertyId, coverImageUrl } = req.body;
+  console.log("data", coverImageUrl);
 
 
   switch (method) {

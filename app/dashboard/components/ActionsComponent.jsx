@@ -20,6 +20,7 @@ const approveListing = async (id, data) => {
     }
     const result = await response.json();
     console.log(result);
+    alert("Property Activated successfully")
   } catch (err) {
     console.error(err);
   }

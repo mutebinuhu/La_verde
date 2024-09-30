@@ -11,6 +11,7 @@ const ImageList = ({ propertyId, images }) => {
           coverImageUrl: imageUrl,
         });
         setCoverImage(imageUrl);
+        console.log("imageUrl: " + imageUrl);
         console.log("res++++++",res);
       } catch (error) {
         console.error('Error setting cover image:', error);

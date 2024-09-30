@@ -40,8 +40,8 @@ const PropertyDetails = ({ property }) => {
           {/* Slideshow Section */}
           <div className="w-full md:w-2/4 ">
             <img
-              src={property.images[0]}
-              alt={`Property Image ${property.images[0]}`}
+              src={property.coverImage ? property.coverImage : property.images[0]}
+              alt={`Property Image ${property.coverImage ? property.coverImage : property.images[0]}`}
               className="w-full  md:h-full h-68 object-cover transition-transform duration-500 hover:scale-105"
             />
            {
@@ -158,7 +158,7 @@ const PropertyDetails = ({ property }) => {
       <div className="relative">
         <img
           className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
-          src={property.images[0]} // Replace with your image URL
+          src={property.coverImage ? property.coverImage : property.images[0]} // Replace with your image URL
           alt="Property"
         />
         <span className="absolute top-2 left-2 bg-[#104E3E] text-white text-xs font-semibold px-2 py-1 rounded capitalize">

@@ -16,7 +16,7 @@ import { useMyContext } from '../context/MyContext';
 
 
 const EditPropertyForm = ({data}) => {
-  const { setSingleProperty } = useMyContext();
+
 
   const [upComingDate, setUpComingDate] = useState(false)
   const [hideProjectForm, setHideProjectForm] = useState(false)
@@ -123,7 +123,28 @@ const { showEditPropertyForm, setShowEditPropertyForm, singleProperty} = useMyCo
     setIsLoading(true)
     console.log("Values*****", values)
     try {
-     
+      const uploadPromises = Array.from(selectedFiles).map(file => {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset',"jtiqg5os");
+  // Add the transformation for the logo overlay
+   // Add the transformation for the logo overlay
+
+
+ // formData.append('transformation', JSON.stringify(transformation));
+
+        return axios.post(
+          `https://api.cloudinary.com/v1_1/mutebinuhu/image/upload`,
+          formData
+        );
+      });
+
+      const responses = await Promise.all(uploadPromises);
+      responses.forEach(response => {
+        uploadedImageURLs.push(response.data.secure_url);
+      });
+
+      values.images = uploadedImageURLs;
 
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL+"api/properties/"+singleProperty._id, {
 
@@ -200,6 +221,7 @@ if (showEditPropertyForm) getPropertInfo();
           setUpComingDate(false)
         }
        useEffect(()=>{
+        console.log("testing", singleProperty)
         setFieldValue('title', singleProperty.title);
         setFieldValue('address', singleProperty.address);
         setFieldValue('status', singleProperty.status);
@@ -215,9 +237,10 @@ if (showEditPropertyForm) getPropertInfo();
         setFieldValue('price', singleProperty.price);
         setFieldValue('areaSquare', singleProperty.areaSquare);
         setFieldValue('amenities', singleProperty.amenities);
-       
+        setFieldValue('upComingDate', singleProperty.upComingDate);
+        setFieldValue('images', singleProperty.images);
 
-        
+
 
        }, [setFieldValue]);
 

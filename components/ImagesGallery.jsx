@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import ImageCarousel from './ImageCoursel';
 import SwipeImages from './SwipeImages';
-const ImagesGallery = ({ images, type, status }) => {
+const ImagesGallery = ({ images, type, status, coverImage }) => {
   if (images.length < 3) {
     console.error('Please provide at least 3 images');
     return null;
@@ -47,7 +47,7 @@ const ImagesGallery = ({ images, type, status }) => {
         <div className='absolute z-30'>
         <ProjectBadge status={status}/>
         </div>
-        <img src={images[0]} alt="Main Property" className="w-full h-full object-cover rounded-md transform transition-transform hover:scale-95" />
+        <img src={coverImage ? coverImage : images[0]} alt="Main Property" className="w-full h-full object-cover rounded-md transform transition-transform hover:scale-95" />
       </div>
       
       {/* Side Images */}
