@@ -7,7 +7,7 @@ async function fetchData() {
         next: { revalidate: 60*60 } // Revalidate data every 60 seconds
       });
       const data = await res.json();
-      console.log("properties", data)
+      console.log("properties*****", data)
       return data;
     } catch (error) {
       console.log("error", error.message)
