@@ -1,4 +1,5 @@
 "use client"
+export const dynamic = 'force-dynamic'
 import React, {useEffect, useState, useContext} from 'react'
 import DashboardContent from '../components/DashboardContent'
 import DataTable from 'react-data-table-component';
@@ -9,13 +10,15 @@ import { MyContext } from '@/context';
 import ActionsComponent from '../components/ActionsComponent';
 import LeadForm from '../components/LeadForm';
 import MyProvider from '@/context/MyProvider';
-import { useMyContext } from '../context/MyContext';
+import { useMyContext } from '../../context/MyContext';
+import NoSSR from '@/NoSSR';
+
 
 export default function page() {
   const [data, setData] = useState([]);
   const [messages, setMessages] = useState([]);
   
-  const { showAddPropertyForm, setShowAddPropertyForm, properties,setShowEditPropertyForm } = useMyContext();
+  const {setShowAddPropertyForm, properties } = useMyContext() || {};
 
   useEffect(() => {
 
@@ -107,7 +110,7 @@ export default function page() {
   };
 
 
-  const {  properties:newData, loading, error } = useMyContext(); // Destructure context values
+  const {  properties:newData, loading, error } = useMyContext() ||{}; // Destructure context values
 
   if (loading) return(
     <div class="flex w-full h-screen justify-center items-center">
@@ -121,6 +124,7 @@ export default function page() {
   if (error) return <p>Error: {error}</p>;
  
   return (
+<NoSSR>
 
     <div className="h-screen flex flex-col">
    <div>
@@ -147,5 +151,6 @@ export default function page() {
     </div>
   </div>
 
+</NoSSR>
   )
 }

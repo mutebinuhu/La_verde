@@ -1,10 +1,11 @@
 "use client"
+export const dynamic = 'force-dynamic'
 import React, { useContext } from 'react'
 import Card from '../components/Card'
 import DataTable from 'react-data-table-component'
 import ActionsComponent from '../components/ActionsComponent';
 import { MyContext } from '@/context';
-import { useMyContext } from '../context/MyContext';
+import { useMyContext } from '@/app/context/MyContext'
 
 const customStyles = {
   headCells: {

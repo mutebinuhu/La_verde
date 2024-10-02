@@ -1,9 +1,11 @@
+"use client"
 import React from "react";
 import { FaTasks } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
 import { PiBuildingApartmentThin } from "react-icons/pi";
 import { MdGppGood } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
+export const dynamic = 'force-dynamic'
 
 
 function DashboardContent() {

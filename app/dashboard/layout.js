@@ -1,14 +1,18 @@
 "use client"
 import React, { useContext } from "react";
-import PropertyForm from "@/components/PropertyForm";
+
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import DashboardContent from "./components/DashboardContent";
 import PropertyDetails from "./components/PropertyDetails";
 import EditPropertyForm from "./components/EditPropertyForm";
-import { MyProvider, useMyContext } from "./context/MyContext";
+
+import PropertyForm from "./components/PropertyForm";
+import { MyProvider } from "../context/MyContext";
+
 <meta name="robots" content="noindex,nofollow" />
 
+export const dynamic = 'force-dynamic'
 
 export default function DashboardLayout({children}) 
   

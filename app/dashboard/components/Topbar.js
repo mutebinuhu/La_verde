@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBell, FaSearch, FaUserCircle } from "react-icons/fa";
+export const dynamic = 'force-dynamic'
 
 function Topbar() {
   return (

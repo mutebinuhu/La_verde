@@ -1,10 +1,12 @@
 
+"use client"
+import { useMyContext } from '@/app/context/MyContext';
 import { MyContext } from '@/context';
 import React, {useContext} from 'react';
 import { FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import { FcApproval,FcCancel } from "react-icons/fc";
-import { useMyContext } from '../context/MyContext';
 
+export const dynamic = 'force-dynamic'
 
 const approveListing = async (id, data) => {
   try {

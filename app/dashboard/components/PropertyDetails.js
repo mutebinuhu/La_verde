@@ -1,8 +1,8 @@
-import { MyContext } from '@/context';
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import { useMyContext } from '../context/MyContext';
 import ImageList from './ImageList';
+import { useMyContext } from '@/app/context/MyContext';
+export const dynamic = 'force-dynamic'
 
 const PropertyDetails = ({ property }) => {
     

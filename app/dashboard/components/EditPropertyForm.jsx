@@ -11,8 +11,9 @@ import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import SubmittingState from './SubmittingState';
 import SubmittedState from './SubmittedState';
-import { useMyContext } from '../context/MyContext';
+import { useMyContext } from '@/app/context/MyContext';
 
+export const dynamic = 'force-dynamic'
 
 
 const EditPropertyForm = ({data}) => {

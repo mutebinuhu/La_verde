@@ -17,7 +17,6 @@ import { useMyContext } from '@/app/dashboard/context/MyContext';
 const PropertyForm = ({data}) => {
   const { showAddPropertyForm, setShowAddPropertyForm } = useMyContext()
 
-  console.log("value=====", showAddPropertyForm);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [showLocationComponent,setShowLocationComponent] = useState(false)

@@ -1,6 +1,8 @@
 "use client"
 import axios from 'axios';
 import React, {useState} from 'react';
+export const dynamic = 'force-dynamic'
+
 const ImageList = ({ propertyId, images }) => {
     const [coverImage, setCoverImage] = useState(null);
   

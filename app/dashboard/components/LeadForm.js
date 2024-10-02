@@ -1,4 +1,6 @@
+"use client"
 import React, { useState } from 'react';
+export const dynamic = 'force-dynamic'
 
 const LeadForm = () => {
   const [formData, setFormData] = useState({
