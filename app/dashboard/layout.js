@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
@@ -10,6 +10,8 @@ import EditPropertyForm from "./components/EditPropertyForm";
 import PropertyForm from "./components/PropertyForm";
 import { MyProvider } from "../context/MyContext";
 
+import { useRouter } from 'next/navigation';
+import { checkAuthClient } from "@/utils/auth2";
 <meta name="robots" content="noindex,nofollow" />
 
 export const dynamic = 'force-dynamic'
@@ -17,6 +19,35 @@ export const dynamic = 'force-dynamic'
 export default function DashboardLayout({children}) 
   
   {
+
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const router = useRouter();
+
+    useEffect(() => {
+      const fetchUser = async () => {
+        try {
+          const user = await checkAuthClient(router);
+          setUser(user);
+        } catch (error) {
+          console.error('Authentication failed:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchUser();
+    }, [router]);
+
+    if (!user) return(
+      <div class="flex w-full h-screen justify-center items-center">
+      <div class="w-12 h-12 rounded-full absolute border border-solid border-gray-200"></div>
+    
+      <div
+          class="w-12 h-12 rounded-full animate-spin absolute border border-solid border-cyan-500 border-t-transparent shadow-md">
+      </div>
+    </div>
+    )
     return (
 <MyProvider>
 <div className="overflow-y-auto  sticky h-screen">
@@ -33,7 +64,7 @@ export default function DashboardLayout({children})
 <div className="flex bg-gray-100">
       <Sidebar />
       <div className="flex flex-col flex-1 w-full">
-        <Topbar />
+        <Topbar username={user && user.name} />
         <main className="flex-1 p-6 bg-white">
         <DashboardContent />
          {children}
