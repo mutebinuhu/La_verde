@@ -29,10 +29,15 @@ const LeadSchema = new mongoose.Schema({
     enum: ['New', 'Contacted', 'Qualified', 'Proposal Sent', 'Negotiation', 'Closed Won', 'Closed Lost'],
     default: 'New'
   },
-  agent: {
+  /*agent: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Agent', // Assuming you have an Agent model to track the agent managing this lead
     required: true
+  },
+  */
+  agent: {
+    type:String,
+// Assuming you have an Agent model to track the agent managing this lead
   },
   interactions: [{
     type: {

@@ -22,7 +22,9 @@ export default async function handler(req, res) {
         const lead = await Lead.create(req.body);
         res.status(201).json({ success: true, data: lead });
       } catch (error) {
+        console.log("my error", error);
         res.status(400).json({ success: false });
+
       }
       break;
     default:

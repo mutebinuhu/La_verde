@@ -20,6 +20,8 @@ export const MyProvider = ({ children }) => {
     const [leadsLoading, setLeadsLoading] = useState(true);  // Set initial loading state to true
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [showLeadForm, setShowLeadForm] = useState(false);
+    const [leadsDetails, setLeadsDetails] = useState({});
   
     useEffect(() => {
       const fetchData = async () => {
@@ -74,7 +76,9 @@ export const MyProvider = ({ children }) => {
       singleProperty, setSingleProperty, 
       leads, leadsLoading, setLeads, 
       showPropertyDetails, setShowPropertyDetails,
-      properties 
+      properties,
+      showLeadForm, setShowLeadForm,
+      leadsDetails, setLeadsDetails
         }}
       >
         {children}

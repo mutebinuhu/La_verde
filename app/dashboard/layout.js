@@ -8,10 +8,12 @@ import PropertyDetails from "./components/PropertyDetails";
 import EditPropertyForm from "./components/EditPropertyForm";
 
 import PropertyForm from "./components/PropertyForm";
-import { MyProvider } from "../context/MyContext";
+import { MyProvider, useMyContext } from "../context/MyContext";
 
 import { useRouter } from 'next/navigation';
 import { checkAuthClient } from "@/utils/auth2";
+import LeadForm from "./components/LeadForm";
+import LeadDetails from "./leads/LeadDetails";
 <meta name="robots" content="noindex,nofollow" />
 
 export const dynamic = 'force-dynamic'
@@ -51,6 +53,10 @@ export default function DashboardLayout({children})
     return (
 <MyProvider>
 <div className="overflow-y-auto  sticky h-screen">
+<div className="absolute z-40 w-1/2 top-0 left-0">
+      <LeadForm/>
+     
+      </div>
  <div className="absolute z-40 top-0">
  <PropertyForm/>
  </div>
