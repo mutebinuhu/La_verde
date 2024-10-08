@@ -11,6 +11,8 @@ import { FaEdit } from 'react-icons/fa'
 
 
 export default function page() {
+  const { leads, loading, error, setShowLeadForm} = useMyContext();
+
   const customStyles = {
     headCells: {
       style: {

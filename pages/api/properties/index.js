@@ -3,6 +3,7 @@
     import connectToDatabase from '../../../utils/db';
     import Property from '../../../models/Property';
 import { image } from '@nextui-org/react';
+import { generateSlug, generateUniqueId } from '@/utils/generateSlug';
     const propertiesss = [
         {   id:1,
             bed:2,
@@ -1266,13 +1267,13 @@ import { image } from '@nextui-org/react';
         case 'POST':
           try {
 
+            const title = req.body.title;
+            const uniqueId = generateUniqueId();
+            const slug = generateSlug(title, uniqueId);
             const newProperty = new Property(req.body);
-            console.log("reeeeeeeeeeeeeeee", req.body);
-         
-            console.log("features type", typeof(req.body.amenities), "------", req.body.amenities);
-            console.log("images type", typeof(req.body.images), "--------", req.body.images);
+            newProperty.slug = slug;
             let property = await newProperty.save();
-            console.log("PROP----", property)
+
 
            return res.status(201).json({ success: true, data: property });
           } catch (error) {

@@ -41,6 +41,9 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  slug:{
+    type: String
+  },
   location:{
     type: String
   },
