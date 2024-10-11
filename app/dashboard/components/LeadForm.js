@@ -12,7 +12,8 @@ const LeadForm = () => {
     "Joseph ",
     "Samir",
     "Amir",
-    "Abelrahman"
+    "Abelrahman",
+    "Meria"
   ];
 
   const [formData, setFormData] = useState({
@@ -98,7 +99,6 @@ const LeadForm = () => {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          required
           className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
         />
       </div>

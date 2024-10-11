@@ -188,7 +188,9 @@ const propertySchema = new mongoose.Schema({
 );
 
 
-
+propertySchema.statics.findBySlug = function(slug) {
+  return this.findOne({ slug });
+};
 const Property = mongoose.models.Property || mongoose.model('Property', propertySchema);
 
 module.exports = Property;

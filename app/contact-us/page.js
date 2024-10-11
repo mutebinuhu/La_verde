@@ -3,7 +3,7 @@ import ContactUsMain from '@/components/ContactUsMain';
 import Navbar from '@/components/Navbar';
 import React from 'react';
 export const metadata = {
-    title: "La Verde Property Management  - Real Estate Services in Abu Dhabi",
+    title: "La Verde Property Management  - Contact Us",
     description: "Discover exceptional real estate services with La Verde Property Management  in Abu Dhabi. Our experienced team offers personalized solutions for buying, selling, and renting properties. Contact us today to achieve your real estate goals",
   };
 const Page = () => {
