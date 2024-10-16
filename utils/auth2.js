@@ -20,6 +20,8 @@ export async function checkAuthServer() {
 export async function checkAuthClient(router) {
   try {
     const user = await account.get();
+    const jwt = await account.createJWT();
+    console.log("jwt>>>>>>>>",JSON.stringify(jwt));
     return user;
   } catch (error) {
     if (error.code === 401) {

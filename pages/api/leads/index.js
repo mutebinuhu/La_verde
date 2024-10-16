@@ -1,12 +1,13 @@
 // pages/api/locations/index.js
 import connectToDatabase from '../../../utils/db';
 import Lead from '@/models/Lead';
+import authorize from '../protected/authorise';
 
 export default async function handler(req, res) {
   await  connectToDatabase();
 
   const { method } = req;
-
+   //await authorize(req, res);
   switch (method) {
     case 'GET':
       try {
