@@ -43,7 +43,16 @@ const { data, error } = useSWR(()=> {
 }, fetcher);
 
   if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  
+  if (!data) return(
+    <div class="flex w-full h-screen justify-center items-center">
+    <div class="w-12 h-12 rounded-full absolute border border-solid border-gray-200"></div>
+  
+    <div
+        class="w-12 h-12 rounded-full animate-spin absolute border border-solid border-cyan-500 border-t-transparent shadow-md">
+    </div>
+  </div>
+  )
 
 
   return (
@@ -53,26 +62,28 @@ const { data, error } = useSWR(()=> {
        <Navbar/>
        </div>
         <div className="mt-10">
-          <h1 className="text-3xl font-bold mb-5 text-center">{data.length > 0 && ' Property Listing'}</h1>
-          <p className='text-center text-2xl'>Search Results</p>
-          <div className="container mx-auto">
+    
+          <div className="">
           <div className='md:flex justify-center items-center w-full  '>
               <Filters onFilterChange={handleFilterChange} />
 
           </div>
           </div>
         
-          <div className="container mx-auto py-12">
+          <div className="container mx-auto py-12 hidden md:block">
           <div className="container mb-8 ">
-        <h2 className="text-xl  mx-4 font-bold text-[#FFA72A] ">Featured Cities</h2>
+        <h1 className="text-xl  mx-4 font-bold text-[#FFA72A] ">Featured Cities</h1>
           <p className="text-gray-600 mx-4 text-3xl font-bold">Explore our top Cities</p>
         </div>
-              <CityGrid />
+            
+            <CityGrid  />
+         
+         
           </div>
           <div className="container  mx-auto w-full ">
           <div className="container mb-8 w-full">
-        <h2 className="text-xl  font-bold text-[#FFA72A] ">Featured Properties</h2>
-          <p className="text-gray-600 text-3xl font-bold">Explore Our Properties</p>
+        <h2 className="text-xl mx-4  font-bold  text-[#FFA72A] ">Featured Properties</h2>
+          <p className="text-gray-600 text-3xl  mx-4 md:mx-0 font-bold">Explore Our Properties</p>
         </div>
             <>
             <div className={`${data.length > 0 ? 'md:grid grid-cols-4 gap-4 mx-4 md:mx-2':'w-full'  } `}>

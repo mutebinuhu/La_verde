@@ -126,7 +126,7 @@ function Agents() {
   return (
 
     <section class="py-24 bg-gray-70 " id="agents">
-    <Fade >
+
     <div class="container px-6 py-12 mx-auto">
         <div class="flex justify-between items-center flex-col lg:flex-row md:mt-20">
             <div class="w-full lg:w-1/2">
@@ -194,7 +194,6 @@ function Agents() {
             </div>
         </div>
     </div>
-    </Fade>
     </section>
                                
   )

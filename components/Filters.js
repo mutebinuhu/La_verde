@@ -44,7 +44,7 @@ const Filters = ({ onFilterChange }) => {
     getLocations();
   }, [])
   return (
-    <form onSubmit={handleSubmit} className="my-4 md:mx-72 mx-4 ">
+    <form onSubmit={handleSubmit} className="my-4  mx-4 ">
       <div className="flex overflow-x-auto space-x-4 p-4 border border-gray-300 rounded-md">
         <div className="min-w-[100px]">
           <label className="block text-sm font-medium text-gray-700">Category</label>

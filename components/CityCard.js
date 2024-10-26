@@ -1,14 +1,15 @@
+"use client"
 import React from 'react';
 import { FaForward } from 'react-icons/fa';
 import { FaRightLong } from 'react-icons/fa6';
 import MoreDetails from './MoreDetails';
 import Link from 'next/link';
 
-const CityCard = ({ image, propertiesCount, cityName, url }) => {
+export const CityCard = ({ image, propertiesCount, cityName, url, height }) => {
   return (
     <Link href={url}>
         <div className="relative overflow-hidden rounded-lg shadow-md">
-      <img src={image} alt={cityName} className="w-full h-64 object-cover" />
+      <img src={image} alt={cityName} className={`w-full  object-cover h-${height}`} />
       <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-between p-4 text-white hover:gray-400 hover:bg-opacity-10">
         <div>
           <p className="text-sm font-light">{propertiesCount} Properties</p>
@@ -37,6 +38,7 @@ const CityGrid = () => {
           image={city.image}
           propertiesCount={city.propertiesCount}
           cityName={city.cityName}
+          height={32}
           url={`/search?location=${city.cityName}`}
         />
       ))}
