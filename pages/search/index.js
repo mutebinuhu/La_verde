@@ -12,6 +12,7 @@ import Filters from "@/components/Filters";
 import { useEffect, useState } from "react";
 import CityGrid from "@/components/CityCard";
 import FooterComponent from "@/app/components/FooterComponent";
+import PropCard from "@/components/PropCard";
 export const metadata = {
   title: "Best real estate agency Abu Dhabi",
   description: "Achieve your real estate goals with La Verde Property Management L.L.C. Our expert team in Abu Dhabi offers customized and professional services for property buying, selling, and renting. Reach out to us for a personalized consultation",
@@ -86,6 +87,18 @@ const { data, error } = useSWR(()=> {
           <p className="text-gray-600 text-3xl  mx-4 md:mx-0 font-bold">Explore Our Properties</p>
         </div>
             <>
+            
+            {/**
+             * imprved One
+             * <div className={`${data.length > 0 ? 'md:grid grid-cols-1 gap-4 mx-4 md:mx-2':'w-full'  } `}>
+            {
+              data.length > 0 ? data.map((property) => (
+                <PropCard image={property.coverImage ? property.coverImage : property.images[0]}/>
+              )) :<div className=""><NoResults/></div>
+            }
+            </div>
+             * 
+             */}
             <div className={`${data.length > 0 ? 'md:grid grid-cols-4 gap-4 mx-4 md:mx-2':'w-full'  } `}>
             {
               data.length > 0 ? data.map((property) => (
