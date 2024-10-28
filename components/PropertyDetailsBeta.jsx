@@ -158,7 +158,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
         <p>Amir Moataz</p>
         <p>Office 42, Al Jazeera Towers - Hamdan Bin Mohammed St- Abu Dhabi</p>
        <div className='mt-4'>
-       <Link href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className=" bg-blue-500 text-white py-2 px-4 rounded-lg">
+       <Link href={`https://wa.me/971506144930?text=Hi, tell me more about this ${res.data.title}`} target="_blank" rel="noopener noreferrer" className=" bg-blue-500 text-white py-2 px-4 rounded-lg">
           Contact Agent
         </Link>
        </div>
@@ -171,7 +171,7 @@ const PropertyDetailsBeta = async ({propertyId}) => {
         <p>Monday - Saturday</p>
        
         <div className='mt-4'>
-       <Link href={`https://wa.me/971506144930?text=I'm interested in ${res.data.title}`} target="_blank" rel="noopener noreferrer" className=" bg-blue-500 text-white py-2 px-4 rounded-lg">
+       <Link href={`https://wa.me/971506144930?text=hi can we schedule a viewing for this  ${res.data.title}`} target="_blank" rel="noopener noreferrer" className=" bg-blue-500 text-white py-2 px-4 rounded-lg">
           Request Viewing
         </Link>
        </div>

@@ -42,6 +42,7 @@ const pixelId = 'YOUR_PIXEL_ID';
 import 'mapbox-gl/dist/mapbox-gl.css'; // Import Mapbox CSS globally
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'; // Import Geocoder CSS globally
 import FooterComponent from "./components/FooterComponent";
+import Brevo from "./components/Brevo";
 
 export default function RootLayout({ children }) {
   return (
@@ -69,6 +70,8 @@ export default function RootLayout({ children }) {
 
         <Analytics />
         <GoogleAnalytics gaId="G-5R8ELRR41Z" />
+        <Brevo/>
+
       </body>
     </html>
   );
