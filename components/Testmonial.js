@@ -5,14 +5,14 @@ import { Fade } from 'react-awesome-reveal';
 const Testimonial = () => {
     const reviews = [
         {
-            "name":"Walid Turki",
-            "info":"The company has very good service, Joy was very co-operative and provided all required support to make the deal done.",
+            "name":"Mohamed Adel ",
+            "info":"Service is beyond average. Nice and committed place. Mr Amir and Mr Ahmed gave me so much help to find exactly what I needed.",
             "img":"https://avatar.iran.liara.run/public/boy",
             "rating":5
         },
         {
-            "name":"SeekTruth",
-            "info":"Quick and professional assistance from Joy @ La Verde. Even after signing the rent contract, she was providing assistance regarding my moving in. Two thumbs up",
+            "name":"Essaf Esso",
+            "info":"Best maintenance service and also they have a variety for rental options in the capital Abu Dhabi.The best service from Mr Sami highly recommended to deal with if you have any maintenance issues",
             "img":"https://avatar.iran.liara.run/public/boy",
             "rating":5
         },
@@ -30,8 +30,8 @@ const Testimonial = () => {
 
         },
         {
-            "name":"Ricardo Thompson",
-            "info":"Mary joy was very professional and gave me frequent update on the apartment, wonderful customer service",
+            "name":"Wesam Abdel hakem",
+            "info":"Great team and good management. I am outside the country and they manage my property and rent it with complete honesty. They deposit the rent into my account and care about the quality of the tenants.",
             "img":"https://avatar.iran.liara.run/public/boy",
             "rating":5
         },

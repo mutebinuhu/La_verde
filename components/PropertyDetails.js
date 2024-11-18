@@ -153,11 +153,11 @@ const PropertyDetails = ({ property }) => {
   return ( 
     
     <>
-<Link href={property.project ? `/projects/${property.title}/`:`/properties/${property._id}/`} className=''>
- <div className="max-w-sm rounded mb-4 md:mb-0 w-full overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+<Link href={property.project ? `/projects/${property.title}/`:`/properties/${property._id}/`} className='h-full'>
+ <div className="max-w-sm h-full rounded mb-4 md:mb-0 w-full overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
       <div className="relative">
         <img
-          className="w-full h-60 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
+          className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
           src={property.coverImage ? property.coverImage : property.images[0]} // Replace with your image URL
           alt="Property"
         />
