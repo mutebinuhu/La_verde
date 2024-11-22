@@ -1,25 +1,11 @@
-"use client"
-import React, { useState } from 'react';
+import React from 'react';
 import {Button} from '@nextui-org/button'; 
-import {Card, CardHeader, CardBody, Image,CardFooter, Textarea} from "@nextui-org/react";
 import { FaWhatsapp } from 'react-icons/fa';
+import Inquiry from './components/Inquiry';
+import InquiryList from './components/InquiryList';
 
 
-const Post = ({item})=>{
-  return(
-    <Card shadow="sm" className="my-2" >
-          <CardBody className="overflow-visible rounded p-0 ">
-              <CardBody className="p-2">
-                <p>{item[0].message}</p>
-              
-              </CardBody>
-              <CardFooter className="flex items-center justify-between">
-                <Button size="sm" variant="primary">View Details</Button>
-              </CardFooter>
-          </CardBody>
-    </Card>
-  )
-}
+
 const MessageCard = () => {
   return (
     <div className="flex items-start p-4 bg-gray-100 rounded-lg shadow-lg max-w-md mx-auto">
@@ -52,7 +38,6 @@ const MessageCard = () => {
   );
 };
 export default function page() {
-  const [selectedOption, setSelectedOption] = useState('Buy');
 
   return (
 
@@ -65,20 +50,11 @@ export default function page() {
 
 
         {/* Search Input */}
-        <div className="flex  w-full ">
-          <Textarea  
-            type="text"
-            placeholder="What Property are you looking for"
-            className="w-full px-4 py-2 rounded-l-full text-black focus:outline-none">
-           
-        
-          </Textarea>
-         
-        </div>
-        <button className="px-6 py-2 bg-green-800 text-white rounded font-semibold">
-            Submit
-          </button>
+
    
+        <div className='w-full'>
+        <Inquiry/>
+        </div>
       </div> 
     </div>
     <div className='container mx-auto py-12 '>
@@ -87,8 +63,7 @@ export default function page() {
     </div>
     <div className='bg-gray-100 p-2 space-x-4 md:flex container mx-auto'>
       <div className='w-full'>
-      <Post item={[{image:"https://placeholder.png", message:"Looking for a 3 bedrooms plus maid in Alreem"}]}/>
-      <Post item={[{image:"https://placeholder.png", message:"Looking for a 3 bedrooms plus maid in Alreem"}]}/>
+        <InquiryList/>
       
       </div>
       <div className='hidden md:block w-2/4 bg-white'>

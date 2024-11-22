@@ -29,6 +29,7 @@ import LatestProperties from "@/components/UpcomingProperties";
 import UpcomingProperties from "@/components/UpcomingProperties";
 import Agents from "@/components/Agents";
 import FooterComponent from "./components/FooterComponent";
+import IntentForm from "@/components/IntentForm";
 
 const PopularPlacesComponent = () =>{
   return(
@@ -112,6 +113,9 @@ export default function Home() {
        */}
               <div className="w-full">
               <Agents/>
+              </div>
+              <div className="w-full">
+              <IntentForm/>
               </div>
               <ContactUsMain/>
 

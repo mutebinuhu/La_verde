@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault();
     try {
       let res = await account.createEmailPasswordSession(email, password);
-      console.log("response", res);
+      console.log("response=====================", res);
      if(res) {
        window.localStorage.setItem('la_creds', JSON.stringify(res))
        window.location.href = "/dashboard/admin"

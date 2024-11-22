@@ -54,8 +54,8 @@ export default function DashboardLayout({children})
 <MyProvider>
 <div className="overflow-y-auto  sticky h-screen">
 <div className="absolute z-40 w-1/2 top-0 left-0">
-      <LeadForm/>
-     
+   
+<LeadForm/>
       </div>
  <div className="absolute z-40 top-0">
  <PropertyForm/>
