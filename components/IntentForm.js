@@ -57,7 +57,7 @@ try {
   };
 
   return (
-    <div className=" p-6 rounded-lg shadow-lg max-w-2xl mx-auto mt-8" id="intent" >
+    <div className=" p-6 bg-white rounded-lg shadow-lg max-w-2xl mx-auto mt-8" id="intent" >
       <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
       🏠 Looking for Your Dream Home?
       </h2>
