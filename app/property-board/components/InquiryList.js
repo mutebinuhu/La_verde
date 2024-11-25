@@ -9,8 +9,8 @@ export const metadata = {
   async function getDocuments() {
     try {
       const response = await databases.listDocuments(
-       '67320477003091afb449',
-        '67387bc40020fbb914e7',
+        NEXT_PUBLIC_APPWRITE_LA_VERDE_DATABASE_ID,
+        NEXT_PUBLIC_APPWRITE_INTENTS_COLLECTION_ID
       );
   
       return response.documents;
