@@ -59,10 +59,10 @@ try {
   return (
     <div className=" p-6 bg-white rounded-lg shadow-lg max-w-2xl mx-auto mt-8" id="intent" >
       <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
-      🏠 Looking for Your Dream Home?
+      🏠Lets Help You Find A Property Now
       </h2>
       <p className="py-4 font-regular">
-      Don’t wait—rental opportunities are disappearing fast! Fill out our form now and let us find the perfect property for you. 📋 Your new home is just a step away!
+       Fill out our form now and let us find the perfect property for you. �� Your new home is just a step away!
       </p>
       <Formik
         initialValues={initialValues}
