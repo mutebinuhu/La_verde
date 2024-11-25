@@ -72,9 +72,9 @@ try {
       >
         {({ isSubmitting }) => (
           <Form className="space-y-4 rounded-lg border p-4">
-            <div className="flex space-x-4">
+            <div className="md:flex md:space-x-4">
                 {/* Name */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="name" className="block font-medium text-gray-700">
                 Name
               </label>
@@ -92,7 +92,7 @@ try {
             </div>
 
             {/* Email */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="email" className="block font-medium text-gray-700">
                 Email
               </label>
@@ -110,9 +110,9 @@ try {
             </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="md:flex md:space-x-4">
                 {/* Phone */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="phone" className="block font-medium text-gray-700">
                 Phone
               </label>
@@ -130,7 +130,7 @@ try {
             </div>
 
             {/* Purpose */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="purpose" className="block font-medium text-gray-700">
                 Purpose
               </label>
@@ -146,9 +146,9 @@ try {
             </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="md:flex md:space-x-4">
                  {/* Location */}
-            <div className="w-full">
+            <div className="md:w-full">
               <label htmlFor="location" className="block font-medium text-gray-700">
                 Preferred Location
               </label>
@@ -189,9 +189,9 @@ try {
             </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="md:flex md:space-x-4">
                  {/* Budget */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="budget" className="block font-medium text-gray-700">
                 Max Budget (AED)
               </label>
@@ -209,7 +209,7 @@ try {
             </div>
 
             {/* Move-in Date */}
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <label htmlFor="moveInDate" className="block font-medium text-gray-700">
                 Move-in Date
               </label>

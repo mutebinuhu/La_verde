@@ -114,9 +114,7 @@ export default function Home() {
               <div className="w-full">
               <Agents/>
               </div>
-              <div className="w-full">
-              <IntentForm/>
-              </div>
+              
               <ContactUsMain/>
 
      {
