@@ -3,7 +3,10 @@ import IntentForm from '@/components/IntentForm'
 import Navbar from '@/components/Navbar'
 import React from 'react'
 import FooterComponent from '../components/FooterComponent'
-
+export const metadata = {
+  title: "La Verde - Intent Form",
+  description: "Please enter your intent to La Verde Property Management So that we can assign to You one of Our Agents",
+};
 export default function page() {
   return (
   <>

@@ -3,7 +3,10 @@ import React, { useRef } from 'react';
 import Loader from '@/components/Loader';
 import Navbar from '@/components/Navbar';
 import { useState } from 'react';
-
+export const metadata = {
+  title: "La Verde - Job Application",
+  description: "Please Send your job application",
+};
 export default function Home() {
   const formRef = useRef(null);
 
