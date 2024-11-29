@@ -44,14 +44,12 @@ export default function page() {
          <section className=''>
            <div className="relative bg-cover bg-center py-8 h-[250px] lg:h-[300px] flex items-center justify-center text-white"
          style={{ backgroundImage: "url('/abudhabi.jpg')" }}>
-      <div className="bg-black bg-opacity-50 md:pb-12 pb-4 px-4 rounded-lg flex flex-col items-center mx-4 md:w-1/2">
+      <div className="bg-black bg-opacity-20 md:pb-12 pb-4 px-4 rounded-lg flex flex-col items-center mx-4 md:w-1/2">
         {/* Options */}
         <h1 className="p-4 text-xl text-left md:text-2xl font-bold">Post Your Requirement</h1>
 
 
         {/* Search Input */}
-
-   
         <div className='w-full'>
         <Inquiry/>
         </div>
@@ -64,7 +62,6 @@ export default function page() {
     <div className='bg-gray-100 p-2 space-x-4 md:flex container mx-auto'>
       <div className='w-full'>
         <InquiryList/>
-      
       </div>
       <div className='hidden md:block w-2/4 bg-white'>
         <p>Lorem  </p>

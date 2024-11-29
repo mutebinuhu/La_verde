@@ -1,10 +1,12 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { databases } from "@/utils/appwrite";
 
 const IntentForm = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const initialValues = {
     name: "",
     email: "",
@@ -33,6 +35,7 @@ const IntentForm = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
 try {
+ 
     //alert(JSON.stringify(values, null, 2)); // Replace with your form submission logic
     const db = await databases.createDocument(
         '67320477003091afb449',
@@ -49,9 +52,15 @@ try {
             move_in_date: values.moveInDate,
             additional_info:values.additionalInfo
         })
-    resetForm();
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        resetForm();
+      }, 3000);
 } catch (error) {
     console.log("errr>>>>>",error);
+    setStatus(false)
+
 }
 
   };
@@ -70,7 +79,12 @@ try {
         onSubmit={handleSubmit}
     
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, status }) => (
+          <>
+            {isSubmitting && <p className="text-center">Submitting...</p>}
+            { isSubmitted && <p className="text-center">Submitted...</p>}
+
+
           <Form className="space-y-4 rounded-lg border p-4">
             <div className="md:flex md:space-x-4">
                 {/* Name */}
@@ -180,6 +194,8 @@ try {
                 <option value="apartment">Apartment</option>
                 <option value="villa">Villa</option>
                 <option value="office">Office</option>
+                <option value="studio">Studio</option>
+                <option value="other">Other</option>
               </Field>
               <ErrorMessage
                 name="propertyType"
@@ -254,7 +270,9 @@ try {
                 Submit Inquiry
               </button>
             </div>
+            {isSubmitted && <p className="text-white bg-green-700 p-2 rounded">Form has been submitted!!</p>}
           </Form>
+          </>
         )}
       </Formik>
     </div>

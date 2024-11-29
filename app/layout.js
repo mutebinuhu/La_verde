@@ -8,6 +8,7 @@ import Link from "next/link";
 import FacebookPixel from "./components/FacebookPixel";
 import { DefaultSeo } from 'next-seo';
 
+
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="VGhuf4L0i0FUxUOIGDyoOdJ8v_jm3a92HX1p6f7sBJY" />
+        
       </head>
       <body className={`${inter.className} relative`}>
         <FacebookPixel pixelId={1184822549604092} />
