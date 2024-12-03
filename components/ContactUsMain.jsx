@@ -186,7 +186,7 @@ export default function ContactUsMain() {
                     </span>
                     
                     <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Sat from 10:00am to 5:00pm.</p>
                     <Link href={`tel:+971506144930`} target='_blank' class="mt-2 text-sm font-bold text-[#FFA72A]">+971 (506) 144-930</Link>
                 </div>
             </div>
