@@ -38,8 +38,8 @@ try {
  
     //alert(JSON.stringify(values, null, 2)); // Replace with your form submission logic
     const db = await databases.createDocument(
-        '67320477003091afb449',
-        '673dc75e002b85a5aad7',
+      process.env.NEXT_PUBLIC_APPWRITE_LA_VERDE_DATABASE_ID,
+      process.env.NEXT_PUBLIC_APPWRITE_INTENT_COLLECTION_ID,
         'unique()',
         {
             name: values.name,
